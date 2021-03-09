@@ -1,45 +1,17 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Uncle Jam's Baking Recipes] <!--- Link of the website goes here --->
+This is a website for baking recipes for bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
+It is a mobile responsive website and the link to the website is available HERE. <!--- Link of the website goes here --->
 
-Welcome USER_NAME,
+## TABLE OF CONTENTS <a name="table-of-contents"></a>
+* #### [WHO'S THIS WEBSITE FOR?](#whos-this-website-for-heading)
+* #### [WHO IS THE OWNER?](#who-is-the-owner-heading)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
+This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to look at someone’s recipes for new ideas and / or who would like to share their own recipes with other people. 
+The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to look at recipes. If users would like to post their recipes, then they need to create an account but the process of creating an account is very simple without any hassles. Some users may want to buy new tools for baking so there is a "shop" page that uses can look at and purchase goods.
 
-## Gitpod Reminders
+## WHO IS THE OWNER? <a name="who-is-the-owner-heading"></a>
+I am the owner of the website. The primary goal of the website is to provide a platform that users can look at baking recipes and / or share their recipes without any hassles. 
+There is a “shop” page that some tools relate to baking are listed (affiliate) so in case users find something interesting or useful, they can purchase it from the website, and I can get a commission from the sellers. I would like to collect their e-mail address for mail magazines or something similar to expand the community.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+<div align="right"><a href="#table-of-contents">🔝</a></div>
