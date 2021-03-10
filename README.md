@@ -6,7 +6,9 @@ It is a mobile responsive website and the link to the website is available HERE.
 * #### [WHO'S THIS WEBSITE FOR?](#whos-this-website-for-heading)
 * #### [WHO IS THE OWNER?](#who-is-the-owner-heading)
 * #### [UX 5 PLANES](#ux5-planes-heading)
-  * ##### [Strategy Plane](#strategy-plane-heading)
+    * ##### [Strategy Plane](#strategy-plane-heading)
+    * ##### [Scope Plane](#scope-plane-heading)
+
 
 ## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to look at someone’s recipes for new ideas and / or who would like to share their own recipes with other people. 
@@ -33,7 +35,7 @@ All the functions on the tables below are minimum requirements on the website to
 | Register                                  |     5      |            5            |
 | Login / Log out                           |     5      |            5            |
 | Post / Edit / Delete Recipes              |     5      |            4            |
-| Search By Key Words                       |     4      |            5            |
+| Search By Keywords                        |     4      |            5            |
 | Show Recipes By Category                  |     4      |            5            |
 | Shop &#40;Affiliate&#41;                  |     4      |            5            |
 | Responsiveness                            |     4      |            5            |
@@ -50,5 +52,23 @@ Below are the additional functions that can improve the website, however, these 
 | Pagination                              |     3      |            3            |
 | Review By Other Users                   |     3      |            3            |
 | “Like” Reaction By Other Users          |     3      |            2            |
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
+
+### Scope Plane <a name="scope-plane-heading"></a>
+To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, CRUD &#40;Create, Read, Update, and Delete&#41; functions are required for this project so these are implemented as a part of essential features. 
+*	Simple design Home page that first-time users can recognise the purpose of the website easily &#40;R&#41;
+*	Categories &#40;Bread, Cake and Biscuit&#41; pages that users can see recipes of those categories &#40;R&#41; 
+*	Shop page that users can see some baking items which are linked to the seller’s website
+*	Register page that users can create an account to post recipes
+*	Login page that users can log in to the website 
+*	Log out function that users can log out
+*	Create Recipe page that users can create their recipes and post them &#40;C&#41;
+*	Edit Recipe page that users can edit their recipes &#40;U&#41;
+*	Delete Recipe page that users can delete their recipes &#40;D&#41;
+*	Edit Categories page that owner can create, edit and delete categories &#40;C & U & D&#41;
+*	Search by keywords function that users can search for specific recipes
+*	Subscribe News Letters input to collect users email address
+*	404 page that will take users back to the home page of the website  
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
