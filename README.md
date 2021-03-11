@@ -2,13 +2,15 @@
 This is a website for baking recipes for bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
 It is a mobile responsive website and the link to the website is available HERE. <!--- Link of the website goes here --->
 
+<!--- Mockup goes here --->
+
 ## TABLE OF CONTENTS <a name="table-of-contents"></a>
 * #### [WHO'S THIS WEBSITE FOR?](#whos-this-website-for-heading)
 * #### [WHO IS THE OWNER?](#who-is-the-owner-heading)
 * #### [UX 5 PLANES](#ux5-planes-heading)
     * ##### [Strategy Plane](#strategy-plane-heading)
     * ##### [Scope Plane](#scope-plane-heading)
-
+    * ##### [Structure Plane](#structure-plane-heading)
 
 ## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to look at someone’s recipes for new ideas and / or who would like to share their own recipes with other people. 
@@ -18,7 +20,7 @@ The website is designed to be obvious its purpose for first-time users. Everythi
 
 ## WHO IS THE OWNER? <a name="who-is-the-owner-heading"></a>
 I am the owner of the website. The primary goal of the website is to provide a platform that users can look at baking recipes and / or share their recipes without any hassles. 
-There is a “shop” page that some tools relate to baking are listed &#40;affiliate&#41; so in case users find something interesting or useful, they can purchase it from the website, and I can get a commission from the sellers. I would like to collect their e-mail address for news letters to expand the community.
+There is a “shop” page that some tools relate to baking are listed &#40;affiliate&#41; so in case users find something interesting or useful, they can purchase it from the website, and I can get a commission from the sellers. I would like to collect their e-mail address for newsletters to expand the community.
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
@@ -70,5 +72,27 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 *	Search by keywords function that users can search for specific recipes
 *	Subscribe News Letters input to collect users email address
 *	404 page that will take users back to the home page of the website  
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
+
+### Structure Plane <a name="scope-plane-heading"></a>
+
+—Front-end—<br>
+The website consists of a **Home** page with **10 other core pages**.
+*   **Home** &#40;`index.html`&#41;<br>This is the main page of the website. There is a log, navigation bar to *Categories* &#40;`categories_bred | cake | biscuit.html`&#41;, *Shop* &#40;`shop.html`&#41;, *Register* &#40;`register.html`&#41; and *Login* &#40;`login.html`&#41; pages, a hero image and all the recipes are contained. There is a footer with some social icons and a form to subscribe to newsletters
+*   **Categories** &#40;`categories_bred | cake | biscuit.html`&#41;<br>These are the pages where users can see recipes by category. The same header and footer are used as *Home*
+*   **Shop** &#40;`shop.html`&#41;<br>This is the page where users can see some baking items. The same header and footer are used as *Home*
+*   **Register** &#40;`register.html`&#41;<br>This is the page where users can create an account. Once users create an account successfully, they will be led to a *Profile* &#40;`profile.html`&#41; page. The same header and footer are used as *Home* but there are additional navigation links to *Create Recipe* &#40;`create_recipe.html`&#41;, *Edit Recipe* &#40;`edit_recipe.html`&#41; and *Logout*. For an <ins>admin</ins> user, there is a page to *Edit Category* &#40;`edit_category.html`&#41;
+*   **Login** &#40;`login.html`&#41;<br>This is the page where users with account can log in the website. Once users log in successfully, they will be led to the **Profile** &#40;`profile.html`&#41; page. The same header and footer are used as *Home* but there are additional navigation links to *Create Recipe* &#40;`create_recipe.html`&#41;, *Edit Recipe* &#40;`edit_recipe.html`&#41; and *Logout*. For an <ins>admin</ins> user, there is a page to *Edit Category* &#40;`edit_category.html`&#41;<br>
+Any users have access to a full recipe by clicking a link and it is also open on a unique link.<br>
+Below is the chart of the website to show the core relationships between the pages. &#40;All the pages are linked to each other subject to permission&#41;<br>
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/main/assets/readme/ux/front-end-chart.png)<br>
+
+—Back-end—<br>
+Users must have an account to post a recipe so there is a *users collection* that is linked with the *user of baking recipes collection*. Same principle as a *users collection* that users can only post recipes for the categories in a *categories collection* so it is also liked with the *category of baking recipes collection*. Categories in *categories collection* are editable by admin so it is created as an independent collection. Data in *subscription collection* is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do.<br>
+Below is the chart of the database to show the collections and their relationships.<br>
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/main/assets/readme/ux/back-end-chart.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
