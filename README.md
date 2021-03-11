@@ -87,12 +87,12 @@ The website consists of a **Home** page with **10 other core pages**.
 Any users have access to a full recipe by clicking a link and it is also open on a unique link.<br>
 Below is the chart of the website to show the core relationships between the pages. &#40;All the pages are linked to each other subject to permission&#41;<br>
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/main/assets/readme/ux/front-end-chart.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/front-end-chart.png)<br>
 
 —Back-end—<br>
 Users must have an account to post a recipe so there is a *users collection* that is linked with the *user of baking recipes collection*. Same principle as a *users collection* that users can only post recipes for the categories in a *categories collection* so it is also liked with the *category of baking recipes collection*. Categories in *categories collection* are editable by admin so it is created as an independent collection. Data in *subscription collection* is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do.<br>
 Below is the chart of the database to show the collections and their relationships.<br>
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/main/assets/readme/ux/back-end-chart.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/back-end-chart.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
