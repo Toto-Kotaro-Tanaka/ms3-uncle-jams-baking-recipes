@@ -1,6 +1,6 @@
 <!--- Logo goes here --->
 # [Uncle Jam's Baking Recipes] <!--- Link of the website goes here --->
-This is a website for baking recipes for bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
+This is a website for baking recipes of bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
 It is a mobile responsive website and the link to the website is available HERE. <!--- Link of the website goes here --->
 
 <!--- Mockup goes here --->
@@ -13,16 +13,15 @@ It is a mobile responsive website and the link to the website is available HERE.
     * ##### [Scope Plane](#scope-plane-heading)
     * ##### [Structure Plane](#structure-plane-heading)
     * ##### [Skeleton Plane](#skeleton-plane-heading)
+    * ##### [Surface Plane](#surface-plane-heading)
 
 ## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
-This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to look at someone’s recipes for new ideas and / or who would like to share their own recipes with other people. 
-The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to look at recipes. If users would like to post their recipes, then they need to create an account but the process of creating an account is very simple without any hassles. Some users may want to buy new tools for baking so there is a *Shop* page that uses can look at some baking items and purchase them on the seller's website.
+This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to look at someone’s recipes for new ideas and / or who would like to share their own recipes with other people can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page that uses can look at some items and purchase them on the seller's website.
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
 ## WHO IS THE OWNER? <a name="who-is-the-owner-heading"></a>
-I am the owner of the website. The primary goal of the website is to provide a platform that users can look at baking recipes and / or share their recipes without any hassles. 
-There is a *Shop* page that some baking tools are listed &#40;affiliate&#41; so in case users find something interesting or useful, they can access to the seller's website from the page and purchase it so that I can get a commission from the seller. I would like to collect their e-mail address for newsletters to expand the community.
+I am the owner of the website. The primary goal of the website is to provide a platform that users can look at baking recipes and / or share their recipes without any hassles. There is a *Shop* page that some baking items are listed &#40;affiliate&#41; so in case users find something interesting, they can access to the seller's website for more details of the items and can also purchase them. I can get a commission from the seller for any items being sold through my website and this is also one of the goals. I would like to collect their e-mail address for newsletters to expand the community.
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
@@ -39,7 +38,7 @@ All the functions on the tables below are minimum requirements on the website to
 | Register                                    |     5      |            5            |
 | Login / Log out                             |     5      |            5            |
 | Post / Edit / Delete Recipes                |     5      |            4            |
-| Search By Keywords                          |     4      |            5            |
+| Search Recipes By Keywords                  |     4      |            5            |
 | Show Recipes By Category                    |     4      |            5            |
 | Shop &#40;Affiliate&#41;                    |     4      |            5            |
 | Responsiveness                              |     4      |            5            |
@@ -64,16 +63,16 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 *    Simple design Home page that first-time users can recognise the purpose of the website easily. All the recipes are shown on the home page &#40;R&#41;
 *    Categories &#40;Bread, Cake and Biscuit&#41; pages that users can see recipes by the categories &#40;R&#41;
 *    Shop page that users can see some baking items, which are linked to the seller’s website
-*    Register page that users can create an account to post recipes
+*    Register page that users can create an account to post and edit recipes
 *    Login page that users can log in to the website
 *    Logout function that users can log out
-*    Profile page that users can see all the recipes and access to add, edit and delete recipes 
+*    Profile page that users can see all the recipes and access to create, edit and delete recipes 
 *    Create Recipe page that users can create their recipes and post them &#40;C&#41;
 *    Edit Recipe page that users can edit their recipes &#40;U&#41;
 *    Delete Recipe function that users can delete their recipes &#40;D&#41;
-*    Manage Categories functions that only the owner can create, edit and delete categories &#40;C & U & D&#41;
+*    Manage Category functions that only <ins>admin user</ins> &#40;owner&#41; can create, edit and delete categories &#40;C & U & D&#41;
 *    Search by keywords function that users can search for specific recipes
-*    Subscribe Newsletter input to collect users email address
+*    Subscribe Newsletter section to collect users email addresses
 *    404 page that takes users back to the home page of the website safely  
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
@@ -90,29 +89,33 @@ The website consists of a **Home** page with **13 other core pages**.
 
 *    **Shop** &#40;`shop.html`&#41;<br>The page where users can see some baking items and purchase them on the seller's website. The same header and footer are used as *Home*
 
-*    **Register** &#40;`register.html`&#41;<br>The page where users can create an account. Once users create an account successfully, they will be led to the *Profile* page. Header is different to *home* page and there is no footer
+*    **Register** &#40;`register.html`&#41;<br>The page where users can create an account. Once users create an account successfully, they will be led to *Profile* page. Header is different to *home* page and there is no footer
 
-*    **Login** &#40;`login.html`&#41;<br>The page where users who have an account can log in the website. Once users log in successfully, they will be led to the *Profile* page. Header is different to *home* page and there is no footer
+*    **Login** &#40;`login.html`&#41;<br>The page where users who have an account can log in the website. Once users log in successfully, they will be led to *Profile* page. Header is different to *home* page and there is no footer
 
-*    **Profile** &#40;`profile+uniequ-name/id.html`&#41;<br>The page where users are led when they create an account or login. Users see all of their recipes with an option to edit / delete. Users can access to *Edit Recipe* and *Delete Recipe* function by clicking a button on the recipe. There is an option to add a new recipe from this page by clicking a button and that leads to *Create Recipe* page. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
+*    **Profile** &#40;`profile+uniequ-name/id.html`&#41;<br>The page where users are led when they create an account or login. Users see all of their recipes with an option to edit / delete. Users can access to *Edit Recipe* page and *Delete Recipe* function by clicking a button on the recipe. There is an option to create a new recipe from this page by clicking a button and that leads to *Create Recipe* page. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
 
-*    **Create Recipe** &#40;`create_recipe.html`&#41;<br>The page where users can create recipes. There is no navigation link on the header and it can be accessed by clicking a Create button on *Profile* page. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
+*    **Create Recipe** &#40;`create_recipe.html`&#41;<br>The page where users can create recipes. There is no navigation link of this on the header and it can only be accessed by clicking a Create button on *Profile* page. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
 
-*    **Edit Recipe** &#40;`edit_recipe+uniequ-name/id.html`&#41;<br>The page where users can edit recipes. There is no navigation link on the header and it can be accessed by clicking an Edit button on *Profile* page. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
+*    **Edit Recipe** &#40;`edit_recipe+uniequ-name/id.html`&#41;<br>The page where users can edit recipes. There is no navigation link of this on the header and it can only be accessed by clicking an Edit button on *Profile* page. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
 
-*    **Manage Category** &#40;`manage_category.html`&#41;<br>The page where the <ins>owner</ins> can access to create and edit pages, and can delete categories. The admin user (owner) can only see a link to this page on the navigation bar. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
+*    **Manage Category** &#40;`manage_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can access to create, edit pages, and can delete categories. Only admin user can see a link to this page on the navigation bar. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
 
-*    **Create Category** &#40;`create_category.html`&#41;<br>The page where the <ins>owner</ins> can create categories. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
+*    **Create Category** &#40;`create_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can create categories. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
 
-*    **Edit Category** &#40;`edit_category.html`&#41;<br>The page where the <ins>owner</ins> can edit categories. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
+*    **Edit Category** &#40;`edit_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can edit categories. The same header and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*
 
-Any users have access to a full recipe by clicking a link and it is also open on a unique link.<br>
-Below is the chart of the website to show the core relationships between the pages. &#40;All the pages are linked to each other subject to permission&#41;<br>
+Summary of recipes and full recipes are accessible by any users. Summary of recipes are available on *Home* and *Categories* pages and full recipes are available on *Recipe* page.<br>
+
+
+Below is the chart of the website to show the core relationships between the pages. &#40;Most of the pages are linked to each other subject to permission&#41;<br>
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/front-end-chart.png)<br>
 
 — Back-end —<br>
-Users must have an account to post a recipe so there is a *users collection* that have *username* and *password* as keys. *username* in *users collections* is linked with the *username* of *recipes collection* because users who have an account can only create a recipe and they create a recipe in their own account. Same principle as *username* in *users collection* that users can only create a recipe for the categories available in a *categories collection* so it is liked with *category_name* of *recipes collection*. Categories in *categories collection* are editable by admin so it is created as an independent collection. Data in *subscription collection* is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do. The data in all the collections are retrievable and they can be identified by the key or unique id of the object. <br>
+Users must have an account to post recipes so there is a *users collection* that have *username* and *password* as keys of the data. *username* in *users collections* is linked with the *username* in *recipes collection* because users who have an account can only create a recipe and they create a recipe in their own account. Same principle as *username* in *users collection* that users can only create a recipe for the categories available in a *categories collection* so it is liked with *category_name* in *recipes collection*. Categories in *categories collection* are editable by admin so it is created as an independent collection. Data in *subscription collection* is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do. The data in all the collections are retrievable and they can be identified by the key or unique id of the object. <br>
+
+
 Below is the chart of the database to show the collections and their relationships.<br>
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/back-end-chart.png)<br>
@@ -120,7 +123,7 @@ Below is the chart of the database to show the collections and their relationshi
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
 ### Skeleton Plane <a name="skeleton-plane-heading"></a>
-It is a mobile-first website because people usually do baking with a recipe so a good mobile-first design helps users whose purpose is to see a recipe. There are wireframes of mobile and desktop sizes for all the core pages of the website. 
+It is a mobile-first website because people usually do baking with a recipe so a good mobile-first design helps users whose purpose is to see recipes. There are wireframes of mobile and desktop sizes for all the core pages of the website. 
 
 *    [Wireframes: Home &#40;`index.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/home.png)
 
@@ -144,8 +147,24 @@ It is a mobile-first website because people usually do baking with a recipe so a
 
 *    [Wireframes: Edit Category &#40;`edit_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/edit_category.png)
 
-*    [Wireframes: Test 60%](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/shop60.png)
+<div align="right"><a href="#table-of-contents">🔝</a></div>
 
-*    [Wireframes: Test 70%](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/shop70.png)
+### Surface Plane <a name="surface-plane-heading"></a>
+— Colour —<br>
+As this website is for baking, light brownish colour is used as the main colour. Currently, the background image for the main section is decided, which is a brick style wallpaper with Tumbleweed (#eaac7f).
+Other colours such as background, fonts etc are not decided yet. They will be light brown, light pink or light grey colours but the exact colours will be decided as the website is being built.
+
+— Typography —<br>
+Amatic SC is used for the main heading “Uncle Jam’s Baking Recipes” because this handwritten type of font links with recipes (hand made) very well.
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/amatic-sc.png)<br>
+
+Balsamiq Sans, which is also another type of handwritten font, is used for menu and other headings &#40;h2 - h6&#41; as it matches the image of the website well.
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/balsamiq-sans.png)<br>
+
+Nunito, which is Sans Serif type font, is used for texts on the body to give users maximum readability.
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/nunito.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
