@@ -114,6 +114,8 @@ Below is the chart of the website to show the core relationships between the pag
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/front-end-chart.png)<br>
 
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/front-end-chart-50.png)<br>
+
 — Back-end —<br>
 Users must have an account to post recipes so there is a *users collection* that have *username* and *password* as keys of the data. *username* in *users collections* is linked with the *username* in *recipes collection* because users who have an account can only create a recipe and they create a recipe in their own account. Same principle as *username* in *users collection* that users can only create a recipe for the categories available in a *categories collection* so it is liked with *category_name* in *recipes collection*. Categories in *categories collection* are editable by admin so it is created as an independent collection. Data in *subscription collection* is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do. The data in all the collections are retrievable and they can be identified by the key or unique id of the object. <br>
 
@@ -121,6 +123,9 @@ Users must have an account to post recipes so there is a *users collection* that
 Below is the chart of the database to show the collections and their relationships.<br>
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/back-end-chart.png)<br>
+
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/back-end-chart-50.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
