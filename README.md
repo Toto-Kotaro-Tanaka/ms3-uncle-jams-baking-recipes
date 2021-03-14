@@ -18,6 +18,7 @@ It is a mobile responsive website and the link to the website is available HERE.
 * #### [TECHNOLOGIES USED](#technologies-used-heading)
 * #### [TESTING](#testing-heading)
     * ##### [Python](#python-heading)
+* #### [PROJECT BARRIERS & SOLUTIONS](#barriers-solutions-heading)
 * #### [DEPLOYMENT](#deployment-heading)
 
 ## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
@@ -225,9 +226,8 @@ As functions in Python are created, a manual test is carried out.
 
 * Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png)
-
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png)
+[Test Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png) / 
+[Test Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png) &#40;The message is displayed so the function is working properly&#41;
 
 — Connection with DB —
 
@@ -235,8 +235,22 @@ The connection between the App and MongoDB Atlas is set up so a manual test is c
 
 * `render_template` function is imported to render HTML document when the function is run. A variable called *recipes* is created to retrieve the data from *recipes collection*. Each data in *recipes collection* is retrieved by using Jinja templating language on `index.html`
  
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection.png)<br>
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection-result.png)
+[Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection.png) / 
+[Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection-result.png) &#40;All the data in recipes collection is displayed so the App and database are connecting properly&#41;
+
+— Base Template —
+
+The base template for HTML is created so a test is carried out.
+
+* Create `base.html` that contains all main references to external files and third-party libraries for CSS and JavaScript that are used across the entire website.  Block keyword is required to show the contents of child documents
+ 
+[Base Template](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template.png) / 
+[Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template is working properly&#41;
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
+
+## PROJECT BARRIERS & SOLUTIONS <a name="barriers-solutions-heading"></a>
+<!--- Retrieving data in a list --->
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
