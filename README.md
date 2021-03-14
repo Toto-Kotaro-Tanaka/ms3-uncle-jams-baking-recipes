@@ -209,7 +209,7 @@ Updating README.md and some testing is also done during the above process
 <!--- * [Bootstrap4](https://getbootstrap.com/) (css framework) for main frame of the website --->
 * [Font Awesome](https://fontawesome.com/) for icons
 * [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for testing, style checking and debugging
-* [Gitpod](https://www.gitpod.io/) as Integrated Development Environment &#40;IDE&#40;
+* [Gitpod](https://www.gitpod.io/) as Integrated Development Environment &#40;IDE&#41;
 * [Git](https://git-scm.com/) for local version control, keeping the files & documents
 * [GitHub](https://github.com/) for online version control and keeping the files & documents
 * [Heroku](https://www.heroku.com/) for and deploying the website
