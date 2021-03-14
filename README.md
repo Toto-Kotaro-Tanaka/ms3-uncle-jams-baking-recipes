@@ -184,7 +184,7 @@ Nunito, which is Sans Serif type font, is used for texts on the body to give use
 This project contains both front-end and back-end so well-structured planning is required to do the work efficiently. Below is a summary of the plans.
 
 1. Creating Database in MongoDB
-1. Installing necessary Python frameworks, creating a Python & HTML file for the app and test it
+1. Installing necessary Python frameworks, creating a Python file for the app and to test a function
 1. Deploying the website in Heroku
 1. Connecting Database and App
 1. Creating parent HTML template with common sections (e.g. header & footer)
@@ -219,21 +219,36 @@ Updating README.md and some testing is also done during the above process
 
 ## TESTING <a name="testing-heading"></a>
 ### Python <a name="python-heading"></a>
-— Function —<br>
+— Function —
+
 As functions in Python are created, a manual test is carried out.
 
-* Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png)<br>
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png)<br>
+* Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png)
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png)
+
+— Connection with DB —
+
+The connection between the App and MongoDB Atlas is set up so a manual test is carried out.
+
+* `render_template` function is imported to render HTML document when the function is run. A variable called *recipes* is created to retrieve the data from *recipes collection*. Each data in *recipes collection* is retrieved by using Jinja templating language on `index.html`
+ 
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection-result.png)
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
 
 ## DEPLOYMENT <a name="deployment-heading"></a>
 
 The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/) because Github can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository. Connecting to GitHub repository is much easier so this website is deployed by using GitHub method.
  
-Before deploying the website to Heroku, there are two important steps to follow in order to make the app work in Heroku correctly.
+Before deploying the website to Heroku, there are three important steps to follow in order to make the app work in Heroku correctly.
 
-1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages / modules are imported during the project
-2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run
+1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages / modules are installed during the project
+2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run. Procfile may have a blank line so remove it as it may cause problems
+3. Push them into Github
 
 Once those steps are done, the website can be deployed and below are the steps of the deployment in Heroku.
 
@@ -243,11 +258,11 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-new-app.png)
 
-3. Put an **App name**, **Choose a region** and click create app
+3. Put an **App name**, which must be unique, **Choose a region** and click create app
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-new-app.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-put-name.png)
 
-4. Go to **Deploy** section and click **connect to GithHub**
+4. Go to **Deploy** section and click **Connect to GithHub**
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-github.png)
 

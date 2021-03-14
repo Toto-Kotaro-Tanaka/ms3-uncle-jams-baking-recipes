@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncle Jam's Baking Recipes</title>
+</head>
+
+<body>
+    {% for recipe in recipes %}
+    {{ recipe.category_name}}<br>
+    {{ recipe.recipe_title }}<br>
+    {{ recipe.recipe_desc }}<br>
+    {{ recipe.recipe_time }}<br>
+    {{ recipe.recipe_served }}<br>
+
+    {% for ingred in recipe.recipe_ingreds %}
+    {{ ingred }}<br>
+    {% endfor %}
+
+    {% for step in recipe.recipe_steps %}
+    {{ step }}<br>
+    {% endfor %}
+
+    {% endfor %}
+</body>
+
+</html>
