@@ -18,6 +18,7 @@ It is a mobile responsive website and the link to the website is available HERE.
 * #### [TECHNOLOGIES USED](#technologies-used-heading)
 * #### [TESTING](#testing-heading)
     * ##### [Python](#python-heading)
+* #### [DEPLOYMENT](#deployment-heading)
 
 ## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to see someone’s recipes for new ideas and / or who would like to share their own recipes with other people can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page that uses can look at some items and purchase them on the seller's website. There is a section to subscribe newsletters to get engaged informed what’s happening in baking and community.
@@ -224,5 +225,48 @@ As functions in Python are created, a manual test is carried out.
 * Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png)<br>
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png)<br>
+
+## DEPLOYMENT <a name="deployment-heading"></a>
+
+The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/) because Github can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository. Connecting to GitHub repository is much easier so this website is deployed by using GitHub method.
+ 
+Before deploying the website to Heroku, there are two important steps to follow in order to make the app work in Heroku correctly.
+
+1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages / modules are imported during the project
+2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run
+
+Once those steps are done, the website can be deployed and below are the steps of the deployment in Heroku.
+
+1. Create an account in Heroku
+
+2. Click **New** & **Create new app** to create a new app
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-new-app.png)
+
+3. Put an **App name**, **Choose a region** and click create app
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-new-app.png)
+
+4. Go to **Deploy** section and click **connect to GithHub**
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-github.png)
+
+5. Search for the repository by the repository name and connect it
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-search.png)
+
+6. Before clicking Enable Automatic Deploys, hidden variables such as IP address, PORT, SECRET_KEY, MONGO_URI and MONGO_DATABASE need to be recorded in Heroku. Go to **Settings**, click **Reveal Config Vars** and fill out neccessary keys and values 
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-settings.png)<br>
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-vars.png)
+
+7. Once all the hidden variables are recorded, then click **Enable Automatic Deploys** and click **Deploy Branch** &#40;Main should be selected unless you want other branches to be deployed&#41;
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-deploy.png)
+
+8. When Heroku deploy the app correctly, there is a confirmation message and you can access the app
+
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-success.png)
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
