@@ -14,7 +14,10 @@ It is a mobile responsive website and the link to the website is available HERE.
     * ##### [Structure Plane](#structure-plane-heading)
     * ##### [Skeleton Plane](#skeleton-plane-heading)
     * ##### [Surface Plane](#surface-plane-heading)
-* #### [WEBSITE CONSTRUCTION PLANS](#website-construction-plans)
+* #### [WEBSITE CONSTRUCTION PLANS](#website-construction-plans-heading)
+* #### [TECHNOLOGIES USED](#technologies-used-heading)
+* #### [TESTING](#testing-heading)
+    * ##### [Python](#python-heading)
 
 ## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to see someone’s recipes for new ideas and / or who would like to share their own recipes with other people can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page that uses can look at some items and purchase them on the seller's website. There is a section to subscribe newsletters to get engaged informed what’s happening in baking and community.
@@ -84,7 +87,7 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 The website consists of **Home** page with **14 other core pages**.
 * **Home** &#40;`index.html`&#41;<br>The main page of the website. There is a logo, navigation bar to *Categories*, *Shop*, *Register* and *Login* pages, a hero image, all the summary of recipes are contained and users can access to a full *Recipe* page. There is a footer with a form to subscribe to newsletters and some social icons
 
-* **Categories** &#40;`categories_bred | cake | biscuit.html`&#41;<br>The pages where users can see recipes by category and access to a full *Recipe* page. The same header and footer are used as *Home*
+* **Categories** &#40;`categories_bread | cake | biscuit.html`&#41;<br>The pages where users can see recipes by category and access to a full *Recipe* page. The same header and footer are used as *Home*
 
 * **Recipe** &#40;`recipe.html`&#41;<br>The page where the details of recipe are shown individually. The same header and footer are used as *Home*
 
@@ -131,7 +134,7 @@ It is a mobile-first website because people usually do baking with a recipe so a
 
 * [Wireframes: Home &#40;`index.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/home.png)
 
-* [Wireframes: Categories &#40;`categories_bred | cake | biscuit.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/categories.png)
+* [Wireframes: Categories &#40;`categories_bread | cake | biscuit.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/categories.png)
 
 * [Wireframes: Recipe &#40;`recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/recipe.png)
 
@@ -175,7 +178,7 @@ Nunito, which is Sans Serif type font, is used for texts on the body to give use
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
-## WEBSITE CONSTRUCTION PLANS <a name="website-construction-plans"></a>
+## WEBSITE CONSTRUCTION PLANS <a name="website-construction-plans-heading"></a>
 
 This project contains both front-end and back-end so well-structured planning is required to do the work efficiently. Below is a summary of the plans.
 
@@ -192,5 +195,34 @@ This project contains both front-end and back-end so well-structured planning is
 1. Creating *404* page
 
 Updating README.md and some testing is also done during the above process
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
+
+## TECHNOLOGIES USED <a name="technologies-used-heading"></a>
+* [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
+* [CSS3](https://en.wikipedia.org/wiki/CSS) for style
+* [Python](https://www.python.org/) for backend programming language
+* [Flask](https://flask.palletsprojects.com/) &#40;a micro web framework written in Python&#41; as main framework of Python
+* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/) as database
+<!--- * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction --->
+* [Google Fonts](https://fonts.google.com/) for fonts
+<!--- * [Bootstrap4](https://getbootstrap.com/) (css framework) for main frame of the website --->
+* [Font Awesome](https://fontawesome.com/) for icons
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for testing, style checking and debugging
+* [Gitpod](https://www.gitpod.io/) as Integrated Development Environment &#40;IDE&#40;
+* [Git](https://git-scm.com/) for local version control, keeping the files & documents
+* [GitHub](https://github.com/) for online version control and keeping the files & documents
+* [Heroku](https://www.heroku.com/) for and deploying the website
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
+
+## TESTING <a name="testing-heading"></a>
+### Python <a name="python-heading"></a>
+— Function —<br>
+As functions in Python are created, a manual test is carried out.
+
+* Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page 
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
