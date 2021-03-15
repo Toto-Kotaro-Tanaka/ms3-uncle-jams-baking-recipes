@@ -1,2 +1,71 @@
 body {
+    background-image: url(../images/main-background.png);
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: .1rem;
+    margin: 0;
+    padding: 0;
 }
+
+/* -- Header -- */
+header {
+    background-color: rgba(73, 51, 35, .6);
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.navbar-nav a, .fa-bars {
+    color: #fbeade !important;
+}
+
+.navbar-brand img {
+    width: 3.5rem;
+}
+
+.vl {
+    border-right: 1px solid #fbeade;
+}
+
+.dropdown-item {
+    background-color: #fbeade;
+}
+
+.dropdown-menu li a {
+    color: rgba(73, 51, 35, .8) !important;
+}
+
+.dropdown-item:hover {
+    background-color: #ffd5b7;
+}
+
+.input-group>.form-control {
+    height: auto;
+}
+
+.input-group>.form-control:focus {
+    border-color: #fbeade;
+    box-shadow: inset 0 0 0 1px #493323;;
+}
+
+.form-control::placeholder {
+    color: rgba(73, 51, 35, .4);
+}
+
+.form-control:focus {
+    background-color: rgba(251, 234, 222, .9);
+    color: #493323;
+}
+
+.form-control {
+    background-color: rgba(251, 234, 222, .5);
+    border: 1px solid #fbeade;
+}
+
+.btn, .btn:hover{
+    color: #fbeade;
+}
+
+.btn {
+    border: 1px solid #fbeade;
+    padding-top: .5rem;
+}
+
