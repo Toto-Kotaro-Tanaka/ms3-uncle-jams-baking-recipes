@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>I'm extending the base template</h2>
-{% for recipe in recipes %}
-{{ recipe.category_name}}<br>
-{{ recipe.recipe_title }}<br>
-{{ recipe.recipe_desc }}<br>
-{{ recipe.recipe_time }}<br>
-{{ recipe.recipe_served }}<br>
+<main>
+    <h1>Uncle Jam's Baking Recipes</h1>
+    <img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam" id="uncle-jam">
+</main>
 
-{% for ingred in recipe.recipe_ingreds %}
-{{ ingred }}<br>
-{% endfor %}
+<section>
+    {% for recipe in recipes %}
+    {{ recipe.category_name}}<br>
+    {{ recipe.recipe_title }}<br>
+    {{ recipe.recipe_desc }}<br>
+    {{ recipe.recipe_time }}<br>
+    {{ recipe.recipe_served }}<br>
 
-{% for step in recipe.recipe_steps %}
-{{ step }}<br>
-{% endfor %}
+    {% for ingred in recipe.recipe_ingreds %}
+    {{ ingred }}<br>
+    {% endfor %}
 
-{% endfor %}
+    {% for step in recipe.recipe_steps %}
+    {{ step }}<br>
+    {% endfor %}
+
+    {% endfor %}
+</section>
 
 {% endblock %}

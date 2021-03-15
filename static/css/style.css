@@ -1,19 +1,32 @@
 body {
     background-image: url(../images/main-background.png);
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-    letter-spacing: .1rem;
+    font-family: "Nunito", sans-serif;
+    letter-spacing: 0.1rem;
     margin: 0;
     padding: 0;
 }
 
-/* -- Header -- */
-header {
-    background-color: rgba(73, 51, 35, .6);
-    font-family: 'Balsamiq Sans', cursive;
+/* -- General Styling -- */
+h1 {
+    color: #493323;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5rem;
+    padding: 0 1.5rem;
+    position: absolute;
+    text-align: center;
+    top: 8rem;
+    z-index: -1;
 }
 
-.navbar-nav a, .fa-bars {
+/* -- Header -- */
+header {
+    background-color: rgba(73, 51, 35, 0.6);
+    font-family: "Balsamiq Sans", cursive;
+}
+
+.navbar-nav a,
+.fa-bars {
     color: #fbeade !important;
 }
 
@@ -30,42 +43,54 @@ header {
 }
 
 .dropdown-menu li a {
-    color: rgba(73, 51, 35, .8) !important;
+    color: #493323 !important;
 }
 
 .dropdown-item:hover {
     background-color: #ffd5b7;
 }
 
-.input-group>.form-control {
+.input-group > .form-control {
     height: auto;
 }
 
-.input-group>.form-control:focus {
+.input-group > .form-control:focus {
     border-color: #fbeade;
-    box-shadow: inset 0 0 0 1px #493323;;
+    box-shadow: inset 0 0 0 1px #493323;
 }
 
 .form-control::placeholder {
-    color: rgba(73, 51, 35, .4);
+    color: rgba(73, 51, 35, 0.4);
 }
 
 .form-control:focus {
-    background-color: rgba(251, 234, 222, .9);
+    background-color: rgba(251, 234, 222, 0.9);
     color: #493323;
 }
 
 .form-control {
-    background-color: rgba(251, 234, 222, .5);
+    background-color: rgba(251, 234, 222, 0.5);
     border: 1px solid #fbeade;
 }
 
-.btn, .btn:hover{
+.btn,
+.btn:hover {
     color: #fbeade;
 }
 
 .btn {
     border: 1px solid #fbeade;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
 }
 
+/* -- main -- */
+main {
+    min-height: 100vh;
+}
+
+#uncle-jam {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    width: 20rem;
+}
