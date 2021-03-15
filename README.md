@@ -203,7 +203,7 @@ Updating README.md and some testing is also done during the above process
 ## TECHNOLOGIES USED <a name="technologies-used-heading"></a>
 * [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
 * [CSS3](https://en.wikipedia.org/wiki/CSS) for style
-* [Python](https://www.python.org/) for backend programming language
+* [Python3](https://www.python.org/) for backend programming language
 * [Flask](https://flask.palletsprojects.com/) &#40;a micro web framework written in Python&#41; as main framework of Python
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/) as database
 <!--- * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction --->
@@ -214,7 +214,7 @@ Updating README.md and some testing is also done during the above process
 * [Gitpod](https://www.gitpod.io/) as Integrated Development Environment &#40;IDE&#41;
 * [Git](https://git-scm.com/) for local version control, keeping the files & documents
 * [GitHub](https://github.com/) for online version control and keeping the files & documents
-* [Heroku](https://www.heroku.com/) for and deploying the website
+* [Heroku](https://www.heroku.com/) for deploying the website
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
@@ -235,7 +235,7 @@ The connection between the App and MongoDB Atlas is set up so a manual test is c
 
 * `render_template` function is imported to render HTML document when the function is run. A variable called *recipes* is created to retrieve the data from *recipes collection*. Each data in *recipes collection* is retrieved by using Jinja templating language on `index.html`
  
-[Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection.png) / 
+[Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection.png) / [Data in Database](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-db.png) / 
 [Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection-result.png) &#40;All the data in recipes collection is displayed so the App and database are connecting properly&#41;
 
 — Base Template —
@@ -245,7 +245,7 @@ The base template for HTML is created so a test is carried out.
 * Create `base.html` that contains all main references to external files and third-party libraries for CSS and JavaScript that are used across the entire website.  Block keyword is required to show the contents of child documents
  
 [Base Template](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template.png) / 
-[Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template is working properly&#41;
+[Base Template Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template is working properly&#41;
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
