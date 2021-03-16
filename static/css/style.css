@@ -171,8 +171,11 @@ footer {
     background-color: rgba(73, 51, 35, 0.6);
 }
 
-/* Test git merge on main */
-.testmain {
-    font-family: 'Courier New', Courier, monospace;
-    border: 1px solid green;
+/* git merge test in test branch */
+.test {
+    background-color: blue;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 1.5rem;
 }
