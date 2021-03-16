@@ -170,3 +170,9 @@ footer {
 .copyright {
     background-color: rgba(73, 51, 35, 0.6);
 }
+
+/* Test git merge on main */
+.testmain {
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid green;
+}
