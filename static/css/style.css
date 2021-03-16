@@ -170,3 +170,12 @@ footer {
 .copyright {
     background-color: rgba(73, 51, 35, 0.6);
 }
+
+/* git merge test in test branch */
+.test {
+    background-color: blue;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 1.5rem;
+}
