@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block image %}
+<img src="{{ url_for('static', filename='images/categories.png') }}" alt="Uncle Jam" id="categories">
+{% endblock %}
+
+{% block content %}
+
+{% for recipe in recipes %}
+{{ recipe.category_name}}<br>
+{{ recipe.recipe_title }}<br>
+{{ recipe.recipe_desc }}<br>
+{{ recipe.recipe_time }}<br>
+{{ recipe.recipe_served }}<br>
+
+{% for ingred in recipe.recipe_ingreds %}
+{{ ingred }}<br>
+{% endfor %}
+
+{% for step in recipe.recipe_steps %}
+{{ step }}<br>
+{% endfor %}
+
+{% endfor %}
+
+{% endblock %}
