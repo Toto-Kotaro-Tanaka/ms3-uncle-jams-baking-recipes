@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-<section>
+<main>
     <h3 class="recipe-title">Recipes</h3>
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
-    <div class="card recipe-summary">
+    <div class="card">
         <div class="card-body">
             <img src="https://mdbootstrap.com/img/new/standard/city/062.jpg" class="card-img-top" alt="..." />
             {% for recipe in recipes %}
@@ -17,9 +17,10 @@
             {% endfor %}
         </div>
         <div class="card-body">
-            <a href="#" class="card-link">Recipe</a>
+            <a href="#" class="card-link">See More</a>
         </div>
     </div>
     <!-- /End of Credit -->
-</section>
+    <div class="white-space"></div>
+</main>
 {% endblock %}

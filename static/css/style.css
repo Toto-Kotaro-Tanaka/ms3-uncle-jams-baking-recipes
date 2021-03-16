@@ -75,16 +75,16 @@ nav {
 }
 
 .form-control {
-    background-color: rgba(251, 234, 222, 0.5);
+    background-color: rgba(251, 234, 222, 0.5) !important;
     border: 1px solid #fbeade;
 }
 
-.btn,
-.btn:hover {
+.search-btn,
+.search-btn:hover {
     color: #fbeade;
 }
 
-.btn {
+.search-btn {
     border: 1px solid #fbeade;
     padding-top: 0.5rem;
 }
@@ -110,14 +110,9 @@ header {
     width: 15rem;
 }
 
-/* -- Section -- */
-section {
+/* -- Main -- */
+main {
     background-color: rgba(251, 234, 222, 0.3);
-}
-
-.recipe-summary {
-    margin: 0 auto;
-    width: 90%;
 }
 
 .recipe-title {
@@ -128,8 +123,50 @@ section {
 
 .card {
     background-color: #fbeade;
+    margin: 0 auto;
+    width: 90%;
 }
 
 .card-title {
     margin-top: .5rem;
+}
+
+.white-space {
+    height: 3rem;
+}
+
+/* -- Footer -- */
+footer {
+    color: #fbeade;
+}
+
+.subscribe-input {
+    background-color: rgba(73, 51, 35, 0.3) !important;
+}
+
+.form-outline.form-white .form-control {
+    color: #fbeade;
+}
+
+.subscribe-btn {
+    border: none;
+    color: #493323;
+    background-color: #ffd5b7;
+}
+
+.subscribe-btn:hover {
+    color: #493323;
+}
+
+.social-media {
+    border: none;
+    font-size: 1.5rem;
+}
+
+.btn-link.active, .btn-link.active:focus, .btn-link.focus, .btn-link:active, .btn-link:active:focus, .btn-link:focus, .btn-link:hover {
+    background-color: #ffd5b7 !important;
+}
+
+.copyright {
+    background-color: rgba(73, 51, 35, 0.6);
 }
