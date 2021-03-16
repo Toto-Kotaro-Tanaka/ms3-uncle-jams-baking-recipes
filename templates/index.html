@@ -7,22 +7,21 @@
 </main>
 
 <section>
-    {% for recipe in recipes %}
-    {{ recipe.category_name}}<br>
-    {{ recipe.recipe_title }}<br>
-    {{ recipe.recipe_desc }}<br>
-    {{ recipe.recipe_time }}<br>
-    {{ recipe.recipe_served }}<br>
-
-    {% for ingred in recipe.recipe_ingreds %}
-    {{ ingred }}<br>
-    {% endfor %}
-
-    {% for step in recipe.recipe_steps %}
-    {{ step }}<br>
-    {% endfor %}
-
-    {% endfor %}
+    <h3 class="recipe-title">Recipes</h3>
+    <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
+    <div class="card recipe-summary">
+        <div class="card-body">
+            <img src="https://mdbootstrap.com/img/new/standard/city/062.jpg" class="card-img-top" alt="..." />
+            {% for recipe in recipes %}
+            <h5 class="card-title">{{ recipe.recipe_title }}</h5>
+            <p class="card-text">{{ recipe.recipe_desc }}</p>
+            {% endfor %}
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Recipe</a>
+        </div>
+    </div>
+    <!-- /End of Credit -->
 </section>
 
 {% endblock %}

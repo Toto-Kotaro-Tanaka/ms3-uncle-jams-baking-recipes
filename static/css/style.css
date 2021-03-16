@@ -10,13 +10,19 @@ body {
 /* -- General Styling -- */
 h1 {
     color: #493323;
-    font-family: 'Amatic SC', cursive;
+    font-family: "Amatic SC", cursive;
     font-size: 3.5rem;
     padding: 0 1.5rem;
     position: absolute;
     text-align: center;
     top: 8rem;
     z-index: -1;
+}
+
+h3,
+h5 {
+    color: #493323;
+    font-family: "Balsamiq Sans", cursive;
 }
 
 /* -- Header -- */
@@ -93,4 +99,24 @@ main {
     position: absolute;
     right: 0;
     width: 20rem;
+}
+
+/* -- Section -- */
+section {
+    background-color: rgba(251, 234, 222, 0.3);
+}
+
+.recipe-summary {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.recipe-title {
+    font-size: 2rem;
+    padding: 2rem 0 1rem;
+    text-align: center;
+}
+
+.card {
+    background-color: #fbeade;
 }
