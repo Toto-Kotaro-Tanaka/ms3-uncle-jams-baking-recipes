@@ -19,6 +19,12 @@ h1 {
     z-index: -1;
 }
 
+h3,
+h5 {
+    color: #493323;
+    font-family: "Balsamiq Sans", cursive;
+}
+
 /* -- Nav -- */
 nav {
     background-color: rgba(73, 51, 35, 0.6);
@@ -95,6 +101,15 @@ header {
     width: 20rem;
 }
 
+#categories {
+    bottom: 5rem;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 15rem;
+}
+
 /* -- Section -- */
 section {
     background-color: rgba(251, 234, 222, 0.3);
@@ -113,4 +128,8 @@ section {
 
 .card {
     background-color: #fbeade;
+}
+
+.card-title {
+    margin-top: .5rem;
 }
