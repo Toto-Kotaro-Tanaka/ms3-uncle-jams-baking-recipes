@@ -113,7 +113,7 @@ header {
     width: 15rem;
 }
 
-/* -- Main -- */
+/* -- Main: index.html -- */
 main {
     background-color: rgba(251, 234, 222, 0.3);
 }
@@ -152,6 +152,62 @@ main {
 
 .blank-space {
     height: 3rem;
+}
+
+/* -- Section Form: register.html -- */
+.register-heading {
+    width: 100%;
+}
+
+.section-form {
+    background-color: rgba(73, 51, 35, 0.3);
+    border-radius: .25rem;
+    color: #fbeade;
+    height: 25rem;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 15rem;
+    width: 90%;
+}
+
+#register-form {
+    margin: 1.5rem auto 0;
+    width: 90%;
+}
+
+.register-note {
+    color: #fff;
+    font-size: .8rem;
+    padding: 2rem 1rem 1rem;
+}
+
+.register-input {
+    background-color: rgba(73, 51, 35, 0.6) !important;
+}
+
+.btn-register {
+    background-color: #ffd5b7;
+    color: #493323;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.form-counter {
+    color: #ffd5b7;
+    font-size: .8rem;
+}
+
+.divert-to-login {
+    color: #fff;
+    font-size: .9rem;
+    padding: 2rem 2rem 0;
+}
+
+.divert-to-login a {
+    color: #fff;
+    font-weight: bolder;
 }
 
 /* -- Footer -- */
