@@ -78,20 +78,31 @@
     </nav>
     <!-- /End of Credit -->
 
+    <section>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div>
+            <div class="alert alert-light bg-color-fbeade color-493323 text-center" role="alert">{{ message }}</div>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </section>
+
     <header>
         {% block heading %}
         {% endblock %}
         {% block form %}
         {% endblock %}
     </header>
-    <main>
 
+    <main>
+        {% block content %}
+        {% endblock %}
     </main>
 
-    {% block content %}
-    {% endblock %}
-
-    <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
+    <!-- Credit: MDB Form @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
     <footer class="color-fbeade text-center">
         <div class="container p-4 pb-0">
             <section class="">

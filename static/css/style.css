@@ -13,7 +13,7 @@ h1 {
     font-size: 3.5rem;
     padding: 0 1.5rem;
     position: absolute;
-    top: 8rem;
+    top: 8.5rem;
     z-index: -1;
 }
 
@@ -99,6 +99,12 @@ nav {
     color: #fbeade;
 }
 
+/* -- Flash Message -- */
+.alert {
+    border-radius: 0;
+    margin-top: 1rem;
+}
+
 /* -- Header -- */
 header {
     min-height: 100vh;
@@ -160,10 +166,6 @@ header {
 }
 
 /* -- Section Form: register.html -- */
-.register-heading {
-    width: 100%;
-}
-
 .section-register {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
@@ -187,10 +189,14 @@ header {
     padding: 2rem 1rem 1rem;
 }
 
+/* This div is created to prevent the button moves left when it is clicked */
+.div-btn-register {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .btn-register {
     background-color: #ffd5b7;
-    margin: 0 auto;
-    width: 60%;
 }
 
 .form-counter {

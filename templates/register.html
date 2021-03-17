@@ -1,29 +1,32 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<h1 class="text-center register-heading">Register</h1>
+<h1 class="w-100 color-493323 text-center">Register</h1>
 {% endblock %}
 
 {% block form %}
 <section class="section-register color-fbeade">
     <p class="note-register text-center"><i class="fas fa-info-circle"></i> Username can contain only alphabets &
-        numbers, and max 30 letters
+        numbers, and max 30 letters. Min 5 letters required for both.
     </p>
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
-    <form id="form-register">
+    <form id="form-register" method="POST" action="{{ url_for('register') }}">
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-user trailing"></i>
-            <input type="text" id="username" data-mdb-showcounter="true" maxlength="30"
-                class="form-control bg-color-49332-06" required />
-            <label class="username form-label" for="form1Example1">Username</label>
+            <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
+                data-mdb-showcounter="true" minlength="5" maxlength="30" required />
+            <label class="username form-label" for="username">Username</label>
             <div class="form-helper"></div>
         </div>
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-lock trailing"></i>
-            <input type="password" id="password" class="form-control bg-color-49332-06" required />
-            <label class="password form-label" for="form1Example2">Password</label>
+            <input type="password" id="password" name="password" class="form-control bg-color-49332-06" minlength="5"
+                required />
+            <label class="password form-label" for="password">Password</label>
         </div>
-        <button type="submit" class="btn btn-block btn-register color-493323">Register</button>
+        <div class="div-btn-register">
+            <button type="submit" class="btn btn-block btn-register color-493323">Register</button>
+        </div>
     </form>
     <div>
         <p class="divert-to-login text-center">Already registered? Click <a href="">HERE</a> to login</p>
