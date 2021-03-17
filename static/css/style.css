@@ -14,7 +14,6 @@ h1 {
     font-size: 3.5rem;
     padding: 0 1.5rem;
     position: absolute;
-    text-align: center;
     top: 8rem;
     z-index: -1;
 }
@@ -23,6 +22,10 @@ h3,
 h5 {
     color: #493323;
     font-family: "Balsamiq Sans", cursive;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* -- Nav -- */
@@ -118,7 +121,6 @@ main {
 .recipe-title {
     font-size: 2rem;
     padding: 2rem 0 1rem;
-    text-align: center;
 }
 
 .card {
@@ -128,10 +130,27 @@ main {
 }
 
 .card-title {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
-.white-space {
+.posted-list li {
+    background-color: #fbeade;
+    font-size: .8rem;
+}
+
+.see-more-recipe {
+    color: rgba(232, 70, 16, 0.7);
+}
+
+.see-more-recipe:hover {
+    color: #e84610;
+}
+
+.see-more-recipe:visited {
+    color: #e84610;
+}
+
+.blank-space {
     height: 3rem;
 }
 
@@ -163,19 +182,16 @@ footer {
     font-size: 1.5rem;
 }
 
-.btn-link.active, .btn-link.active:focus, .btn-link.focus, .btn-link:active, .btn-link:active:focus, .btn-link:focus, .btn-link:hover {
+.btn-link.active,
+.btn-link.active:focus,
+.btn-link.focus,
+.btn-link:active,
+.btn-link:active:focus,
+.btn-link:focus,
+.btn-link:hover {
     background-color: #ffd5b7 !important;
 }
 
 .copyright {
     background-color: rgba(73, 51, 35, 0.6);
-}
-
-/* git merge test in test branch */
-.test {
-    background-color: blue;
-    font-size: 2.1rem;
-    font-weight: 700;
-    margin-top: 1rem;
-    padding: 1.5rem;
 }

@@ -6,27 +6,27 @@
 
 {% block content %}
 <main>
-    <h3 class="recipe-title">Recipes</h3>
+    <h3 class="recipe-title text-center">Recipes</h3>
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
     <div class="card">
+        {% for recipe in recipes %}
         <div class="card-body">
-            <img src="https://mdbootstrap.com/img/new/standard/city/062.jpg" class="card-img-top" alt="..." />
-            {% for recipe in recipes %}
-            <h5 class="card-title">{{ recipe.recipe_title }}</h5>
-            <p class="card-text">{{ recipe.recipe_desc }}</p>
-            {% endfor %}
+            <img src="{{ recipe.recipe_img_url }}" class="card-img-top" alt="..." />
+            <p class="card-text">Category: {{ recipe.category_name | capitalize }}</p>
+            <h5 class="card-title text-center">{{ recipe.recipe_title | title }}</h5>
+            <p class="card-text">{{ recipe.recipe_desc | truncate(50) }} </p>
         </div>
+        <ul class="list-group list-group-flush posted-list">
+            <li class="list-group-item text-center">Posted by {{ recipe.username}}</li>
+            <li class="list-group-item text-center">on 17 Mar 2021</li>
+        </ul>
+        {% endfor %}
         <div class="card-body">
-            <a href="#" class="card-link">See More</a>
+            <a href="#" class="card-link see-more-recipe">See More</a>
         </div>
     </div>
     <!-- /End of Credit -->
-    <div class="white-space"></div>
-</main>
-
-<!-- Test git merge on main -->
-<main>
-    <div>This is test on main branch</div>
+    <div class="blank-space"></div>
 </main>
 
 {% endblock %}
