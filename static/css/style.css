@@ -9,7 +9,6 @@ body {
 
 /* -- General Styling -- */
 h1 {
-    color: #493323;
     font-family: "Amatic SC", cursive;
     font-size: 3.5rem;
     padding: 0 1.5rem;
@@ -20,7 +19,6 @@ h1 {
 
 h3,
 h5 {
-    color: #493323;
     font-family: "Balsamiq Sans", cursive;
 }
 
@@ -28,14 +26,28 @@ h5 {
     text-align: center;
 }
 
+.color-493323 {
+    color: #493323;
+}
+
+.color-fbeade {
+    color: #fbeade !important;
+}
+
+.bg-color-49332-06 {
+    background-color: rgba(73, 51, 35, 0.6) !important;
+}
+
+.bg-color-fbeade {
+    background-color: #fbeade;
+}
+
 /* -- Nav -- */
 nav {
-    background-color: rgba(73, 51, 35, 0.6);
     font-family: "Balsamiq Sans", cursive;
 }
 
-.navbar-nav a,
-.fa-bars {
+.navbar-nav a {
     color: #fbeade !important;
 }
 
@@ -47,10 +59,6 @@ nav {
     border-right: 1px solid #fbeade;
 }
 
-.dropdown-item {
-    background-color: #fbeade;
-}
-
 .dropdown-menu li a {
     color: #493323 !important;
 }
@@ -59,37 +67,36 @@ nav {
     background-color: #ffd5b7;
 }
 
-.input-group > .form-control {
+.form-search > .form-control {
     height: auto;
 }
 
-.input-group > .form-control:focus {
+.form-search > .form-control:focus {
     border-color: #fbeade;
     box-shadow: inset 0 0 0 1px #493323;
 }
 
-.form-control::placeholder {
+.input-search::placeholder {
     color: rgba(73, 51, 35, 0.4);
 }
 
-.form-control:focus {
+.input-search:focus {
     background-color: rgba(251, 234, 222, 0.9);
     color: #493323;
 }
 
-.form-control {
-    background-color: rgba(251, 234, 222, 0.5) !important;
+.input-search {
+    background-color: rgba(251, 234, 222, 0.9) !important;
     border: 1px solid #fbeade;
 }
 
-.search-btn,
-.search-btn:hover {
-    color: #fbeade;
-}
-
-.search-btn {
+.btn-search {
     border: 1px solid #fbeade;
     padding-top: 0.5rem;
+}
+
+.btn-search:hover {
+    color: #fbeade;
 }
 
 /* -- Header -- */
@@ -113,8 +120,8 @@ header {
     width: 15rem;
 }
 
-/* -- Main: index.html -- */
-main {
+/* -- Section Recipe: index.html -- */
+#section-recipe {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -123,19 +130,17 @@ main {
     padding: 2rem 0 1rem;
 }
 
-.card {
-    background-color: #fbeade;
+.recipe-summary {
     margin: 0 auto;
     width: 90%;
 }
 
-.card-title {
+.recipe-summary-title {
     margin-top: 0.5rem;
 }
 
 .posted-list li {
-    background-color: #fbeade;
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 .see-more-recipe {
@@ -159,10 +164,9 @@ main {
     width: 100%;
 }
 
-.section-form {
+.section-register {
     background-color: rgba(73, 51, 35, 0.3);
-    border-radius: .25rem;
-    color: #fbeade;
+    border-radius: 0.25rem;
     height: 25rem;
     left: 0;
     margin: auto;
@@ -172,36 +176,31 @@ main {
     width: 90%;
 }
 
-#register-form {
+#form-register {
     margin: 1.5rem auto 0;
     width: 90%;
 }
 
-.register-note {
+.note-register {
     color: #fff;
-    font-size: .8rem;
+    font-size: 0.8rem;
     padding: 2rem 1rem 1rem;
-}
-
-.register-input {
-    background-color: rgba(73, 51, 35, 0.6) !important;
 }
 
 .btn-register {
     background-color: #ffd5b7;
-    color: #493323;
     margin: 0 auto;
     width: 60%;
 }
 
 .form-counter {
     color: #ffd5b7;
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 .divert-to-login {
     color: #fff;
-    font-size: .9rem;
+    font-size: 0.9rem;
     padding: 2rem 2rem 0;
 }
 
@@ -211,25 +210,16 @@ main {
 }
 
 /* -- Footer -- */
-footer {
-    color: #fbeade;
-}
-
-.subscribe-input {
+.input-subscribe {
     background-color: rgba(73, 51, 35, 0.3) !important;
 }
 
-.form-outline.form-white .form-control {
-    color: #fbeade;
-}
-
-.subscribe-btn {
+.btn-subscribe {
     border: none;
-    color: #493323;
     background-color: #ffd5b7;
 }
 
-.subscribe-btn:hover {
+.btn-subscribe:hover {
     color: #493323;
 }
 
@@ -238,16 +228,12 @@ footer {
     font-size: 1.5rem;
 }
 
-.btn-link.active,
-.btn-link.active:focus,
-.btn-link.focus,
-.btn-link:active,
-.btn-link:active:focus,
-.btn-link:focus,
-.btn-link:hover {
+.social-media.active,
+.social-media.active:focus,
+.social-media.focus,
+.social-media:active,
+.social-media:active:focus,
+.social-media:focus,
+.social-media:hover {
     background-color: #ffd5b7 !important;
-}
-
-.copyright {
-    background-color: rgba(73, 51, 35, 0.6);
 }

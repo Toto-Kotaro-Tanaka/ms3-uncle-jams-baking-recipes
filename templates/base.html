@@ -30,14 +30,14 @@
 
 <body>
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-color-49332-06">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png"
                     alt="Website Logo"></a>
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars color-fbeade"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -50,9 +50,9 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Bread</a></li>
-                            <li><a class="dropdown-item" href="#">Cake</a></li>
-                            <li><a class="dropdown-item" href="#">Biscuit</a></li>
+                            <li><a class="dropdown-item bg-color-fbeade" href="#">Bread</a></li>
+                            <li><a class="dropdown-item bg-color-fbeade" href="#">Cake</a></li>
+                            <li><a class="dropdown-item bg-color-fbeade" href="#">Biscuit</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -66,9 +66,10 @@
                         <a class="nav-link active" href="#">Login</a>
                     </li>
                 </ul>
-                <form class="d-flex input-group w-auto">
-                    <input type="search" class="form-control" placeholder="Type a keyword" aria-label="Search" />
-                    <button class="btn search-btn" type="button" data-mdb-ripple-color="dark">
+                <form class="d-flex input-group w-auto form-search">
+                    <input type="search" class="form-control input-search" placeholder="Type a keyword"
+                        aria-label="Search" />
+                    <button class="btn btn-search color-fbeade" type="button" data-mdb-ripple-color="dark">
                         Search
                     </button>
                 </form>
@@ -83,12 +84,15 @@
         {% block form %}
         {% endblock %}
     </header>
+    <main>
+
+    </main>
 
     {% block content %}
     {% endblock %}
 
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
-    <footer class="text-center">
+    <footer class="color-fbeade text-center">
         <div class="container p-4 pb-0">
             <section class="">
                 <form action="">
@@ -101,12 +105,12 @@
                         <div class="col-md-5 col-12">
                             <div class="form-outline form-white mb-4">
                                 <i class="fas fa-envelope trailing"></i>
-                                <input type="email" id="form5Example2" class="form-control subscribe-input" />
+                                <input type="email" id="form5Example2" class="form-control input-subscribe" />
                                 <label class="form-label" for="form5Example2">Email address</label>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn subscribe-btn mb-4">
+                            <button type="submit" class="btn btn-subscribe color-493323 mb-4">
                                 Subscribe
                             </button>
                         </div>
@@ -125,7 +129,7 @@
                 role="button" data-mdb-ripple-color="dark" target="_blank" rel="noopener"><i
                     class="fab fa-instagram"></i></a>
         </section>
-        <div class="text-center p-3 copyright">
+        <div class="text-center p-3 bg-color-49332-06">
             &copy; toto tanaka <span id="copyright"></span>
         </div>
     </footer>
