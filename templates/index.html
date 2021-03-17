@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block image %}
+<h1 class="text-center">Uncle Jam's Baking Recipes</h1>
 <img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam" id="uncle-jam">
 {% endblock %}
 
@@ -17,7 +18,7 @@
             <p class="card-text">{{ recipe.recipe_desc | truncate(50) }} </p>
         </div>
         <ul class="list-group list-group-flush posted-list">
-            <li class="list-group-item text-center">Posted by {{ recipe.username}}</li>
+            <li class="list-group-item text-center">Posted by {{ recipe.username | capitalize }}</li>
             <li class="list-group-item text-center">on 17 Mar 2021</li>
         </ul>
         {% endfor %}

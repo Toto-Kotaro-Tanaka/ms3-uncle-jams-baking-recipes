@@ -32,7 +32,8 @@
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../static/images/logo.png" alt="Website Logo"></a>
+            <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png"
+                    alt="Website Logo"></a>
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -41,7 +42,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
@@ -58,7 +59,7 @@
                         <a class="nav-link active" href="#">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active register" href="#">Register</a>
+                        <a class="nav-link active register" href="{{ url_for('register') }}">Register</a>
                     </li>
                     <span class="vl"></span>
                     <li class="nav-item">
@@ -77,8 +78,9 @@
     <!-- /End of Credit -->
 
     <header>
-        <h1 class="text-center">Uncle Jam's Baking Recipes</h1>
         {% block image %}
+        {% endblock %}
+        {% block form %}
         {% endblock %}
     </header>
 
