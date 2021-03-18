@@ -118,7 +118,7 @@ Summary of recipes and full recipes are accessible by any users. Summary of reci
 
 Below is the chart of the website to show the core relationships between the pages. &#40;Most of the pages are linked to each other subject to permission&#41;<br>
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/front-end-chart.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/front-end-chart.png)<br>
 
 
 — Back-end —<br>
@@ -127,36 +127,36 @@ Users must have an account to post recipes so there is a *users collection* that
 
 Below is the chart of the database to show the collections and their relationships.<br>
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/back-end-chart.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/back-end-chart.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
 ### Skeleton Plane <a name="skeleton-plane-heading"></a>
 It is a mobile-first website because people usually do baking with a recipe so a good mobile-first design helps users whose main purpose is to see recipes. For users whose main purpose is to post recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website. 
 
-* [Wireframes: Home &#40;`index.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/home.png)
+* [Wireframes: Home &#40;`index.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/home.png)
 
-* [Wireframes: Categories &#40;`categories_bread | cake | biscuit.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/categories.png)
+* [Wireframes: Categories &#40;`categories_bread | cake | biscuit.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/categories.png)
 
-* [Wireframes: Recipe &#40;`recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/recipe.png)
+* [Wireframes: Recipe &#40;`recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/recipe.png)
 
-* [Wireframes: Shop &#40;`shop.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/shop.png)
+* [Wireframes: Shop &#40;`shop.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/shop.png)
 
-* [Wireframes: Register | Login &#40;`register.html` | `login.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/register-login.png)
+* [Wireframes: Register | Login &#40;`register.html` | `login.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/register-login.png)
 
-* [Wireframes: Profile &#40;`profile.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/profile.png)
+* [Wireframes: Profile &#40;`profile.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/profile.png)
 
-* [Wireframes: Create Recipe &#40;`create_recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/create-recipe.png)
+* [Wireframes: Create Recipe &#40;`create_recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/create-recipe.png)
 
-* [Wireframes: Edit Recipe &#40;`edit_recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/edit-recipe.png)
+* [Wireframes: Edit Recipe &#40;`edit_recipe.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/edit-recipe.png)
 
-* [Wireframes: Manage Category &#40;`manage_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/manage-category.png)
+* [Wireframes: Manage Category &#40;`manage_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/manage-category.png)
 
-* [Wireframes: Create Category &#40;`create_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/create-category.png)
+* [Wireframes: Create Category &#40;`create_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/create-category.png)
 
-* [Wireframes: Edit Category &#40;`edit_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/edit-category.png)
+* [Wireframes: Edit Category &#40;`edit_category.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/edit-category.png)
 
-* [Wireframes: Page 404 &#40;`page_404.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/page-404.png)
+* [Wireframes: Page 404 &#40;`page_404.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/page-404.png)
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
@@ -168,15 +168,15 @@ Other colours such as background, fonts etc are not decided yet. They will be li
 — Typography —<br>
 Amatic SC is used for the main heading “Uncle Jam’s Baking Recipes” because this handwritten type of font links with recipes (hand made) very well.
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/amatic-sc.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/amatic-sc.png)<br>
 
 Balsamiq Sans, which is also another type of handwritten font, is used for menu and other headings &#40;h2 - h6&#41; as it matches the image of the website well.
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/balsamiq-sans.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/balsamiq-sans.png)<br>
 
 Nunito, which is Sans Serif type font, is used for texts on the body to give users maximum readability.
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/ux/nunito.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/nunito.png)<br>
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
@@ -226,8 +226,8 @@ As functions in Python are created, a manual test is carried out.
 
 * Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page
 
-[Test Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function.png) / 
-[Test Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-function-result.png) &#40;The message is displayed so the function is working properly&#41;
+[Test Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-function.png) / 
+[Test Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-function-result.png) &#40;The message is displayed so the function is working properly&#41;
 
 — Connection with DB —
 
@@ -235,8 +235,8 @@ The connection between the App and MongoDB Atlas is set up so a manual test is c
 
 * `render_template` function is imported to render HTML document when the function is run. A variable called *recipes* is created to retrieve the data from *recipes collection*. Each data in *recipes collection* is retrieved by using Jinja templating language on `index.html`
  
-[Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection.png) / [Data in Database](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-db.png) / 
-[Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-db-connection-result.png) &#40;All the data in recipes collection is displayed so the App and database are connecting properly&#41;
+[Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-connection.png) / [Data in Database](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-db.png) / 
+[Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-connection-result.png) &#40;All the data in recipes collection is displayed so the App and database are connecting properly&#41;
 
 — Base Template —
 
@@ -244,8 +244,17 @@ The base template for HTML is created so a test is carried out.
 
 * Create `base.html` that contains all main references to external files and third-party libraries for CSS and JavaScript that are used across the entire website.  Block keyword is required to show the contents of child documents
  
-[Base Template](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template.png) / 
-[Base Template Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template is working properly&#41;
+[Base Template](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-base-template.png) / 
+[Base Template Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template is working properly&#41;
+
+— Register Function & Form —
+
+Register function and form are created so a test is carried out.
+
+* Create `register.html` that contains a form to store first time user in *users collection* in *baking_recipe* database to create a unique account. Create a function in `app.py` with POST method with a condition for any usernames, which are not in the database, to be stored in the database
+ 
+[Register Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register.png) / [Register Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-form.png) / 
+[Register Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-result.png) &#40;Username and password are stored in the dabase correctly&#41;
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 
@@ -270,32 +279,32 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 2. Click **New** & **Create new app** to create a new app
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-new-app.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-new-app.png)
 
 3. Put an **App name**, which must be unique, **Choose a region** and click create app
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-put-name.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-put-name.png)
 
 4. Go to **Deploy** section and click **Connect to GithHub**
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-github.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-github.png)
 
 5. Search for the repository by the repository name and connect it
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-search.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-search.png)
 
 6. Before clicking Enable Automatic Deploys, hidden variables such as IP address, PORT, SECRET_KEY, MONGO_URI and MONGO_DATABASE need to be recorded in Heroku. Go to **Settings**, click **Reveal Config Vars** and fill out neccessary keys and values 
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-settings.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-settings.png)<br>
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-vars.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-vars.png)
 
 7. Once all the hidden variables are recorded, then click **Enable Automatic Deploys** and click **Deploy Branch** &#40;Main should be selected unless you want other branches to be deployed&#41;
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-deploy.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-deploy.png)
 
 8. When Heroku deploy the app correctly, there is a confirmation message and you can access the app
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/assets/readme/deployment/dep-success.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-success.png)
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
