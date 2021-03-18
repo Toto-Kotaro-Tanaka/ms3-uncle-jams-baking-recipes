@@ -17,6 +17,12 @@ h1 {
     z-index: -1;
 }
 
+h2 {
+    font-family: "Amatic SC", cursive;
+    font-size: 3.1rem;
+    padding: 1rem 0;
+}
+
 h3,
 h5 {
     font-family: "Balsamiq Sans", cursive;
@@ -166,6 +172,16 @@ header {
 }
 
 /* -- Section Form: register.html -- */
+.img-register {
+    text-align: center;
+}
+
+#uncle-jam-sub {
+    padding-top: 1rem;
+    margin: 0 auto;
+    width: 6rem;
+}
+
 .section-register {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
@@ -174,7 +190,6 @@ header {
     margin: auto;
     position: absolute;
     right: 0;
-    top: 15rem;
     width: 90%;
 }
 
