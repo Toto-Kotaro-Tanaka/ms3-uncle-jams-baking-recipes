@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@200;300;400;700&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@400;700&display=swap">
     <!-- MDB -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" type="text/css" />
     <!-- Styles CSS -->
@@ -78,11 +78,11 @@
     {% endif %}
 
     <section>
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-        {% for message in messages %}
+        {% for category, message in messages %}
         <div>
-            <div class="alert alert-lightcolor-493323 bg-color-fbeade text-center" role="alert">{{ message }}</div>
+            <div class="{{ category }} alert alert-light text-center" role="alert">{{ message }}</div>
         </div>
         {% endfor %}
         {% endif %}

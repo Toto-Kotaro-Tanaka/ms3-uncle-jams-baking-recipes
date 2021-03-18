@@ -110,6 +110,17 @@ nav {
     border-radius: 0;
 }
 
+.success {
+    background-color: #fbeade;
+    color: #493323;
+}
+
+.error {
+    background-color: #ff7c3e;
+    color: #fff;
+    font-weight: bold;
+}
+
 /* -- Header -- */
 header {
     min-height: 100vh;
