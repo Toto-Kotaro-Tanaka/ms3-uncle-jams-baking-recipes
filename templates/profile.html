@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block heading %}
+<h1 class="color-493323 text-center">Uncle Jam's Baking Recipes</h1>
+<img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam" id="uncle-jam">
+{% endblock %}
+
+{% block content %}
+<section id="section-recipe">
+    <h3 class="recipe-title color-493323 text-center">Recipes</h3>
+    <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
+    <div class="card recipe-summary bg-color-fbeade">
+        {% for recipe in recipes %}
+        <div class="card-body">
+            <img src="{{ recipe.recipe_img_url }}" class="card-img-top" alt="..." />
+            <p class="card-text">Category: {{ recipe.category_name | capitalize }}</p>
+            <h5 class="card-title recipe-summary-title color-493323 text-center">{{ recipe.recipe_title | title }}</h5>
+            <p class="card-text">{{ recipe.recipe_desc | truncate(50) }} </p>
+        </div>
+        <ul class="list-group list-group-flush posted-list">
+            <li class="list-group-item bg-color-fbeade text-center">Posted by {{ recipe.username | capitalize }}</li>
+            <li class="list-group-item bg-color-fbeade text-center">on 17 Mar 2021</li>
+        </ul>
+        {% endfor %}
+        <div class="card-body">
+            <a href="#" class="card-link see-more-recipe">See More</a>
+        </div>
+    </div>
+    <!-- /End of Credit -->
+    <div class="blank-space"></div>
+</section>
+
+{% endblock %}
