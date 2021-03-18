@@ -108,7 +108,6 @@ nav {
 /* -- Flash Message -- */
 .alert {
     border-radius: 0;
-    margin-top: 1rem;
 }
 
 /* -- Header -- */
@@ -171,18 +170,18 @@ header {
     height: 3rem;
 }
 
-/* -- Section Form: register.html -- */
-.img-register {
+/* -- Section Form: register.html & login.html -- */
+.img-account {
     text-align: center;
 }
 
-#uncle-jam-sub {
+#uncle-jam-account {
     padding-top: 1rem;
     margin: 0 auto;
     width: 6rem;
 }
 
-.section-register {
+.section-account {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
     height: 25rem;
@@ -193,7 +192,11 @@ header {
     width: 90%;
 }
 
-#form-register {
+.section-login {
+    height: 18rem;
+}
+
+#form-account {
     margin: 1.5rem auto 0;
     width: 90%;
 }
@@ -204,28 +207,28 @@ header {
     padding: 2rem 1rem 1rem;
 }
 
-/* This div is created to prevent the button moves left when it is clicked */
-.div-btn-register {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.btn-register {
-    background-color: #ffd5b7;
-}
-
 .form-counter {
     color: #ffd5b7;
     font-size: 0.8rem;
 }
 
-.divert-to-login {
+/* This div is created to prevent the button moves left when it is clicked */
+.div-btn-account {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.btn-account {
+    background-color: #ffd5b7;
+}
+
+.diversion-account {
     color: #fff;
     font-size: 0.9rem;
     padding: 2rem 2rem 0;
 }
 
-.divert-to-login a {
+.diversion-account a {
     color: #fff;
     font-weight: bolder;
 }
