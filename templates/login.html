@@ -1,21 +1,17 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<div class="img-account">
-    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-            id="uncle-jam-account"></a>
-</div>
-<h2 class="w-100 color-493323 text-center">Login</h2>
-{% endblock %}
+<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
+        id="uncle-jam-account"></a>
+<h2 class="w-100 font-amatic color-493323 text-center">Login</h2>
 
-{% block form %}
 <section class="section-account section-login color-fbeade">
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
     <form id="form-account" method="POST" action="{{ url_for('login') }}">
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-user trailing"></i>
             <input type="text" id="username" name="username" class="form-control bg-color-49332-06" minlength="5"
-                maxlength="30" required />
+                maxlength="25" required />
             <label class="username form-label" for="username">Username</label>
         </div>
         <div class="form-outline mb-4 form-white">
@@ -25,7 +21,7 @@
             <label class="password form-label" for="password">Password</label>
         </div>
         <div class="div-btn-account">
-            <button type="submit" class="btn btn-block btn-account color-493323">Login</button>
+            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Login</button>
         </div>
     </form>
     <div>

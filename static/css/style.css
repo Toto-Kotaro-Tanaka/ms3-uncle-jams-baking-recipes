@@ -7,9 +7,12 @@ body {
     padding: 0;
 }
 
+.wrap h2 {
+    white-space: normal;
+}
+
 /* -- General Styling -- */
 h1 {
-    font-family: "Amatic SC", cursive;
     font-size: 3.5rem;
     padding: 0 1.5rem;
     position: absolute;
@@ -18,18 +21,16 @@ h1 {
 }
 
 h2 {
+    font-size: 3rem;
+    padding: 0 5rem;
+}
+
+.font-amatic {
     font-family: "Amatic SC", cursive;
-    font-size: 3.1rem;
-    padding: 1rem 0;
 }
 
-h3,
-h5 {
+.font-balsamiq {
     font-family: "Balsamiq Sans", cursive;
-}
-
-.text-center {
-    text-align: center;
 }
 
 .color-493323 {
@@ -48,11 +49,20 @@ h5 {
     background-color: #fbeade;
 }
 
-/* -- Nav -- */
-nav {
-    font-family: "Balsamiq Sans", cursive;
+.text-center {
+    text-align: center;
 }
 
+.btn-ffd5b7 {
+    border: none;
+    background-color: #ffd5b7;
+}
+
+.btn-ffd5b7:hover {
+    color: #493323;
+}
+
+/* -- Nav -- */
 .navbar-nav a {
     color: #fbeade !important;
 }
@@ -182,14 +192,9 @@ header {
 }
 
 /* -- Section Form: register.html & login.html -- */
-.img-account {
-    text-align: center;
-}
-
 #uncle-jam-account {
-    padding-top: 1rem;
-    margin: 0 auto;
-    width: 6rem;
+    padding: 1rem;
+    width: 8rem;
 }
 
 .section-account {
@@ -244,18 +249,26 @@ header {
     font-weight: bolder;
 }
 
+/* -- Heading Profile: profile.html -- */
+.profile {
+    padding: 1rem 0;
+    width: 12rem;
+}
+
+hr {
+    border: .5rem solid #493323;
+    border-radius: .25rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.btn-create-recipe {
+    margin: 0 auto;
+}
+
 /* -- Footer -- */
 .input-subscribe {
     background-color: rgba(73, 51, 35, 0.3) !important;
-}
-
-.btn-subscribe {
-    border: none;
-    background-color: #ffd5b7;
-}
-
-.btn-subscribe:hover {
-    color: #493323;
 }
 
 .social-media {

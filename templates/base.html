@@ -28,7 +28,7 @@
 <body>
     {% if not hide_navbar_footer %}
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-color-49332-06">
+    <nav class="navbar navbar-expand-lg navbar-light font-balsamiq bg-color-49332-06">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png"
                     alt="Website Logo"></a>
@@ -92,8 +92,6 @@
     <header>
         {% block heading %}
         {% endblock %}
-        {% block form %}
-        {% endblock %}
     </header>
 
     <main>
@@ -121,7 +119,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-subscribe color-493323 mb-4">
+                            <button type="submit" class="btn btn-ffd5b7 color-493323 mb-4">
                                 Subscribe
                             </button>
                         </div>

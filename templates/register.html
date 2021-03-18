@@ -1,24 +1,20 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<div class="img-account">
-    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-            id="uncle-jam-account"></a>
-</div>
-<h2 class="w-100 color-493323 text-center">Register</h2>
-{% endblock %}
+<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
+        id="uncle-jam-account"></a>
+<h2 class="w-100 font-amatic color-493323 text-center">Register</h2>
 
-{% block form %}
 <section class="section-account color-fbeade">
     <p class="note-register text-center"><i class="fas fa-info-circle"></i> Username can contain only alphabets &
-        numbers, and max 30 letters.<br>Min 5 letters required for both.
+        numbers, and max 20 letters.<br>Min 5 letters required for both.
     </p>
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
     <form id="form-account" method="POST" action="{{ url_for('register') }}">
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-user trailing"></i>
             <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
-                data-mdb-showcounter="true" pattern="^[a-zA-Z0-9]{5,30}$" minlength="5" maxlength="30" required />
+                data-mdb-showcounter="true" pattern="^[a-zA-Z0-9]{5,20}$" minlength="5" maxlength="20" required />
             <label class="username form-label" for="username">Username</label>
             <div class="form-helper"></div>
         </div>
@@ -29,7 +25,7 @@
             <label class="password form-label" for="password">Password</label>
         </div>
         <div class="div-btn-account">
-            <button type="submit" class="btn btn-block btn-account color-493323">Register</button>
+            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Register</button>
         </div>
     </form>
     <div>
