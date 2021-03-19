@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block heading %}
+<h2 class="font-amatic color-493323 text-center profile-text">{{ username }}'s profile</h2>
 <div class="text-center">
     <img src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Profile Image Gingerbread Man"
-        class="profile">
+        class="profile-img">
 </div>
-<h2 class="w-100 font-amatic color-493323 text-center">{{ username }}'s profile</h2>
 <hr>
 <div class="text-center">
     <h4 class="font-balsamiq color-493323 mt-4">Create Recipe</h4>

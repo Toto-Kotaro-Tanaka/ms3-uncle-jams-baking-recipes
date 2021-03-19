@@ -7,10 +7,6 @@ body {
     padding: 0;
 }
 
-.wrap h2 {
-    white-space: normal;
-}
-
 /* -- General Styling -- */
 h1 {
     font-size: 3.5rem;
@@ -147,6 +143,7 @@ h2 {
 /* -- Header -- */
 header {
     min-height: 100vh;
+    word-wrap: break-word
 }
 
 #uncle-jam {
@@ -268,9 +265,13 @@ header {
 }
 
 /* -- Heading Profile: profile.html -- */
-.profile {
-    padding: 9rem 0 0;
-    width: 12rem;
+.profile-text {
+    padding: 9rem 1.5rem 0;
+}
+
+.profile-img {
+    padding: 2rem 0 1rem;
+    width: 7rem;
 }
 
 hr {
