@@ -14,10 +14,7 @@ body {
 /* -- General Styling -- */
 h1 {
     font-size: 3.5rem;
-    padding: 0 1.5rem;
-    position: absolute;
-    top: 8.5rem;
-    z-index: -1;
+    padding: 10rem 1.5rem 0;
 }
 
 h2 {
@@ -62,7 +59,14 @@ h2 {
     color: #493323;
 }
 
-/* -- Nav -- */
+/* -- Navbar -- */
+.navbar {
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
 .navbar-nav a {
     color: #fbeade !important;
 }
@@ -117,18 +121,27 @@ h2 {
 
 /* -- Flash Message -- */
 .alert {
-    border-radius: 0;
+    margin-bottom: 0;
 }
 
 .success {
     background-color: #fbeade;
     color: #493323;
+    left: 1rem;
+    margin: 0 auto;
+    position: absolute;
+    right: 1rem;
+    top: 5rem;
 }
 
 .error {
     background-color: #ff7c3e;
+    bottom: 1rem;
     color: #fff;
-    font-weight: bold;
+    left: 1rem;
+    margin: 0 auto;
+    position: absolute;
+    right: 1rem;
 }
 
 /* -- Header -- */
@@ -200,7 +213,6 @@ header {
 .section-account {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
-    height: 25rem;
     left: 0;
     margin: auto;
     position: absolute;
@@ -220,7 +232,7 @@ header {
 .note-register {
     color: #fff;
     font-size: 0.8rem;
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 1rem 0;
 }
 
 .form-counter {
@@ -251,7 +263,7 @@ header {
 
 /* -- Heading Profile: profile.html -- */
 .profile {
-    padding: 1rem 0;
+    padding: 9rem 0 0;
     width: 12rem;
 }
 
