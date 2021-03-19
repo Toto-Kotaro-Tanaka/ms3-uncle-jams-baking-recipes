@@ -56,6 +56,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Shop</a>
                     </li>
+                    {% if session.user %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link active register" href="{{ url_for('register') }}">Register</a>
                     </li>
@@ -63,6 +71,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ url_for('login') }}">Login</a>
                     </li>
+                    {% endif %}
                 </ul>
                 <form class="d-flex input-group w-auto form-search">
                     <input type="search" class="form-control input-search" placeholder="Type a keyword"
@@ -100,7 +109,7 @@
     </main>
 
     {% if not hide_navbar_footer %}
-    <!-- Credit: MDB Form @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
+    <!-- Credit: MDB Forms @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
     <footer class="color-fbeade text-center">
         <div class="container p-4 pb-0">
             <section class="">
