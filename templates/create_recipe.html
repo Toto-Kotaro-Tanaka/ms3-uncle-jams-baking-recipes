@@ -6,33 +6,80 @@
         id="gingerbread-man-recipe"></a>
 <h2 class="font-amatic color-493323 text-center">Create Your Recipe</h2>
 
-<section class="section-recipe color-fbeade">
+<section class="section-create-recipe color-fbeade">
     <p class="note-recipe text-center"><i class="fas fa-info-circle"></i> Follow the below steps to create your recipe &
         post it. Take a look at general guidance before creating a recipe
     </p>
-    <!-- Credit: MDB Forms & Input @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
+    <!-- Credit: MDB Forms & Input + Bootstrap Dropdowns @ https://mdbootstrap.com/docs/standard/forms/overview/ & @ https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
     <form id="form-recipe" method="POST" action="{{ url_for('create_recipe') }}">
+
         <div class="form-outline mb-4 form-white">
-            <i class="fas fa-user trailing"></i>
-            <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
-                data-mdb-showcounter="true" minlength="5" maxlength="30" required />
-            <label class="username form-label" for="username">Username</label>
-            <div class="form-helper"></div>
+            <select class="form-select" aria-label="Recipe Categories">
+                <option selected disabled required>Select Category</option>
+                {% for category in categories %}
+                <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
+                {% endfor %}
+            </select>
         </div>
+
         <div class="form-outline mb-4 form-white">
-            <i class="fas fa-lock trailing"></i>
-            <input type="password" id="password" name="password" class="form-control bg-color-49332-06" minlength="5"
-                required />
-            <label class="password form-label" for="password">Password</label>
+            <input type="text" id="recipe_title" name="recipe_title" class="form-control bg-color-49332-06"
+                minlength="5" maxlength="30" required />
+            <label class="form-label" for="recipe_title">Recipe Title</label>
+            <p class="input-note">min 5 - max 30</p>
         </div>
+
+        <div class="form-outline mb-4 form-white">
+            <textarea id="recipe_desc" name="recipe_desc" class="form-control bg-color-49332-06" minlength="10"
+                maxlength="200" rows="5" required></textarea>
+            <label class="form-label" for="recipe_desc">Recipe Descriptions</label>
+            <p class="input-note">min 10 - max 200</p>
+        </div>
+
+        <div class="form-outline mb-4 form-white">
+            <select class="form-select" aria-label="Baking Time">
+                <option selected disabled required>Select Time</option>
+                <option value="less-than-30">Less than 30 min</option>
+                {% for time in range(40, 120, 10) %}
+                <option value="{{ time }}">{{ time }} min</option>
+                {% endfor %}
+                <option value="more-than-120">More than 120 min</option>
+            </select>
+        </div>
+
+        <div class="form-outline mb-4 form-white">
+            <select class="form-select" aria-label="Served">
+                <option selected disabled required>Select Served For</option>
+                {% for num in range(2, 11) %}
+                <option value="{{ num }}">{{ num }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-outline mb-4 form-white">
+            <input type="text" id="recipe_ingreds" name="recipe_ingreds" class="form-control bg-color-49332-06"
+                minlength="5" maxlength="30" required />
+            <label class="form-label" for="recipe_ingreds">Recipe Ingredients</label>
+            <p class="input-note">min 5 - max 30</p>
+        </div>
+
+        <!-- Steps here same as recipe ingredients -->
+
+        <div class="form-outline mb-4 form-white">
+            <input type="text" id="" name="recipe_img_url" class="form-control bg-color-49332-06" required />
+            <label class="form-label" for="recipe_img_url">Recipe Image URL</label>
+        </div>
+
+        <div class="form-outline mb-4 form-white">
+            <textarea id="recipe_img_url" name="recipe_img_url" class="form-control bg-color-49332-06" rows="3"
+                required></textarea>
+            <label class="form-label" for="recipe_img_url">Recipe Image URL</label>
+        </div>
+
         <div class="div-btn-account">
-            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Register</button>
+            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Post Recipe</button>
         </div>
     </form>
-    <div>
-        <p class="diversion-account text-center">Already registered?<br>Click <a href="{{ url_for('login') }}">HERE to
-                LOGIN</a></p>
-    </div>
     <!-- /End of Credit -->
 </section>
 {% endblock %}
