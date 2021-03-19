@@ -170,13 +170,19 @@ header {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
+.recipe-img-top {
+    height: 50vw;
+    object-fit: cover;
+    width: 100%;
+}
+
 .recipe-title {
     font-size: 2rem;
     padding: 2rem 0 1rem;
 }
 
 .recipe-summary {
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     width: 90%;
 }
 
@@ -184,24 +190,24 @@ header {
     margin-top: 0.5rem;
 }
 
-.posted-list li {
+.category, .posted-list li {
     font-size: 0.8rem;
 }
 
-.see-more-recipe {
+.see-recipe {
     color: rgba(232, 70, 16, 0.7);
 }
 
-.see-more-recipe:hover {
+.see-recipe:hover {
     color: #e84610;
 }
 
-.see-more-recipe:visited {
+.see-recipe:visited {
     color: #e84610;
 }
 
 .blank-space {
-    height: 3rem;
+    height: .5rem;
 }
 
 /* -- Section Form: register.html & login.html -- */
