@@ -207,13 +207,13 @@ header {
     height: .5rem;
 }
 
-/* -- Section Form: register.html & login.html -- */
-#uncle-jam-account {
+/* -- Section Form: register.html & login.html & create_recipe.html -- */
+#uncle-jam-account, #gingerbread-man-recipe {
     padding: 1rem 1rem 0;
     width: 8rem;
 }
 
-.section-account {
+.section-account, .section-recipe {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
     left: 0;
@@ -227,12 +227,12 @@ header {
     height: 18rem;
 }
 
-#form-account {
+#form-account, #form-recipe {
     margin: 1.5rem auto 0;
     width: 90%;
 }
 
-.note-register {
+.note-register, .note-recipe {
     color: #fff;
     font-size: 0.8rem;
     padding: 2rem 1rem 0;

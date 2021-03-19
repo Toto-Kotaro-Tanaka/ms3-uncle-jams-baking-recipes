@@ -95,6 +95,11 @@ def logout():
     return redirect(url_for("home"))
 
 
+@app.route("/create_recipe")
+def create_recipe():
+    return render_template("create_recipe.html", hide_navbar_footer=True)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

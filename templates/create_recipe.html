@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-        id="uncle-jam-account"></a>
-<h2 class="font-amatic color-493323 text-center">Register</h2>
+<a href="{{ url_for('profile', username=session['user']) }}"><img
+        src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Ginderbread Man"
+        id="gingerbread-man-recipe"></a>
+<h2 class="font-amatic color-493323 text-center">Create Your Recipe</h2>
 
-<section class="section-account color-fbeade">
-    <p class="note-register text-center"><i class="fas fa-info-circle"></i> Username can contain only alphabets &
-        numbers, and max 15 letters.<br>Min 5 letters required for both.
+<section class="section-recipe color-fbeade">
+    <p class="note-recipe text-center"><i class="fas fa-info-circle"></i> Follow the below steps to create your recipe &
+        post it. Take a look at general guidance before creating a recipe
     </p>
     <!-- Credit: MDB Forms & Input @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
-    <form id="form-account" method="POST" action="{{ url_for('register') }}">
+    <form id="form-recipe" method="POST" action="{{ url_for('create_recipe') }}">
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-user trailing"></i>
             <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
-                data-mdb-showcounter="true" pattern="^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required />
+                data-mdb-showcounter="true" minlength="5" maxlength="30" required />
             <label class="username form-label" for="username">Username</label>
             <div class="form-helper"></div>
         </div>
