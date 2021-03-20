@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -21,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find().sort("_id", -1)
     return render_template("index.html", recipes=recipes)
 
 
@@ -95,8 +96,26 @@ def logout():
     return redirect(url_for("home"))
 
 
-@app.route("/create_recipe")
+@app.route("/create_recipe", methods=["GET", "POST"])
 def create_recipe():
+    if request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_title": request.form.get("recipe_title"),
+            "recipe_desc": request.form.get("recipe_desc"),
+            "recipe_time": request.form.get("recipe_time"),
+            "recipe_serves": request.form.get("recipe_serves"),
+            "recipe_ingreds": request.form.getlist("recipe_ingreds"),
+            "recipe_steps": request.form.getlist("recipe_steps"),
+            "recipe_img_url": request.form.get("recipe_img_url"),
+            "recipe_tips": request.form.get("recipe_tips"),
+            "username": session["user"],
+            "posted_date": datetime.today().strftime("%d %b, %Y")
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("You have posted your recipe", "success")
+        return redirect(url_for("home"))
+
     categories = mongo.db.categories.find().sort("category_name")
     return render_template("create_recipe.html",
                            categories=categories, hide_navbar_footer=True,

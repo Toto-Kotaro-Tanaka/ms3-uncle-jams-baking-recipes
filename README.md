@@ -338,9 +338,10 @@ Once those steps are done, the website can be deployed and below are the steps o
 — **CSS3** —
 
 — **JavaScript** —
+* [Sanwebe](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery) for adding input fields
 
 > **Note:**
-> All credited codes are also mentioned on html files
+> All credited codes are also mentioned on html and js files
 
 ### Contents <a name="contents-heading"></a>
 

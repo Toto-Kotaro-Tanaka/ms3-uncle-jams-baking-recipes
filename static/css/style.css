@@ -150,7 +150,7 @@ header {
     bottom: 0;
     position: absolute;
     right: 0;
-    width: 20rem;
+    width: 17rem;
 }
 
 #categories {
@@ -290,8 +290,13 @@ header {
     text-transform: lowercase;
 }
 
-.btn-add-field-ingreds, .btn-add-field-steps {
-    margin-bottom: .5rem;
+.btn-add-field-ingreds {
+    margin-bottom: .6rem;
+    width: 85%;
+}
+
+.btn-add-field-steps {
+    margin-bottom: .6rem;
     width: 70%;
 }
 

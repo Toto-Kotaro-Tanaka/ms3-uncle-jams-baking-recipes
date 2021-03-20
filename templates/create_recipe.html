@@ -14,7 +14,8 @@
     <form id="form-recipe" method="POST" action="{{ url_for('create_recipe') }}">
         <!-- Select Category -->
         <div class="form-outline mb-4 form-white">
-            <select class="form-select bg-color-49332-06 recipe-select" aria-label="Recipe Categories">
+            <select id="category_name" name="category_name" class="form-select bg-color-49332-06 recipe-select"
+                aria-label="Recipe Categories">
                 <option selected disabled required>Select Category</option>
                 {% for category in categories %}
                 <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
@@ -24,20 +25,21 @@
         <!-- Recipe Title -->
         <div class="form-outline mb-4 form-white">
             <input type="text" id="recipe_title" name="recipe_title" class="form-control bg-color-49332-06"
-                minlength="5" maxlength="30" required />
+                maxlength="50" required />
             <label class="form-label" for="recipe_title">Recipe Title</label>
-            <p class="input-note">&#40;min 5 - max 30&#41;</p>
+            <p class="input-note">&#40;max 50&#41;</p>
         </div>
         <!-- Recipe Description -->
         <div class="form-outline mb-4 form-white">
-            <textarea id="recipe_desc" name="recipe_desc" class="form-control bg-color-49332-06" minlength="10"
-                maxlength="200" rows="5" required></textarea>
+            <textarea id="recipe_desc" name="recipe_desc" class="form-control bg-color-49332-06" maxlength="300"
+                rows="5" required></textarea>
             <label class="form-label" for="recipe_desc">Recipe Descriptions</label>
-            <p class="input-note">&#40;min 10 - max 200&#41;</p>
+            <p class="input-note">&#40;max 300&#41;</p>
         </div>
         <!-- Recipe Time -->
         <div class="form-outline mb-4 form-white">
-            <select class="form-select bg-color-49332-06 recipe-select" aria-label="Baking Time">
+            <select id="recipe_time" name="recipe_time" class="form-select bg-color-49332-06 recipe-select"
+                aria-label="Baking Time">
                 <option selected disabled required>Select Time</option>
                 <option value="less-than-30">Less than 30 min</option>
                 {% for time in range(40, 120, 10) %}
@@ -46,27 +48,27 @@
                 <option value="more-than-120">More than 120 min</option>
             </select>
         </div>
-        <!-- Recipe Served -->
+        <!-- Recipe Serves -->
         <div class="form-outline mb-4 form-white">
-            <select class="form-select bg-color-49332-06 recipe-select" aria-label="Served">
-                <option selected disabled required>Select Served For</option>
+            <select id="recipe_serves" name="recipe_serves" class="form-select bg-color-49332-06 recipe-select"
+                aria-label="Serves">
+                <option selected disabled required>Select Serves</option>
                 {% for num in range(2, 11) %}
-                <option value="{{ num }}">{{ num }}</option>
+                <option value="{{ num }}">{{ num }} people</option>
                 {% endfor %}
             </select>
         </div>
         <!-- Recipe Ingredients -->
         <div>
-            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-ingreds">Add Field <span
+            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-ingreds">Add Ingredients <span
                     class="input-note btn-note">&#40;max 15 fields&#41;</span></button>
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-ingreds">
             <div>
-                <input type="text" id="recipe_ingreds" name="recipe_ingreds" class="form-control bg-color-49332-06"
-                    minlength="5" maxlength="30" required />
+                <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50"
+                    required />
                 <label class="form-label" for="recipe_ingreds">Recipe Ingredients</label>
-                <p class="input-note">&#40;min 5 - max 30&#41;</p>
-
+                <p class="input-note">&#40;max 50&#41;</p>
             </div>
         </div>
         <!-- Recipe Steps -->
@@ -76,23 +78,24 @@
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-steps">
             <div>
-                <input type="text" id="recipe_ingreds" name="recipe_ingreds" class="form-control bg-color-49332-06"
-                    minlength="5" maxlength="30" required />
-                <label class="form-label" for="recipe_ingreds">Recipe Ingredients</label>
-                <p class="input-note">&#40;min 5 - max 30&#41;</p>
-
+                <textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300"
+                    required></textarea>
+                <label class="form-label" for="recipe_steps">Recipe Steps</label>
+                <p class="input-note">&#40;max 300&#41;</p>
             </div>
         </div>
         <!-- Recipe Image URL -->
         <div class="form-outline mb-4 form-white">
-            <input type="text" id="" name="recipe_img_url" class="form-control bg-color-49332-06" />
+            <textarea id="recipe_img_url" name="recipe_img_url" class="form-control bg-color-49332-06" rows="3"
+                maxlength="200"></textarea>
             <label class="form-label" for="recipe_img_url">Recipe Image URL</label>
         </div>
-        <!-- Recipe Tip -->
+        <!-- Recipe Tips -->
         <div class="form-outline mb-4 form-white">
-            <textarea id="recipe_tip" name="recipe_tip" class="form-control bg-color-49332-06" rows="3"
+            <textarea id="recipe_tips" name="recipe_tips" class="form-control bg-color-49332-06" rows="2"
                 maxlength="200"></textarea>
-            <label class="form-label" for="recipe_tip">Recipe Tip</label>
+            <label class="form-label" for="recipe_tips">Recipe Tips</label>
+            <p class="input-note">&#40;max 200&#41;</p>
         </div>
         <!-- Post Recipe Button -->
         <div class="div-btn-account">
