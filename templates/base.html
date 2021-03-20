@@ -16,6 +16,11 @@
         href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@400;700&display=swap">
     <!-- MDB -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" type="text/css" />
+    {% if jquery %}
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {% endif %}
     <!-- Styles CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
     <!-- Favicon -->
@@ -157,6 +162,9 @@
     <!-- script.js -->
     {% if not hide_navbar_footer %}
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    {% endif %}
+    {% if jquery %}
+    <script src="{{ url_for('static', filename='js/createRecipe.js') }}"></script>
     {% endif %}
     {% block scripts %}
     {% endblock %}

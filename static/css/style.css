@@ -269,6 +269,36 @@ header {
     font-weight: bolder;
 }
 
+.recipe-select {
+    border: none;
+    color: #fff;
+}
+
+.recipe-select:focus {
+    border: none;
+    -webkit-box-shadow: none;
+}
+
+.input-note {
+    font-size: .7rem;
+    float: right;
+}
+
+.btn-note {
+    font-family: "Nunito", sans-serif;
+    padding-top: .1rem;
+    text-transform: lowercase;
+}
+
+.btn-add-field-ingreds, .btn-add-field-steps {
+    margin-bottom: .5rem;
+    width: 70%;
+}
+
+.remove-field-ingreds, .remove-field-steps {
+    float: right;
+}
+
 /* -- Heading Profile: profile.html -- */
 .profile-text {
     padding: 9rem 1.5rem 0;

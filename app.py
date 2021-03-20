@@ -99,7 +99,8 @@ def logout():
 def create_recipe():
     categories = mongo.db.categories.find().sort("category_name")
     return render_template("create_recipe.html",
-                           categories=categories, hide_navbar_footer=True)
+                           categories=categories, hide_navbar_footer=True,
+                           jquery=True)
 
 
 if __name__ == "__main__":
