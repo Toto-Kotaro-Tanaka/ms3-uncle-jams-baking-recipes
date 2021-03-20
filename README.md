@@ -333,19 +333,19 @@ Once those steps are done, the website can be deployed and below are the steps o
 * [MDB Navbar](https://mdbootstrap.com/docs/standard/navigation/navbar/) for navigation bar
 * [MDB Forms & Input](https://mdbootstrap.com/docs/standard/forms/overview/) for input forms
 * [MDB Cards](https://mdbootstrap.com/docs/standard/components/cards/) for recipe summary display
-* [MDB Forms](https://mdbootstrap.com/docs/standard/forms/overview/) for input forms
+* [Bootstrap Dropdowns](https://getbootstrap.com/docs/5.0/components/dropdowns/) for dropdown menus
 
 — **CSS3** —
 
 — **JavaScript** —
 
 > **Note:**
-> All credited codes are also mentioned on html and css files
+> All credited codes are also mentioned on html files
 
 ### Contents <a name="contents-heading"></a>
 
 ### Media <a name="media-heading"></a>
-— **Logo & Favicon ** —
+— **Logo & Favicon** —
 * Created by me using [canva](https://www.canva.com/)
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>

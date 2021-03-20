@@ -11,6 +11,7 @@
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
     {% for recipe in recipes %}
     <div class="card recipe-summary bg-color-fbeade">
+        <!-- Recipe Image & Category & Title -->
         <div class="card-body">
             <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
                 alt="{{ recipe.recipe_title }}" />
@@ -19,10 +20,12 @@
                 {{ recipe.recipe_title | title }}</h5>
             <p class="card-text">{{ recipe.recipe_desc | truncate(50) }} </p>
         </div>
+        <!-- Recipe Owner & Posted Date -->
         <ul class="list-group list-group-flush posted-list">
             <li class="list-group-item bg-color-fbeade text-center">Posted by {{ recipe.username | capitalize }}</li>
             <li class="list-group-item bg-color-fbeade text-center">on 17 Mar 2021</li>
         </ul>
+        <!-- See Recipe Button -->
         <div class="card-body">
             <a href="#" class="card-link see-recipe">See Recipe</a>
         </div>

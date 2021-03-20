@@ -11,6 +11,7 @@
     </p>
     <!-- Credit: MDB Forms & Input @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
     <form id="form-account" method="POST" action="{{ url_for('register') }}">
+        <!-- Username -->
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-user trailing"></i>
             <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
@@ -18,16 +19,19 @@
             <label class="form-label" for="username">Username</label>
             <div class="form-helper"></div>
         </div>
+        <!-- Password -->
         <div class="form-outline mb-4 form-white">
             <i class="fas fa-lock trailing"></i>
             <input type="password" id="password" name="password" class="form-control bg-color-49332-06" minlength="5"
                 required />
             <label class="form-label" for="password">Password</label>
         </div>
+        <!-- Register Button -->
         <div class="div-btn-account">
             <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Register</button>
         </div>
     </form>
+    <!-- Diversion Message -->
     <div>
         <p class="diversion-account text-center">Already registered?<br>Click <a href="{{ url_for('login') }}">HERE to
                 LOGIN</a></p>
