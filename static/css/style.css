@@ -34,6 +34,10 @@ h2 {
     color: #fbeade !important;
 }
 
+.color-fff {
+    color: #fff;
+}
+
 .bg-color-49332-06 {
     background-color: rgba(73, 51, 35, 0.6) !important;
 }
@@ -133,7 +137,6 @@ h2 {
 .error {
     background-color: #ff7c3e;
     bottom: 1rem;
-    color: #fff;
     left: 1rem;
     margin: 0 auto;
     position: absolute;
@@ -143,7 +146,7 @@ h2 {
 /* -- Header -- */
 header {
     min-height: 100vh;
-    word-wrap: break-word
+    word-wrap: break-word;
 }
 
 #uncle-jam {
@@ -187,7 +190,8 @@ header {
     margin-top: 0.5rem;
 }
 
-.category, .posted-list li {
+.category,
+.posted-list li {
     font-size: 0.8rem;
 }
 
@@ -204,7 +208,7 @@ header {
 }
 
 .blank-space {
-    height: .5rem;
+    height: 0.5rem;
 }
 
 /* -- register.html & login.html & create_recipe.html -- */
@@ -218,7 +222,9 @@ header {
     width: 6rem;
 }
 
-.section-account, .section-recipe, .section-create-recipe {
+.section-account,
+.section-recipe,
+.section-create-recipe {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
     left: 0;
@@ -237,13 +243,14 @@ header {
     height: 18rem;
 }
 
-#form-account, #form-recipe {
+#form-account,
+#form-recipe {
     margin: 1.5rem auto 0;
     width: 90%;
 }
 
-.note-register, .note-recipe {
-    color: #fff;
+.note-register,
+.note-recipe {
     font-size: 0.8rem;
     padding: 2rem 1rem 0;
 }
@@ -264,7 +271,6 @@ header {
 }
 
 .diversion-account {
-    color: #fff;
     font-size: 0.9rem;
     padding: 2rem 2rem 0;
 }
@@ -276,7 +282,6 @@ header {
 
 .recipe-select {
     border: none;
-    color: #fff;
 }
 
 .recipe-select:focus {
@@ -285,27 +290,28 @@ header {
 }
 
 .input-note {
-    font-size: .7rem;
+    font-size: 0.7rem;
     float: right;
 }
 
 .btn-note {
     font-family: "Nunito", sans-serif;
-    padding-top: .1rem;
+    padding-top: 0.1rem;
     text-transform: lowercase;
 }
 
 .btn-add-field-ingreds {
-    margin-bottom: .6rem;
+    margin-bottom: 0.6rem;
     width: 85%;
 }
 
 .btn-add-field-steps {
-    margin-bottom: .6rem;
+    margin-bottom: 0.6rem;
     width: 70%;
 }
 
-.remove-field-ingreds, .remove-field-steps {
+.remove-field-ingreds,
+.remove-field-steps {
     float: right;
 }
 
@@ -320,8 +326,8 @@ header {
 }
 
 hr {
-    border: .5rem solid #493323;
-    border-radius: .25rem;
+    border: 0.5rem solid #493323;
+    border-radius: 0.25rem;
     margin: 0 auto;
     width: 80%;
 }

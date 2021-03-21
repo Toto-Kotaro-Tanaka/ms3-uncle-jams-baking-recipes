@@ -7,15 +7,16 @@
 <h2 class="font-amatic color-493323 text-center">Create Your Recipe</h2>
 
 <section class="section-create-recipe color-fbeade">
-    <p class="note-recipe text-center"><i class="fas fa-info-circle"></i> Follow the below steps to create your recipe &
+    <p class="note-recipe text-center color-fff"><i class="fas fa-info-circle"></i> Follow the below steps to create
+        your recipe &
         post it. Take a look at general guidance before creating a recipe
     </p>
     <!-- Credit: MDB Forms & Input + Bootstrap Dropdowns @ https://mdbootstrap.com/docs/standard/forms/overview/ & @ https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
     <form id="form-recipe" method="POST" action="{{ url_for('create_recipe') }}">
         <!-- Select Category -->
         <div class="form-outline mb-4 form-white">
-            <select id="category_name" name="category_name" class="form-select bg-color-49332-06 recipe-select"
-                aria-label="Recipe Categories">
+            <select id="category_name" name="category_name"
+                class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Recipe Categories">
                 <option selected disabled required>Select Category</option>
                 {% for category in categories %}
                 <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
