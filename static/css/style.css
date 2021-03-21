@@ -208,9 +208,14 @@ header {
 }
 
 /* -- Section Form: register.html & login.html & create_recipe.html -- */
-#uncle-jam-account, #gingerbread-man-recipe {
+#uncle-jam-account {
     padding: 1rem 1rem 0;
     width: 8rem;
+}
+
+#gingerbread-man-recipe {
+    padding: 1rem 1rem 0;
+    width: 6rem;
 }
 
 .section-account, .section-recipe, .section-create-recipe {
