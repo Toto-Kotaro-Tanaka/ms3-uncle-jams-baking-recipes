@@ -287,6 +287,7 @@ header {
 .input-note {
     font-size: .7rem;
     float: right;
+    margin-bottom: 0;
 }
 
 .btn-note {
@@ -337,6 +338,25 @@ hr {
 .delete {
     color: rgba(232, 70, 16, 0.6);
     float: right;
+}
+
+.delete:hover {
+    color: #e84610;
+}
+
+/* -- edit_recipe.html -- */
+.btn-edit {
+    background-color: #1266f1;
+    color: #fff;
+    float: left;
+    width: 8rem;
+}
+
+.btn-cancel {
+    color: #fff;
+    background-color: rgba(232, 70, 16, 0.6);
+    float: right;
+    width: 8rem;
 }
 
 /* -- Footer -- */
