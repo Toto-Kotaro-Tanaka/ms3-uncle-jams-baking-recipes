@@ -162,7 +162,7 @@ header {
     width: 15rem;
 }
 
-/* -- Section Recipe: index.html -- */
+/* -- index.html -- */
 #section-recipe-summary {
     background-color: rgba(251, 234, 222, 0.3);
 }
@@ -207,7 +207,7 @@ header {
     height: .5rem;
 }
 
-/* -- Section Form: register.html & login.html & create_recipe.html -- */
+/* -- register.html & login.html & create_recipe.html -- */
 #uncle-jam-account {
     padding: 1rem 1rem 0;
     width: 8rem;
@@ -309,7 +309,7 @@ header {
     float: right;
 }
 
-/* -- Heading Profile: profile.html -- */
+/* -- profile.html -- */
 .profile-text {
     padding: 9rem 1.5rem 0;
 }
@@ -328,6 +328,15 @@ hr {
 
 .btn-create-recipe {
     margin: 0 auto;
+}
+
+.edit {
+    float: left;
+}
+
+.delete {
+    color: rgba(232, 70, 16, 0.6);
+    float: right;
 }
 
 /* -- Footer -- */
