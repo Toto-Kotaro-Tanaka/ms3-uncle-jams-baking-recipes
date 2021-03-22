@@ -159,6 +159,16 @@ def delete_recipe(recipe_id):
     return redirect(url_for("profile", username=session["user"]))
 
 
+@app.route("/manage_category")
+def manage_category():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+
+    if session["user"] == "admin":
+        return render_template("manage_category.html", categories=categories)
+
+    return redirect(url_for("profile", username=session["user"]))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

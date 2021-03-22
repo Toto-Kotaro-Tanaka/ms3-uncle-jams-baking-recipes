@@ -65,6 +65,12 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                     </li>
+                    {% if session.user | lower == "admin" | lower %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('manage_category') }}">Manage
+                            Category</a>
+                    </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ url_for('logout') }}">Logout</a>
                     </li>

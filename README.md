@@ -295,6 +295,7 @@ Create Recipe function and form are created so a test is carried out.
 [Create Recipe Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-result.png) / [Create Recipe Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-result-data.png) &#40;All the input as well as username and posted date are shown on recipe summary and stored in the database so it works properly&#41;
 
 — **Edit & Delete Recipe Function & Form** —
+
 Edit Recipe function & form and Delete function are created.
 Edit recipe function & form work almost the same way as Create Recipe but uses `updated()` method instead of `insert_one()`. 
 

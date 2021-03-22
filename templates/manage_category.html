@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block heading %}
+<h2 class="font-amatic color-493323 text-center profile-text">Manage Category</h2>
+<div class="text-center">
+    <img src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Profile Image Gingerbread Man"
+        class="profile-img">
+</div>
+<hr>
+<div class="text-center">
+    <h4 class="font-balsamiq color-493323 mt-4">Create Category</h4>
+    <a href="#" class="btn btn-ffd5b7 color-493323 mt-4 mb-4">Create Category</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<section id="section-recipe-summary">
+    <h3 class="recipe-title font-balsamiq color-493323 text-center">Category</h3>
+    <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
+    {% for category in categories %}
+    <div class="card recipe-summary bg-color-fbeade">
+        <!-- Recipe Image & Category & Title -->
+        <div class="card-body">
+            <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
+                {{ category.category_name | title }}</h5>
+        </div>
+        <!-- Edit & Delet Recipe Buttons -->
+        <div class="card-body">
+            <div class="edit"><a href="#" class="card-link edit"><i class="fas fa-edit"></i> Edit</a></div>
+            <div class="delete"><a href="#" class="card-link delete"><i class="fas fa-trash-alt"></i> Delete</a></div>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- /End of Credit -->
+    <div class="blank-space"></div>
+</section>
+
+{% endblock %}
