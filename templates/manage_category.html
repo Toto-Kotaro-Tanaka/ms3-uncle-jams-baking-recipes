@@ -3,13 +3,12 @@
 {% block heading %}
 <h2 class="font-amatic color-493323 text-center profile-text">Manage Category</h2>
 <div class="text-center">
-    <img src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Profile Image Gingerbread Man"
-        class="profile-img">
+    <img src="{{ url_for('static', filename='images/utensils.png') }}" alt="Category Utensils" class="profile-img">
 </div>
 <hr>
 <div class="text-center">
     <h4 class="font-balsamiq color-493323 mt-4">Create Category</h4>
-    <a href="#" class="btn btn-ffd5b7 color-493323 mt-4 mb-4">Create Category</a>
+    <a href="{{ url_for('create_category') }}" class="btn btn-ffd5b7 color-493323 mt-4 mb-4">Create Category</a>
 </div>
 {% endblock %}
 
@@ -27,8 +26,10 @@
         </div>
         <!-- Edit & Delet Recipe Buttons -->
         <div class="card-body">
-            <div class="edit"><a href="#" class="card-link edit"><i class="fas fa-edit"></i> Edit</a></div>
-            <div class="delete"><a href="#" class="card-link delete"><i class="fas fa-trash-alt"></i> Delete</a></div>
+            <div class="edit"><a href="{{ url_for('edit_category', category_id=category._id) }}"
+                    class="card-link edit"><i class="fas fa-edit"></i> Edit</a></div>
+            <div class="delete"><a href="{{ url_for('delete_category', category_id=category._id) }}"
+                    class="card-link delete"><i class="fas fa-trash-alt"></i> Delete</a></div>
         </div>
     </div>
     {% endfor %}

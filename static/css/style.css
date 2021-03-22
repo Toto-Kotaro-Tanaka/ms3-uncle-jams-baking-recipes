@@ -211,13 +211,14 @@ header {
     height: 0.5rem;
 }
 
-/* -- register.html & login.html & create_recipe.html -- */
+/* -- register.html & login.html & create_recipe.html & create_category.html -- */
 #uncle-jam-account {
     padding: 1rem 1rem 0;
     width: 8rem;
 }
 
-#gingerbread-man-recipe {
+#gingerbread-man-recipe,
+#utensils-category {
     padding: 1rem 1rem 0;
     width: 6rem;
 }
@@ -244,7 +245,8 @@ header {
 }
 
 #form-account,
-#form-recipe {
+#form-recipe,
+#form-category {
     margin: 1.5rem auto 0;
     width: 90%;
 }
@@ -314,6 +316,11 @@ header {
 .remove-field-ingreds,
 .remove-field-steps {
     float: right;
+}
+
+.btn-create-category {
+    margin: 0 auto;
+    width: 60%;
 }
 
 /* -- profile.html -- */
