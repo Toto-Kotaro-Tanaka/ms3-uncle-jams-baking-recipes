@@ -12,8 +12,8 @@
         <!-- Select Category -->
         <div class="form-outline mb-4 form-white">
             <label for="category_name">Recipe Category</label>
-            <select id="category_name" name="category_name" class="form-select bg-color-49332-06 recipe-select"
-                aria-label="Recipe Categories">
+            <select id="category_name" name="category_name"
+                class="form-select bg-color-49332-06 recipe-select color-fff" aria-label="Recipe Categories">
                 <option disabled required>Select Category</option>
                 {% for category in categories %}
                 {% if category.category_name == recipe.category_name %}
@@ -41,7 +41,7 @@
         <!-- Recipe Time -->
         <div class="form-outline mb-4 form-white">
             <label for="recipe_time">Baking Time</label>
-            <select id="recipe_time" name="recipe_time" class="form-select bg-color-49332-06 recipe-select"
+            <select id="recipe_time" name="recipe_time" class="form-select recipe-select bg-color-49332-06 color-fff"
                 aria-label="Baking Time">
                 <option disabled required>Select Time</option>
                 <option value="{{ recipe.recipe_time }}" selected>{{ recipe.recipe_time }} min</option>
@@ -55,8 +55,8 @@
         <!-- Recipe Serves -->
         <div class="form-outline mb-4 form-white">
             <label for="recipe_serves">Serves</label>
-            <select id="recipe_serves" name="recipe_serves" class="form-select bg-color-49332-06 recipe-select"
-                aria-label="Serves">
+            <select id="recipe_serves" name="recipe_serves"
+                class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Serves">
                 <option disabled required>Select Serves</option>
                 <option value="{{ recipe.recipe_serves }}">{{ recipe.recipe_serves }} people</option>
                 {% for num in range(2, 11) %}
