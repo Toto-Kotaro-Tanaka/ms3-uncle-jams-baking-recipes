@@ -154,7 +154,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for("home"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    recipes = mongo.db.recipes.find_one()
+    recipes = mongo.db.recipes.find_one()  # This can be deleted - check later
     categories = mongo.db.categories.find().sort("category_name")
 
     return render_template("edit_recipe.html", recipe=recipe, recipes=recipes,

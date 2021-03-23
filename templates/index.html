@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<section id="section-recipe-summary">
+<section id="section-recipe">
     <h3 class="recipe-title font-balsamiq color-493323 text-center">Recipes</h3>
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
     {% for recipe in recipes %}
@@ -28,7 +28,7 @@
         </ul>
         <!-- See Recipe Button -->
         <div class="card-body">
-            <a href="#" class="card-link see-recipe">See Recipe</a>
+            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="card-link see-recipe">See Recipe</a>
         </div>
     </div>
     {% endfor %}

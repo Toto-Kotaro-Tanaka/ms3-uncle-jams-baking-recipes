@@ -165,8 +165,8 @@ header {
     width: 15rem;
 }
 
-/* -- index.html -- */
-#section-recipe-summary {
+/* -- index.html & recipe.html -- */
+#section-recipe {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -207,8 +207,12 @@ header {
     color: #e84610;
 }
 
-.blank-space {
-    height: 0.5rem;
+.blank-space-top {
+    height: 2.5rem;
+}
+
+.blank-space-bottom {
+    height: 0.1rem;
 }
 
 /* -- categories.html -- */
@@ -230,7 +234,6 @@ header {
 }
 
 .section-account,
-.section-recipe,
 .section-create-recipe {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
