@@ -26,9 +26,11 @@ def home():
     return render_template("index.html", recipes=recipes)
 
 
-@app.route("/categories")
-def categories():
-    return render_template("categories.html")
+@app.route("/categories/<category_name>")
+def categories(category_name):
+    recipes = mongo.db.recipes.find({"category_name": category_name})
+    return render_template("categories.html",
+                           recipes=recipes, category_name=category_name)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -80,7 +82,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    recipes = mongo.db.recipes.find().sort("_id", -1)
+    recipes = mongo.db.recipes.find().sort("posted_date", -1)
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -166,38 +168,45 @@ def manage_category():
     if session["user"] == "admin":
         return render_template("manage_category.html", categories=categories)
 
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for("home", username=session["user"]))
 
 
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.insert_one(category)
-        flash("You have created a new category", "success")
-        return redirect(url_for("manage_category"))
+    if session["user"] == "admin":
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("create_category.html",
-                           categories=categories, hide_navbar_footer=True,
-                           jquery=True)
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.insert_one(category)
+            flash("You have created a new category", "success")
+            return redirect(url_for("manage_category"))
+
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("create_category.html",
+                               categories=categories, hide_navbar_footer=True,
+                               jquery=True)
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-        flash("Category successfully updated", "success")
-        return redirect(url_for("manage_category"))
+    if session["user"] == "admin":
 
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category,
-                           hide_navbar_footer=True)
+        if request.method == "POST":
+            submit = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+            flash("Category successfully updated", "success")
+            return redirect(url_for("manage_category"))
+
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+        return render_template("edit_category.html", category=category,
+                               hide_navbar_footer=True)
+
+    # Question: If this is ok or should be redirected page 404?
+    return redirect(url_for("home"))
 
 
 @app.route("/delete_category/<category_id>")

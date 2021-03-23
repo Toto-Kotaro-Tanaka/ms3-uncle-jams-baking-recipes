@@ -53,9 +53,13 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item bg-color-fbeade" href="#">Bread</a></li>
-                            <li><a class="dropdown-item bg-color-fbeade" href="#">Cake</a></li>
-                            <li><a class="dropdown-item bg-color-fbeade" href="#">Biscuit</a></li>
+                            <li><a class="dropdown-item bg-color-fbeade"
+                                    href="{{ url_for('categories', category_name='bread') }}">Bread</a>
+                            </li>
+                            <li><a class="dropdown-item bg-color-fbeade"
+                                    href="{{ url_for('categories', category_name='cake') }}">Cake</a></li>
+                            <li><a class="dropdown-item bg-color-fbeade"
+                                    href="{{ url_for('categories', category_name='biscuit') }}">Biscuit</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">

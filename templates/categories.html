@@ -1,26 +1,46 @@
 {% extends "base.html" %}
 
-{% block image %}
-<img src="{{ url_for('static', filename='images/categories.png') }}" alt="Category image donut" id="categories">
+{% block heading %}
+<h1 class="font-amatic color-493323 text-center">Categories</h1>
+<div class="text-center">
+    {% if category_name == "bread" %}
+    <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Category Bread" class="categories-img">
+    {% elif category_name == "cake" %}
+    <img src="{{ url_for('static', filename='images/cake.png') }}" alt="Category Cake" class="categories-img">
+    {% elif category_name == "biscuit" %}
+    <img src="{{ url_for('static', filename='images/biscuit.png') }}" alt="Category Biscuit" class="categories-img">
+    {% endif %}
+</div>
 {% endblock %}
 
 {% block content %}
-
-{% for recipe in recipes %}
-{{ recipe.category_name}}<br>
-{{ recipe.recipe_title }}<br>
-{{ recipe.recipe_desc }}<br>
-{{ recipe.recipe_time }}<br>
-{{ recipe.recipe_served }}<br>
-
-{% for ingred in recipe.recipe_ingreds %}
-{{ ingred }}<br>
-{% endfor %}
-
-{% for step in recipe.recipe_steps %}
-{{ step }}<br>
-{% endfor %}
-
-{% endfor %}
-
+<section id="section-recipe-summary">
+    <h3 class="recipe-title font-balsamiq color-493323 text-center">{{ category_name | title }}</h3>
+    <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
+    {% for recipe in recipes %}
+    <div class="card recipe-summary bg-color-fbeade">
+        <!-- Recipe Image & Category & Title -->
+        <div class="card-body">
+            <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
+                alt="{{ recipe.recipe_title }}" />
+            <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
+            <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
+                {{ recipe.recipe_title | title }}</h5>
+            <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
+        </div>
+        <!-- Recipe Owner & Posted Date -->
+        <ul class="list-group list-group-flush posted-list">
+            <li class="list-group-item bg-color-fbeade text-center">Posted by {{ recipe.username | capitalize }}</li>
+            <li class="list-group-item bg-color-fbeade text-center">on {{ recipe.posted_date }}
+            </li>
+        </ul>
+        <!-- See Recipe Button -->
+        <div class="card-body">
+            <a href="#" class="card-link see-recipe">See Recipe</a>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- /End of Credit -->
+    <div class="blank-space"></div>
+</section>
 {% endblock %}

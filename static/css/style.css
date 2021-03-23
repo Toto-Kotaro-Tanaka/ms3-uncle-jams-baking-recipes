@@ -211,6 +211,12 @@ header {
     height: 0.5rem;
 }
 
+/* -- categories.html -- */
+.categories-img {
+    margin-top: 4rem;
+    width: 17rem;
+}
+
 /* -- register.html & login.html & create_recipe.html & create_category.html -- */
 #uncle-jam-account {
     padding: 1rem 1rem 0;
