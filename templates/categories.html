@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<h1 class="font-amatic color-493323 text-center">Categories</h1>
+<h1 class="font-amatic color-493323 text-center">Recipe By Category</h1>
 <div class="text-center">
     {% if category_name == "bread" %}
     <img src="{{ url_for('static', filename='images/bread.png') }}" alt="Category Bread" class="categories-img">

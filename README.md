@@ -193,6 +193,7 @@ This project contains both front-end and back-end so well-structured planning is
 1. Creating *Create*, *Edit* recipe pages
 1. Creating *Create*, *Edit* category pages
 1. Creating *Categories* recipe pages
+1. Creating individual *Recipe* page
 1. Creating *Shop* page
 1. Creating *404* page
 

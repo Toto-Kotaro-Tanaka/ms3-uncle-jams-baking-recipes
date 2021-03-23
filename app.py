@@ -33,6 +33,13 @@ def categories(category_name):
                            recipes=recipes, category_name=category_name)
 
 
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html",
+                           recipe=recipe, hide_navbar_footer=True)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

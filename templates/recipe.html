@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block heading %}
+<a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png" alt="Website Logo"></a>
+<h2 class="font-amatic color-493323 text-center">Recipe</h2>
+
+<section class="section-create-recipe color-fbeade">
+    <!-- Credit: MDB Forms & Input + Bootstrap Dropdowns @ https://mdbootstrap.com/docs/standard/forms/overview/ & @ https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
+    <form id="form-recipe" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <!-- Select Category -->
+        <div class="form-outline mb-4 form-white">
+            <label for="category_name">Recipe Category</label>
+            <select id="category_name" name="category_name"
+                class="form-select bg-color-49332-06 recipe-select color-fff" aria-label="Recipe Categories">
+                <option disabled required>Select Category</option>
+                {% for category in categories %}
+                {% if category.category_name == recipe.category_name %}
+                <option value="{{ category.category_name }}" selected>{{ category.category_name | title }}</option>
+                {% else %}
+                <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Recipe Title -->
+        <div class="form-outline mb-4 form-white">
+            <label for="recipe_title">Recipe Title</label>
+            <input type="text" id="recipe_title" name="recipe_title" class="form-control bg-color-49332-06"
+                maxlength="50" value="{{ recipe.recipe_title }}" required />
+            <p class="input-note">&#40;max 50&#41;</p>
+        </div>
+        <!-- Recipe Description -->
+        <div class="form-outline mb-4 form-white">
+            <label for="recipe_desc">Recipe Descriptions</label>
+            <textarea id="recipe_desc" name="recipe_desc" class="form-control bg-color-49332-06" maxlength="300"
+                rows="5" required>{{- recipe.recipe_desc -}}</textarea>
+            <p class="input-note">&#40;max 300&#41;</p>
+        </div>
+        <!-- Recipe Time -->
+        <div class="form-outline mb-4 form-white">
+            <label for="recipe_time">Baking Time</label>
+            <select id="recipe_time" name="recipe_time" class="form-select recipe-select bg-color-49332-06 color-fff"
+                aria-label="Baking Time">
+                <option disabled required>Select Time</option>
+                <option value="{{ recipe.recipe_time }}" selected>{{ recipe.recipe_time }} min</option>
+                <option value="less-than-30">Less than 30 min</option>
+                {% for time in range(40, 120, 10) %}
+                <option value="{{ time }}">{{ time }} min</option>
+                {% endfor %}
+                <option value="more-than-120">More than 120 min</option>
+            </select>
+        </div>
+        <!-- Recipe Serves -->
+        <div class="form-outline mb-4 form-white">
+            <label for="recipe_serves">Serves</label>
+            <select id="recipe_serves" name="recipe_serves"
+                class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Serves">
+                <option disabled required>Select Serves</option>
+                <option value="{{ recipe.recipe_serves }}">{{ recipe.recipe_serves }} people</option>
+                {% for num in range(2, 11) %}
+                <option value="{{ num }}">{{ num }} people</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- Recipe Ingredients -->
+        <label for="recipe_ingreds">Recipe Ingredients</label>
+        <div>
+            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-ingreds">Add Ingredients <span
+                    class="input-note btn-note">&#40;max 15 fields&#41;</span></button>
+        </div>
+        <div class="form-outline mb-4 form-white input-fields-wrap-ingreds">
+            <div>
+                {% for ingreds in recipe.recipe_ingreds %}
+                <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50"
+                    value="{{ ingreds }}" required />
+                {% endfor %}
+                <p class="input-note">&#40;max 50&#41;</p>
+            </div>
+        </div>
+        <!-- Recipe Steps -->
+        <label class="form-label" for="recipe_steps">Recipe Steps</label>
+        <div>
+            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-steps">Add Steps <span
+                    class="input-note btn-note">&#40;max 10 fields&#41;</span></button>
+        </div>
+        <div class="form-outline mb-4 form-white input-fields-wrap-steps">
+            <div>
+                {% for step in recipe.recipe_steps %}
+                <textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300"
+                    required>{{- step -}}</textarea>
+                {% endfor %}
+                <p class="input-note">&#40;max 300&#41;</p>
+            </div>
+        </div>
+        <!-- Recipe Image URL -->
+        <div class="form-outline mb-4 form-white">
+            <label for="recipe_img_url">Recipe Image URL</label>
+            <textarea id="recipe_img_url" name="recipe_img_url" class="form-control bg-color-49332-06" rows="3"
+                maxlength="200">{{- recipe.recipe_img_url -}}</textarea>
+        </div>
+        <!-- Recipe Tips -->
+        <div class="form-outline mb-4 form-white">
+            <label class="form-label" for="recipe_tips">Recipe Tips</label>
+            <textarea id="recipe_tips" name="recipe_tips" class="form-control bg-color-49332-06" rows="2"
+                maxlength="200">{{- recipe.recipe_tips -}}</textarea>
+            <p class="input-note">&#40;max 200&#41;</p>
+        </div>
+        <!-- Post Recipe Button -->
+        <div>
+            <button type="submit" class="btn btn btn-edit">Edit</button>
+            <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-cancel">Cancel</a>
+        </div>
+    </form>
+    <!-- /End of Credit -->
+</section>
+{% endblock %}
