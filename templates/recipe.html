@@ -1,54 +1,50 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png" alt="Website Logo"></a>
+<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
+        id="uncle-jam-account"></a>
 <h2 class="font-amatic color-493323 text-center">{{ recipe.recipe_title }}</h2>
 
-<section id="section-recipe" class="color-493323">
-    <div class="blank-space-top"></div>
-
-    <div class="card recipe-summary bg-color-fbeade">
-        <div class="card-body">
-            <img src="{{ recipe.recipe_img_url }}" class="card-img-top" alt="{{ recipe.recipe_title | title }}" />
-            <h5 class="card-title">{{ recipe.recipe_title | title }}</h5>
+<section class="color-493323">
+    <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-full-img"
+        alt="{{ recipe.recipe_title | title }}" />
+    <div class="card recipe-full bg-color-fbeade">
+        <div class="card-body text-center">
+            <h3 class="card-title mt-2 mb-4 font-weight-700">{{ recipe.recipe_title | title }} by
+                {{ recipe.username | title }}
+            </h3>
             <p class="card-text">{{ recipe.recipe_desc }}</p>
         </div>
+        <div>
+            <h5 class="text-center mt-3 font-weight-700">Time & Serves</h5>
+            <p class="text-center"><i class="fas fa-clock">
+                </i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }} people
+            </p>
+        </div>
+
+        <h5 class="text-center mt-4 font-weight-700">Ingredients</h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ recipe.recipe_time }}</li>
-            <li class="list-group-item">{{ recipe.recipe_serves }}</li>
+            {% for ingreds in recipe.recipe_ingreds %}
+            <li class="list-group-item">&#9679; {{ ingreds }}</li>
+            {% endfor %}
         </ul>
 
-        <div class="form-outline mb-4 form-white input-fields-wrap-ingreds">
-            <div>
-                {% for ingreds in recipe.recipe_ingreds %}
-                <p>{{ ingreds }}</p>
-                {% endfor %}
-            </div>
-        </div>
-
-        <div class="form-outline mb-4 form-white input-fields-wrap-steps">
-            <div>
-                {% for step in recipe.recipe_steps %}
-                <p>{{ step }}</p>
-                {% endfor %}
-            </div>
-        </div>
-
+        <h5 class="text-center mt-4 font-weight-700">Steps</h5>
+        <ul class="list-group list-group-flush">
+            {% for step in recipe.recipe_steps %}
+            <li class="list-group-item"><span class="font-weight-700">Step {{ loop.index }}</span><br>{{ step }}</li>
+            {% endfor %}
+        </ul>
+        {% if not recipe.recipe_tips == "" %}
         <div>
-            <p>{{ recipe.recipe_tips }}</p>
+            <h5 class="text-center mt-4 font-weight-700">Tips</h5>
+            <p class="tips text-center">{{ recipe.recipe_tips }}</p>
         </div>
-
-        <div>
-            <p>{{ recipe.username }}</p>
-        </div>
-
-
-        <div class="card-body">
+        {% endif %}
+        <div class="card-body card-bottom mb-4">
             <a href="{{ url_for('home') }}" class="card-link">Home</a>
         </div>
     </div>
-    <div class="blank-space-bottom"></div>
-
 </section>
 
 {% endblock %}

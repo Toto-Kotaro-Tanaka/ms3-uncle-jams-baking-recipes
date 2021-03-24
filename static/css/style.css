@@ -15,7 +15,7 @@ h1 {
 
 h2 {
     font-size: 3rem;
-    padding: 0 5rem;
+    padding: 0 2rem 1rem;
 }
 
 .font-amatic {
@@ -24,6 +24,10 @@ h2 {
 
 .font-balsamiq {
     font-family: "Balsamiq Sans", cursive;
+}
+
+.font-weight-700 {
+    font-weight: 700;
 }
 
 .color-493323 {
@@ -166,8 +170,23 @@ header {
 }
 
 /* -- index.html & recipe.html -- */
+.recipe-home-img {
+    margin: 1rem;
+    width: 7rem;
+}
+
 #section-recipe {
     background-color: rgba(251, 234, 222, 0.3);
+}
+
+.recipe-full {
+    border-radius: 0;
+    padding: 0 1.2rem;
+}
+
+.recipe-full-img {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .recipe-img-top {
@@ -215,6 +234,10 @@ header {
     height: 0.1rem;
 }
 
+.tips {
+    font-size: 0.9rem;
+}
+
 /* -- categories.html -- */
 .categories-img {
     margin-top: 4rem;
@@ -223,14 +246,14 @@ header {
 
 /* -- register.html & login.html & create_recipe.html & create_category.html -- */
 #uncle-jam-account {
-    padding: 1rem 1rem 0;
-    width: 8rem;
+    margin: 1rem;
+    width: 6rem;
 }
 
 #gingerbread-man-recipe,
 #utensils-category {
-    padding: 1rem 1rem 0;
-    width: 6rem;
+    margin: 1rem;
+    width: 4rem;
 }
 
 .section-account,
