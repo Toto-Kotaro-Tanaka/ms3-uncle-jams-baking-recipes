@@ -40,6 +40,11 @@ def recipe(recipe_id):
                            recipe=recipe, hide_navbar_footer=True)
 
 
+@app.route("/shop")
+def shop():
+    return render_template("shop.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

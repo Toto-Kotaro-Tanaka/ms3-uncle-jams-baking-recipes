@@ -239,12 +239,16 @@ header {
     font-size: 0.9rem;
 }
 
-.home-link {
+.home-link, .back-category-link {
     color: #0060ff;
 }
 
-.home-link:hover {
+.home-link:hover, .back-category-link {
     color: rgba(0, 96, 255, 0.6);
+}
+
+.back-category-link {
+    float: right;
 }
 
 /* -- categories.html -- */
@@ -385,7 +389,7 @@ hr {
     margin: 0 auto;
 }
 
-.edit {
+.edit .home {
     color: #0060ff;
     float: left;
 }

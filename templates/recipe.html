@@ -45,9 +45,16 @@
             <p class="tips text-center">{{ recipe.recipe_tips }}</p>
         </div>
         {% endif %}
-        <div class="card-body card-bottom mb-4">
+        <!-- Home & Back To Category Links -->
+        <div>
             <a href="{{ url_for('home') }}" class="card-link home-link">Home</a>
+            <a href="{{ url_for('categories', category_name=recipe.category_name) }}"
+                class="card-link back-category-link">Back
+                to {{ recipe.category_name | title}}</a>
         </div>
+
+
+
     </div>
 </section>
 
