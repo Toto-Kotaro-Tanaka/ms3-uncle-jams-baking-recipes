@@ -220,7 +220,6 @@ header {
 
 .see-recipe:hover {
     color: rgba(232, 70, 16, 0.7);
-
 }
 
 .see-recipe:visited {
@@ -239,11 +238,17 @@ header {
     font-size: 0.9rem;
 }
 
-.home-link, .back-category-link {
+.recipe-links {
+    margin: 1rem 0 1.5rem;
+}
+
+.home-link,
+.back-category-link {
     color: #0060ff;
 }
 
-.home-link:hover, .back-category-link {
+.home-link:hover,
+.back-category-link:hover {
     color: rgba(0, 96, 255, 0.6);
 }
 
@@ -255,6 +260,18 @@ header {
 .categories-img {
     margin-top: 4rem;
     width: 17rem;
+}
+
+/* -- shop.html -- */
+.card-shop {
+    margin: 0 auto 2.5rem;
+    width: 90%;
+}
+
+.affiliate-img {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 /* -- register.html & login.html & create_recipe.html & create_category.html -- */
@@ -408,14 +425,16 @@ hr {
 }
 
 /* -- edit_recipe.html -- */
-.btn-edit {
+.btn-edit,
+.btn-shop {
     background-color: #0060ff;
     color: #fff;
     float: left;
     width: 8rem;
 }
 
-.btn-edit:hover {
+.btn-edit:hover,
+.btn-shop:hover {
     background-color: rgba(0, 96, 255, 0.6);
     color: #fff;
 }
