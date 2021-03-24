@@ -215,15 +215,16 @@ header {
 }
 
 .see-recipe {
-    color: rgba(232, 70, 16, 0.7);
+    color: #e84610;
 }
 
 .see-recipe:hover {
-    color: #e84610;
+    color: rgba(232, 70, 16, 0.7);
+
 }
 
 .see-recipe:visited {
-    color: #e84610;
+    color: rgba(232, 70, 16, 0.7);
 }
 
 .blank-space-top {
@@ -236,6 +237,14 @@ header {
 
 .tips {
     font-size: 0.9rem;
+}
+
+.home-link {
+    color: #0060ff;
+}
+
+.home-link:hover {
+    color: rgba(0, 96, 255, 0.6);
 }
 
 /* -- categories.html -- */
@@ -377,7 +386,12 @@ hr {
 }
 
 .edit {
+    color: #0060ff;
     float: left;
+}
+
+.edit:hover {
+    color: rgba(0, 96, 255, 0.6);
 }
 
 .delete {
@@ -391,17 +405,27 @@ hr {
 
 /* -- edit_recipe.html -- */
 .btn-edit {
-    background-color: #1266f1;
+    background-color: #0060ff;
     color: #fff;
     float: left;
     width: 8rem;
 }
 
-.btn-cancel {
+.btn-edit:hover {
+    background-color: rgba(0, 96, 255, 0.6);
     color: #fff;
+}
+
+.btn-cancel {
     background-color: rgba(232, 70, 16, 0.6);
+    color: #fff;
     float: right;
     width: 8rem;
+}
+
+.btn-cancel:hover {
+    background-color: #e84610;
+    color: #fff;
 }
 
 /* -- Footer -- */

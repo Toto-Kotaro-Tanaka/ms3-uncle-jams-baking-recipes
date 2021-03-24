@@ -36,7 +36,7 @@
         </ul>
         <!-- See Recipe Button -->
         <div class="card-body">
-            <a href="#" class="card-link see-recipe">See Recipe</a>
+            <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="card-link see-recipe">See Recipe</a>
         </div>
     </div>
     {% endfor %}

@@ -6,29 +6,32 @@
 <h2 class="font-amatic color-493323 text-center">{{ recipe.recipe_title }}</h2>
 
 <section class="color-493323">
+    <!-- Recipe Image -->
     <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-full-img"
         alt="{{ recipe.recipe_title | title }}" />
     <div class="card recipe-full bg-color-fbeade">
+        <!-- Recipe Title & Owner & Descriptions -->
         <div class="card-body text-center">
-            <h3 class="card-title mt-2 mb-4 font-weight-700">{{ recipe.recipe_title | title }} by
+            <h3 class="card-title mt-2 mb-4 font-weight-700">{{ recipe.recipe_title | title }} Recipe<br>by
                 {{ recipe.username | title }}
             </h3>
             <p class="card-text">{{ recipe.recipe_desc }}</p>
         </div>
+        <!-- Recipe Time & Serves -->
         <div>
             <h5 class="text-center mt-3 font-weight-700">Time & Serves</h5>
             <p class="text-center"><i class="fas fa-clock">
                 </i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }} people
             </p>
         </div>
-
+        <!-- Recipe Ingredients -->
         <h5 class="text-center mt-4 font-weight-700">Ingredients</h5>
         <ul class="list-group list-group-flush">
             {% for ingreds in recipe.recipe_ingreds %}
             <li class="list-group-item">&#9679; {{ ingreds }}</li>
             {% endfor %}
         </ul>
-
+        <!-- Recipe Steps -->
         <h5 class="text-center mt-4 font-weight-700">Steps</h5>
         <ul class="list-group list-group-flush">
             {% for step in recipe.recipe_steps %}
@@ -36,13 +39,14 @@
             {% endfor %}
         </ul>
         {% if not recipe.recipe_tips == "" %}
+        <!-- Recipe Tips -->
         <div>
             <h5 class="text-center mt-4 font-weight-700">Tips</h5>
             <p class="tips text-center">{{ recipe.recipe_tips }}</p>
         </div>
         {% endif %}
         <div class="card-body card-bottom mb-4">
-            <a href="{{ url_for('home') }}" class="card-link">Home</a>
+            <a href="{{ url_for('home') }}" class="card-link home-link">Home</a>
         </div>
     </div>
 </section>
