@@ -22,6 +22,7 @@ It is a mobile-first & responsive website and the link to the website is availab
 * #### [TESTING](#testing-heading)
     * ##### [Python](#python-heading)
 * #### [PROJECT BARRIERS & SOLUTIONS](#barriers-solutions-heading)
+* #### [VERSION CONTROL](#version-control-heading)
 * #### [DEPLOYMENT](#deployment-heading)
 * #### [CREDITS](#credits-heading)
     * ##### [Code](#code-heading)
@@ -323,6 +324,12 @@ Manage Category page with Create, Edit & Delete Functions & Form are created so 
 
 ## PROJECT BARRIERS & SOLUTIONS <a name="barriers-solutions-heading"></a>
 <!--- Retrieving data in a list --->
+
+<div align="right"><a href="#table-of-contents">🔝</a></div>
+
+## VERSION CONTROL <a name="version-control-heading"></a>
+
+<!--- Commit message by mistke --->
 
 <div align="right"><a href="#table-of-contents">🔝</a></div>
 

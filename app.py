@@ -1,11 +1,11 @@
 import os
-from datetime import datetime
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -226,6 +226,11 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category successfully deleted", "success")
     return redirect(url_for("manage_category"))
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("page_404.html", hide_navbar_footer=True), 404
 
 
 if __name__ == "__main__":
