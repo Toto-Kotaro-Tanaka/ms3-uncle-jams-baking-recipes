@@ -1,16 +1,15 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-        id="uncle-jam-account"></a>
-<h2 class="font-amatic color-493323 text-center">Page 404</h2>
+<h2 class="page-404-title font-amatic color-493323 text-center">Page 404</h2>
 <div class="text-center">
     <img src="{{ url_for('static', filename='images/tomato.png') }}" alt="Page 404" class="page-404-img">
 </div>
-
-<section class="section-page-404 color-fbeade">
-    <h3 class="text-center p-3">Sorry, this page does not exists...</h3>
+<div class="bubble">
+    <h3 class="text-center p-3 color-fbeade">Sorry but I don't think belong here...</h3>
     <p class="diversion-home text-center color-fff">Going back to HOME page?<br>Click <a
-            href="{{ url_for('home') }}">HERE</a></p>
-</section>
+            href="{{ url_for('home') }}">HERE</a> or ME</p>
+</div>
+<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
+        id="uncle-jam-error"></a>
 {% endblock %}

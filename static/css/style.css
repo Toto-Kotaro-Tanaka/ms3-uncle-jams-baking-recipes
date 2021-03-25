@@ -452,20 +452,50 @@ hr {
 }
 
 /* -- Page 404 -- */
-.page-404-img {
-    width: 8rem;
+.page-404-title {
+    padding-top: 2rem;
 }
 
-.section-page-404 {
-    background-color: rgba(73, 51, 35, 0.3);
-    border-radius: 0.25rem;
-    margin: 1rem auto 0;
-    width: 90%;
+.page-404-img {
+    margin-bottom: 1rem;
+    width: 8rem;
 }
 
 .diversion-home {
     padding: 1rem;
 }
+
+#uncle-jam-error {
+    bottom: 2rem;
+    float: right;
+    margin-top: 3.5rem;
+    right: 0;
+    width: 8rem;
+}
+
+/* Credit: html code generator @ https://www.html-code-generator.com/css/speech-bubble-generator */
+.bubble {
+    background-color: rgba(73, 51, 35, 0.3);
+    border-radius: 0.25rem;
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 2.56rem 3.5rem 0;
+    border-color: transparent rgba(73, 51, 35, 0.3) transparent transparent;
+    bottom: -3.5rem;
+    left: 80%;
+    margin-left: -1.28rem;
+}
+/* /End of Credit */
 
 /* -- Footer -- */
 .input-subscribe {
