@@ -131,7 +131,7 @@
     <footer class="color-fbeade text-center">
         <div class="container p-4 pb-0">
             <section class="">
-                <form action="">
+                <form id="form-subscribe-newsletter" method="POST" action="{{ url_for('subscribe_newsletter') }}">
                     <div class="row d-flex justify-content-center">
                         <div class="col-auto">
                             <p class="pt-2">
@@ -141,8 +141,9 @@
                         <div class="col-md-5 col-12">
                             <div class="form-outline form-white mb-4">
                                 <i class="fas fa-envelope trailing"></i>
-                                <input type="email" id="form5Example2" class="form-control input-subscribe" />
-                                <label class="form-label" for="form5Example2">Email address</label>
+                                <input type="email" id="subsc_email" name="subsc_email"
+                                    class="form-control input-subscribe" required />
+                                <label class="form-label" for="subsc_email">Email Address</label>
                             </div>
                         </div>
                         <div class="col-auto">

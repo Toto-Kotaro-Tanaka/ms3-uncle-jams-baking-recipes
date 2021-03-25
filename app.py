@@ -235,6 +235,17 @@ def delete_category(category_id):
     return redirect(url_for("manage_category"))
 
 
+@app.route("/subscribe_newsletter", methods=["GET", "POST"])
+def subscribe_newsletter():
+    if request.method == "POST":
+        email = {
+            "subsc_email": request.form.get("subsc_email")
+        }
+        mongo.db.emails.insert_one(email)
+        flash("Thank your for your subscription", "success")
+        return redirect(url_for("home"))
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("page_404.html", hide_navbar_footer=True), 404
