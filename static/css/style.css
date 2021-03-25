@@ -119,6 +119,10 @@ h2 {
     padding-top: 0.5rem;
 }
 
+.btn-search a {
+    color: #fbeade;
+}
+
 .btn-search:hover {
     color: #fbeade;
 }

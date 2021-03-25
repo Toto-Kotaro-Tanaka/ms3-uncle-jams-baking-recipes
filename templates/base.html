@@ -88,13 +88,18 @@
                     </li>
                     {% endif %}
                 </ul>
-                <form class="d-flex input-group w-auto form-search">
-                    <input type="search" class="form-control input-search" placeholder="Type a keyword"
-                        aria-label="Search" />
-                    <button class="btn btn-search color-fbeade" type="button" data-mdb-ripple-color="dark">
+                {% if search %}
+                <form class="d-flex input-group w-auto form-search" action="{{ url_for('search') }}" method="POST">
+                    <input type="text" name="query" id="query" minlength="3" class="form-control input-search"
+                        placeholder="Search Recipes" aria-label="Search" required />
+                    <button class="btn btn-search color-fbeade" type="submit" data-mdb-ripple-color="dark">
                         Search
                     </button>
+                    <button class="btn btn-search color-fbeade" data-mdb-ripple-color="dark">
+                        <a href="{{ url_for('home') }}">Reset</a>
+                    </button>
                 </form>
+                {% endif %}
             </div>
         </div>
     </nav>

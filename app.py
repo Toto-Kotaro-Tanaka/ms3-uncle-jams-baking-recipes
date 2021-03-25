@@ -23,14 +23,21 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     recipes = mongo.db.recipes.find().sort("posted_date", -1)
-    return render_template("index.html", recipes=recipes)
+    return render_template("index.html", recipes=recipes, search=True)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("index.html", recipes=recipes, search=True)
 
 
 @app.route("/categories/<category_name>")
 def categories(category_name):
     recipes = mongo.db.recipes.find({"category_name": category_name})
     return render_template("categories.html",
-                           recipes=recipes, category_name=category_name)
+                           recipes=recipes, category_name=category_name, search=True)
 
 
 @app.route("/recipe/<recipe_id>")
