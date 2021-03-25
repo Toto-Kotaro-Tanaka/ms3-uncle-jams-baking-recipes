@@ -461,6 +461,10 @@ hr {
     width: 8rem;
 }
 
+.error-text {
+    font-size: 1.4rem;
+}
+
 .diversion-home {
     padding: 1rem;
 }
@@ -468,7 +472,7 @@ hr {
 #uncle-jam-error {
     bottom: 2rem;
     float: right;
-    margin-top: 3.5rem;
+    margin-top: 3rem;
     right: 0;
     width: 8rem;
 }
