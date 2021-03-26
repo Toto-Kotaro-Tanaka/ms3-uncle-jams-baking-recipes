@@ -21,7 +21,8 @@
         <div>
             <h5 class="text-center mt-3 font-weight-700">Time & Serves</h5>
             <p class="text-center"><i class="fas fa-clock">
-                </i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }} people
+                </i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }}
+                people
             </p>
         </div>
         <!-- Recipe Ingredients -->
@@ -49,8 +50,7 @@
         <div class="recipe-links">
             <a href="{{ url_for('home') }}" class="card-link home-link">Home</a>
             <a href="{{ url_for('categories', category_name=recipe.category_name) }}"
-                class="card-link back-category-link">Back
-                to {{ recipe.category_name | title}}</a>
+                class="card-link back-category-link">{{ recipe.category_name | title}}</a>
         </div>
 
 

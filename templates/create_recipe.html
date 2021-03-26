@@ -42,11 +42,11 @@
             <select id="recipe_time" name="recipe_time" class="form-select recipe-select bg-color-49332-06 color-fff"
                 aria-label="Baking Time">
                 <option selected disabled required>Select Time</option>
-                <option value="less-than-30">Less than 30 min</option>
+                <option value="Less than 30">Less than 30 min</option>
                 {% for time in range(40, 120, 10) %}
                 <option value="{{ time }}">{{ time }} min</option>
                 {% endfor %}
-                <option value="more-than-120">More than 120 min</option>
+                <option value="More than 120">More than 120 min</option>
             </select>
         </div>
         <!-- Recipe Serves -->

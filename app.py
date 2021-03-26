@@ -35,7 +35,8 @@ def search():
 
 @app.route("/categories/<category_name>")
 def categories(category_name):
-    recipes = mongo.db.recipes.find({"category_name": category_name})
+    recipes = mongo.db.recipes.find(
+        {"category_name": category_name}).sort("posted_date", -1)
     return render_template("categories.html",
                            recipes=recipes, category_name=category_name, search=True)
 
@@ -254,4 +255,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)  # Change this to False before submission of the project and delete this message
+            debug=False)  # Change this to False before submission of the project and delete this message
