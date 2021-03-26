@@ -14,7 +14,6 @@
             <label for="category_name">Recipe Category</label>
             <select id="category_name" name="category_name"
                 class="form-select bg-color-49332-06 recipe-select color-fff" aria-label="Recipe Categories">
-                <option disabled required>Select Category</option>
                 {% for category in categories %}
                 {% if category.category_name == recipe.category_name %}
                 <option value="{{ category.category_name }}" selected>{{ category.category_name | title }}</option>
@@ -38,6 +37,7 @@
                 rows="5" required>{{- recipe.recipe_desc -}}</textarea>
             <p class="input-note">&#40;max 300&#41;</p>
         </div>
+        <hr class="hr-fff">
         <!-- Recipe Time -->
         <div class="form-outline mb-4 form-white">
             <label for="recipe_time">Baking Time</label>
@@ -64,36 +64,39 @@
                 {% endfor %}
             </select>
         </div>
+        <hr class="hr-fff">
         <!-- Recipe Ingredients -->
         <label for="recipe_ingreds">Recipe Ingredients</label>
         <div>
-            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-ingreds">Add Ingredients <span
+            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-ingreds">More Ingredients <span
                     class="input-note btn-note">&#40;max 15 fields&#41;</span></button>
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-ingreds">
             <div>
                 {% for ingreds in recipe.recipe_ingreds %}
-                <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50"
+                <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06 mt-3" maxlength="50"
                     value="{{ ingreds }}" required />
                 {% endfor %}
                 <p class="input-note">&#40;max 50&#41;</p>
             </div>
         </div>
+        <hr class="hr-fff">
         <!-- Recipe Steps -->
-        <label class="form-label" for="recipe_steps">Recipe Steps</label>
+        <label for="recipe_steps">Recipe Steps</label>
         <div>
-            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-steps">Add Steps <span
+            <button class="btn btn-block btn-ffd5b7 color-493323 btn-add-field-steps">More Steps <span
                     class="input-note btn-note">&#40;max 10 fields&#41;</span></button>
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-steps">
             <div>
                 {% for step in recipe.recipe_steps %}
-                <textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300"
+                <textarea name="recipe_steps" class="form-control bg-color-49332-06 mt-3" rows="3" maxlength="300"
                     required>{{- step -}}</textarea>
                 {% endfor %}
                 <p class="input-note">&#40;max 300&#41;</p>
             </div>
         </div>
+        <hr class="hr-fff">
         <!-- Recipe Image URL -->
         <div class="form-outline mb-4 form-white">
             <label for="recipe_img_url">Recipe Image URL</label>
@@ -101,14 +104,14 @@
                 maxlength="200">{{- recipe.recipe_img_url -}}</textarea>
         </div>
         <!-- Recipe Tips -->
-        <div class="form-outline mb-4 form-white">
-            <label class="form-label" for="recipe_tips">Recipe Tips</label>
+        <div class="form-outline form-white mb-4 ">
+            <label for="recipe_tips">Recipe Tips</label>
             <textarea id="recipe_tips" name="recipe_tips" class="form-control bg-color-49332-06" rows="2"
                 maxlength="200">{{- recipe.recipe_tips -}}</textarea>
             <p class="input-note">&#40;max 200&#41;</p>
         </div>
         <!-- Post Recipe Button -->
-        <div>
+        <div class="pt-3">
             <button type="submit" class="btn btn btn-edit">Edit</button>
             <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-cancel">Cancel</a>
         </div>

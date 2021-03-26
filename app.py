@@ -183,7 +183,7 @@ def delete_recipe(recipe_id):
 
 @app.route("/manage_category")
 def manage_category():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    categories = list(mongo.db.categories.find().sort("_id", -1))
 
     if session["user"] == "admin":
         return render_template("manage_category.html", categories=categories)
@@ -255,4 +255,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)  # Change this to False before submission of the project and delete this message
+            debug=True)  # Change this to False before submission of the project and delete this message

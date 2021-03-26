@@ -63,6 +63,18 @@ h2 {
     color: #493323;
 }
 
+hr.hr-493323 {
+    border: 0.5rem solid #493323;
+    border-radius: 0.25rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+hr.hr-fff {
+    border: 0.3rem solid #fff;
+    margin: 3rem 0 2.5rem;
+}
+
 /* -- Navbar -- */
 .navbar {
     left: 0;
@@ -397,13 +409,6 @@ header {
 .profile-img {
     padding: 2rem 0 1rem;
     width: 7rem;
-}
-
-hr {
-    border: 0.5rem solid #493323;
-    border-radius: 0.25rem;
-    margin: 0 auto;
-    width: 80%;
 }
 
 .btn-create-recipe {
