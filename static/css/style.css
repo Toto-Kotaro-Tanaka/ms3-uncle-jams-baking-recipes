@@ -355,7 +355,8 @@ header {
     padding: 2rem 2rem 0;
 }
 
-.diversion-account a, .diversion-home a {
+.diversion-account a,
+.diversion-home a {
     color: #fff;
     font-weight: bolder;
 }
@@ -496,7 +497,7 @@ header {
 }
 
 .bubble:after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     width: 0;
@@ -528,4 +529,34 @@ header {
 .social-media:focus,
 .social-media:hover {
     background-color: #ffd5b7 !important;
+}
+
+/* -- Media Query: Screen Size Bigger Than 62rem / 992px -- */
+@media only screen and (min-width: 62rem) {
+    h1 {
+        font-size: 4rem;
+        padding-top: 1rem;
+    }
+
+    #uncle-jam {
+        display: block;
+        margin: 0 auto;
+        padding-top: 10rem;
+        position: relative;
+        width: 20rem;
+    }
+
+    #wheat-top {
+        position: absolute;
+        right: 4rem;
+        top: 6rem;
+        width: 6rem;
+    }
+
+    #wheat-bottom {
+        bottom: 2rem;
+        left: 4rem;
+        position: absolute;
+        width: 6rem;
+    }
 }
