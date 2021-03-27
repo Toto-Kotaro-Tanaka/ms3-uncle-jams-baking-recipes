@@ -222,7 +222,7 @@ header {
 
 .recipe-summary {
     margin: 0 auto 3rem;
-    width: 90%;
+    width: 95%;
 }
 
 .recipe-summary-title {
@@ -535,12 +535,8 @@ header {
     background-color: #ffd5b7 !important;
 }
 
-/* -- Media Query: Screen Size Bigger Than 62rem / 992px -- */
-@media only screen and (min-width: 62rem) {
-    .register {
-        margin-left: 3rem;
-    }
-
+/* -- Media Query: Screen Size Bigger Than 48rem / 768px -- */
+@media only screen and (min-width: 48rem) {
     h1 {
         font-size: 4rem;
         padding-top: 1rem;
@@ -549,9 +545,24 @@ header {
     #uncle-jam {
         display: block;
         margin: 0 auto;
-        padding-top: 10rem;
+        padding-top: 15rem;
         position: relative;
         width: 20rem;
+    }
+
+    .recipe-img-top {
+        height: 30vw;
+    }
+}
+
+/* -- Media Query: Screen Size Bigger Than 62rem / 992px -- */
+@media only screen and (min-width: 62rem) {
+    .register {
+        margin-left: 3rem;
+    }
+
+    #uncle-jam {
+        padding-top: 10rem;
     }
 
     #wheat-top {
@@ -568,5 +579,19 @@ header {
         left: 4rem;
         position: absolute;
         width: 6rem;
+    }
+
+    .recipe-img-top {
+        height: 20vw;
+    }
+
+    #section-recipe {
+        margin: 0 auto;
+        padding: 0 1.875rem;
+        width: 85%;
+    }
+
+    footer {
+        margin-top: 2rem;
     }
 }
