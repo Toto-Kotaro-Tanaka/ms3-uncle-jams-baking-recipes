@@ -91,6 +91,10 @@ hr.hr-fff {
     color: #ff7c3e !important;
 }
 
+.line {
+     pointer-events: none;
+}
+
 .dropdown-menu a:hover {
     color: #493323 !important;
 }
@@ -195,7 +199,8 @@ header {
     width: 7rem;
 }
 
-#section-recipe-summary {
+#section-recipe-summary,
+#section-recipe {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -254,12 +259,8 @@ header {
     height: 0.1rem;
 }
 
-.tips {
+.p-tips {
     font-size: 0.9rem;
-}
-
-.recipe-links {
-    margin: 1rem 0 1.5rem;
 }
 
 .home-link,
@@ -560,6 +561,34 @@ header {
 
     #section-recipe {
         margin: 0 auto 3rem;
+        padding: 3rem 3rem 2rem;
+        width: 85%;
+    }
+
+    .grid-top {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-top-img {
+        grid-column: 2/2;
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    .grid-top-title {
+        grid-row: 1/1;
+    }
+
+    .grid-bottom {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .tips {
+        margin: 2rem auto 1rem;
         width: 60%;
     }
 }
