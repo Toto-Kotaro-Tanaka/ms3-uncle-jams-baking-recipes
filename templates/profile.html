@@ -15,39 +15,46 @@
 
 
 {% block content %}
-<section id="section-recipe">
-    <h3 class="recipe-title font-balsamiq color-493323 text-center">Your Recipes</h3>
-    <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
-    {% for recipe in recipes %}
-    {% if session.user | lower == recipe.username | lower %}
-    <div class="card recipe-summary bg-color-fbeade">
-        <!-- Recipe Image & Category & Title -->
-        <div class="card-body">
-            <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
-                alt="{{ recipe.recipe_title }}" />
-            <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
-            <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
-                {{ recipe.recipe_title | title }}</h5>
-            <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
+<section id="section-recipe-summary">
+    <div class="container-fluid">
+        <div class="row">
+            <h3 class="recipe-title font-balsamiq color-493323 text-center">Your Recipes</h3>
+            <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
+            {% for recipe in recipes %}
+            {% if session.user | lower == recipe.username | lower %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card recipe-summary bg-color-fbeade">
+                    <!-- Recipe Image & Category & Title -->
+                    <div class="card-body">
+                        <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
+                            alt="{{ recipe.recipe_title }}" />
+                        <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
+                        <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
+                            {{ recipe.recipe_title | title }}</h5>
+                        <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
+                    </div>
+                    <!-- Recipe Owner & Posted Date -->
+                    <ul class="list-group list-group-flush posted-list">
+                        <li class="list-group-item bg-color-fbeade text-center">Posted by
+                            {{ recipe.username | capitalize }}</li>
+                        <li class="list-group-item bg-color-fbeade text-center">on {{ recipe.posted_date }}
+                        </li>
+                    </ul>
+                    <!-- Edit & Delet Recipe Buttons -->
+                    <div class="card-body">
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-link edit"><i
+                                class="fas fa-edit"></i> Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-link delete"><i
+                                class="fas fa-trash-alt"></i> Delete</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
-        <!-- Recipe Owner & Posted Date -->
-        <ul class="list-group list-group-flush posted-list">
-            <li class="list-group-item bg-color-fbeade text-center">Posted by {{ recipe.username | capitalize }}</li>
-            <li class="list-group-item bg-color-fbeade text-center">on {{ recipe.posted_date }}
-            </li>
-        </ul>
-        <!-- Edit & Delet Recipe Buttons -->
-        <div class="card-body">
-            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-link edit"><i
-                    class="fas fa-edit"></i> Edit</a>
-            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-link delete"><i
-                    class="fas fa-trash-alt"></i> Delete</a>
-        </div>
+        <!-- /End of Credit -->
+        <div class="blank-space-bottom"></div>
     </div>
-    {% endif %}
-    {% endfor %}
-    <!-- /End of Credit -->
-    <div class="blank-space-bottom"></div>
 </section>
 
 {% endblock %}

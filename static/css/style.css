@@ -601,6 +601,11 @@ header {
         margin: 2rem auto 1rem;
         width: 60%;
     }
+
+    hr.hr-493323 {
+        margin-bottom: 3rem;
+        width: 22rem;
+    }
 }
 
 /* -- Media Query: Screen Size Bigger Than 62rem / 992px -- */
