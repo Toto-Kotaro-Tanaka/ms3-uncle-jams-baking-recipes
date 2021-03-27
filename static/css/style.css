@@ -201,7 +201,7 @@ header {
 }
 
 #section-recipe-summary,
-#section-recipe {
+#section-recipe, #section-shop {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -561,6 +561,10 @@ header {
         width: 20rem;
     }
 
+    .categories-img {
+        width: 18rem;
+    }
+
     .recipe-img-top {
         height: 30vw;
     }
@@ -609,7 +613,7 @@ header {
         padding-top: 10rem;
     }
 
-    #wheat-top, #coffee-top {
+    #wheat-top, #coffee-top, #glove-top {
         opacity: 0.4;
         position: absolute;
         right: 4rem;
@@ -617,7 +621,7 @@ header {
         width: 6rem;
     }
 
-    #wheat-bottom, #coffee-bottom {
+    #wheat-bottom, #coffee-bottom, #glove-bottom {
         opacity: 0.4;
         bottom: 2rem;
         left: 4rem;
