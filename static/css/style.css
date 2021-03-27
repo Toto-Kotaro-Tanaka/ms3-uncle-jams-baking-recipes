@@ -63,6 +63,10 @@ h2 {
     color: #493323;
 }
 
+.btn:hover {
+    background-color: #fff !important;
+}
+
 hr.hr-493323 {
     border: 0.5rem solid #493323;
     border-radius: 0.25rem;
@@ -146,6 +150,7 @@ hr.hr-fff {
 
 .btn-search:hover {
     color: #fbeade;
+    background-color: #ff7c3e !important;
 }
 
 /* -- Flash Message -- */
@@ -314,7 +319,7 @@ header {
 }
 
 #section-account,
-.section-create-recipe {
+#section-manage-recipe {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
     left: 0;
@@ -324,7 +329,7 @@ header {
     width: 90%;
 }
 
-.section-create-recipe {
+#section-manage-recipe {
     margin-bottom: 4rem;
     padding-bottom: 2rem;
 }
@@ -353,7 +358,7 @@ header {
 
 /* This div is created to prevent the button moves left when it is clicked */
 .div-btn-account {
-    width: 50%;
+    width: 8rem;
     margin: 0 auto;
 }
 
@@ -395,12 +400,12 @@ header {
 
 .btn-add-field-ingreds {
     margin-bottom: 0.6rem;
-    width: 85%;
+    width: 15rem;
 }
 
 .btn-add-field-steps {
     margin-bottom: 0.6rem;
-    width: 70%;
+    width: 13rem;
 }
 
 .remove-field-ingreds,
@@ -448,16 +453,8 @@ header {
 /* -- edit_recipe.html -- */
 .btn-edit,
 .btn-shop {
-    background-color: #0060ff;
-    color: #fff;
     float: left;
     width: 8rem;
-}
-
-.btn-edit:hover,
-.btn-shop:hover {
-    background-color: rgba(0, 96, 255, 0.6);
-    color: #fff;
 }
 
 .btn-cancel {
@@ -612,6 +609,10 @@ header {
     }
 
     .success, .error {
+        width: 40rem;
+    }
+
+    #section-manage-recipe {
         width: 40rem;
     }
 }

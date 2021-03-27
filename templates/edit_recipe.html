@@ -6,7 +6,7 @@
         id="gingerbread-man-recipe"></a>
 <h2 class="font-amatic color-493323 text-center">Edit Your Recipe</h2>
 
-<section class="section-create-recipe color-fbeade">
+<section id="section-manage-recipe" class="color-fbeade">
     <!-- Credit: MDB Forms & Input + Bootstrap Dropdowns @ https://mdbootstrap.com/docs/standard/forms/overview/ & @ https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
     <form id="form-recipe" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
         <!-- Select Category -->
@@ -112,7 +112,7 @@
         </div>
         <!-- Post Recipe Button -->
         <div class="pt-3">
-            <button type="submit" class="btn btn btn-edit">Edit</button>
+            <button type="submit" class="btn btn btn-edit btn-ffd5b7 color-493323">Edit</button>
             <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-cancel">Cancel</a>
         </div>
     </form>
