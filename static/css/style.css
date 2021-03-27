@@ -269,16 +269,6 @@ header {
     font-size: 0.9rem;
 }
 
-.home-link,
-.back-category-link {
-    color: #0060ff;
-}
-
-.home-link:hover,
-.back-category-link:hover {
-    color: rgba(0, 96, 255, 0.6);
-}
-
 .back-category-link {
     float: right;
 }
@@ -338,10 +328,6 @@ header {
     padding: 0 2rem;
 }
 
-.section-login {
-    height: 18rem;
-}
-
 #form-account,
 #form-recipe,
 #form-category {
@@ -372,7 +358,7 @@ header {
 
 .diversion-account {
     font-size: 0.9rem;
-    padding: 2rem 2rem 0;
+    padding: 1.5rem 2rem 0;
 }
 
 .diversion-account a,
@@ -469,7 +455,7 @@ header {
 }
 
 .btn-cancel:hover {
-    background-color: #e84610;
+    background-color: #e84610 !important;
     color: #fff;
 }
 
@@ -554,15 +540,20 @@ header {
         font-size: 3.5rem;
     }
 
+    .border-radius-025 {
+        border-radius: 0.25rem;
+    }
+
     #uncle-jam, .categories-img {
         display: block;
         margin: 0 auto;
-        padding-top: 15rem;
+        padding-top: 13rem;
         position: relative;
         width: 20rem;
     }
 
     .categories-img {
+        bottom: 0;
         width: 18rem;
     }
 
@@ -632,7 +623,7 @@ header {
     }
 
     #wheat-top, #coffee-top, #glove-top {
-        opacity: 0.4;
+        opacity: 0.5;
         position: absolute;
         right: 4rem;
         top: 6rem;
@@ -640,10 +631,26 @@ header {
     }
 
     #wheat-bottom, #coffee-bottom, #glove-bottom {
-        opacity: 0.4;
+        opacity: 0.5;
         bottom: 2rem;
         left: 4rem;
         position: absolute;
+        width: 6rem;
+    }
+
+    #flour-top, #cream-top, #saucepans-top {
+        left: 4rem;
+        opacity: 0.5;
+        position: absolute;
+        top: 6rem;
+        width: 6rem;
+    }
+
+    #flour-bottom, #cream-bottom, #saucepans-bottom {
+        opacity: 0.5;
+        bottom: 2rem;
+        position: absolute;
+        right: 4rem;
         width: 6rem;
     }
 
