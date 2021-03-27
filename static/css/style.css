@@ -91,10 +91,6 @@ hr.hr-fff {
     color: #ff7c3e !important;
 }
 
-.line {
-     pointer-events: none;
-}
-
 .dropdown-menu a:hover {
     color: #493323 !important;
 }
@@ -109,6 +105,11 @@ hr.hr-fff {
 
 .dropdown-item:hover {
     background-color: #ffd5b7;
+}
+
+.vl {
+    color: #fbeade;
+    padding-top: .5rem;
 }
 
 .form-search > .form-control {
