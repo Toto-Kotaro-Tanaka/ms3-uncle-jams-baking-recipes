@@ -113,7 +113,7 @@ hr.hr-fff {
 
 .vl {
     color: #fbeade;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
 }
 
 .form-search > .form-control {
@@ -206,7 +206,9 @@ header {
 }
 
 #section-recipe-summary,
-#section-recipe, #section-shop, #section-manage-category {
+#section-recipe,
+#section-shop,
+#section-manage-category {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -308,7 +310,8 @@ header {
 }
 
 #section-account,
-#section-manage-recipe, #section-create-edit-category {
+#section-manage-recipe,
+#section-create-edit-category {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
     left: 0;
@@ -544,7 +547,8 @@ header {
         border-radius: 0.25rem;
     }
 
-    #uncle-jam, .categories-img {
+    #uncle-jam,
+    .categories-img {
         display: block;
         margin: 0 auto;
         padding-top: 13rem;
@@ -563,6 +567,7 @@ header {
 
     #section-recipe {
         margin: 0 auto 3rem;
+        max-width: 80rem;
         padding: 3rem 3rem 2rem;
         width: 85%;
     }
@@ -599,16 +604,24 @@ header {
         width: 22rem;
     }
 
-    #section-account, #section-create-edit-category {
+    #section-account,
+    #section-create-edit-category,
+    #section-page-404 {
         width: 30rem;
     }
 
-    .success, .error {
+    .success,
+    .error {
         width: 40rem;
     }
 
-    #section-manage-recipe, #section-manage-category {
+    #section-manage-recipe,
+    #section-manage-category {
         width: 40rem;
+    }
+
+    #section-page-404 {
+        margin: 0 auto;
     }
 }
 
@@ -622,7 +635,9 @@ header {
         padding-top: 10rem;
     }
 
-    #wheat-top, #coffee-top, #glove-top {
+    #wheat-top,
+    #coffee-top,
+    #glove-top {
         opacity: 0.5;
         position: absolute;
         right: 4rem;
@@ -630,7 +645,9 @@ header {
         width: 6rem;
     }
 
-    #wheat-bottom, #coffee-bottom, #glove-bottom {
+    #wheat-bottom,
+    #coffee-bottom,
+    #glove-bottom {
         opacity: 0.5;
         bottom: 2rem;
         left: 4rem;
@@ -638,7 +655,9 @@ header {
         width: 6rem;
     }
 
-    #flour-top, #cream-top, #saucepans-top {
+    #flour-top,
+    #cream-top,
+    #saucepans-top {
         left: 4rem;
         opacity: 0.5;
         position: absolute;
@@ -646,7 +665,9 @@ header {
         width: 6rem;
     }
 
-    #flour-bottom, #cream-bottom, #saucepans-bottom {
+    #flour-bottom,
+    #cream-bottom,
+    #saucepans-bottom {
         opacity: 0.5;
         bottom: 2rem;
         position: absolute;
