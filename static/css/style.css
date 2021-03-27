@@ -278,8 +278,13 @@ header {
 
 /* -- categories.html -- */
 .categories-img {
-    margin-top: 4rem;
+    bottom: 4rem;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
     width: 17rem;
+
 }
 
 /* -- shop.html -- */
@@ -546,7 +551,7 @@ header {
         font-size: 3.5rem;
     }
 
-    #uncle-jam {
+    #uncle-jam, .categories-img {
         display: block;
         margin: 0 auto;
         padding-top: 15rem;
@@ -574,7 +579,7 @@ header {
         padding-top: 10rem;
     }
 
-    #wheat-top {
+    #wheat-top, #coffee-top {
         opacity: 0.4;
         position: absolute;
         right: 4rem;
@@ -582,7 +587,7 @@ header {
         width: 6rem;
     }
 
-    #wheat-bottom {
+    #wheat-bottom, #coffee-bottom {
         opacity: 0.4;
         bottom: 2rem;
         left: 4rem;

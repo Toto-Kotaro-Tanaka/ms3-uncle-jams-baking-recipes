@@ -71,7 +71,7 @@
                     </li>
                     {% if session.user | lower == "admin" | lower %}
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('manage_category') }}">Manage
+                        <a class="nav-link active" href="{{ url_for('manage_category') }}"><i class="fas fa-tools"></i>
                             Category</a>
                     </li>
                     {% endif %}
