@@ -5,7 +5,7 @@
 <div class="text-center">
     <img src="{{ url_for('static', filename='images/utensils.png') }}" alt="Category Utensils" class="profile-img">
 </div>
-<hr>
+<hr class="hr-493323">
 <div class="text-center">
     <h4 class="font-balsamiq color-493323 mt-4">Create Category</h4>
     <a href="{{ url_for('create_category') }}" class="btn btn-ffd5b7 color-493323 mt-4 mb-4">Create Category</a>
@@ -14,7 +14,7 @@
 
 
 {% block content %}
-<section id="section-recipe">
+<section id="section-manage-category">
     <h3 class="recipe-title font-balsamiq color-493323 text-center">Category</h3>
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
     {% for category in categories %}

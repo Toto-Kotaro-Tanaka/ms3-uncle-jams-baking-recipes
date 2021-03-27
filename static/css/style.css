@@ -206,7 +206,7 @@ header {
 }
 
 #section-recipe-summary,
-#section-recipe, #section-shop {
+#section-recipe, #section-shop, #section-manage-category {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -291,7 +291,6 @@ header {
     position: absolute;
     right: 0;
     width: 17rem;
-
 }
 
 /* -- shop.html -- */
@@ -319,7 +318,7 @@ header {
 }
 
 #section-account,
-#section-manage-recipe {
+#section-manage-recipe, #section-create-edit-category {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
     left: 0;
@@ -332,6 +331,11 @@ header {
 #section-manage-recipe {
     margin-bottom: 4rem;
     padding-bottom: 2rem;
+}
+
+#section-manage-category {
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .section-login {
@@ -415,7 +419,7 @@ header {
 
 .btn-create-category {
     margin: 0 auto;
-    width: 60%;
+    width: 10rem;
 }
 
 /* -- profile.html -- */
@@ -604,7 +608,7 @@ header {
         width: 22rem;
     }
 
-    #section-account {
+    #section-account, #section-create-edit-category {
         width: 30rem;
     }
 
@@ -612,7 +616,7 @@ header {
         width: 40rem;
     }
 
-    #section-manage-recipe {
+    #section-manage-recipe, #section-manage-category {
         width: 40rem;
     }
 }

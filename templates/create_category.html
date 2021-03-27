@@ -5,8 +5,8 @@
         alt="Utensils" id="utensils-category"></a>
 <h2 class="font-amatic color-493323 text-center">Create Category</h2>
 
-<section class="section-create-recipe color-fbeade">
-    <form id="form-category" method="POST" action="{{ url_for('create_category') }}">
+<section id="section-create-edit-category" class="color-fbeade">
+    <form id="form-category" class="pb-4" method="POST" action="{{ url_for('create_category') }}">
         <!-- New Category -->
         <div class="form-outline mb-4 form-white">
             <input type="text" id="category_name" name="category_name" class="form-control bg-color-49332-06"
