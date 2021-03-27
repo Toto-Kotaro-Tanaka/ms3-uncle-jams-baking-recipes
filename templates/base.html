@@ -82,13 +82,11 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link active register" href="{{ url_for('register') }}"><span
-                                class="d-none d-lg-inline">&#60;</span> Register <span
-                                class="d-none d-lg-inline">&nbsp;&VerticalLine;</span></a>
+                        <a class="nav-link active register" href="{{ url_for('register') }}">Register </a>
                     </li>
+                    <span class="vl d-none d-lg-inline">&nbsp;&#124;&nbsp;</span>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('login') }}">Login <span
-                                class="d-none d-lg-inline">&#62;</span></a>
+                        <a class="nav-link active" href="{{ url_for('login') }}">Login </a>
                     </li>
                     {% endif %}
                 </ul>
