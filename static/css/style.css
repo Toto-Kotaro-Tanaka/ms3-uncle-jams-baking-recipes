@@ -313,7 +313,7 @@ header {
     width: 4rem;
 }
 
-.section-account,
+#section-account,
 .section-create-recipe {
     background-color: rgba(73, 51, 35, 0.3);
     border-radius: 0.25rem;
@@ -605,6 +605,14 @@ header {
     hr.hr-493323 {
         margin-bottom: 3rem;
         width: 22rem;
+    }
+
+    #section-account {
+        width: 30rem;
+    }
+
+    .success, .error {
+        width: 40rem;
     }
 }
 
