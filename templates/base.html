@@ -76,15 +76,19 @@
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('logout') }}">Logout</a>
+                        <a class="nav-link active" href="{{ url_for('logout') }}"><span
+                                class="d-none d-lg-inline">&#60;</span> Logout <span
+                                class="d-none d-lg-inline">&#62;</span></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link active register" href="{{ url_for('register') }}">Register</a>
+                        <a class="nav-link active register" href="{{ url_for('register') }}"><span
+                                class="d-none d-lg-inline">&#60;</span> Register <span
+                                class="d-none d-lg-inline">&nbsp;&VerticalLine;</span></a>
                     </li>
-                    <span class="vl"></span>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link active" href="{{ url_for('login') }}">Login <span
+                                class="d-none d-lg-inline">&#62;</span></a>
                     </li>
                     {% endif %}
                 </ul>

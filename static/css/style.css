@@ -87,12 +87,16 @@ hr.hr-fff {
     color: #fbeade !important;
 }
 
-.navbar-brand img {
-    width: 3.5rem;
+.navbar-nav a:hover {
+    color: #ff7c3e !important;
 }
 
-.vl {
-    border-right: 1px solid #fbeade;
+.dropdown-menu a:hover {
+    color: #493323 !important;
+}
+
+.navbar-brand img {
+    width: 3.5rem;
 }
 
 .dropdown-menu li a {
@@ -533,6 +537,10 @@ header {
 
 /* -- Media Query: Screen Size Bigger Than 62rem / 992px -- */
 @media only screen and (min-width: 62rem) {
+    .register {
+        margin-left: 3rem;
+    }
+
     h1 {
         font-size: 4rem;
         padding-top: 1rem;
@@ -547,6 +555,7 @@ header {
     }
 
     #wheat-top {
+        opacity: 0.4;
         position: absolute;
         right: 4rem;
         top: 6rem;
@@ -554,6 +563,7 @@ header {
     }
 
     #wheat-bottom {
+        opacity: 0.4;
         bottom: 2rem;
         left: 4rem;
         position: absolute;
