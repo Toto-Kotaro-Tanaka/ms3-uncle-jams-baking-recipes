@@ -195,7 +195,7 @@ header {
     width: 7rem;
 }
 
-#section-recipe {
+#section-recipe-summary {
     background-color: rgba(251, 234, 222, 0.3);
 }
 
@@ -542,6 +542,10 @@ header {
         padding-top: 1rem;
     }
 
+    h2 {
+        font-size: 3.5rem;
+    }
+
     #uncle-jam {
         display: block;
         margin: 0 auto;
@@ -552,6 +556,11 @@ header {
 
     .recipe-img-top {
         height: 30vw;
+    }
+
+    #section-recipe {
+        margin: 0 auto 3rem;
+        width: 60%;
     }
 }
 
@@ -585,7 +594,7 @@ header {
         height: 20vw;
     }
 
-    #section-recipe {
+    #section-recipe-summary {
         margin: 0 auto;
         padding: 0 1.875rem;
         width: 85%;
