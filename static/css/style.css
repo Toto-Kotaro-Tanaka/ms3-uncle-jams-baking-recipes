@@ -425,21 +425,17 @@ header {
     margin: 0 auto;
 }
 
-.edit .home {
+.home {
     color: #0060ff;
     float: left;
 }
 
-.edit:hover {
-    color: rgba(0, 96, 255, 0.6);
-}
-
-.delete {
-    color: rgba(232, 70, 16, 0.6);
+.btn-delete {
+    color: #e84610;
     float: right;
 }
 
-.delete:hover {
+.btn-delete:hover {
     color: #e84610;
 }
 
@@ -530,6 +526,11 @@ header {
 .social-media:focus,
 .social-media:hover {
     background-color: #ffd5b7 !important;
+}
+
+/* -- Delete Modal -- */
+.modal-header, .modal-footer {
+    border: none;
 }
 
 /* -- Media Query: Mobile Landscape Screen Size Bigger Than 40rem / 640px -- */

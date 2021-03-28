@@ -42,10 +42,35 @@
                     </ul>
                     <!-- Edit & Delet Recipe Buttons -->
                     <div class="card-body">
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="card-link edit"><i
-                                class="fas fa-edit"></i> Edit</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-link delete"><i
-                                class="fas fa-trash-alt"></i> Delete</a>
+                        <a class="btn card-link btn-ffd5b7" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i
+                                class="fas fa-edit"></i>Edit</a>
+
+                        <button class="btn card-link btn-delete btn-ffd5b7" type="button" data-mdb-toggle="modal"
+                            data-mdb-target="#delete-modal"><i class="fas fa-trash-alt"></i> Delete</button>
+
+                        <!-- <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="card-link delete"><i
+                                class="fas fa-trash-alt"></i> Delete</a> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
+            <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content color-493323">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="delete-modalLabel">Are you sure to DELETE?</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="mb-0">{{ recipe.recipe_title | title }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <form action="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
+                                <input type="submit" value="Yes, Delete" class="btn btn-danger"></form>
+                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">No</button>
+                        </div>
                     </div>
                 </div>
             </div>

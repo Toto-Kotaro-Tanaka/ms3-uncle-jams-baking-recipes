@@ -145,8 +145,8 @@ def create_recipe():
 
     categories = mongo.db.categories.find().sort("category_name")
     return render_template("create_recipe.html",
-                           categories=categories, title="Create Recipe", hide_navbar_footer=True,
-                           jquery=True)
+                           categories=categories, title="Create Recipe",
+                           hide_navbar_footer=True, jquery=True)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -178,7 +178,7 @@ def edit_recipe(recipe_id):
                            hide_navbar_footer=True, jquery=True)
 
 
-@app.route("/delete_recipe/<recipe_id>")
+@app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe successfully deleted", "success")
@@ -234,7 +234,7 @@ def edit_category(category_id):
     return redirect(url_for("home"))
 
 
-@app.route("/delete_category/<category_id>")
+@app.route("/delete_category/<category_id>", methods=["GET", "POST"])
 def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category successfully deleted", "success")
