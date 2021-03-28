@@ -556,7 +556,6 @@ header {
     }
 }
 
-
 /* -- Media Query: Tablet Screen Size Bigger Than 48rem / 768px -- */
 @media only screen and (min-width: 48rem) {
     h1 {

@@ -25,9 +25,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-    {% block styles %}
-    {% endblock %}
+    {% if recipe_title  %}
+    <title>UJBR - {{ recipe_title.recipe_title | title}}</title>
+    {% elif title %}
+    <title>UJBR - {{ title | title}}</title>
+    {% else %}
     <title>Uncle Jam's Baking Recipes</title>
+    {% endif %}
 </head>
 
 <body>

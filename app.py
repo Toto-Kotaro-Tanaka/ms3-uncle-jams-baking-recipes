@@ -38,19 +38,21 @@ def categories(category_name):
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("posted_date", -1)
     return render_template("categories.html",
-                           recipes=recipes, category_name=category_name, search=True)
+                           recipes=recipes, category_name=category_name,
+                           title=category_name, search=True)
 
 
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html",
-                           recipe=recipe, hide_navbar_footer=True)
+                           recipe=recipe, recipe_title=recipe,
+                           hide_navbar_footer=True)
 
 
 @app.route("/shop")
 def shop():
-    return render_template("shop.html")
+    return render_template("shop.html", title="Shop")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -74,7 +76,7 @@ def register():
             request.form.get("username")), "success")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html", hide_navbar_footer=True)
+    return render_template("register.html", title="Register", hide_navbar_footer=True)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -97,7 +99,8 @@ def login():
             flash("Incorrect username and/or password", "error")
             return redirect(url_for("login"))
 
-    return render_template("login.html", hide_navbar_footer=True)
+    return render_template("login.html", title="Login",
+                           hide_navbar_footer=True)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -108,7 +111,7 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", username=username,
-                               recipes=recipes)
+                               recipes=recipes, title=username)
 
     return redirect(url_for("login"))
 
@@ -142,7 +145,7 @@ def create_recipe():
 
     categories = mongo.db.categories.find().sort("category_name")
     return render_template("create_recipe.html",
-                           categories=categories, hide_navbar_footer=True,
+                           categories=categories, title="Create Recipe", hide_navbar_footer=True,
                            jquery=True)
 
 
@@ -171,7 +174,8 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find().sort("category_name")
 
     return render_template("edit_recipe.html", recipe=recipe, recipes=recipes,
-                           categories=categories, hide_navbar_footer=True, jquery=True)
+                           categories=categories, recipe_title=recipe,
+                           hide_navbar_footer=True, jquery=True)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -186,7 +190,8 @@ def manage_category():
     categories = list(mongo.db.categories.find().sort("_id", -1))
 
     if session["user"] == "admin":
-        return render_template("manage_category.html", categories=categories)
+        return render_template("manage_category.html",
+                               categories=categories, title="Manage Category")
 
     return redirect(url_for("home", username=session["user"]))
 
@@ -205,8 +210,8 @@ def create_category():
 
         categories = mongo.db.categories.find().sort("category_name", 1)
         return render_template("create_category.html",
-                               categories=categories, hide_navbar_footer=True,
-                               jquery=True)
+                               categories=categories, title="Create Category",
+                               hide_navbar_footer=True, jquery=True)
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -223,7 +228,7 @@ def edit_category(category_id):
 
         category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
         return render_template("edit_category.html", category=category,
-                               hide_navbar_footer=True)
+                               title="Edit Category", hide_navbar_footer=True)
 
     # Question: If this is ok or should be redirected page 404?
     return redirect(url_for("home"))
@@ -249,7 +254,8 @@ def subscribe_newsletter():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("page_404.html", hide_navbar_footer=True), 404
+    return render_template("page_404.html", title="Page 404",
+                           hide_navbar_footer=True), 404
 
 
 if __name__ == "__main__":
