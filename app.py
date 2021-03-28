@@ -244,12 +244,20 @@ def delete_category(category_id):
 @app.route("/subscribe_newsletter", methods=["GET", "POST"])
 def subscribe_newsletter():
     if request.method == "POST":
-        email = {
-            "subsc_email": request.form.get("subsc_email")
-        }
-        mongo.db.emails.insert_one(email)
-        flash("Thank your for your subscription", "success")
-        return redirect(url_for("home"))
+        existing_email = mongo.db.emails.find_one(
+            {"subsc_email": request.form.get("subsc_email")})
+
+        if existing_email:
+            flash("You are already subscribed", "error")
+            return redirect(url_for("home"))
+
+        else:
+            email = {
+                "subsc_email": request.form.get("subsc_email")
+            }
+            mongo.db.emails.insert_one(email)
+            flash("Thank your for your subscription", "success")
+            return redirect(url_for("home"))
 
 
 @app.errorhandler(404)
