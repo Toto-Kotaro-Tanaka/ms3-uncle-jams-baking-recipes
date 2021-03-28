@@ -532,7 +532,32 @@ header {
     background-color: #ffd5b7 !important;
 }
 
-/* -- Media Query: Screen Size Bigger Than 48rem / 768px -- */
+/* -- Media Query: Mobile Landscape Screen Size Bigger Than 40rem / 640px -- */
+@media only screen and (min-width: 40rem) {
+    #uncle-jam, .categories-img {
+        display: block;
+        margin: 0 auto;
+        padding-top: 5rem;
+        position: relative;
+        width: 13rem;
+    }
+
+    .categories-img {
+        bottom: 0;
+    }
+
+    h1 {
+        padding-top: 0.5rem;
+    }
+
+    #section-account,
+    #section-create-edit-category {
+        margin-bottom: 3rem;
+    }
+}
+
+
+/* -- Media Query: Tablet Screen Size Bigger Than 48rem / 768px -- */
 @media only screen and (min-width: 48rem) {
     h1 {
         font-size: 4rem;
@@ -557,7 +582,6 @@ header {
     }
 
     .categories-img {
-        bottom: 0;
         width: 18rem;
     }
 
@@ -610,6 +634,11 @@ header {
         width: 30rem;
     }
 
+    #section-account, 
+    #section-create-edit-category {
+        margin-bottom: 0;
+    }
+
     .success,
     .error {
         width: 40rem;
@@ -625,7 +654,7 @@ header {
     }
 }
 
-/* -- Media Query: Screen Size Bigger Than 62rem / 992px -- */
+/* -- Media Query: Desktop Screen Size Bigger Than 62rem / 992px -- */
 @media only screen and (min-width: 62rem) {
     .register {
         margin-left: 3rem;
