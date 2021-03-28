@@ -191,7 +191,7 @@ def manage_category():
 
     if session["user"] == "admin":
         return render_template("manage_category.html",
-                               categories=categories, title="Manage Category")
+                               categories=categories, title="Manage Category", modal=True)
 
     return redirect(url_for("home", username=session["user"]))
 

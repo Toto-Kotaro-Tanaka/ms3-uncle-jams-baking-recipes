@@ -130,6 +130,29 @@
     <main>
         {% block content %}
         {% endblock %}
+
+        {% for category in categories %}
+        {% if modal %}
+        <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content color-493323">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="delete-modalLabel">Are you sure to DELETE?</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="mb-0 font-weight-700">{{ category.category_name | title }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ url_for('delete_category', category_id=category._id) }}" method="POST"><input
+                                type="submit" value="Yes, Delete" class="btn btn-danger"></form>
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
     </main>
 
     {% if not hide_navbar_footer %}
@@ -179,7 +202,7 @@
     <!-- /End of Credit -->
     {% endif %}
 
-    <!-- Modal for Delete Confirmation -->
+    <!-- Modal for Delete-->
 
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
