@@ -29,7 +29,7 @@
                         <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
                             alt="{{ recipe.recipe_title }}" />
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
-                        <h5 class="card-title">
+                        <h5 class="card-title pt-2 pb-1">
                             {{ recipe.recipe_title | title }}</h5>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
                     </div>

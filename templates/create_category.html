@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('manage_category') }}"><img src="{{ url_for('static', filename='images/utensils.png') }}"
-        alt="Utensils" id="utensils-category"></a>
-<h2 class="font-amatic color-493323 text-center">Create Category</h2>
+<a id="utensils-category" href="{{ url_for('manage_category') }}"><img
+        src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
+<h2>Create Category</h2>
 
 <section id="section-create-edit-category" class="color-fbeade">
     <form id="form-category" class="pb-4" method="POST" action="{{ url_for('create_category') }}">
         <!-- New Category -->
-        <div class="form-outline mb-4 form-white">
+        <div class="form-outline form-white mb-4">
             <input type="text" id="category_name" name="category_name" class="form-control bg-color-49332-06"
                 maxlength="15" required />
             <label class="form-label" for="category_name">New Category</label>
             <p class="input-note">&#40;max 15&#41;</p>
         </div>
-        <!-- Create Category Button -->
+        <!-- Create Category Button --> btn-ffd5b7
         <div class="btn-create-category">
-            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Create
+            <button type="submit" class="btn btn-block btn-ffd5b7">Create
                 Category</button>
         </div>
     </form>

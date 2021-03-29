@@ -17,8 +17,11 @@ h1 {
 }
 
 h2 {
+    color: #493323;
+    font-family: "Amatic SC", cursive;
     font-size: 3rem;
     padding: 0 2rem 1rem;
+    text-align: center;
 }
 
 h3 {
@@ -406,7 +409,7 @@ header {
 
 .btn-create-category {
     margin: 0 auto;
-    width: 10rem;
+    width: fit-content;
 }
 
 /* -- profile.html -- */
