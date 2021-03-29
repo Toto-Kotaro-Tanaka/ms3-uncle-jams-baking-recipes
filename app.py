@@ -76,7 +76,8 @@ def register():
             request.form.get("username")), "success")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html", title="Register", hide_navbar_footer=True)
+    return render_template("register.html", title="Register",
+                           hide_navbar_footer=True)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -213,6 +214,9 @@ def create_category():
                                categories=categories, title="Create Category",
                                hide_navbar_footer=True, jquery=True)
 
+    # Check this with mentor - It goes to 500 internal server error
+    return redirect(url_for("home"))
+
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
@@ -269,4 +273,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)  # Change this to False before submission of the project and delete this message
+            debug=False)  # Change this to False before submission of the project and delete this message

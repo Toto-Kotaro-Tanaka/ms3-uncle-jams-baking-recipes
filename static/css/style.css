@@ -528,7 +528,11 @@ header {
     background-color: #ffd5b7 !important;
 }
 
-/* -- Delete Modal -- */
+.hide {
+    display: none;
+}
+
+/* -- Modal Delete Confirmation -- */
 .modal-header, .modal-footer {
     border: none;
 }

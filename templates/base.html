@@ -172,14 +172,20 @@
                 role="button" data-mdb-ripple-color="dark" target="_blank" rel="noopener"><i
                     class="fab fa-instagram"></i></a>
         </section>
-        <div class="text-center p-3 bg-color-49332-06">
+
+        <div id="important-note" class="hide p-3">This website is created by Kotaro Tanaka, and the information provided
+            is for educational purposes only. I use recipes from BBC goodfood for this website but the copyright is at
+            the actual owner of the recipe.
+        </div>
+        <div class="bg-color-49332-06 pt-3">
+            <i class="fas fa-exclamation-circle" onclick="showImportantNote()"></i> Important Note
+        </div>
+        <div class="text-center p-3 bg-color-49332-06 pb-3">
             &copy; toto tanaka <span id="copyright"></span>
         </div>
     </footer>
     <!-- /End of Credit -->
     {% endif %}
-
-    <!-- Modal for Delete Confirmation -->
 
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
