@@ -2,16 +2,16 @@
 
 {% block heading %}
 <section id="section-page-404">
-    <h2 class="page-404-title font-amatic color-493323 text-center">Page 404</h2>
+    <h2 class="mt-5">Page 404</h2>
     <div class="text-center">
-        <img src="{{ url_for('static', filename='images/tomato.png') }}" alt="Page 404" class="page-404-img mb-4">
+        <img class="page-404-img mb-4" src="{{ url_for('static', filename='images/tomato.png') }}" alt="Page 404">
     </div>
-    <div class="bubble">
-        <h3 class="error-text text-center p-3 mb-0 color-fbeade">Sorry but I don't think you belong here...</h3>
-        <p class="diversion-home text-center color-fff mb-0">Going back to HOME page?<br>Click <a
+    <div class="bubble text-center">
+        <p class="h4 color-fbeade p-3 mb-0">Sorry but I don't think you belong here...</p>
+        <p class="diversion-home color-fff pb-3 mb-0">Going back to HOME page?<br>Click <a
                 href="{{ url_for('home') }}">HERE</a> or ME</p>
     </div>
-    <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-            id="uncle-jam-error"></a>
+    <a href="{{ url_for('home') }}"><img class="uj404-back-page-logo"
+            src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"></a>
 </section>
 {% endblock %}

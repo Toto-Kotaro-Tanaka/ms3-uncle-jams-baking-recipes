@@ -433,24 +433,12 @@ header {
 }
 
 /* -- Page 404 -- */
-.page-404-title {
-    padding-top: 2rem;
-}
-
 .page-404-img {
     margin-bottom: 1rem;
     width: 8rem;
 }
 
-.error-text {
-    font-size: 1.4rem;
-}
-
-.diversion-home {
-    padding: 1rem;
-}
-
-#uncle-jam-error {
+.uj404-back-page-logo {
     bottom: 2rem;
     float: right;
     margin-top: 3rem;
