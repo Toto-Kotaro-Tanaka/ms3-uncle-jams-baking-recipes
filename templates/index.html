@@ -2,20 +2,18 @@
 
 {% block heading %}
 <img id="uncle-jam" src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam">
-<h1 class="font-amatic color-493323 text-center">Uncle Jam's Baking Recipes</h1>
-<img id="wheat-top" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
-<img id="wheat-bottom" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/wheat.png') }}"
-    alt="Wheat">
-<img id="flour-top" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
-<img id="flour-bottom" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/flour.png') }}"
-    alt="flour">
+<h1>Uncle Jam's Baking Recipes</h1>
+<img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
+<img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
+<img class="d-none d-lg-inline right-bottom" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
+<img class="d-none d-lg-inline left-bottom" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
 {% endblock %}
 
 {% block content %}
 <section id="section-recipe-summary">
     <div class="container-fluid">
         <div class="row">
-            <h3 class="recipe-title font-balsamiq color-493323 text-center">Recipes</h3>
+            <h3>Recipes</h3>
             <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
@@ -27,7 +25,7 @@
                                 alt="{{ recipe.recipe_title }}" />
                         </a>
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
-                        <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
+                        <h5 class="card-title">
                             {{ recipe.recipe_title | title }}</h5>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
                     </div>
@@ -49,7 +47,6 @@
             {% endfor %}
         </div>
         <!-- /End of Credit -->
-        <div class="blank-space-bottom"></div>
     </div>
 </section>
 {% endblock %}

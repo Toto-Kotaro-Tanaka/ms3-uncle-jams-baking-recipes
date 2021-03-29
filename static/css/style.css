@@ -9,13 +9,30 @@ body {
 
 /* -- General Styling -- */
 h1 {
+    color: #493323;
+    font-family: "Amatic SC", cursive;
     font-size: 3.5rem;
     padding: 10rem 1.5rem 0;
+    text-align: center;
 }
 
 h2 {
     font-size: 3rem;
     padding: 0 2rem 1rem;
+}
+
+h3 {
+    color: #493323;
+    font-family: "Balsamiq Sans", cursive;
+    font-size: 2rem;
+    padding: 2rem 0 1rem;
+    text-align: center;
+}
+
+h5 {
+    color: #493323;
+    font-family: "Balsamiq Sans", cursive;
+    text-align: center;
 }
 
 .font-amatic {
@@ -218,18 +235,9 @@ header {
     width: 100%;
 }
 
-.recipe-title {
-    font-size: 2rem;
-    padding: 2rem 0 1rem;
-}
-
 .recipe-summary {
     margin: 0 auto 3rem;
     width: 95%;
-}
-
-.recipe-summary-title {
-    margin-top: 0.5rem;
 }
 
 .category,
@@ -253,9 +261,9 @@ header {
     height: 2.5rem;
 }
 
-.blank-space-bottom {
+/* .blank-space-bottom {
     height: 0.1rem;
-}
+} */
 
 .p-tips {
     font-size: 0.9rem;
@@ -658,29 +666,7 @@ header {
         padding-top: 10rem;
     }
 
-    #wheat-top,
-    #coffee-top,
-    #glove-top {
-        opacity: 0.5;
-        position: absolute;
-        right: 4rem;
-        top: 6rem;
-        width: 6rem;
-    }
-
-    #wheat-bottom,
-    #coffee-bottom,
-    #glove-bottom {
-        opacity: 0.5;
-        bottom: 2rem;
-        left: 4rem;
-        position: absolute;
-        width: 6rem;
-    }
-
-    #flour-top,
-    #cream-top,
-    #saucepans-top {
+    .left-top {
         left: 4rem;
         opacity: 0.5;
         position: absolute;
@@ -688,13 +674,27 @@ header {
         width: 6rem;
     }
 
-    #flour-bottom,
-    #cream-bottom,
-    #saucepans-bottom {
+    .right-top {
+        opacity: 0.5;
+        position: absolute;
+        right: 4rem;
+        top: 6rem;
+        width: 6rem;
+    }
+
+    .right-bottom {
         opacity: 0.5;
         bottom: 2rem;
         position: absolute;
         right: 4rem;
+        width: 6rem;
+    }
+
+    .left-bottom {
+        opacity: 0.5;
+        bottom: 2rem;
+        left: 4rem;
+        position: absolute;
         width: 6rem;
     }
 

@@ -49,47 +49,51 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                        <a class="nav-link active color-fbeade" aria-current="page"
+                            href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle color-fbeade" href="#" id="navbarDropdown" role="button"
                             data-mdb-toggle="dropdown" aria-expanded="false">
                             Categories
                         </a>
                         <ul class="dropdown-menu color-493323 bg-color-fbeade" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item"
+                            <li><a class="dropdown-item color-493323"
                                     href="{{ url_for('categories', category_name='bread') }}">Bread</a>
                             </li>
-                            <li><a class="dropdown-item"
+                            <li><a class="dropdown-item color-493323"
                                     href="{{ url_for('categories', category_name='cake') }}">Cake</a></li>
-                            <li><a class="dropdown-item"
+                            <li><a class="dropdown-item color-493323"
                                     href="{{ url_for('categories', category_name='biscuit') }}">Biscuit</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('shop') }}">Shop</a>
+                        <a class="nav-link color-fbeade" href="{{ url_for('shop') }}">Shop</a>
                     </li>
                     {% if session.user %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                        <a class="nav-link color-fbeade"
+                            href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                     </li>
                     {% if session.user | lower == "admin" | lower %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('manage_category') }}"><i class="fas fa-tools"></i>
+                        <a class="nav-link color-fbeade" href="{{ url_for('manage_category') }}"><i
+                                class="fas fa-tools"></i>
                             Category</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}"><span class="d-none d-lg-inline">&#60;</span>
+                        <a class="nav-link color-fbeade" href="{{ url_for('logout') }}"><span
+                                class="d-none d-lg-inline">&#60;</span>
                             Logout <span class="d-none d-lg-inline">&#62;</span></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link register" href="{{ url_for('register') }}">Register</a>
+                        <a class="nav-link register color-fbeade" href="{{ url_for('register') }}">Register</a>
                     </li>
                     <span class="vl d-none d-lg-inline"> &nbsp;&#124;&nbsp; </span>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link color-fbeade" href="{{ url_for('login') }}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -100,8 +104,8 @@
                     <button class="btn btn-search color-fbeade" type="submit" data-mdb-ripple-color="dark">
                         Search
                     </button>
-                    <button class="btn btn-search color-fbeade" data-mdb-ripple-color="dark">
-                        <a href="{{ url_for('home') }}">Reset</a>
+                    <button class="btn btn-search" data-mdb-ripple-color="dark">
+                        <a class="color-fbeade" href="{{ url_for('home') }}">Reset</a>
                     </button>
                 </form>
                 {% endif %}

@@ -2,27 +2,24 @@
 
 {% block heading %}
 {% if category_name == "bread" %}
-<img src="{{ url_for('static', filename='images/bread.png') }}" alt="Category Bread" class="categories-img">
+<img class="categories-img" src="{{ url_for('static', filename='images/bread.png') }}" alt="Category Bread">
 {% elif category_name == "cake" %}
-<img src="{{ url_for('static', filename='images/cake.png') }}" alt="Category Cake" class="categories-img">
+<img class="categories-img" src="{{ url_for('static', filename='images/cake.png') }}" alt="Category Cake">
 {% elif category_name == "biscuit" %}
-<img src="{{ url_for('static', filename='images/biscuit.png') }}" alt="Category Biscuit" class="categories-img">
+<img class="categories-img" src="{{ url_for('static', filename='images/biscuit.png') }}" alt="Category Biscuit">
 {% endif %}
-<h1 class="font-amatic color-493323 text-center">Recipe By Category</h1>
-<img id="coffee-top" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/coffee.png') }}"
-    alt="coffee">
-<img id="coffee-bottom" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/coffee.png') }}"
-    alt="coffee">
-<img id="cream-top" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/cream.png') }}" alt="cream">
-<img id="cream-bottom" class="d-none d-lg-inline" src="{{ url_for('static', filename='images/cream.png') }}"
-    alt="cream">
+<h1>Recipe By Category</h1>
+<img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
+<img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/coffee.png') }}" alt="Coffee">
+<img class="d-none d-lg-inline right-bottom" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
+<img class="d-none d-lg-inline left-bottom" src="{{ url_for('static', filename='images/coffee.png') }}" alt="coffee">
 {% endblock %}
 
 {% block content %}
 <section id="section-recipe-summary">
     <div class="container-fluid">
         <div class="row">
-            <h3 class="recipe-title font-balsamiq color-493323 text-center">{{ category_name | title }}</h3>
+            <h3>{{ category_name | title }}</h3>
             <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
@@ -32,7 +29,7 @@
                         <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
                             alt="{{ recipe.recipe_title }}" />
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
-                        <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
+                        <h5 class="card-title">
                             {{ recipe.recipe_title | title }}</h5>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
                     </div>
@@ -53,7 +50,6 @@
             {% endfor %}
         </div>
         <!-- /End of Credit -->
-        <div class="blank-space-bottom"></div>
     </div>
 </section>
 {% endblock %}
