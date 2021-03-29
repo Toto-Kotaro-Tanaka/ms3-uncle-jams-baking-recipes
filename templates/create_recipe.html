@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('profile', username=session['user']) }}"><img id="gingerbread-man-recipe"
+<a href="{{ url_for('profile', username=session['user']) }}"><img class="back-page-logo"
         src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Ginderbread Man"></a>
 <h2>Create Your Recipe</h2>
 

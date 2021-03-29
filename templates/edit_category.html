@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('manage_category') }}"><img src="{{ url_for('static', filename='images/utensils.png') }}"
-        alt="Utensils" id="utensils-category"></a>
-<h2 class="font-amatic color-493323 text-center">Edit Category</h2>
+<a href="{{ url_for('manage_category') }}"><img class="back-page-logo"
+        src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
+<h2>Edit Category</h2>
 
 <section id="section-create-edit-category" class="color-fbeade">
     <form id="form-category" class="pb-4" method="POST"
@@ -16,8 +16,8 @@
             <p class="input-note">&#40;max 15&#41;</p>
         </div>
         <!-- Create Category Button -->
-        <div class="btn-create-category">
-            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Edit Category</button>
+        <div class="btn-center">
+            <button type="submit" class="btn btn-ffd5b7">Edit Category</button>
         </div>
     </form>
     <!-- /End of Credit -->

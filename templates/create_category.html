@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('manage_category') }}"><img id="utensils-category"
+<a href="{{ url_for('manage_category') }}"><img class="back-page-logo"
         src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
 <h2>Create Category</h2>
 
@@ -15,8 +15,8 @@
             <p class="input-note">&#40;max 15&#41;</p>
         </div>
         <!-- Create Category Button -->
-        <div class="btn-create-category">
-            <button type="submit" class="btn btn-block btn-ffd5b7">Create
+        <div class="btn-center">
+            <button type="submit" class="btn btn-ffd5b7">Create
                 Category</button>
         </div>
     </form>

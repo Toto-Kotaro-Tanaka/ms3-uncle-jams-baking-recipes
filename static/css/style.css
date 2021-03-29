@@ -91,6 +91,11 @@ h5 {
     background-color: #fff !important;
 }
 
+.btn-center {
+    margin: 0 auto;
+    width: fit-content;
+}
+
 hr.hr-493323 {
     border: 0.5rem solid #493323;
     border-radius: 0.25rem;
@@ -307,8 +312,7 @@ header {
     width: 6rem;
 }
 
-#gingerbread-man-recipe,
-#utensils-category {
+.back-page-logo {
     margin: 1rem;
     width: 4rem;
 }
@@ -393,11 +397,6 @@ header {
 .remove-field-ingreds,
 .remove-field-steps {
     float: right;
-}
-
-.btn-create-category {
-    margin: 0 auto;
-    width: fit-content;
 }
 
 /* -- profile.html -- */
