@@ -91,6 +91,17 @@ h5 {
     background-color: #fff !important;
 }
 
+.btn-e84610 {
+    border: none;
+    background-color: #ffd5b7;
+    color: #e84610;
+    float: right;
+}
+
+.btn-e84610:hover {
+    color: #e84610;
+}
+
 .btn-center {
     margin: 0 auto;
     width: fit-content;
@@ -272,10 +283,6 @@ header {
     height: 2.5rem;
 }
 
-/* .blank-space-bottom {
-    height: 0.1rem;
-} */
-
 .p-tips {
     font-size: 0.9rem;
 }
@@ -416,15 +423,6 @@ header {
 .home {
     color: #0060ff;
     float: left;
-}
-
-.btn-delete {
-    color: #e84610;
-    float: right;
-}
-
-.btn-delete:hover {
-    color: #e84610;
 }
 
 /* -- edit_recipe.html -- */

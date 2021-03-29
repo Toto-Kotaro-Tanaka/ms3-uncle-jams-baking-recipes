@@ -1,59 +1,59 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<h2 class="font-amatic color-493323 text-center profile-text">Manage Category</h2>
+<h2 class="profile-text">Manage Category</h2>
 <div class="text-center">
-    <img src="{{ url_for('static', filename='images/utensils.png') }}" alt="Category Utensils" class="profile-img">
+    <img class="profile-img" src="{{ url_for('static', filename='images/utensils.png') }}" alt="Category Utensils">
 </div>
 <hr class="hr-493323">
 <div class="text-center">
-    <h4 class="font-balsamiq color-493323 mt-4">Create Category</h4>
-    <a href="{{ url_for('create_category') }}" class="btn btn-ffd5b7 color-493323 mt-4 mb-4">Create Category</a>
+    <p class="h3 font-balsamiq color-493323 mt-4">Create Category</p>
+    <a href="{{ url_for('create_category') }}" class="btn btn-ffd5b7 mt-4 mb-4">Create Category</a>
 </div>
 {% endblock %}
 
 
 {% block content %}
-<section id="section-manage-category">
-    <h3 class="recipe-title font-balsamiq color-493323 text-center">Category</h3>
+<section id="section-manage-category pb-3">
+    <h3>Category</h3>
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
     {% for category in categories %}
     <div class="card recipe-summary bg-color-fbeade">
         <!-- Recipe Image & Category & Title -->
         <div class="card-body">
-            <h5 class="card-title recipe-summary-title font-balsamiq color-493323 text-center">
-                {{ category.category_name | title }}</h5>
+            <h5>{{ category.category_name | title }}</h5>
         </div>
         <!-- Edit & Delet Recipe Buttons -->
         <div class="card-body">
-            <a class="btn card-link btn-ffd5b7" href="{{ url_for('edit_category', category_id=category._id) }}"><i
+            <a class="btn btn-ffd5b7" href="{{ url_for('edit_category', category_id=category._id) }}"><i
                     class="fas fa-edit"></i> Edit</a>
-            <button class="btn card-link btn-delete btn-ffd5b7" type="button" data-mdb-toggle="modal"
-                data-mdb-target="#delete-modal"><i class="fas fa-trash-alt"></i> Delete</button>
+            <button class="btn btn-e84610" type="button" data-mdb-toggle="modal" data-mdb-target="#modal-delete"><i
+                    class="fas fa-trash-alt"></i> Delete</button>
         </div>
     </div>
     <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
-    <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="modal-deleteLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content color-493323">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="delete-modalLabel">Are you sure to DELETE?</h5>
+                    <h5 class="modal-title" id="modal-deleteLabel">Are you sure to DELETE?</h5>
                     <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-0 font-weight-700">{{ category.category_name | title }}</p>
+                    <p class="h3 font-weight-700 mb-0">{{ category.category_name | title }}
+                        <span class="h5">Category</span>
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <form action="{{ url_for('delete_category', category_id=category._id) }}" method="POST"><input
-                            type="submit" value="Yes, Delete" class="btn btn-danger"></form>
-                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">No</button>
+                    <form action="{{ url_for('delete_category', category_id=category._id) }}" method="POST">
+                        <input class="btn btn-e84610 font-weight-700" type="submit" value="Delete"></form>
+                    <button class="btn btn-ffd5b7-06" type="button" data-mdb-dismiss="modal">No</button>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
     <!-- /End of Credit -->
-    <div class="blank-space-bottom"></div>
 </section>
 
 {% endblock %}
