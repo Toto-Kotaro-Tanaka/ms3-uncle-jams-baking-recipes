@@ -307,7 +307,7 @@ header {
 }
 
 /* -- register.html & login.html & create_recipe.html & create_category.html -- */
-#uncle-jam-account {
+.uj-back-page-logo {
     margin: 1rem;
     width: 6rem;
 }

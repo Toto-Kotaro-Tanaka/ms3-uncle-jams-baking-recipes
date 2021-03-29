@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-        id="uncle-jam-account"></a>
-<h2 class="font-amatic color-493323 text-center">Register</h2>
+<a href="{{ url_for('home') }}"><img class="uj-back-page-logo"
+        src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"></a>
+<h2>Register</h2>
 
 <section id="section-account" class="color-fbeade">
     <p class="note-register text-center color-fff"><i class="fas fa-info-circle"></i> Username can contain only
@@ -13,7 +13,7 @@
     <!-- Credit: MDB Forms & Input @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
     <form id="form-account" method="POST" action="{{ url_for('register') }}">
         <!-- Username -->
-        <div class="form-outline mb-4 form-white">
+        <div class="form-outline form-white mb-4">
             <i class="fas fa-user trailing"></i>
             <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
                 data-mdb-showcounter="true" pattern="^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required />
@@ -21,15 +21,15 @@
             <div class="form-helper"></div>
         </div>
         <!-- Password -->
-        <div class="form-outline mb-4 form-white">
+        <div class="form-outline form-white mb-4">
             <i class="fas fa-lock trailing"></i>
             <input type="password" id="password" name="password" class="form-control bg-color-49332-06" minlength="5"
                 required />
             <label class="form-label" for="password">Password</label>
         </div>
         <!-- Register Button -->
-        <div class="div-btn-account">
-            <button type="submit" class="btn btn-block btn-ffd5b7 color-493323">Register</button>
+        <div class="btn-center">
+            <button type="submit" class="btn btn-ffd5b7">Register</button>
         </div>
     </form>
     <!-- Diversion Message -->
