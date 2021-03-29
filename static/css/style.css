@@ -80,9 +80,12 @@ h5 {
     color: #493323;
 }
 
-/* .btn-ffd5b7:hover {
+.btn-ffd5b7-06 {
+    border: none;
+    background-color: rgba(255, 213, 183, 0.6);
     color: #493323;
-} */
+    float: right;
+}
 
 .btn:hover {
     background-color: #fff !important;
@@ -253,11 +256,11 @@ header {
 }
 
 .see-recipe:hover {
-    color: rgba(232, 70, 16, 0.7);
+    color: rgba(232, 70, 16, 0.6);
 }
 
 .see-recipe:visited {
-    color: rgba(232, 70, 16, 0.7);
+    color: rgba(232, 70, 16, 0.6);
 }
 
 .blank-space-top {
@@ -350,12 +353,6 @@ header {
     font-size: 0.8rem;
 }
 
-/* This div is created to prevent the button moves left when it is clicked */
-.div-btn-account {
-    width: 8rem;
-    margin: 0 auto;
-}
-
 .btn-account {
     background-color: #ffd5b7;
 }
@@ -384,22 +381,13 @@ header {
     font-size: 0.7rem;
     float: right;
     margin-bottom: 0;
+    padding-left: 0.25rem;
 }
 
 .btn-note {
     font-family: "Nunito", sans-serif;
     padding-top: 0.1rem;
     text-transform: lowercase;
-}
-
-.btn-add-field-ingreds {
-    margin-bottom: 0.6rem;
-    width: 15rem;
-}
-
-.btn-add-field-steps {
-    margin-bottom: 0.6rem;
-    width: 13rem;
 }
 
 .remove-field-ingreds,
@@ -445,18 +433,6 @@ header {
 .btn-shop {
     float: left;
     width: 8rem;
-}
-
-.btn-cancel {
-    background-color: rgba(232, 70, 16, 0.6);
-    color: #fff;
-    float: right;
-    width: 8rem;
-}
-
-.btn-cancel:hover {
-    background-color: #e84610 !important;
-    color: #fff;
 }
 
 /* -- Page 404 -- */
