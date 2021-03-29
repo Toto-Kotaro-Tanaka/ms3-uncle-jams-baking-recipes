@@ -26,8 +26,10 @@
                 <div class="card recipe-summary bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
-                        <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
-                            alt="{{ recipe.recipe_title }}" />
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                            <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
+                                alt="{{ recipe.recipe_title }}" />
+                        </a>
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h5 class="card-title pt-2 pb-1">
                             {{ recipe.recipe_title | title }}</h5>

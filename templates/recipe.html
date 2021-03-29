@@ -15,15 +15,15 @@
         <div class="recipe-full grid-top-title bg-color-fbeade border-radius-025">
             <!-- Recipe Title & Owner & Descriptions -->
             <div class="text-center">
-                <h3 class="font-weight-700 mt-2 mb-4">{{ recipe.recipe_title | title }} Recipe<br>by
+                <h3 class="font-weight-700">{{ recipe.recipe_title | title }} Recipe<br>by
                     {{ recipe.username | title }}
                 </h3>
                 <p class="card-text">{{ recipe.recipe_desc }}</p>
             </div>
             <!-- Recipe Time & Serves -->
             <div>
-                <h5 class="text-center mt-5 font-weight-700">Time & Serves</h5>
-                <p class="text-center"><i class="fas fa-clock">
+                <h5 class="text-center mt-3 font-weight-700">Time & Serves</h5>
+                <p class="text-center pb-3"><i class="fas fa-clock">
                     </i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }}
                     people
                 </p>

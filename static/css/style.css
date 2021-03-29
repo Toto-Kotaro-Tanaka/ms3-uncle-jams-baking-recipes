@@ -38,10 +38,6 @@ h5 {
     text-align: center;
 }
 
-.font-amatic {
-    font-family: "Amatic SC", cursive;
-}
-
 .font-balsamiq {
     font-family: "Balsamiq Sans", cursive;
 }
@@ -127,16 +123,16 @@ hr.hr-fff {
     z-index: 1;
 }
 
+.navbar-brand img {
+    width: 3.5rem;
+}
+
 .navbar-nav a:hover {
     color: #ff7c3e !important;
 }
 
 .dropdown-menu a:hover {
     color: #493323 !important;
-}
-
-.navbar-brand img {
-    width: 3.5rem;
 }
 
 .dropdown-item:hover {
@@ -219,21 +215,7 @@ header {
     width: 17rem;
 }
 
-#categories {
-    bottom: 5rem;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    width: 15rem;
-}
-
 /* -- index.html & recipe.html -- */
-.recipe-home-img {
-    margin: 1rem;
-    width: 7rem;
-}
-
 #section-recipe-summary,
 #section-recipe,
 #section-shop,
@@ -271,16 +253,9 @@ header {
     color: #e84610;
 }
 
-.see-recipe:hover {
-    color: rgba(232, 70, 16, 0.6);
-}
-
+.see-recipe:hover,
 .see-recipe:visited {
     color: rgba(232, 70, 16, 0.6);
-}
-
-.blank-space-top {
-    height: 2.5rem;
 }
 
 .p-tips {
@@ -304,9 +279,13 @@ header {
 }
 
 .affiliate-img {
-    display: block;
+    display: inline;
     margin-top: 1rem;
     text-align: center;
+}
+
+.affiliate-img img {
+    width: 60%;
 }
 
 /* -- register.html & login.html & create_recipe.html & create_category.html -- */
@@ -355,15 +334,6 @@ header {
     padding: 2rem 1rem 0;
 }
 
-.form-counter {
-    color: #ffd5b7;
-    font-size: 0.8rem;
-}
-
-.btn-account {
-    background-color: #ffd5b7;
-}
-
 .diversion-account {
     font-size: 0.9rem;
     padding: 1.5rem 2rem 0;
@@ -410,22 +380,6 @@ header {
 .profile-img {
     padding: 2rem 0 1rem;
     width: 7rem;
-}
-
-.btn-create-recipe {
-    margin: 0 auto;
-}
-
-.home {
-    color: #0060ff;
-    float: left;
-}
-
-/* -- edit_recipe.html -- */
-.btn-edit,
-.btn-shop {
-    float: left;
-    width: 8rem;
 }
 
 /* -- Page 404 -- */
@@ -491,13 +445,15 @@ header {
 }
 
 /* -- Modal Delete Confirmation -- */
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
     border: none;
 }
 
 /* -- Media Query: Mobile Landscape Screen Size Bigger Than 40rem / 640px -- */
 @media only screen and (min-width: 40rem) {
-    #uncle-jam, .categories-img {
+    #uncle-jam,
+    .categories-img {
         display: block;
         margin: 0 auto;
         padding-top: 5rem;
@@ -596,7 +552,7 @@ header {
         width: 30rem;
     }
 
-    #section-account, 
+    #section-account,
     #section-create-edit-category {
         margin-bottom: 0;
     }
@@ -662,7 +618,8 @@ header {
         height: 20vw;
     }
 
-    #section-recipe-summary {
+    #section-recipe-summary,
+    #section-shop {
         margin: 0 auto;
         padding: 0 1.875rem;
         width: 85%;

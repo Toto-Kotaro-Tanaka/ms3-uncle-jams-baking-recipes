@@ -15,10 +15,9 @@
                 maxlength="15" value="{{ category.category_name }}" required />
             <p class="input-note">&#40;max 15&#41;</p>
         </div>
-        <!-- Create Category Button -->
-        <div class="btn-center">
-            <button type="submit" class="btn btn-ffd5b7">Edit Category</button>
-        </div>
+        <!-- Edit Category Button -->
+        <button type="submit" class="btn btn-ffd5b7 mt-2">Edit</button>
+        <a href="{{ url_for('manage_category') }}" class="btn btn-ffd5b7-06 mt-2">Cancel</a>
     </form>
     <!-- /End of Credit -->
 </section>
