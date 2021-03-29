@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"
-        id="uncle-jam-account"></a>
-<h2 class="font-amatic color-493323 text-center">{{ recipe.recipe_title }}</h2>
+<a href="{{ url_for('home') }}"><img class="uj-back-page-logo"
+        src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"></a>
+<h2>{{ recipe.recipe_title }}</h2>
 
 <section id="section-recipe" class="color-493323">
     <div class="grid-top">
@@ -12,10 +12,10 @@
             <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-full-img border-radius-025"
                 alt="{{ recipe.recipe_title | title }}" />
         </div>
-        <div class="card recipe-full grid-top-title bg-color-fbeade border-radius-025">
+        <div class="recipe-full grid-top-title bg-color-fbeade border-radius-025">
             <!-- Recipe Title & Owner & Descriptions -->
-            <div class="card-body text-center">
-                <h3 class="card-title mt-2 mb-4 font-weight-700">{{ recipe.recipe_title | title }} Recipe<br>by
+            <div class="text-center">
+                <h3 class="font-weight-700 mt-2 mb-4">{{ recipe.recipe_title | title }} Recipe<br>by
                     {{ recipe.username | title }}
                 </h3>
                 <p class="card-text">{{ recipe.recipe_desc }}</p>
@@ -33,7 +33,7 @@
     <div class="grid-bottom">
         <!-- Recipe Ingredients -->
         <div>
-            <h5 class="text-center mt-5 font-weight-700">Ingredients</h5>
+            <h5 class="font-weight-700 mt-5">Ingredients</h5>
             <ul class="list-group list-group-flush border-radius-025">
                 {% for ingreds in recipe.recipe_ingreds %}
                 <li class="list-group-item">&#9679; {{ ingreds }}</li>
@@ -42,7 +42,7 @@
         </div>
         <!-- Recipe Steps -->
         <div>
-            <h5 class="text-center mt-5 font-weight-700">Steps</h5>
+            <h5 class="font-weight-700 mt-5">Steps</h5>
             <ul class="list-group list-group-flush border-radius-025">
                 {% for step in recipe.recipe_steps %}
                 <li class="list-group-item"><span class="font-weight-700">Step {{ loop.index }}</span><br>{{ step }}
@@ -54,16 +54,15 @@
     {% if not recipe.recipe_tips == "" %}
     <!-- Recipe Tips -->
     <div class="tips text-center">
-        <h5 class=" mt-4 font-weight-700">Tips</h5>
+        <h5 class="font-weight-700 mt-4">Tips</h5>
         <p class="p-tips">{{ recipe.recipe_tips }}</p>
     </div>
     {% endif %}
     <!-- Home & Back To Category Links -->
     <div class="p-3">
-        <a href="{{ url_for('home') }}" class="btn btn-ffd5b7 card-link color-493323">Home</a>
+        <a href="{{ url_for('home') }}" class="btn btn-ffd5b7">Home</a>
         <a href="{{ url_for('categories', category_name=recipe.category_name) }}"
-            class="btn btn-ffd5b7 back-category-link">{{ recipe.category_name | title}}</a>
+            class="btn btn-ffd5b7-06">{{ recipe.category_name | title}}</a>
     </div>
 </section>
-
 {% endblock %}

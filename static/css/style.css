@@ -287,10 +287,6 @@ header {
     font-size: 0.9rem;
 }
 
-.back-category-link {
-    float: right;
-}
-
 /* -- categories.html -- */
 .categories-img {
     bottom: 4rem;
