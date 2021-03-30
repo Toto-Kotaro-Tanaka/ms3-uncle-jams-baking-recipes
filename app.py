@@ -20,39 +20,27 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 app.template_folder = ""
-# recipes = mongo.db.recipes.find().sort("posted_date", -1)
-
-# def get_recipes(offset=0, per_page=6):
-#     return recipes[offset: offset + per_page]
-
-users = list(range(100))
+recipes = mongo.db.recipes.find().sort("posted_date", -1)
 
 
-def get_users(offset=0, per_page=10):
-    return users[offset: offset + per_page]
-
-
-@app.route('/pagination')
-def index():
-    page, per_page, offset = get_page_args(page_parameter='page',
-                                           per_page_parameter='per_page')
-    total = len(users)
-    pagination_users = get_users(offset=offset, per_page=per_page)
-    pagination = Pagination(page=page, per_page=per_page, total=total,
-                            css_framework='bootstrap4')
-    return render_template('pagination.html',
-                           users=pagination_users,
-                           page=page,
-                           per_page=per_page,
-                           pagination=pagination,
-                           )
+def get_recipes(offset=0, per_page=6):
+    return recipes[offset: offset + per_page]
 
 
 @app.route("/")
 @app.route("/home")
 def home():
     recipes = mongo.db.recipes.find().sort("posted_date", -1)
-    return render_template("index.html", recipes=recipes, search=True)
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    total = mongo.db.recipes.count_documents({})
+    pagination_recipes = get_recipes(offset=offset, per_page=per_page)
+    pagination = Pagination(page=page, per_page=per_page, total=total,
+                            css_framework='bootstrap4')
+    return render_template("index.html", recipes=recipes,
+                           pagination_recipes=pagination_recipes, page=page,
+                           per_page=per_page, pagination=pagination,
+                           search=True)
 
 
 @app.route("/search", methods=["GET", "POST"])
