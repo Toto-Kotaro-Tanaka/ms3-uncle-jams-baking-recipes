@@ -7,6 +7,8 @@
 <img class="categories-img" src="{{ url_for('static', filename='images/cake.png') }}" alt="Category Cake">
 {% elif category_name == "biscuit" %}
 <img class="categories-img" src="{{ url_for('static', filename='images/biscuit.png') }}" alt="Category Biscuit">
+{% else %}
+<img class="categories-img" src="{{ url_for('static', filename='images/other-categories.png') }}" alt="Category Other">
 {% endif %}
 <h1>Recipe By Category</h1>
 <img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">

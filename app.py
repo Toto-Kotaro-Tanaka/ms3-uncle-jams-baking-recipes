@@ -152,7 +152,7 @@ def create_recipe():
         flash("You have posted your recipe", "success")
         return redirect(url_for("home"))
 
-    categories = mongo.db.categories.find().sort("category_name")
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_recipe.html",
                            categories=categories, title="Create Recipe",
                            hide_navbar_footer=True, jquery=True)
@@ -212,7 +212,7 @@ def create_category():
 
         if request.method == "POST":
             category = {
-                "category_name": request.form.get("category_name")
+                "category_name": request.form.get("category_name").lower()
             }
             mongo.db.categories.insert_one(category)
             flash("You have created a new category", "success")

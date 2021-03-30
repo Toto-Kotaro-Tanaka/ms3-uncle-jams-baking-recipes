@@ -16,7 +16,7 @@
         <div class="form-outline form-white mb-4">
             <select id="category_name" name="category_name"
                 class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Recipe Categories">
-                <option selected disabled required>Select Category</option>
+                <option value="other" selected required>Select Category</option>
                 {% for category in categories %}
                 <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
                 {% endfor %}
