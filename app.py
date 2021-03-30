@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
@@ -17,6 +18,34 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+app.template_folder = ""
+# recipes = mongo.db.recipes.find().sort("posted_date", -1)
+
+# def get_recipes(offset=0, per_page=6):
+#     return recipes[offset: offset + per_page]
+
+users = list(range(100))
+
+
+def get_users(offset=0, per_page=10):
+    return users[offset: offset + per_page]
+
+
+@app.route('/pagination')
+def index():
+    page, per_page, offset = get_page_args(page_parameter='page',
+                                           per_page_parameter='per_page')
+    total = len(users)
+    pagination_users = get_users(offset=offset, per_page=per_page)
+    pagination = Pagination(page=page, per_page=per_page, total=total,
+                            css_framework='bootstrap4')
+    return render_template('pagination.html',
+                           users=pagination_users,
+                           page=page,
+                           per_page=per_page,
+                           pagination=pagination,
+                           )
 
 
 @app.route("/")
@@ -273,4 +302,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)  # Change this to False before submission of the project and delete this message
+            debug=True)  # Change this to False before submission of the project and delete this message
