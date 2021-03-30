@@ -27,7 +27,7 @@ h2 {
 h3 {
     color: #493323;
     font-family: "Balsamiq Sans", cursive;
-    font-size: 2rem;
+    font-size: 1.4rem;
     padding: 2rem 0 1rem;
     text-align: center;
 }
@@ -444,10 +444,8 @@ header {
     display: none;
 }
 
-/* -- Modal Delete Confirmation -- */
-.modal-header,
-.modal-footer {
-    border: none;
+#important-note a {
+    color: #005a87;
 }
 
 /* -- Media Query: Mobile Landscape Screen Size Bigger Than 40rem / 640px -- */
@@ -486,6 +484,10 @@ header {
         font-size: 3.5rem;
     }
 
+    h3 {
+        font-size: 2rem;
+    }
+
     .border-radius-025 {
         border-radius: 0.25rem;
     }
@@ -505,6 +507,10 @@ header {
 
     .recipe-img-top {
         height: 30vw;
+    }
+
+    .recipe-full-img {
+        width: 120%;
     }
 
     #section-recipe {
@@ -616,6 +622,10 @@ header {
 
     .recipe-img-top {
         height: 20vw;
+    }
+
+    .recipe-full-img {
+        width: 80%;
     }
 
     #section-recipe-summary,
