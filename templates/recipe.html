@@ -9,8 +9,13 @@
     <div class="grid-top">
         <!-- Recipe Image -->
         <div class="grid-top-img">
-            <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-full-img border-radius-025"
-                alt="{{ recipe.recipe_title | title }}" />
+            {% if recipe.recipe_img_url %}
+            <img class="card-img-top recipe-full-img border-radius-025" src="{{ recipe.recipe_img_url }}"
+                alt="{{ recipe.recipe_title }}" />
+            {% else %}
+            <img class="card-img-top recipe-full-img border-radius-025"
+                src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
+            {% endif %}
         </div>
         <div class="recipe-full grid-top-title bg-color-fbeade border-radius-025">
             <!-- Recipe Title & Owner & Descriptions -->
