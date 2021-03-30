@@ -64,5 +64,10 @@
         <a href="{{ url_for('categories', category_name=recipe.category_name) }}"
             class="btn btn-ffd5b7-06">{{ recipe.category_name | title}}</a>
     </div>
+    {% if recipe.recipe_owner %}
+    <div class="bbc-recipe-full text-center">
+        <a class="h6" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">BBC Recipe</a>
+    </div>
+    {% endif %}
 </section>
 {% endblock %}

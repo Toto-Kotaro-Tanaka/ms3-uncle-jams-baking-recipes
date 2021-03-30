@@ -47,6 +47,12 @@
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="card-link see-recipe">See
                             Recipe</a>
                     </div>
+                    {% if recipe.recipe_owner %}
+                    <div class="bbc-recipe text-center">
+                        <a class="p-2" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">&#40;BBC
+                            Recipe&#41;</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

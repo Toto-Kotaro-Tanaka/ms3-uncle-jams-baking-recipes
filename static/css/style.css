@@ -444,7 +444,14 @@ header {
     display: none;
 }
 
-#important-note a {
+.bbc-recipe a {
+    color: rgba(0, 90, 135, 0.5);
+    float: right;
+    font-size: 0.7rem;
+}
+
+#important-note a, 
+.bbc-recipe-full a {
     color: #005a87;
 }
 

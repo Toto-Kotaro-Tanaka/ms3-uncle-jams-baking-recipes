@@ -273,4 +273,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)  # Change this to False before submission of the project and delete this message
+            debug=True)  # Change this to False before submission of the project and delete this message
