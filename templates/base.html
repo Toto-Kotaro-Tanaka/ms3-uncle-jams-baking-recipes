@@ -58,13 +58,11 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu color-493323 bg-color-fbeade" aria-labelledby="navbarDropdown">
+                            {% for category in categories %}
                             <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name='bread') }}">Bread</a>
+                                    href="{{ url_for('categories', category_name=category.category_name) }}">{{ category.category_name | title }}</a>
                             </li>
-                            <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name='cake') }}">Cake</a></li>
-                            <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name='biscuit') }}">Biscuit</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <li class="nav-item">

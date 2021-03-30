@@ -4,7 +4,8 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import (generate_password_hash,
+                               check_password_hash)
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
@@ -23,7 +24,9 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     recipes = mongo.db.recipes.find().sort("posted_date", -1)
-    return render_template("index.html", recipes=recipes, search=True)
+    categories = mongo.db.categories.find()
+    return render_template("index.html", recipes=recipes,
+                           categories=categories, search=True)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -37,9 +40,11 @@ def search():
 def categories(category_name):
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("posted_date", -1)
+    categories = mongo.db.categories.find()
     return render_template("categories.html",
                            recipes=recipes, category_name=category_name,
-                           title=category_name, search=True)
+                           categories=categories, title=category_name,
+                           search=True)
 
 
 @app.route("/recipe/<recipe_id>")
@@ -52,7 +57,8 @@ def recipe(recipe_id):
 
 @app.route("/shop")
 def shop():
-    return render_template("shop.html", title="Shop")
+    categories = mongo.db.categories.find()
+    return render_template("shop.html", categories=categories, title="Shop")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -107,12 +113,14 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     recipes = mongo.db.recipes.find().sort("posted_date", -1)
+    categories = mongo.db.categories.find()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username,
-                               recipes=recipes, title=username)
+        return render_template("profile.html", recipes=recipes,
+                               categories=categories, username=username,
+                               title=username)
 
     return redirect(url_for("login"))
 
@@ -171,10 +179,9 @@ def edit_recipe(recipe_id):
         return redirect(url_for("home"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    recipes = mongo.db.recipes.find_one()  # This can be deleted - check later
-    categories = mongo.db.categories.find().sort("category_name")
+    categories = mongo.db.categories.find()
 
-    return render_template("edit_recipe.html", recipe=recipe, recipes=recipes,
+    return render_template("edit_recipe.html", recipe=recipe,
                            categories=categories, recipe_title=recipe,
                            hide_navbar_footer=True, jquery=True)
 
@@ -188,11 +195,13 @@ def delete_recipe(recipe_id):
 
 @app.route("/manage_category")
 def manage_category():
-    categories = list(mongo.db.categories.find().sort("_id", -1))
+    categories = mongo.db.categories.find()
+    manage_categories = list(mongo.db.categories.find().sort("_id", -1))
 
     if session["user"] == "admin":
-        return render_template("manage_category.html",
-                               categories=categories, title="Manage Category")
+        return render_template("manage_category.html", categories=categories,
+                               manage_categories=manage_categories,
+                               title="Manage Category")
 
     return redirect(url_for("home", username=session["user"]))
 
