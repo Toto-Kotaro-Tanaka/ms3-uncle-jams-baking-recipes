@@ -223,7 +223,7 @@ def create_category():
                                categories=categories, title="Create Category",
                                hide_navbar_footer=True, jquery=True)
 
-    # Check this with mentor - It goes to 500 internal server error
+    # Question: If this is ok or should be redirected page 404 or 401?
     return redirect(url_for("home"))
 
 
@@ -243,7 +243,7 @@ def edit_category(category_id):
         return render_template("edit_category.html", category=category,
                                title="Edit Category", hide_navbar_footer=True)
 
-    # Question: If this is ok or should be redirected page 404?
+    # Question: If this is ok or should be redirected page 404 or 401?
     return redirect(url_for("home"))
 
 
