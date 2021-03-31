@@ -351,7 +351,6 @@ header {
 
 .recipe-inst-open:hover {
     cursor: pointer;
-    font-size: 1.2rem;
 }
 
 .recipe-inst {
@@ -365,7 +364,7 @@ header {
 }
 
 .recipe-inst-dialog {
-    max-width: 55rem;
+    max-width: 60rem;
 }
 
 .recipe-inst-header, 
