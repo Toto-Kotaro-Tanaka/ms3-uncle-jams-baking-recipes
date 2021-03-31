@@ -345,6 +345,34 @@ header {
     font-weight: bolder;
 }
 
+.recipe-inst-open {
+    font-size: 1.1rem;
+}
+
+.recipe-inst-open:hover {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.recipe-inst {
+    margin: 0 auto;
+}
+
+.recipe-inst-img {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.recipe-inst-dialog {
+    max-width: 55rem;
+}
+
+.recipe-inst-header, 
+.recipe-inst-footer {
+    border: none;
+}
+
 .recipe-select {
     border: none;
 }
@@ -453,6 +481,15 @@ header {
 #important-note a, 
 .bbc-recipe-full a {
     color: #005a87;
+}
+
+.fa-exclamation-circle {
+    cursor: pointer;
+}
+
+.fa-exclamation-circle:hover {
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 /* -- Media Query: Mobile Landscape Screen Size Bigger Than 40rem / 640px -- */

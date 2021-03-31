@@ -33,8 +33,10 @@
                             <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
                                 alt="{{ recipe.recipe_title }}" /></a>
                         {% else %}
-                        <img class="card-img-top recipe-img-top"
-                            src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                            <img class="card-img-top recipe-img-top"
+                                src="{{ url_for('static', filename='images/no-recipe-img.png') }}"
+                                alt="No recipe image" /></a>
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h5 class="card-title pt-2 pb-1">

@@ -15,7 +15,9 @@
                 class="form-select bg-color-49332-06 recipe-select color-fff" aria-label="Recipe Categories">
                 {% for category in categories %}
                 {% if category.category_name == recipe.category_name %}
-                <option value="{{ category.category_name }}" selected>{{ category.category_name | title }}</option>
+                <option value="other" disabled required>Select Category</option>
+                <option value="{{ category.category_name }}" selected>{{ category.category_name | title }}
+                </option>
                 {% else %}
                 <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
                 {% endif %}
