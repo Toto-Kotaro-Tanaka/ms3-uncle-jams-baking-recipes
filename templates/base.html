@@ -26,7 +26,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     {% if recipe_title  %}
-    <title>Uncle Jam's Baking Recipes - {{ recipe_title.recipe_title | title}}</title>
+    <title>{{ recipe_title.recipe_title | title}}</title>
     {% elif title %}
     <title>Uncle Jam's Baking Recipes - {{ title | title}}</title>
     {% else %}
