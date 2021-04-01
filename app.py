@@ -181,9 +181,10 @@ def edit_recipe(recipe_id):
         recipes, they are redirected to home page """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
-    if session["user"] != recipe["username"]:
-        return redirect(url_for("home"))
+    if session["user"].lower() != recipe["username"].lower():
+        return redirect(url_for("profile", username=session["user"]))
 
+    else:
         if request.method == "POST":
             submit = {
                 "category_name": request.form.get("category_name"),
@@ -208,6 +209,8 @@ def edit_recipe(recipe_id):
         return render_template("edit_recipe.html", recipe=recipe,
                                categories=categories, recipe_title=recipe,
                                hide_navbar_footer=True, jquery=True)
+
+    # return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -295,7 +298,7 @@ def subscribe_newsletter():
             flash("You are already subscribed", "error")
             return redirect(url_for("home"))
 
-        else:
+        else:  # Do you need esle ?
             email = {
                 "subsc_email": request.form.get("subsc_email")
             }
