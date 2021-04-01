@@ -19,6 +19,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+print("Hello test")
+
+x = range(6)
+for n in x:
+    print(n)
+
 
 @app.route("/")
 @app.route("/home")
@@ -162,9 +168,8 @@ def create_recipe():
 def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    recipe_username = {"username": request.form.get("username")}
-
-    if session["user"] == recipe_username:
+    print(recipe)
+    if session["user"] == recipe["username"]:
 
         if request.method == "POST":
             submit = {
@@ -191,7 +196,8 @@ def edit_recipe(recipe_id):
                                categories=categories, recipe_title=recipe,
                                hide_navbar_footer=True, jquery=True)
 
-    return render_template("home")
+    else:
+        return redirect(url_for("home"))
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
