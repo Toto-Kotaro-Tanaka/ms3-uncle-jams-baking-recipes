@@ -619,6 +619,11 @@ header {
     #section-page-404 {
         margin: 0 auto;
     }
+
+    #important-note {
+        padding-left: 5rem !important;
+        padding-right: 5rem !important;
+    }
 }
 
 /* -- Media Query: Desktop Screen Size Bigger Than 62rem / 992px -- */
