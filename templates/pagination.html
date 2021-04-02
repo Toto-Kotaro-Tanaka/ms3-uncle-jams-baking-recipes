@@ -61,4 +61,29 @@
         <!-- /End of Credit -->
     </div>
 </section>
+
+
 {% endblock %}
+
+<div class="container">
+    {{ pagination.links }}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ loop.index + (page - 1) * per_page }}</td>
+                    <td>{{ user }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {{ pagination.links }}
+</div>
