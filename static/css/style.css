@@ -491,6 +491,27 @@ header {
     font-size: 1.5rem;
 }
 
+.pagination ul li {
+    display: inline;
+}
+
+.pagination-page-info {
+padding: .6em;
+padding-left: 0;
+width: 40em;
+margin: .5em;
+margin-left: 0;
+font-size: 12px;
+}
+
+.pagination-page-info b {
+color: black;
+background: #6aa6ed;
+padding-left: 2px;
+padding: .1em .25em;
+font-size: 150%;
+}
+
 /* -- Media Query: Mobile Landscape Screen Size Bigger Than 40rem / 640px -- */
 @media only screen and (min-width: 40rem) {
     #uncle-jam,

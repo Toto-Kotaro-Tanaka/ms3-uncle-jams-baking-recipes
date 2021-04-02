@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-<!-- <section id="section-recipe-summary">
+<section id="section-recipe-summary">
     <div class="container-fluid">
         <div class="row">
             <h3>Recipes</h3>
@@ -55,34 +55,13 @@
             {% endfor %}
         </div>
     </div>
-</section> -->
+</section>
 
-<div class="container">
-    {{ pagination.links }}
+<!-- {{ pagination.info|safe }} -->
+{{ pagination.links }}
 
-    {{ for test in tests }}
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Value</th>
-                    <th>Fizz?</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for test in tests %}
-                <tr>
-                    <td>{{ test.recipe_title }}</td>
-                    <td>{{ test.username }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-    {{ endfor }}
-    {{ pagination.links }}
-</div>
+<!-- {{ pagination.links }} -->
+
 
 
 {% endblock %}

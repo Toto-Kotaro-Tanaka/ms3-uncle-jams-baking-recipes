@@ -24,10 +24,40 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # MongoDB Global Variable
 mongo = PyMongo(app)
 
-total = mongo.db.recipes.find().count()
-print(total)
-print("hello python")
 
+# --- PAGINATION ---
+recipes = mongo.db.recipes.find()
+
+PER_PAGE = 5
+
+
+def paginated(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    offset = page * PER_PAGE - PER_PAGE
+
+    return recipes[offset: offset + PER_PAGE]
+
+
+def pagination_args(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    total = recipes.count()
+
+    return Pagination(page=page, per_page=PER_PAGE, total=total)
+
+
+@app.route("/pagination2")
+def pagination2():
+    recipes = mongo.db.recipes.find()
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
+    return render_template("pagination2.html", recipes=recipes,
+                           recipe_paginated=recipes_paginated,
+                           pagination=pagination, css_framework='bootstrap4')
+
+
+# -- PAGINATION END --
 
 @app.route("/pagination")
 def pagination():
