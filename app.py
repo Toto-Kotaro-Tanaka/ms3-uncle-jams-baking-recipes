@@ -27,7 +27,7 @@ mongo = PyMongo(app)
 @app.route("/home")
 def home():
     """ To display all recipes by posted date """
-    recipes = mongo.db.recipes.find().sort("posted_date", -1)
+    recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
     return render_template("index.html", recipes=recipes,
                            categories=categories, search=True)
@@ -46,7 +46,7 @@ def search():
 def categories(category_name):
     """ To display recipes by category by posted date """
     recipes = mongo.db.recipes.find(
-        {"category_name": category_name}).sort("posted_date", -1)
+        {"category_name": category_name}).sort("_id", -1)
     categories = mongo.db.categories.find()
     return render_template("categories.html",
                            recipes=recipes, category_name=category_name,
@@ -125,7 +125,7 @@ def login():
 def profile(username):
     """ User profile where users have access to all their recipes,\
          and to create, edit and delete recipes """
-    recipes = mongo.db.recipes.find().sort("posted_date", -1)
+    recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -209,8 +209,6 @@ def edit_recipe(recipe_id):
         return render_template("edit_recipe.html", recipe=recipe,
                                categories=categories, recipe_title=recipe,
                                hide_navbar_footer=True, jquery=True)
-
-    # return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
