@@ -4,6 +4,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import (generate_password_hash,
                                check_password_hash)
@@ -22,6 +23,19 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # MongoDB Global Variable
 mongo = PyMongo(app)
 
+# Pagination Variable
+# RECIPES_PER_PAGE = 6
+
+# recipes = list(mongo.db.recipes.find())
+
+
+# def pagination_args(recipes):
+#     page, per_page, offset = get_page_args(
+#         page_parameter='page', per_page_parameter='per_page')
+#     total = len(list(mongo.db.recipes.find()))
+
+#     return Pagination(page=page, per_page=RECIPES_PER_PAGE, total=total)
+
 # Pagination 1
 
 
@@ -32,7 +46,7 @@ def pagination(last_id=None):
             {'_id': {'$gt': last_id}}).limit(6)
     else:
         recipes = list(mongo.db.recipes.find().sort(
-            "_id", pymongo.DESCENDING).limit(6))
+            "_id", -1).limit(6))
 
     last_id = None
     if len(recipes) > 0:
@@ -42,6 +56,13 @@ def pagination(last_id=None):
 
 
 # Pagination 2
+
+
+# @app.route("/pagination2")
+# def pagination2():
+#     recipes = mongo.db.recipes.find()
+#     pagination = pagination_args(recipes)
+#     return render_template("pagination2.html", recipes=recipes, pagination=pagination)
 
 
 @app.route("/")
