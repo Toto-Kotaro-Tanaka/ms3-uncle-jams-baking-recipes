@@ -23,6 +23,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/pagination")
+def pagination():
+    return render_template("pagination.html")
+
+
 @app.route("/")
 @app.route("/home")
 def home():
