@@ -7,6 +7,8 @@
 <img class="categories-img" src="{{ url_for('static', filename='images/cake.png') }}" alt="Category Cake">
 {% elif category_name == "biscuit" %}
 <img class="categories-img" src="{{ url_for('static', filename='images/biscuit.png') }}" alt="Category Biscuit">
+{% else %}
+<img class="categories-img" src="{{ url_for('static', filename='images/other-categories.png') }}" alt="Category Other">
 {% endif %}
 <h1>Recipe By Category</h1>
 <img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
@@ -26,10 +28,16 @@
                 <div class="card recipe-summary bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
+                        {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
-                                alt="{{ recipe.recipe_title }}" />
-                        </a>
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
+                                alt="{{ recipe.recipe_title }}" /></a>
+                        {% else %}
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                            <img class="card-img-top recipe-img-top"
+                                src="{{ url_for('static', filename='images/no-recipe-img.png') }}"
+                                alt="No recipe image" /></a>
+                        {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h5 class="card-title pt-2 pb-1">
                             {{ recipe.recipe_title | title }}</h5>
@@ -47,6 +55,12 @@
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="card-link see-recipe">See
                             Recipe</a>
                     </div>
+                    {% if recipe.recipe_owner %}
+                    <div class="bbc-recipe text-center">
+                        <a class="p-2" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">&#40;BBC
+                            Recipe&#41;</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

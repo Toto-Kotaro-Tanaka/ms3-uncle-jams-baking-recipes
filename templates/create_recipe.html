@@ -7,8 +7,9 @@
 
 <section id="section-manage-recipe" class="color-fbeade">
     <p class="note-recipe text-center color-fff"><i class="fas fa-info-circle"></i> Follow the below steps to create
-        your recipe &
-        post it. Take a look at general guidance before creating a recipe
+        your recipe & post it.<br>Click <span class="recipe-inst-open font-weight-700" data-mdb-toggle="modal"
+            data-mdb-target="#recipeInstModal">HERE</span> to a
+        look at general instructions
     </p>
     <!-- Credit: MDB Forms & Input + Bootstrap Dropdowns @ https://mdbootstrap.com/docs/standard/forms/overview/ & @ https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
     <form id="form-recipe" method="POST" action="{{ url_for('create_recipe') }}">
@@ -16,7 +17,7 @@
         <div class="form-outline form-white mb-4">
             <select id="category_name" name="category_name"
                 class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Recipe Categories">
-                <option selected disabled required>Select Category</option>
+                <option value="other" selected required>Select Category&#42;</option>
                 {% for category in categories %}
                 <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
                 {% endfor %}
@@ -26,14 +27,14 @@
         <div class="form-outline form-white mb-4">
             <input type="text" id="recipe_title" name="recipe_title" class="form-control bg-color-49332-06"
                 maxlength="50" required />
-            <label class="form-label" for="recipe_title">Recipe Title</label>
+            <label class="form-label" for="recipe_title">Recipe Title&#42;</label>
             <p class="input-note">&#40;max 50&#41;</p>
         </div>
         <!-- Recipe Description -->
         <div class="form-outline form-white mb-4">
             <textarea id="recipe_desc" name="recipe_desc" class="form-control bg-color-49332-06" maxlength="300"
                 rows="5" required></textarea>
-            <label class="form-label" for="recipe_desc">Recipe Descriptions</label>
+            <label class="form-label" for="recipe_desc">Recipe Descriptions&#42;</label>
             <p class="input-note">&#40;max 300&#41;</p>
         </div>
         <hr class="hr-fff">
@@ -41,7 +42,7 @@
         <div class="form-outline form-white mb-4">
             <select id="recipe_time" name="recipe_time" class="form-select recipe-select bg-color-49332-06 color-fff"
                 aria-label="Baking Time">
-                <option selected disabled required>Select Time</option>
+                <option value="N/A" selected required>Select Time&#42;</option>
                 <option value="Less than 30">Less than 30 min</option>
                 {% for time in range(40, 120, 10) %}
                 <option value="{{ time }}">{{ time }} min</option>
@@ -53,7 +54,7 @@
         <div class="form-outline form-white mb-4">
             <select id="recipe_serves" name="recipe_serves"
                 class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Serves">
-                <option selected disabled required>Select Serves</option>
+                <option value="N/A" selected required>Select Serves&#42;</option>
                 {% for num in range(2, 11) %}
                 <option value="{{ num }}">{{ num }} people</option>
                 {% endfor %}
@@ -69,7 +70,7 @@
             <div>
                 <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50"
                     required />
-                <label class="form-label" for="recipe_ingreds">Recipe Ingredients</label>
+                <label class="form-label" for="recipe_ingreds">Recipe Ingredients&#42;</label>
                 <p class="input-note">&#40;max 50&#41;</p>
             </div>
         </div>
@@ -83,7 +84,7 @@
             <div>
                 <textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300"
                     required></textarea>
-                <label class="form-label" for="recipe_steps">Recipe Steps</label>
+                <label class="form-label" for="recipe_steps">Recipe Steps&#42;</label>
                 <p class="input-note">&#40;max 300&#41;</p>
             </div>
         </div>
@@ -107,4 +108,30 @@
     </form>
     <!-- /End of Credit -->
 </section>
+<!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
+<div class="modal fade p-0" id="recipeInstModal" tabindex="-1" aria-labelledby="recipeInstModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog recipe-inst-dialog">
+        <div class="modal-content">
+            <div class="modal-header recipe-inst-header">
+                <h5 class="modal-title" id="recipeInstModalLabel">Recipe Instructions</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="recipe-inst">
+                <img class="recipe-inst-img" src="{{ url_for('static', filename='images/recipe-instructions-1.png') }}"
+                    alt="First Recipe Instructions">
+                <img class="recipe-inst-img" src="{{ url_for('static', filename='images/recipe-instructions-2.png') }}"
+                    alt="Second Recipe Instructions">
+                <img class="recipe-inst-img" src="{{ url_for('static', filename='images/recipe-instructions-3.png') }}"
+                    alt="Third Recipe Instructions">
+            </div>
+            <div class="modal-footer recipe-inst-footer">
+                <button type="button" class="btn btn-ffd5b7" data-mdb-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /End of Credit -->
 {% endblock %}

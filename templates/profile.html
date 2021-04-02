@@ -25,8 +25,14 @@
                 <div class="card recipe-summary bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
-                        <img src="{{ recipe.recipe_img_url }}" class="card-img-top recipe-img-top"
-                            alt="{{ recipe.recipe_title }}" />
+                        {% if recipe.recipe_img_url %}
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
+                                alt="{{ recipe.recipe_title }}" /></a>
+                        {% else %}
+                        <img class="card-img-top recipe-img-top"
+                            src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
+                        {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h5>{{ recipe.recipe_title | title }}</h5>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
@@ -43,12 +49,13 @@
                         <a class="btn btn-ffd5b7" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i
                                 class="fas fa-edit"></i>Edit</a>
                         <button class="btn btn-e84610" type="button" data-mdb-toggle="modal"
-                            data-mdb-target="#modal-delete"><i class="fas fa-trash-alt"></i> Delete</button>
+                            data-mdb-target="#modal-delete{{ recipe._id }}"><i class="fas fa-trash-alt"></i>
+                            Delete</button>
                     </div>
                 </div>
             </div>
             <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
-            <div class="modal fade" id="modal-delete" tabindex="-1" aria-labelledby="modal-deleteLabel"
+            <div class="modal fade" id="modal-delete{{ recipe._id }}" tabindex="-1" aria-labelledby="modal-deleteLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content color-493323">

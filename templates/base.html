@@ -26,7 +26,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     {% if recipe_title  %}
-    <title>Uncle Jam's Baking Recipes - {{ recipe_title.recipe_title | title}}</title>
+    <title>{{ recipe_title.recipe_title | title}}</title>
     {% elif title %}
     <title>Uncle Jam's Baking Recipes - {{ title | title}}</title>
     {% else %}
@@ -58,13 +58,11 @@
                             Categories
                         </a>
                         <ul class="dropdown-menu color-493323 bg-color-fbeade" aria-labelledby="navbarDropdown">
+                            {% for category in categories %}
                             <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name='bread') }}">Bread</a>
+                                    href="{{ url_for('categories', category_name=category.category_name) }}">{{ category.category_name | title }}</a>
                             </li>
-                            <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name='cake') }}">Cake</a></li>
-                            <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name='biscuit') }}">Biscuit</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -175,12 +173,13 @@
                 role="button" data-mdb-ripple-color="dark" target="_blank" rel="noopener"><i
                     class="fab fa-instagram"></i></a>
         </section>
-        <div id="important-note" class="hide p-3">This website is created by Kotaro Tanaka, and the information provided
-            is for educational purposes only. I use recipes from BBC goodfood for this website but the copyright is at
-            the actual owner of the recipe.
-        </div>
+        <div id="important-note" class="hide color-fff p-3">This website is created by Kotaro Tanaka for educational
+            purpose only. I use some recipes from <a class="font-weight-700" href="https://www.bbcgoodfood.com/"
+                target="_blank" rel="noopener">BBC Good Food</a> for the website so the copyright is to BBC Good Food
+            &#47;
+            the actual owner of the recipe.</div>
         <div class="bg-color-49332-06 pt-3">
-            <i class="fas fa-exclamation-circle" onclick="showImportantNote()"></i> Important Note
+            <i class="fas fa-exclamation-circle fa-lg" onclick="showImportantNote()"></i> Important Note
         </div>
         <div class="bg-color-49332-06 p-3">
             &copy; toto tanaka <span id="copyright"></span>

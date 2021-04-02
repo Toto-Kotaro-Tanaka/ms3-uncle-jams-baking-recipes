@@ -1,47 +1,23 @@
 <!--- Logo goes here --->
-# [Uncle Jam's Baking Recipes] <!--- Link of the website goes here --->
+# [Uncle Jam's Baking Recipes] <a name="top"></a> <!--- Link of the website goes here --->
 This is a website for baking recipes of bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
 It is a mobile-first & responsive website and the link to the website is available HERE. <!--- Link of the website goes here --->
 
 <!--- Mockup goes here --->
 
-## TABLE OF CONTENTS <a name="table-of-contents"></a>
-* #### [WHO'S THIS WEBSITE FOR?](#whos-this-website-for-heading)
-* #### [WHO IS THE OWNER?](#who-is-the-owner-heading)
-* #### [UX 5 PLANES](#ux5-planes-heading)
-    * ##### [Strategy Plane](#strategy-plane-heading)
-    * ##### [Scope Plane](#scope-plane-heading)
-    * ##### [Structure Plane](#structure-plane-heading)
-    * ##### [Skeleton Plane](#skeleton-plane-heading)
-    * ##### [Surface Plane](#surface-plane-heading)
-* #### [WEBSITE CONSTRUCTION PLANS](#website-construction-plans-heading)
-* #### [TECHNOLOGIES USED](#technologies-used-heading)
-* #### [RESOURCES](#resources-heading)
-    * ##### [General Resources](#general-resources-heading)
-    * ##### [Tools](#tools-heading)
-* #### [TESTING](#testing-heading)
-    * ##### [Python](#python-heading)
-* #### [PROJECT BARRIERS & SOLUTIONS](#barriers-solutions-heading)
-* #### [VERSION CONTROL](#version-control-heading)
-* #### [DEPLOYMENT](#deployment-heading)
-* #### [CREDITS](#credits-heading)
-    * ##### [Code](#code-heading)
-    * ##### [Contents](#contents-heading)
-    * ##### [Media](#media-heading)
-
-## WHO'S THIS WEBSITE FOR? <a name="whos-this-website-for-heading"></a>
+## WHO'S THIS WEBSITE FOR?
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to see someone’s recipes for new ideas and / or to share their own recipes with other people can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to create and post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page that uses can look at some items and purchase them on the seller's website. There is a section to subscribe to newsletter to get engaged what’s happening in baking and community.
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## WHO IS THE OWNER? <a name="who-is-the-owner-heading"></a>
+## WHO IS THE OWNER?
 I am the owner of the website. The primary goal of the website is to provide a platform that users can see baking recipes and / or share their recipes without any hassles. There is a *Shop* page that some baking items are listed &#40;affiliate&#41; so in case users find something interesting, they can access to the seller's website for more details of the items and can also purchase them. I can get a commission from the seller for any items being sold through my website and this is also one of the goals. I would like to collect their e-mail address for newsletters to expand the community for further business opportunities.
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## UX 5 PLANES <a name="ux5-planes-heading"></a>
+## UX 5 PLANES
 
-### Strategy Plane <a name="strategy-plane-heading"></a>
+### Strategy Plane
 
 The website is designed for those who love baking, and who are interested in baking. People who have been baking might want to share their knowledge with other people as it gives them great feeling and motivation, so by following very simple registration steps, they can create an account and post their recipes in a well-structured format. People who have less experience in baking and would just like to see recipes, they can do it simply by visiting the website, where all the recipes are shown by posted date, or they can see them by category &#40;bread, cake, biscuit&#41; on different pages. There is a search field on the website so they can search for specific recipes by keywords. To see recipes, users do not need to register so it is hassle-free. There is a *shop* page that has a number of baking items in an affiliate style so in case users would like to purchase something, they can do it by clicking the link and it leads users to the website of the sellers. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delet recipes for regular users. Owner’s main goal is to provide a community platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community. To achieve this, the website is designed and created by user first concept.
 
@@ -70,7 +46,7 @@ Below are the additional functions that can improve the website, however, these 
 | Review By Other Users                   |     3      |            3            |
 | “Like” Reaction By Other Users          |     3      |            2            |
 
-### Scope Plane <a name="scope-plane-heading"></a>
+### Scope Plane
 To achieve user and owner’s goals, below are the minimum features to be included in this project. Also, *CRUD &#40;Create, Read, Update, and Delete&#41;* functions are required for this project so these are implemented as a part of essential features. 
 * Simple design Home page that first-time users can recognise the purpose of the website easily. All the recipes are shown on *Home* page &#40;R&#41;
 * Categories &#40;Bread, Cake and Biscuit&#41; pages that users can see recipes by the categories &#40;R&#41;
@@ -87,7 +63,7 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 * Subscribe to newsletter section to collect users email addresses
 * 404 page that takes users back to *Home* page of the website safely  
 
-### Structure Plane <a name="structure-plane-heading"></a>
+### Structure Plane
 
 — **Front-end** —<br>
 The website consists of **Home** page with **14 other core pages**.
@@ -123,7 +99,6 @@ Below is the chart of the website to show the core relationships between the pag
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/front-end-chart.png)<br>
 
-
 — **Back-end** —<br>
 Users must have an account to create recipes so there is a **users collection** that have *<ins>username</ins>* and *<ins>password</ins>* as keys of the data. *<ins>username</ins>* in **users collections** is linked with the *<ins>username</ins>* in **recipes collection** because users who have an account can only create a recipe and they create a recipe in their own account. Same principle as *<ins>username</ins>* in **users collection** that users can only create a recipe for the categories available in a **categories collection** so it is liked with *<ins>category_name*</ins> in **recipes collection**. Categories in **categories collection** are editable by admin so it is created as an independent collection. Data in **subscription collection** is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do. The data in all the collections are retrievable and they can be identified by the key or unique id of the object.
 
@@ -131,7 +106,7 @@ Below is the chart of the database to show the collections and their relationshi
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/back-end-chart.png)<br>
 
-### Skeleton Plane <a name="skeleton-plane-heading"></a>
+### Skeleton Plane
 It is a mobile-first website because people usually bake with a recipe so a good mobile-first design helps users whose main purpose is to see recipes. For users whose main purpose is to create and post recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website. 
 
 * [Wireframes: Home &#40;`index.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/home.png)
@@ -158,7 +133,7 @@ It is a mobile-first website because people usually bake with a recipe so a good
 
 * [Wireframes: Page 404 &#40;`page_404.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/page-404.png)
 
-### Surface Plane <a name="surface-plane-heading"></a>
+### Surface Plane
 — **Colour** —
 
 As this is a baking website, **Cafe Noir** &#40;#493323&#41; is used as the main colour of the website. It is used as it is on some headings, texts as well as the navigation bar, footer and some background which is slightly transparentized colour than the original. **Linen** &#40;#FBEADE&#41; and **Apricot** &#40;#FFD5B7&#41; are used for some text and background when it needs contrast. **Mango Tango** &#40;#FF7C3E&#41; and **Flame** &#40;#E84610&#41; are used when it needs an accent on the website such as See Recipe button, flash messages and hover effect.
@@ -179,9 +154,9 @@ As this is a baking website, **Cafe Noir** &#40;#493323&#41; is used as the main
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/nunito.png)
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## WEBSITE CONSTRUCTION PLANS <a name="website-construction-plans-heading"></a>
+## WEBSITE CONSTRUCTION PLANS
 
 This project contains both front-end and back-end so well-structured planning is required to do the work efficiently. Below is a summary of the plans.
 
@@ -200,9 +175,16 @@ This project contains both front-end and back-end so well-structured planning is
 
 Updating README.md and some testing is also done during the above process
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## TECHNOLOGIES USED <a name="technologies-used-heading"></a>
+## FEATURES
+### Existing Features
+
+<div align="right"><a href="#top">🔝</a></div>
+
+### Features Left To Implement
+
+## TECHNOLOGIES USED
 * [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
 * [CSS3](https://en.wikipedia.org/wiki/CSS) for style
 * [Material Design for Bootstrap 5 & 4](https://mdbootstrap.com/) &#40;an open source toolkit based on Bootstrap for developing Material Design&#41; for main frame of the website
@@ -218,17 +200,17 @@ Updating README.md and some testing is also done during the above process
 * [GitHub](https://github.com/) for online version control and keeping the files & documents
 * [Heroku](https://www.heroku.com/) for deploying the website
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## RESOURCES <a name="resources-heading"></a>
-### General Resources <a name="general-resources-heading"></a>
+## RESOURCES
+### General Resources
 * Code Institute Course Materials
 * [Stack Overflow](https://stackoverflow.com/)
 * [YouTube](https://www.youtube.com/)
 * [W3schools](https://www.w3schools.com/)
 * [Google](https://www.google.com/)
 
-### Tools <a name="tools-heading"></a>
+### Tools
 * [Balsamiq](https://balsamiq.com/) for wireframes
 * [Adobe](https://www.adobe.com/ie/photoshop/online/resize-image.html) for resizing images
 * [PNG to ICO](https://hnet.com/png-to-ico/) for converting png to ico for favicon
@@ -236,130 +218,25 @@ Updating README.md and some testing is also done during the above process
 * [Transparent Textures](https://www.transparenttextures.com/) for creating background image
 * [Canva](https://www.canva.com/) for creating logos and some images
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## TESTING <a name="testing-heading"></a>
-### Python <a name="python-heading"></a>
-— **Initial Function** —
+## TESTING
+Testing report is available **[HERE](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/TESTING.md)**
 
-As an initial functions in Python is created, a manual test is carried out.
+<div align="right"><a href="#top">🔝</a></div>
 
-* Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page
-
-[Test Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-function.png) / 
-[Test Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-function-result.png) &#40;The message is displayed so the function works properly&#41;
-
-— **Connection with Database** —
-
-The connection between the App and MongoDB Atlas is set up so a manual test is carried out.
-
-* `render_template` function is imported to render HTML document when the function is run. A variable called *recipes* is created to retrieve the data from *recipes collection*. Each data in *recipes collection* is retrieved by using Jinja templating language on `index.html`
- 
-[Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-connection.png) / [Data in Database](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-db.png) / 
-[Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-connection-result.png) &#40;All the data in recipes collection is displayed so the App and database are connected properly&#41;
-
-— **Base Template** —
-
-The base template for HTML is created so a test is carried out.
-
-* Create `base.html` that contains all main references to external files and third-party libraries for CSS and JavaScript that are used across the entire website.  Block keyword is required to show the contents of child documents
- 
-[Base Template](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-base-template.png) / 
-[Base Template Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template works properly&#41;
-
-— **Register Function & Form** —
-
-Register function and form are created so a test is carried out.
-
-* Create `register.html` that contains a form to store first time user in *users collection* in *baking_recipe* database to create a unique account. Create a function in `app.py` with POST method with a condition for any usernames, which are not in the database, to be stored in the database. If users already exist in the data, users are led back to register page with a notification.
- 
-[Register Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register.png) / [Register Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-form.png) / 
-[Register Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-result.png) / [Register Failure](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-failure.png) &#40;If there is no username exists in the database, the function stores username & password and if there is, it leads back to register page so the function and the form works properly&#41;
-
-— **Login, Logout Function & Form** —
-
-Login function and form are created so a test is carried out.
-
-* Create `login.html` that contains a form, which takes a username and password. If username and password match with the data in the database, users are led to *Profile* page where they have an option to create and post a recipe as well as to see all of their recipes and Edit and Delete. Create a function in `app.py` with POST method and the function checks both input and the data in the database for authentification. If username and / or password is incorrect, users are led back to login page with a notification.
-
-Logout function is created in `app.py` that when users logout, it removes *session* so they do not see a link to *Profile* page and they cannot even access the page by putting `profile/<username>` on URL.
-
-[Login Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-login.png) / [Login Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-login-form.png) / 
-[Login Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-login-result.png) / [Login Failure](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-login-failure.png) &#40;When username and password match, users successfully login and when it doesn't it fails so the function and the form works properly&#41;
-
-— **Create Recipe Function & Form** —
-
-Create Recipe function and form are created so a test is carried out.
-
-* Create `create_recipe.html` that contains a form, which takes some user input by a dropdown, input and textarea fields. Create a function in `app.py` with POST method that stores all the input data in the database. There are two data fields, Recipe Ingredients and Steps that take various fields depending on users so this data is stored as Array in the database. Username and posted date, which are not user input, are also stored in the database. 
-
-[Create Recipe Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe.png) / [Create Recipe Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-form.png) / 
-[Create Recipe Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-result.png) / [Create Recipe Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-result-data.png) &#40;All the input as well as username and posted date are shown on recipe summary and stored in the database so it works properly&#41;
-
-— **Edit & Delete Recipe Function & Form** —
-
-Edit Recipe function & form and Delete function are created.
-Edit recipe function & form work almost the same way as Create Recipe but uses `updated()` method instead of `insert_one()`. 
-
-Delete function uses `remove()` methods to remove the data from the database.
-
-[Edit Recipe Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-recipe.png) / [Edit Recipe Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-recipe-form.png) / 
-[Edit Recipe Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-recipe-result.png) / [Edit Recipe Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-recipe-result-data.png) &#40;All updates on the form are updated in the database in the database so it works properly&#41;
-
-— **Manage Category with Create, Edit & Delete Functions & Form** —
-
-Manage Category page with Create, Edit & Delete Functions & Form are created so a test is carried out.
-
-* These work almost the same as Create, Edit and Delete recipes. Create `manage_category.html`, `create_category.html` and `edit_category.html` and functions on app.py. Only admin user has an access to Manage Category page where admin user can create, edit and delete category. To prevent other users to visit Manage Category Page, the link to this page only appears for admin user. This is set up by using if condition on base template. In case users figure out the URL for Manage, Create and Edit category pages, they do not have access to those pages as it is also prevented by if conditions on app.py. 
-
-[Manage Category Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category.png) / [Manage Category Navbar](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-navbar.png) / [Manage Category Navbar Admin](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-navbar.png) / [Manage Category Admin](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-admin.png) / [Manage Category Non-Admin](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-non-admin.png) &#40;Link to Manage Category page only appears for admin user so it works properly. `manage_category`, `create_category`, `edit_category` URLs are also put in non-admin user and they do not work for non-admin users&#41;
-
-[Create Category Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-category.png) / [Create Category Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-category-form.png) / 
-[Create Category Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-category-result.png) / [Create Category Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-category-result-data.png) &#40;A new category is created as expected so it works properly&#41;
-
-[Edit Category Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-category.png) / [Edit Category Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-category-form.png) / 
-[Edit Category Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-category-result.png) / [Edit Category Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-edit-category-result-data.png) &#40;Category is edited as expected so it works properly&#41;
-
-— **Search Function and Form** —
-
-Search function and form are created so a test is carried out.
-
-* Create Text index using Python interpreter in the command-line.
-Only one Text index can be created on a collection and the purpose of this function is to search recipes by a keyword &#40;s&#41; so text index includes `recipe_title`, `recipe_desc` and `username`. Other documents are excluded from Text Index as there would be too many unnecessary results if we included them. Then, create search function on `app.py` that searches contents in the text index.
-
-[Text Index](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-text-index.png) / [Test Search Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search.png)
-
-[Search By A Word](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search-word.png) / [Search By A Word Result - One recipe contains the word](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search-word-result.png)
-
-[Search By A Word 2](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search-word-2.png) / [Search By A Word 2 Result - Two recipes contain the word](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search-word-2-result.png)
-
-[Search By Words](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search-words.png) / [Search By Words Result - Two recipes contain one of the words](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search-words-result.png)
-
-&#40;All the search results came as expected so it works properly&#41;
-
-— **Subscribe To Newsletter Function and Form** —
-
-Subscribe To Newsletter function and form are created so a test is carried out.
-
-* Create `subscribe_newsletter function` on `app.py` with POST method that takes an input email address and stores in the database. 
-
-[Subscribe To Newsletter Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe.png) / [Subscribe To Newsletter Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-form.png) /
-[Subscribe To Newsletter Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result.png) / [Subscribe To Newsletter Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result-data.png) &#40;Input emails are stored in the database so it works properly&#41;
-
-<div align="right"><a href="#table-of-contents">🔝</a></div>
-
-## PROJECT BARRIERS & SOLUTIONS <a name="barriers-solutions-heading"></a>
+## PROJECT BARRIERS & SOLUTIONS
 <!--- Retrieving data in a list --->
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## VERSION CONTROL <a name="version-control-heading"></a>
+## VERSION CONTROL
 
 <!--- Commit message by mistke --->
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## DEPLOYMENT <a name="deployment-heading"></a>
+## DEPLOYMENT
 
 The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, as Github can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository. Connecting to GitHub repository is much easier so this website is deployed by using GitHub method.
  
@@ -403,17 +280,19 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-success.png)
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
 
-## CREDITS <a name="credits-heading"></a>
-### Code <a name="code-heading"></a>
+## CREDITS
+### Code
 — **HTML5** —
 * [MDB Navbar](https://mdbootstrap.com/docs/standard/navigation/navbar/) for navigation bar
 * [MDB Forms & Input](https://mdbootstrap.com/docs/standard/forms/overview/) for input forms
 * [MDB Cards](https://mdbootstrap.com/docs/standard/components/cards/) for recipe summary display
+* [MDB Modal](https://mdbootstrap.com/docs/standard/components/modal/) for delete confirmation & recipe instructions
 * [Bootstrap Dropdowns](https://getbootstrap.com/docs/5.0/components/dropdowns/) for dropdown menus
 
 — **CSS3** —
+* [Html Code Generator](https://www.html-code-generator.com/css/speech-bubble-generator) for speech bubble
 
 — **JavaScript** —
 * [Sanwebe](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery) for adding input fields
@@ -421,10 +300,14 @@ Once those steps are done, the website can be deployed and below are the steps o
 > **Note:**
 > All credited codes are also mentioned on html and js files
 
-### Contents <a name="contents-heading"></a>
+### Contents
 
-### Media <a name="media-heading"></a>
+### Media
 — **Logo & Favicon** —
 * Created by me using [canva](https://www.canva.com/)
 
-<div align="right"><a href="#table-of-contents">🔝</a></div>
+<div align="right"><a href="#top">🔝</a></div>
+
+## ACKNOWLEDGEMENTS
+
+<div align="right"><a href="#top">🔝</a></div>

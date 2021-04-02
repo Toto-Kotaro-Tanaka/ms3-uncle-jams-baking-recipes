@@ -1,3 +1,4 @@
+# Import Python Modules
 import os
 from flask import (
     Flask, flash, render_template,
@@ -5,18 +6,21 @@ from flask import (
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import (generate_password_hash,
+                               check_password_hash)
 from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
-
+# Instance of Flask
 app = Flask(__name__)
 
+# MongoDB Configuration
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
+# MongoDB Global Variable
 mongo = PyMongo(app)
 
 app.template_folder = ""
@@ -30,21 +34,17 @@ def get_recipes(offset=0, per_page=6):
 @app.route("/")
 @app.route("/home")
 def home():
+    """ To display all recipes by posted date """
     recipes = mongo.db.recipes.find().sort("posted_date", -1)
-    page, per_page, offset = get_page_args(page_parameter='page',
-                                           per_page_parameter='per_page')
-    total = mongo.db.recipes.count_documents({})
-    pagination_recipes = get_recipes(offset=offset, per_page=per_page)
-    pagination = Pagination(page=page, per_page=per_page, total=total,
-                            css_framework='bootstrap4')
+    categories = mongo.db.categories.find()
     return render_template("index.html", recipes=recipes,
-                           pagination_recipes=pagination_recipes, page=page,
-                           per_page=per_page, pagination=pagination,
-                           search=True)
+                           categories=categories, search=True)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """ Search by a key word(s) function.  Index is recipe descriptions,\
+    recipe title and usrname in recipes collection """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("index.html", recipes=recipes, search=True)
@@ -52,15 +52,19 @@ def search():
 
 @app.route("/categories/<category_name>")
 def categories(category_name):
+    """ To display recipes by category by posted date """
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("posted_date", -1)
+    categories = mongo.db.categories.find()
     return render_template("categories.html",
                            recipes=recipes, category_name=category_name,
-                           title=category_name, search=True)
+                           categories=categories, title=category_name,
+                           search=True)
 
 
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
+    """ To display an individual recipe """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html",
                            recipe=recipe, recipe_title=recipe,
@@ -69,11 +73,14 @@ def recipe(recipe_id):
 
 @app.route("/shop")
 def shop():
-    return render_template("shop.html", title="Shop")
+    """ To display all baking tools available to buy """
+    categories = mongo.db.categories.find()
+    return render_template("shop.html", categories=categories, title="Shop")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """ To create an account to create, post, edit and delete recipes """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -99,6 +106,7 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """ To login the webiste """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -123,19 +131,24 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    """ User profile where users have access to all their recipes,\
+         and to create, edit and delete recipes """
     recipes = mongo.db.recipes.find().sort("posted_date", -1)
+    categories = mongo.db.categories.find()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username,
-                               recipes=recipes, title=username)
+        return render_template("profile.html", recipes=recipes,
+                               categories=categories, username=username,
+                               title=username)
 
     return redirect(url_for("login"))
 
 
 @app.route("/logout")
 def logout():
+    """ Logout function """
     flash("You have logged out", "success")
     session.pop("user")
     return redirect(url_for("home"))
@@ -143,6 +156,8 @@ def logout():
 
 @app.route("/create_recipe", methods=["GET", "POST"])
 def create_recipe():
+    # Prevent none user accessing this page
+    """ To create recipes """
     if request.method == "POST":
         recipe = {
             "category_name": request.form.get("category_name"),
@@ -161,7 +176,7 @@ def create_recipe():
         flash("You have posted your recipe", "success")
         return redirect(url_for("home"))
 
-    categories = mongo.db.categories.find().sort("category_name")
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_recipe.html",
                            categories=categories, title="Create Recipe",
                            hide_navbar_footer=True, jquery=True)
@@ -169,35 +184,46 @@ def create_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name"),
-            "recipe_title": request.form.get("recipe_title"),
-            "recipe_desc": request.form.get("recipe_desc"),
-            "recipe_time": request.form.get("recipe_time"),
-            "recipe_serves": request.form.get("recipe_serves"),
-            "recipe_ingreds": request.form.getlist("recipe_ingreds"),
-            "recipe_steps": request.form.getlist("recipe_steps"),
-            "recipe_img_url": request.form.get("recipe_img_url"),
-            "recipe_tips": request.form.get("recipe_tips"),
-            "username": session["user"],
-            "posted_date": datetime.today().strftime("%d %b, %Y")
-        }
-        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-        flash("Recipe successfully updated", "success")
-        return redirect(url_for("home"))
-
+    """ To edit recipes. Users only have access to their\
+        own recipes and if users try to access to someone's\
+        recipes, they are redirected to home page """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    recipes = mongo.db.recipes.find_one()  # This can be deleted - check later
-    categories = mongo.db.categories.find().sort("category_name")
 
-    return render_template("edit_recipe.html", recipe=recipe, recipes=recipes,
-                           categories=categories, recipe_title=recipe,
-                           hide_navbar_footer=True, jquery=True)
+    if session["user"].lower() != recipe["username"].lower():
+        return redirect(url_for("profile", username=session["user"]))
+
+    else:
+        if request.method == "POST":
+            submit = {
+                "category_name": request.form.get("category_name"),
+                "recipe_title": request.form.get("recipe_title"),
+                "recipe_desc": request.form.get("recipe_desc"),
+                "recipe_time": request.form.get("recipe_time"),
+                "recipe_serves": request.form.get("recipe_serves"),
+                "recipe_ingreds": request.form.getlist("recipe_ingreds"),
+                "recipe_steps": request.form.getlist("recipe_steps"),
+                "recipe_img_url": request.form.get("recipe_img_url"),
+                "recipe_tips": request.form.get("recipe_tips"),
+                "username": session["user"],
+                "posted_date": datetime.today().strftime("%d %b, %Y")
+            }
+            mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+            flash("Recipe successfully updated", "success")
+            return redirect(url_for("home"))
+
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        categories = mongo.db.categories.find()
+
+        return render_template("edit_recipe.html", recipe=recipe,
+                               categories=categories, recipe_title=recipe,
+                               hide_navbar_footer=True, jquery=True)
+
+    # return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
 def delete_recipe(recipe_id):
+    """ Delete recipes function """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe successfully deleted", "success")
     return redirect(url_for("profile", username=session["user"]))
@@ -205,22 +231,27 @@ def delete_recipe(recipe_id):
 
 @app.route("/manage_category")
 def manage_category():
-    categories = list(mongo.db.categories.find().sort("_id", -1))
+    """ To manage categories where only Admin has access to it\
+        and access to create, edit category pages and delete function """
+    categories = mongo.db.categories.find()
+    manage_categories = list(mongo.db.categories.find().sort("_id", -1))
 
     if session["user"] == "admin":
-        return render_template("manage_category.html",
-                               categories=categories, title="Manage Category")
+        return render_template("manage_category.html", categories=categories,
+                               manage_categories=manage_categories,
+                               title="Manage Category")
 
     return redirect(url_for("home", username=session["user"]))
 
 
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
+    """ To create categories and only Admin has access to it """
     if session["user"] == "admin":
 
         if request.method == "POST":
             category = {
-                "category_name": request.form.get("category_name")
+                "category_name": request.form.get("category_name").lower()
             }
             mongo.db.categories.insert_one(category)
             flash("You have created a new category", "success")
@@ -231,12 +262,13 @@ def create_category():
                                categories=categories, title="Create Category",
                                hide_navbar_footer=True, jquery=True)
 
-    # Check this with mentor - It goes to 500 internal server error
+    # Question: If this is ok or should be redirected page 404 or 401?
     return redirect(url_for("home"))
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    """ To edit categories and only Admin has access to it """
     if session["user"] == "admin":
 
         if request.method == "POST":
@@ -251,12 +283,13 @@ def edit_category(category_id):
         return render_template("edit_category.html", category=category,
                                title="Edit Category", hide_navbar_footer=True)
 
-    # Question: If this is ok or should be redirected page 404?
+    # Question: If this is ok or should be redirected page 404 or 401?
     return redirect(url_for("home"))
 
 
 @app.route("/delete_category/<category_id>", methods=["GET", "POST"])
 def delete_category(category_id):
+    """ Delete categories function and only Admin has access to it """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category successfully deleted", "success")
     return redirect(url_for("manage_category"))
@@ -264,6 +297,7 @@ def delete_category(category_id):
 
 @app.route("/subscribe_newsletter", methods=["GET", "POST"])
 def subscribe_newsletter():
+    """ Subscribe newsletter function """
     if request.method == "POST":
         existing_email = mongo.db.emails.find_one(
             {"subsc_email": request.form.get("subsc_email")})
@@ -272,7 +306,7 @@ def subscribe_newsletter():
             flash("You are already subscribed", "error")
             return redirect(url_for("home"))
 
-        else:
+        else:  # Do you need esle ?
             email = {
                 "subsc_email": request.form.get("subsc_email")
             }
@@ -283,10 +317,12 @@ def subscribe_newsletter():
 
 @app.errorhandler(404)
 def page_not_found(e):
+    """ To handle not found page """
     return render_template("page_404.html", title="Page 404",
                            hide_navbar_footer=True), 404
 
 
+# IP & PORT Environment Variables
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
