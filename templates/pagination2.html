@@ -10,15 +10,13 @@
 {% endblock %}
 
 {% block content %}
-<section id="section-recipe-summary">
+<!-- <section id="section-recipe-summary">
     <div class="container-fluid">
         <div class="row">
             <h3>Recipes</h3>
-            <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
                 <div class="card recipe-summary bg-color-fbeade">
-                    <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
@@ -35,7 +33,6 @@
                             {{ recipe.recipe_title | title }}</h5>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
                     </div>
-                    <!-- Recipe Owner & Posted Date -->
                     <ul class="list-group list-group-flush posted-list">
                         <li class="list-group-item bg-color-fbeade text-center">Posted by
                             {{ recipe.username | capitalize }}
@@ -43,7 +40,6 @@
                         <li class="list-group-item bg-color-fbeade text-center">on {{ recipe.posted_date }}
                         </li>
                     </ul>
-                    <!-- See Recipe Button -->
                     <div class="card-body">
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe">See
                             Recipe</a>
@@ -58,28 +54,35 @@
             </div>
             {% endfor %}
         </div>
-        <!-- /End of Credit -->
     </div>
-</section>
+</section> -->
 
-<div>
-    <nav aria-label="Search Results Pages">
-        <ul class="pagination pagination-lg justify-content-center">
-            {% for pagenum in pages %}
-            {% if pagenum == page %}
-            <li class="page-item active">
-                <span class="page-link">{{ pagenum }}
-                    <span class="sr-only">(current)</span>
-                </span>
-            </li>
-            {% else %}
-            <li class="page-item"><a class="page-link" href="{{ url_for('recipes', page=pagenum) }}">{{ pagenum }}</a>
-            </li>
-            {% endif %}
-            {% endfor %}
-        </ul>
-    </nav>
+<div class="container">
+    {{ pagination.links }}
 
+    {{ for test in tests }}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Value</th>
+                    <th>Fizz?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for test in tests %}
+                <tr>
+                    <td>{{ test.recipe_title }}</td>
+                    <td>{{ test.username }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {{ endfor }}
+    {{ pagination.links }}
 </div>
+
 
 {% endblock %}

@@ -9,6 +9,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import (generate_password_hash,
                                check_password_hash)
 from datetime import datetime
+import math
 if os.path.exists("env.py"):
     import env
 
@@ -23,46 +24,21 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # MongoDB Global Variable
 mongo = PyMongo(app)
 
-# Pagination Variable
-# RECIPES_PER_PAGE = 6
-
-# recipes = list(mongo.db.recipes.find())
-
-
-# def pagination_args(recipes):
-#     page, per_page, offset = get_page_args(
-#         page_parameter='page', per_page_parameter='per_page')
-#     total = len(list(mongo.db.recipes.find()))
-
-#     return Pagination(page=page, per_page=RECIPES_PER_PAGE, total=total)
-
-# Pagination 1
+total = mongo.db.recipes.find().count()
+print(total)
+print("hello python")
 
 
 @app.route("/pagination")
-def pagination(last_id=None):
-    if last_id:
-        recipes = mongo.db.recipes.find(
-            {'_id': {'$gt': last_id}}).limit(6)
-    else:
-        recipes = list(mongo.db.recipes.find().sort(
-            "_id", -1).limit(6))
+def pagination():
+    per_page = 2
+    page = int(request.args.get("page", 1))
+    total = mongo.db.recipes.count_documents({})
+    recipes = mongo.db.recipes.find().skip((page - 1)*per_page).limit(per_page)
+    pages = range(1, int(math.ceil(total / per_page)) + 1)
 
-    last_id = None
-    if len(recipes) > 0:
-        last_id = recipes[-1]['_id']
-
-    return render_template("pagination.html", recipes=recipes)
-
-
-# Pagination 2
-
-
-# @app.route("/pagination2")
-# def pagination2():
-#     recipes = mongo.db.recipes.find()
-#     pagination = pagination_args(recipes)
-#     return render_template("pagination2.html", recipes=recipes, pagination=pagination)
+    return render_template("pagination.html", recipes=recipes,
+                           pages=pages, total=total)
 
 
 @app.route("/")
