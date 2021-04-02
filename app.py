@@ -22,10 +22,26 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # MongoDB Global Variable
 mongo = PyMongo(app)
 
+# Pagination 1
+
 
 @app.route("/pagination")
-def pagination():
-    return render_template("pagination.html")
+def pagination(last_id=None):
+    if last_id:
+        recipes = mongo.db.recipes.find(
+            {'_id': {'$gt': last_id}}).limit(6)
+    else:
+        recipes = list(mongo.db.recipes.find().sort(
+            "_id", pymongo.DESCENDING).limit(6))
+
+    last_id = None
+    if len(recipes) > 0:
+        last_id = recipes[-1]['_id']
+
+    return render_template("pagination.html", recipes=recipes)
+
+
+# Pagination 2
 
 
 @app.route("/")
