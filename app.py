@@ -26,9 +26,12 @@ mongo = PyMongo(app)
 app.template_folder = ""
 recipes = mongo.db.recipes.find().sort("posted_date", -1)
 
+# Pagination
 
-def get_recipes(offset=0, per_page=6):
-    return recipes[offset: offset + per_page]
+
+@app.route("/pagination")
+def pagination():
+    return render_template("pagination.html")
 
 
 @app.route("/")
