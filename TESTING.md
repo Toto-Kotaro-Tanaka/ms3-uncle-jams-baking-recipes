@@ -2,7 +2,7 @@
 ### Html
 — **Code Validation** —
 
-As the core HTML code is completed on all html files, a code validation test is carried out by using [W3C Markup Validation Service](https://validator.w3.org/), which is a validator by the World Wide Web Consortium that allows checking HTML and XHTML documents for well-formed markup, to check any warnings and errors. Flask Jinja template is being used on all html files, source code is being taken from rendered pages.
+As the core HTML code is completed on all html files, a code validation test is carried out by using [W3C Markup Validation Service](https://validator.w3.org/), which is a validator by the World Wide Web Consortium that allows checking HTML and XHTML documents for well-formed markup, to check any warnings and errors. As Flask Jinja template is used on all html files, source code is taken from rendered pages for the test.
 
 **Home Page** &#40;`index.html`&#41;: [2 Errors & 4 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-home.png)
 
