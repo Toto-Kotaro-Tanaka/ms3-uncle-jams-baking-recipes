@@ -43,7 +43,7 @@ Solve the warning by replacing `<section>` by `<div>`
 
 **Login Page** &#40;`login.html`&#41;: 0 Error & 0 Warning
 
-**Profile Page** &#40;`profile.html`&#41;: [5 Errors & 5 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-profile.png) *Same error and warning by 4 times 
+**Profile Page** &#40;`profile.html`&#41;: [5 Errors & 5 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-profile.png) *Same error and warning by 4 more times 
 
 1. Error: Duplicate ID<br>
 Solve the error by [setting up a unique id](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-profile-id.png) by using Jinja template looping
@@ -54,7 +54,7 @@ Same as No 1
 **Create Recipe Page** &#40;`create_recipe.html`&#41;: [5 Errors & 1 Warning: 1 & 2](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-create-recipe-1.png) &#47; [5 Errors & 1 Warning: 3 - 6](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-create-recipe-2.png)
 
 1. Error: Attribute required not allowed on element option at this point<br>
-Solve the error by removing required attribute. This field is mandatory however Select Category can be selected as an option, because form validator does not prevent this from happening so Other is put as a value. Users selects something on this field so required attribute is not required here
+Solve the error by removing required attribute. This field is mandatory however Select Category can be selected as an option, because form validator does not prevent this from happening so Other is put as a value. Users automatically select something on this field so required attribute is not required here
 
 2. Error: Attribute required not allowed on element option at this point<br>
 Same as No 1
@@ -65,10 +65,10 @@ Same as No 1
 4. Warning: Section lacks heading<br>
 Solve the warning by replacing `<section>` by `<div>`
 
-5. Error: For attribute of label element must be ID of non-hidden form control
+5. Error: For attribute of label element must be ID of non-hidden form control<br>
 Solve the error by putting ID on input
 
-6. Error: For attribute of label element must be ID of non-hidden form control
+6. Error: For attribute of label element must be ID of non-hidden form control<br>
 Same as No 5
 
 **Edit Recipe Page** &#40;`edit_recipe.html`&#41;: 5 Errors & 1 Warning *Same as Create Recipe<br>
@@ -79,6 +79,84 @@ This time, some data is retrieved from the database and they are shown on recipe
 **Create Category Page** &#40;`create_category.html`&#41;: 0 Error & 0 Warning
 
 **Edit Category Page** &#40;`edit_category.html`&#41;: 0 Error & 0 Warning
+
+**404 Page** &#40;`page_404.html`&#41;: 0 Error & 0 Warning
+
+— **Quality** —
+
+As the core HTML code is completed, a quality check test is carried out by using [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is an open-source and one of the automated DevTools for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO. 
+
+**Home Page** &#40;`index.html`&#41;
+
+Mobile Size: [Performance: 61 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-home-mobile.png)
+
+Desktop Size: [Performance: 93 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-home-desktop.png)
+
+**Categories Page** &#40;`categories.html`&#41;
+
+Mobile Size: [Performance: 57 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-categories-mobile.png)
+
+Desktop Size: [Performance: 94 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-categories-desktop.png)
+
+**Recipe Page** &#40;`recipe.html`&#41;
+
+Mobile Size: [Performance: 76 / Accessibility: 96 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-recipe-mobile.png)
+
+Desktop Size: [Performance: 99 / Accessibility: 96 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-recipe-desktop.png)
+
+**Shop Page** &#40;`shop.html`&#41;
+
+Mobile Size: [Performance: 66 / Accessibility: 90 / Best Practices: 86 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-shop-mobile.png)
+
+Desktop Size: [Performance: 95 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-shop-desktop.png)
+
+**Register Page** &#40;`register.html`&#41;
+
+Mobile Size: [Performance: 66 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-register-mobile.png)
+
+Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-register-desktop.png)
+
+**Login Page** &#40;`login.html`&#41;
+
+Mobile Size: [Performance: 91 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-login-mobile.png)
+
+Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-login-desktop.png)
+
+**Profile Page** &#40;`profile.html`&#41;
+
+Mobile Size: [Performance: 75 / Accessibility: 91 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-profile-mobile.png)
+
+Desktop Size: [Performance: 100 / Accessibility: 91 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-profile-desktop.png)
+
+**Create Recipe Page** &#40;`create_recipe.html`&#41;
+
+Mobile Size: [Performance: 85 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-recipe-mobile.png)
+
+Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-recipe-desktop.png)
+
+**Edit Recipe Page** &#40;`edit_recipe.html`&#41;
+
+Mobile Size: [Performance: 82 / Accessibility: 100 / Best Practices: 93 / SEO: 92](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-recipe-mobile.png)
+
+Desktop Size: [Performance: 98 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-recipe-desktop.png)
+
+**Manage Category Page** &#40;`manage_category.html`&#41;
+
+Mobile Size: [Performance: 71 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-manage-category-mobile.png)
+
+Desktop Size: [Performance: 96 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-manage-category-desktop.png)
+
+**Create Category Page** &#40;`create_category.html`&#41;
+
+Mobile Size: [Performance: 78 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-category-mobile.png)
+
+Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-category-desktop.png)
+
+**Edit Category Page** &#40;`edit_category.html`&#41;
+
+Mobile Size: [Performance: 83 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-mobile.png)
+
+Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-desktop.png)
 
 
 ### Css
