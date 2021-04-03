@@ -12,9 +12,8 @@
 </div>
 {% endblock %}
 
-
 {% block content %}
-<section id="section-manage-category" class="pb-3">
+<div id="section-manage-category" class="pb-3">
     <h3>Category</h3>
     <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
     {% for category in manage_categories %}
@@ -32,12 +31,12 @@
         </div>
     </div>
     <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
-    <div class="modal fade" id="modal-delete{{ category._id }}" tabindex="-1" aria-labelledby="modal-deleteLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modal-delete{{ category._id }}" tabindex="-1"
+        aria-labelledby="modal-deleteLabel-{{ category._id }}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content color-493323">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal-deleteLabel">Are you sure to DELETE?</h5>
+                    <h5 class="modal-title" id="modal-deleteLabel-{{ category._id }}">Are you sure to DELETE?</h5>
                     <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -55,6 +54,6 @@
     </div>
     {% endfor %}
     <!-- /End of Credit -->
-</section>
+</div>
 
 {% endblock %}

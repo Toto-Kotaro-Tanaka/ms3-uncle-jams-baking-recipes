@@ -2,6 +2,85 @@
 ### Html
 — **Code Validation** —
 
+As the core HTML code is completed on all html files, a code validation test is carried out by using [W3C Markup Validation Service](https://validator.w3.org/), which is a validator by the World Wide Web Consortium that allows checking HTML and XHTML documents for well-formed markup, to check any warnings and errors. Flask Jinja template is being used on all html files, source code is being taken from rendered pages.
+
+**Home Page** &#40;`index.html`&#41;: [2 Errors & 4 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-home.png)
+
+1. Error: `<span>` in `<ul>` context<br>
+Solve the error by replacing `<span>` by `<li>`
+
+2. Error: `<a>` must not appear as descendant of `<button>`<br>
+Solve the error by replacing `<button>` by `<div>`
+
+3. Warning: Section lacks heading<br>
+Solve the warning by removing `<section>`
+
+4. Warning: Section lacks heading<br>
+Solve the warning by replacing `<section>` by `<div>`
+
+5. Warning: Type attribute unnecessary for JavaScript<br>
+Solve the warning by removing it
+
+6. Warning: Type attribute unnecessary for JavaScript<br>
+Same as No 5
+
+**Categories Page** &#40;`categories.html`&#41;: 0 Error & 0 Warning
+
+**Recipe Page** &#40;`recipe.html`&#41;: 0 Error & 0 Warning
+
+**Shop Page** &#40;`shop.html`&#41;: [6 Errors & 6 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-shop.png) *Same error and warning on other affiliate images 
+
+1. Error: `<img>` must have an `alt` attribute<br>
+Solve the error by putting alt
+
+2. Warning: Border attribute is obsolete<br>
+Solve the warning by removing it
+
+**Register Page** &#40;`register.html`&#41;: [0 Error & 1 Warning](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-register.png)
+
+1. Warning: Section lacks heading<br>
+Solve the warning by replacing `<section>` by `<div>`
+
+**Login Page** &#40;`login.html`&#41;: 0 Error & 0 Warning
+
+**Profile Page** &#40;`profile.html`&#41;: [5 Errors & 5 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-profile.png) *Same error and warning by 4 times 
+
+1. Error: Duplicate ID<br>
+Solve the error by [setting up a unique id](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-profile-id.png) by using Jinja template looping
+
+2. Warning: The first occurrence of ID was here<br>
+Same as No 1
+
+**Create Recipe Page** &#40;`create_recipe.html`&#41;: [5 Errors & 1 Warning: 1 & 2](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-create-recipe-1.png) &#47; [5 Errors & 1 Warning: 3 - 6](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-create-recipe-2.png)
+
+1. Error: Attribute required not allowed on element option at this point<br>
+Solve the error by removing required attribute. This field is mandatory however Select Category can be selected as an option, because form validator does not prevent this from happening so Other is put as a value. Users selects something on this field so required attribute is not required here
+
+2. Error: Attribute required not allowed on element option at this point<br>
+Same as No 1
+
+3. Error: Attribute required not allowed on element option at this point<br>
+Same as No 1
+
+4. Warning: Section lacks heading<br>
+Solve the warning by replacing `<section>` by `<div>`
+
+5. Error: For attribute of label element must be ID of non-hidden form control
+Solve the error by putting ID on input
+
+6. Error: For attribute of label element must be ID of non-hidden form control
+Same as No 5
+
+**Edit Recipe Page** &#40;`edit_recipe.html`&#41;: 5 Errors & 1 Warning *Same as Create Recipe<br>
+This time, some data is retrieved from the database and they are shown on recipe_ingreds and recipe_steps fiedls with duplicated id. To make unique id, [loop index](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-edit-recipe-id.png) and add on for attribute and id.
+
+**Manage Category Page** &#40;`manage_category.html`&#41;: 0 Error & 0 Warning
+
+**Create Category Page** &#40;`create_category.html`&#41;: 0 Error & 0 Warning
+
+**Edit Category Page** &#40;`edit_category.html`&#41;: 0 Error & 0 Warning
+
+
 ### Css
 — **Code Validation** —
 

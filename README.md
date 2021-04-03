@@ -221,7 +221,7 @@ Updating README.md and some testing is also done during the above process
 <div align="right"><a href="#top">🔝</a></div>
 
 ## TESTING
-Testing report is available **[HERE](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/TESTING.md)**
+Testing report is available **[TESTING.md](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/TESTING.md)**
 
 <div align="right"><a href="#top">🔝</a></div>
 

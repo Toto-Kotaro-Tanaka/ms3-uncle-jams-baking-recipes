@@ -5,7 +5,7 @@
         src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Ginderbread Man"></a>
 <h2>Create Your Recipe</h2>
 
-<section id="section-manage-recipe" class="color-fbeade">
+<div id="section-manage-recipe" class="color-fbeade">
     <p class="note-recipe text-center color-fff"><i class="fas fa-info-circle"></i> Follow the below steps to create
         your recipe & post it.<br>Click <span class="recipe-inst-open font-weight-700" data-mdb-toggle="modal"
             data-mdb-target="#recipeInstModal">HERE</span> to a
@@ -17,7 +17,7 @@
         <div class="form-outline form-white mb-4">
             <select id="category_name" name="category_name"
                 class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Recipe Categories">
-                <option value="other" selected required>Select Category&#42;</option>
+                <option value="other" selected>Select Category&#42;</option>
                 {% for category in categories %}
                 <option value="{{ category.category_name }}">{{ category.category_name | title }}</option>
                 {% endfor %}
@@ -42,7 +42,7 @@
         <div class="form-outline form-white mb-4">
             <select id="recipe_time" name="recipe_time" class="form-select recipe-select bg-color-49332-06 color-fff"
                 aria-label="Baking Time">
-                <option value="N/A" selected required>Select Time&#42;</option>
+                <option value="N/A" selected>Select Time&#42;</option>
                 <option value="Less than 30">Less than 30 min</option>
                 {% for time in range(40, 120, 10) %}
                 <option value="{{ time }}">{{ time }} min</option>
@@ -54,7 +54,7 @@
         <div class="form-outline form-white mb-4">
             <select id="recipe_serves" name="recipe_serves"
                 class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Serves">
-                <option value="N/A" selected required>Select Serves&#42;</option>
+                <option value="N/A" selected>Select Serves&#42;</option>
                 {% for num in range(2, 11) %}
                 <option value="{{ num }}">{{ num }} people</option>
                 {% endfor %}
@@ -68,8 +68,8 @@
         </div>
         <div class="form-outline form-white input-fields-wrap-ingreds mb-4">
             <div>
-                <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50"
-                    required />
+                <input type="text" name="recipe_ingreds" id="recipe_ingreds" class="form-control bg-color-49332-06"
+                    maxlength="50" required />
                 <label class="form-label" for="recipe_ingreds">Recipe Ingredients&#42;</label>
                 <p class="input-note">&#40;max 50&#41;</p>
             </div>
@@ -82,8 +82,8 @@
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-steps">
             <div>
-                <textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300"
-                    required></textarea>
+                <textarea name="recipe_steps" id="recipe_steps" class="form-control bg-color-49332-06" rows="3"
+                    maxlength="300" required></textarea>
                 <label class="form-label" for="recipe_steps">Recipe Steps&#42;</label>
                 <p class="input-note">&#40;max 300&#41;</p>
             </div>
@@ -107,7 +107,7 @@
         <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-ffd5b7-06 mt-2">Cancel</a>
     </form>
     <!-- /End of Credit -->
-</section>
+</div>
 <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
 <div class="modal fade p-0" id="recipeInstModal" tabindex="-1" aria-labelledby="recipeInstModalLabel"
     aria-hidden="true">

@@ -5,7 +5,7 @@
         src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
 <h2>Create Category</h2>
 
-<section id="section-create-edit-category" class="color-fbeade">
+<div id="section-create-edit-category" class="color-fbeade">
     <form id="form-category" class="pb-4" method="POST" action="{{ url_for('create_category') }}">
         <!-- New Category -->
         <div class="form-outline form-white mb-4">
@@ -18,5 +18,5 @@
         <button type="submit" class="btn btn-ffd5b7 mt-2">Create</button>
         <a href="{{ url_for('manage_category') }}" class="btn btn-ffd5b7-06 mt-2">Cancel</a>
     </form>
-</section>
+</div>
 {% endblock %}

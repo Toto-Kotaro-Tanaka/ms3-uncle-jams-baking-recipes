@@ -5,7 +5,7 @@
         src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Ginderbread Man"></a>
 <h2>Edit Your Recipe</h2>
 
-<section id="section-manage-recipe" class="color-fbeade">
+<div id="section-manage-recipe" class="color-fbeade">
     <!-- Credit: MDB Forms & Input + Bootstrap Dropdowns @ https://mdbootstrap.com/docs/standard/forms/overview/ & @ https://getbootstrap.com/docs/5.0/components/dropdowns/ -->
     <form id="form-recipe" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
         <!-- Select Category -->
@@ -15,7 +15,7 @@
                 class="form-select bg-color-49332-06 recipe-select color-fff" aria-label="Recipe Categories">
                 {% for category in categories %}
                 {% if category.category_name == recipe.category_name %}
-                <option value="other" disabled required>Select Category</option>
+                <option value="other" disabled>Select Category</option>
                 <option value="{{ category.category_name }}" selected>{{ category.category_name | title }}
                 </option>
                 {% else %}
@@ -44,7 +44,7 @@
             <label for="recipe_time">Baking Time</label>
             <select id="recipe_time" name="recipe_time" class="form-select recipe-select bg-color-49332-06 color-fff"
                 aria-label="Baking Time">
-                <option disabled required>Select Time</option>
+                <option disabled>Select Time</option>
                 <option value="{{ recipe.recipe_time }}" selected>{{ recipe.recipe_time }} min</option>
                 <option value="less-than-30">Less than 30 min</option>
                 {% for time in range(40, 120, 10) %}
@@ -58,7 +58,7 @@
             <label for="recipe_serves">Serves</label>
             <select id="recipe_serves" name="recipe_serves"
                 class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Serves">
-                <option disabled required>Select Serves</option>
+                <option disabled>Select Serves</option>
                 <option value="{{ recipe.recipe_serves }}">{{ recipe.recipe_serves }} people</option>
                 {% for num in range(2, 11) %}
                 <option value="{{ num }}">{{ num }} people</option>
@@ -67,36 +67,38 @@
         </div>
         <hr class="hr-fff">
         <!-- Recipe Ingredients -->
-        <label for="recipe_ingreds">Recipe Ingredients</label>
+        {% for ingreds in recipe.recipe_ingreds %}
+        <label for="recipe_ingreds_{{ loop.index }}">Recipe Ingredients</label>
         <div>
             <button class="btn btn-ffd5b7 btn-add-field-ingreds mb-2">More Ingredients<span
                     class="input-note btn-note">&#40;max 15 fields&#41;</span></button>
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-ingreds">
             <div>
-                {% for ingreds in recipe.recipe_ingreds %}
-                <input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06 mt-3" maxlength="50"
-                    value="{{ ingreds }}" required />
-                {% endfor %}
+                <input type="text" name="recipe_ingreds" id="recipe_ingreds_{{ loop.index }}"
+                    class="form-control bg-color-49332-06 mt-3" maxlength="50" value="{{ ingreds }}" required />
+
                 <p class="input-note">&#40;max 50&#41;</p>
             </div>
         </div>
+        {% endfor %}
         <hr class="hr-fff">
         <!-- Recipe Steps -->
-        <label for="recipe_steps">Recipe Steps</label>
+        {% for step in recipe.recipe_steps %}
+        <label for="recipe_steps_{{ loop.index }}">Recipe Steps</label>
         <div>
             <button class="btn btn-ffd5b7 btn-add-field-steps mb-2">More Steps<span class="input-note btn-note">&#40;max
                     10 fields&#41;</span></button>
         </div>
         <div class="form-outline mb-4 form-white input-fields-wrap-steps">
             <div>
-                {% for step in recipe.recipe_steps %}
-                <textarea name="recipe_steps" class="form-control bg-color-49332-06 mt-3" rows="3" maxlength="300"
+                <textarea name="recipe_steps" id="recipe_steps_{{ loop.index }}"
+                    class="form-control bg-color-49332-06 mt-3" rows="3" maxlength="300"
                     required>{{- step -}}</textarea>
-                {% endfor %}
                 <p class="input-note">&#40;max 300&#41;</p>
             </div>
         </div>
+        {% endfor %}
         <hr class="hr-fff">
         <!-- Recipe Image URL -->
         <div class="form-outline form-white mb-4">
@@ -116,5 +118,5 @@
         <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-ffd5b7-06 mt-2">Cancel</a>
     </form>
     <!-- /End of Credit -->
-</section>
+</div>
 {% endblock %}

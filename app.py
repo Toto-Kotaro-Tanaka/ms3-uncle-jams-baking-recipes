@@ -30,7 +30,7 @@ def home():
     recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
     return render_template("index.html", recipes=recipes,
-                           categories=categories, search=True)
+                           categories=categories, main=True, search=True)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -51,7 +51,7 @@ def categories(category_name):
     return render_template("categories.html",
                            recipes=recipes, category_name=category_name,
                            categories=categories, title=category_name,
-                           search=True)
+                           main=True, search=True)
 
 
 @app.route("/recipe/<recipe_id>")
@@ -67,7 +67,8 @@ def recipe(recipe_id):
 def shop():
     """ To display all baking tools available to buy """
     categories = mongo.db.categories.find()
-    return render_template("shop.html", categories=categories, title="Shop")
+    return render_template("shop.html", categories=categories,
+                           title="Shop", main=True)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -133,7 +134,7 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", recipes=recipes,
                                categories=categories, username=username,
-                               title=username)
+                               title=username, main=True)
 
     return redirect(url_for("login"))
 
@@ -229,7 +230,7 @@ def manage_category():
     if session["user"] == "admin":
         return render_template("manage_category.html", categories=categories,
                                manage_categories=manage_categories,
-                               title="Manage Category")
+                               title="Manage Category", main=True)
 
     return redirect(url_for("home", username=session["user"]))
 
