@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    {% if not hide_navbar_footer %}
+    {% if not hide_navbar_main_footer %}
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
     <nav class="navbar navbar-expand-lg navbar-light font-balsamiq color-fbeade bg-color-49332-06">
         <div class="container-fluid">
@@ -126,14 +126,12 @@
         {% endwith %}
     </header>
 
-    {% if main %}
+    {% if not hide_navbar_main_footer %}
     <main>
         {% block content %}
         {% endblock %}
     </main>
-    {% endif %}
 
-    {% if not hide_navbar_footer %}
     <!-- Credit: MDB Forms @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
     <footer class="color-fbeade text-center">
         <div class="container p-4 pb-0">
@@ -188,12 +186,12 @@
 
     <!-- MDB -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
-    <!-- jQuery -->
     {% if jquery %}
+    <!-- jQuery -->
     <script src="{{ url_for('static', filename='js/createRecipe.js') }}"></script>
     {% endif %}
+    {% if not hide_navbar_main_footer %}
     <!-- script.js -->
-    {% if not hide_navbar_footer %}
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% endif %}
 </body>

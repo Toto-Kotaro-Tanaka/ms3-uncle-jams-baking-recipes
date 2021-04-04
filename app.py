@@ -30,7 +30,7 @@ def home():
     recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
     return render_template("index.html", recipes=recipes,
-                           categories=categories, main=True, search=True)
+                           categories=categories, search=True)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -39,8 +39,7 @@ def search():
     recipe title and usrname in recipes collection """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("index.html", recipes=recipes,
-                           main=True, search=True)
+    return render_template("index.html", recipes=recipes, search=True)
 
 
 @app.route("/categories/<category_name>")
@@ -49,10 +48,9 @@ def categories(category_name):
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("_id", -1)
     categories = mongo.db.categories.find()
-    return render_template("categories.html",
-                           recipes=recipes, category_name=category_name,
-                           categories=categories, title=category_name,
-                           main=True, search=True)
+    return render_template("categories.html", recipes=recipes,
+                           category_name=category_name, categories=categories,
+                           title=category_name, search=True)
 
 
 @app.route("/recipe/<recipe_id>")
@@ -61,15 +59,14 @@ def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html",
                            recipe=recipe, recipe_title=recipe,
-                           hide_navbar_footer=True)
+                           hide_navbar_main_footer=True)
 
 
 @app.route("/shop")
 def shop():
     """ To display all baking items for sale in affiliate """
     categories = mongo.db.categories.find()
-    return render_template("shop.html", categories=categories,
-                           title="Shop", main=True)
+    return render_template("shop.html", categories=categories, title="Shop")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -95,7 +92,7 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html", title="Register",
-                           hide_navbar_footer=True)
+                           hide_navbar_main_footer=True)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -120,7 +117,7 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html", title="Login",
-                           hide_navbar_footer=True)
+                           hide_navbar_main_footer=True)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -134,8 +131,8 @@ def profile(username):
 
     if session["user"]:
         return render_template("profile.html", recipes=recipes,
-                               categories=categories, username=username,
-                               title=username, main=True)
+                               categories=categories,
+                               username=username, title=username)
 
     return redirect(url_for("login"))
 
@@ -173,7 +170,7 @@ def create_recipe():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_recipe.html",
                            categories=categories, title="Create Recipe",
-                           hide_navbar_footer=True, jquery=True)
+                           hide_navbar_main_footer=True, jquery=True)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -211,7 +208,7 @@ def edit_recipe(recipe_id):
 
         return render_template("edit_recipe.html", recipe=recipe,
                                categories=categories, recipe_title=recipe,
-                               hide_navbar_footer=True, jquery=True)
+                               hide_navbar_main_footer=True, jquery=True)
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -235,7 +232,7 @@ def manage_category():
 
     return render_template("manage_category.html", categories=categories,
                            manage_categories=manage_categories,
-                           title="Manage Category", main=True)
+                           title="Manage Category")
 
 
 @app.route("/create_category", methods=["GET", "POST"])
@@ -256,7 +253,7 @@ def create_category():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_category.html",
                            categories=categories, title="Create Category",
-                           hide_navbar_footer=True)
+                           hide_navbar_main_footer=True)
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
@@ -274,7 +271,8 @@ def edit_category(category_id):
 
         category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
         return render_template("edit_category.html", category=category,
-                               title="Edit Category", hide_navbar_footer=True)
+                               title="Edit Category",
+                               hide_navbar_main_footer=True)
 
     flash("Access denied", "error")
     return redirect(url_for("profile", username=session["user"]))
@@ -312,7 +310,7 @@ def subscribe_newsletter():
 def page_not_found(e):
     """ To handle not found page """
     return render_template("page_404.html", title="Page 404",
-                           hide_navbar_footer=True), 404
+                           hide_navbar_main_footer=True), 404
 
 
 # IP & PORT Environment Variables
