@@ -72,7 +72,7 @@ Solve the error by putting ID on input
 Same as No 5
 
 **Edit Recipe Page** &#40;`edit_recipe.html`&#41;: 5 Errors & 1 Warning *Same as Create Recipe<br>
-This time, some data is retrieved from the database and they are shown on recipe_ingreds and recipe_steps fiedls with duplicated id. To make unique id, [loop index](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-edit-recipe-id.png) and add on for attribute and id.
+* This time, some data is retrieved from the database and they are shown on recipe_ingreds and recipe_steps fiedls with duplicated id. To make unique id, [loop index](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-edit-recipe-id.png) and add on for attribute and id.
 
 **Manage Category Page** &#40;`manage_category.html`&#41;: 0 Error & 0 Warning
 
@@ -88,75 +88,75 @@ As the core HTML code is completed, a quality check test is carried out by using
 
 **Home Page** &#40;`index.html`&#41;
 
-Mobile Size: [Performance: 61 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-home-mobile.png)
+* Mobile Size: [Performance: 61 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-home-mobile.png)
 
-Desktop Size: [Performance: 93 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-home-desktop.png)
+* Desktop Size: [Performance: 93 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-home-desktop.png)
 
 **Categories Page** &#40;`categories.html`&#41;
 
-Mobile Size: [Performance: 57 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-categories-mobile.png)
+* Mobile Size: [Performance: 57 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-categories-mobile.png)
 
-Desktop Size: [Performance: 94 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-categories-desktop.png)
+* Desktop Size: [Performance: 94 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-categories-desktop.png)
 
 **Recipe Page** &#40;`recipe.html`&#41;
 
-Mobile Size: [Performance: 76 / Accessibility: 96 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-recipe-mobile.png)
+* Mobile Size: [Performance: 76 / Accessibility: 96 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-recipe-mobile.png)
 
-Desktop Size: [Performance: 99 / Accessibility: 96 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-recipe-desktop.png)
+* Desktop Size: [Performance: 99 / Accessibility: 96 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-recipe-desktop.png)
 
 **Shop Page** &#40;`shop.html`&#41;
 
-Mobile Size: [Performance: 66 / Accessibility: 90 / Best Practices: 86 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-shop-mobile.png)
+* Mobile Size: [Performance: 66 / Accessibility: 90 / Best Practices: 86 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-shop-mobile.png)
 
-Desktop Size: [Performance: 95 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-shop-desktop.png)
+* Desktop Size: [Performance: 95 / Accessibility: 90 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-shop-desktop.png)
 
 **Register Page** &#40;`register.html`&#41;
 
-Mobile Size: [Performance: 66 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-register-mobile.png)
+* Mobile Size: [Performance: 66 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-register-mobile.png)
 
-Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-register-desktop.png)
+* Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-register-desktop.png)
 
 **Login Page** &#40;`login.html`&#41;
 
-Mobile Size: [Performance: 91 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-login-mobile.png)
+* Mobile Size: [Performance: 91 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-login-mobile.png)
 
-Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-login-desktop.png)
+* Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-login-desktop.png)
 
 **Profile Page** &#40;`profile.html`&#41;
 
-Mobile Size: [Performance: 75 / Accessibility: 91 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-profile-mobile.png)
+* Mobile Size: [Performance: 75 / Accessibility: 91 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-profile-mobile.png)
 
-Desktop Size: [Performance: 100 / Accessibility: 91 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-profile-desktop.png)
+* Desktop Size: [Performance: 100 / Accessibility: 91 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-profile-desktop.png)
 
 **Create Recipe Page** &#40;`create_recipe.html`&#41;
 
-Mobile Size: [Performance: 85 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-recipe-mobile.png)
+* Mobile Size: [Performance: 85 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-recipe-mobile.png)
 
-Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-recipe-desktop.png)
+* Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-recipe-desktop.png)
 
 **Edit Recipe Page** &#40;`edit_recipe.html`&#41;
 
-Mobile Size: [Performance: 82 / Accessibility: 100 / Best Practices: 93 / SEO: 92](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-recipe-mobile.png)
+* Mobile Size: [Performance: 82 / Accessibility: 100 / Best Practices: 93 / SEO: 92](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-recipe-mobile.png)
 
-Desktop Size: [Performance: 98 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-recipe-desktop.png)
+* Desktop Size: [Performance: 98 / Accessibility: 100 / Best Practices: 93 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-recipe-desktop.png)
 
 **Manage Category Page** &#40;`manage_category.html`&#41;
 
-Mobile Size: [Performance: 71 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-manage-category-mobile.png)
+* Mobile Size: [Performance: 71 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-manage-category-mobile.png)
 
-Desktop Size: [Performance: 96 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-manage-category-desktop.png)
+* Desktop Size: [Performance: 96 / Accessibility: 90 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-manage-category-desktop.png)
 
 **Create Category Page** &#40;`create_category.html`&#41;
 
-Mobile Size: [Performance: 78 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-category-mobile.png)
+* Mobile Size: [Performance: 78 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-category-mobile.png)
 
-Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-category-desktop.png)
+* Desktop Size: [Performance: 99 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-create-category-desktop.png)
 
 **Edit Category Page** &#40;`edit_category.html`&#41;
 
-Mobile Size: [Performance: 83 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-mobile.png)
+* Mobile Size: [Performance: 83 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-mobile.png)
 
-Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-desktop.png)
+* Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-desktop.png)
 
 
 ### Css
@@ -168,9 +168,18 @@ As the core CSS code is completed, a code validation test is carried out by usin
 
 * 1 warning is related to WebKit, which is one of [web browser rendering engines](https://stackoverflow.com/questions/3468154/what-is-webkit-and-how-is-it-related-to-css). By looking at the [Stack Overflow](https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about) post and a [Code Institue Slack](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/css/webkit.png) thread, no further actions are required so decide to leave them as they are
 
-
 ### JavaScript
 — **Code Validation** —
+
+As the core JavaScript code is completed, a code validation test is carried out by using [JSHint](https://jshint.com/), which is a static code analysis tool used in software development for checking if JavaScript source code complies with coding rules
+
+**`script.js`**: [1 Unused Variable](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/js/test-script.png)
+
+* This is just a function that is controlled on click so can be ignored
+
+**`createRecipe.js`**: [2 Warnings & 1 Unused Variable](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/js/test-create-recipe.png)
+
+* 2 warnings are fixed by putting semi colon and &#36; is jQuery symbol so can be ignored
 
 ### Python
 — **Initial Function** —

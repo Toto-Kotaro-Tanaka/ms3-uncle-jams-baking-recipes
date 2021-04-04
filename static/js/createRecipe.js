@@ -12,13 +12,17 @@ $(document).ready(function () {
         e.preventDefault();
         if (ingreds < maxIngredsFields) {
             ingreds++;
-            $(ingredsWrapper).append('<div><input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50" required /><a class="remove-field-ingreds color-fbeade"><i class="fas fa-trash-alt"></i></a></div>');
+            $(ingredsWrapper).append(
+                '<div><input type="text" name="recipe_ingreds" class="form-control bg-color-49332-06" maxlength="50" required /><a class="remove-field-ingreds color-fbeade"><i class="fas fa-trash-alt"></i></a></div>'
+            );
         }
     });
 
     $(ingredsWrapper).on("click", ".remove-field-ingreds", function (e) {
-        e.preventDefault(); $(this).parent('div').remove(); ingreds--;
-    })
+        e.preventDefault();
+        $(this).parent("div").remove();
+        ingreds--;
+    });
 
     // Steps Fields
     let maxStepsFields = 10;
@@ -30,12 +34,16 @@ $(document).ready(function () {
         e.preventDefault();
         if (steps < maxStepsFields) {
             steps++;
-            $(stepsWrapper).append('<div><textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300" required></textarea><a class="remove-field-steps color-fbeade"><i class="fas fa-trash-alt"></i></a></div>');
+            $(stepsWrapper).append(
+                '<div><textarea name="recipe_steps" class="form-control bg-color-49332-06" rows="3" maxlength="300" required></textarea><a class="remove-field-steps color-fbeade"><i class="fas fa-trash-alt"></i></a></div>'
+            );
         }
     });
 
     $(stepsWrapper).on("click", ".remove-field-steps", function (e) {
-        e.preventDefault(); $(this).parent('div').remove(); steps--;
-    })
+        e.preventDefault();
+        $(this).parent("div").remove();
+        steps--;
+    });
 });
 // -- /End of Credit --
