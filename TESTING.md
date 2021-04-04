@@ -294,9 +294,11 @@ There are some key features to achieve the primary goals of the website from use
 * A page where users can see recipes by category
 * A page where users can see a full recipe
 * A page where users can buy some baking items &#40;Owner gets a commission by selling items on the website and it is owner's primary goal&#41;
-* A page to create an account and login for those who would like to share their recipes
+* A page and function to create an account and login for those who would like to share their recipes
 * A page where users can see only their recipes
-* A page to create and post recipes with simple and clear steps
-* A page to edit and delete recipes
+* A page and function to create and post recipes with simple steps
+* A page and function to edit and delete recipes
 * A function to search specific recipes by a keyword&#40;s&#41;
 * A function to subscribe newsletter
+
+> Everything outlined above is implemented on the website and works properly

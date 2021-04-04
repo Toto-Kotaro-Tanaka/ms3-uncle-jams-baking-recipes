@@ -1,9 +1,9 @@
-<!--- Logo goes here --->
-# [Uncle Jam's Baking Recipes] <a name="top"></a> <!--- Link of the website goes here --->
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/logo.png)
+# [Uncle Jam's Baking Recipes] <a name="top"></a>
 This is a website for baking recipes of bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
-It is a mobile-first & responsive website and the link to the website is available HERE. <!--- Link of the website goes here --->
+It is a mobile-first & responsive website and the link to the website is available [HERE.](https://ms3-uncle-jams-baking-recipes.herokuapp.com/home)
 
-<!--- Mockup goes here --->
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/mockup.png)
 
 ## WHO'S THIS WEBSITE FOR?
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to see someone’s recipes for new ideas and / or to share their own recipes with other people can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to create and post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page that uses can look at some items and purchase them on the seller's website. There is a section to subscribe to newsletter to get engaged what’s happening in baking and community.
