@@ -162,6 +162,13 @@ Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO
 ### Css
 — **Code Validation** —
 
+As the core CSS code is completed, a code validation test is carried out by using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/), which is a validator by the World Wide Web Consortium that allows checking Cascading Style Sheets, to make sure that CSS complies with the standards set by the World Wide Web Consortium
+
+**`style.css`**: [0 Error & 1 Warning](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/css/test-style.png)
+
+* 1 warning is related to WebKit, which is one of [web browser rendering engines](https://stackoverflow.com/questions/3468154/what-is-webkit-and-how-is-it-related-to-css). By looking at the [Stack Overflow](https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about) post and a [Code Institue Slack](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/css/webkit.png) thread, no further actions are required so decide to leave them as they are
+
+
 ### JavaScript
 — **Code Validation** —
 
