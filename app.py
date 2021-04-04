@@ -256,27 +256,28 @@ def create_category():
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_category.html",
                            categories=categories, title="Create Category",
-                           hide_navbar_footer=True, jquery=True)
+                           hide_navbar_footer=True)
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """ To edit categories and only Admin has access to it """
-    if not session["user"] == "admin":
-        flash("Access denied", "error")
-        return redirect(url_for("profile", username=session["user"]))
+    if session["user"] == "admin":
 
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
-        }
-    mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-    flash("Category successfully updated", "success")
-    return redirect(url_for("manage_category"))
+        if request.method == "POST":
+            submit = {
+                "category_name": request.form.get("category_name")
+            }
+            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+            flash("Category successfully updated", "success")
+            return redirect(url_for("manage_category"))
 
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category,
-                           title="Edit Category", hide_navbar_footer=True)
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+        return render_template("edit_category.html", category=category,
+                               title="Edit Category", hide_navbar_footer=True)
+
+    flash("Access denied", "error")
+    return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_category/<category_id>", methods=["GET", "POST"])

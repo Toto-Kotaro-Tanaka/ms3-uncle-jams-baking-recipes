@@ -1,5 +1,5 @@
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/logo.png)
-# [Uncle Jam's Baking Recipes] <a name="top"></a>
+# Uncle Jam's Baking Recipes <a name="top"></a>
 This is a website for baking recipes of bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
 It is a mobile-first & responsive website and the link to the website is available [HERE.](https://ms3-uncle-jams-baking-recipes.herokuapp.com/home)
 
