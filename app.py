@@ -1,5 +1,4 @@
 # Import Python Modules
-import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -8,6 +7,7 @@ from bson.objectid import ObjectId
 from werkzeug.security import (generate_password_hash,
                                check_password_hash)
 from datetime import datetime
+import os
 if os.path.exists("env.py"):
     import env
 
@@ -44,7 +44,7 @@ def search():
 
 @app.route("/categories/<category_name>")
 def categories(category_name):
-    """ To display recipes by category by posted date """
+    """ To display recipes by category and posted date """
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("_id", -1)
     categories = mongo.db.categories.find()
@@ -65,7 +65,7 @@ def recipe(recipe_id):
 
 @app.route("/shop")
 def shop():
-    """ To display all baking tools available to buy """
+    """ To display all baking items for sale in affiliate """
     categories = mongo.db.categories.find()
     return render_template("shop.html", categories=categories,
                            title="Shop", main=True)
@@ -124,7 +124,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """ User profile where users have access to all their recipes,\
+    """ User profile page where users have access to all their recipes,\
          and to create, edit and delete recipes """
     recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
@@ -183,6 +183,7 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
 
     if session["user"].lower() != recipe["username"].lower():
+        flash("Access denied", "error")
         return redirect(url_for("profile", username=session["user"]))
 
     else:
@@ -227,55 +228,54 @@ def manage_category():
     categories = mongo.db.categories.find()
     manage_categories = list(mongo.db.categories.find().sort("_id", -1))
 
-    if session["user"] == "admin":
-        return render_template("manage_category.html", categories=categories,
-                               manage_categories=manage_categories,
-                               title="Manage Category", main=True)
+    if not session["user"] == "admin":
+        flash("Access denied", "error")
+        return redirect(url_for("profile", username=session["user"]))
 
-    return redirect(url_for("home", username=session["user"]))
+    return render_template("manage_category.html", categories=categories,
+                           manage_categories=manage_categories,
+                           title="Manage Category", main=True)
 
 
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
     """ To create categories and only Admin has access to it """
-    if session["user"] == "admin":
+    if not session["user"] == "admin":
+        flash("Access denied", "error")
+        return redirect(url_for("profile", username=session["user"]))
 
-        if request.method == "POST":
-            category = {
-                "category_name": request.form.get("category_name").lower()
-            }
-            mongo.db.categories.insert_one(category)
-            flash("You have created a new category", "success")
-            return redirect(url_for("manage_category"))
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name").lower()
+        }
+        mongo.db.categories.insert_one(category)
+        flash("You have created a new category", "success")
+        return redirect(url_for("manage_category"))
 
-        categories = mongo.db.categories.find().sort("category_name", 1)
-        return render_template("create_category.html",
-                               categories=categories, title="Create Category",
-                               hide_navbar_footer=True, jquery=True)
-
-    # Question: If this is ok or should be redirected page 404 or 401?
-    return redirect(url_for("home"))
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("create_category.html",
+                           categories=categories, title="Create Category",
+                           hide_navbar_footer=True, jquery=True)
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """ To edit categories and only Admin has access to it """
-    if session["user"] == "admin":
+    if not session["user"] == "admin":
+        flash("Access denied", "error")
+        return redirect(url_for("profile", username=session["user"]))
 
-        if request.method == "POST":
-            submit = {
-                "category_name": request.form.get("category_name")
-            }
-            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-            flash("Category successfully updated", "success")
-            return redirect(url_for("manage_category"))
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+    mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+    flash("Category successfully updated", "success")
+    return redirect(url_for("manage_category"))
 
-        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-        return render_template("edit_category.html", category=category,
-                               title="Edit Category", hide_navbar_footer=True)
-
-    # Question: If this is ok or should be redirected page 404 or 401?
-    return redirect(url_for("home"))
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category,
+                           title="Edit Category", hide_navbar_footer=True)
 
 
 @app.route("/delete_category/<category_id>", methods=["GET", "POST"])
@@ -297,7 +297,7 @@ def subscribe_newsletter():
             flash("You are already subscribed", "error")
             return redirect(url_for("home"))
 
-        else:  # Do you need esle ?
+        else:
             email = {
                 "subsc_email": request.form.get("subsc_email")
             }
