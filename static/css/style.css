@@ -85,6 +85,8 @@ h5 {
 
 .btn:hover {
     background-color: #fff !important;
+    color: #493323 !important;
+    font-weight: 700;
 }
 
 .btn-e84610 {
@@ -95,7 +97,7 @@ h5 {
 }
 
 .btn-e84610:hover {
-    color: #e84610;
+    color: #e84610 !important;
 }
 
 .btn-center {
