@@ -271,5 +271,32 @@ Subscribe To Newsletter function and form are created so a test is carried out.
 [Subscribe To Newsletter Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result.png) / [Subscribe To Newsletter Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result-data.png) &#40;Input emails are stored in the database so it works properly&#41;
 
 ### Web Browser
+— **Visibilities and CRUD functionality** —
+
+The website is available on the major web browsers, such as **Chrome**, **Safari**, **Firefox**, **Opera** and **Microsoft Edge**. To make sure all the visual contents are shown and functions work properly on those browsers, the below manual testing is carried out on all of them. *Except Chrom that I use to build the website
+
+1. Open the website on the browser to do a visual test. Look at all the pages to see if everything appears as expected
+2. Create an user and test CRUD functions
+    * Create a recipe and post it
+    * Check to see if they appear on Home page and Categories page
+    * Edit a recipe
+    * Create another recipe and delete it
+    * Subscribe newsletter
+
+> All the above functions work without any problem on each browser
 
 ### UX
+— **Evidence Of Achieving The Website From UX Point Of View** —
+
+There are some key features to achieve the primary goals of the website from users point of view and this is to confirm that these features are on the website for both visually and functionality.
+
+* A page where users can see summary of all the recipes
+* A page where users can see recipes by category
+* A page where users can see a full recipe
+* A page where users can buy some baking items &#40;Owner gets a commission by selling items on the website and it is owner's primary goal&#41;
+* A page to create an account and login for those who would like to share their recipes
+* A page where users can see only their recipes
+* A page to create and post recipes with simple and clear steps
+* A page to edit and delete recipes
+* A function to search specific recipes by a keyword&#40;s&#41;
+* A function to subscribe newsletter
