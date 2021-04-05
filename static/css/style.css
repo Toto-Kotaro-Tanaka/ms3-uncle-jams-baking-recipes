@@ -20,8 +20,8 @@ h2 {
     color: #493323;
     font-family: "Amatic SC", cursive;
     font-size: 3rem;
-    padding: 0 2rem 1rem;
-    text-align: center;
+    padding: 1.5rem 0;
+    /* text-align: center; */
 }
 
 h3 {
@@ -302,12 +302,8 @@ header {
 
 /* -- categories.html -- */
 .categories-img {
-    bottom: 5.5rem;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    width: 17rem;
+    padding-top: 7rem;
+    width: 10rem;
 }
 
 /* -- shop.html -- */

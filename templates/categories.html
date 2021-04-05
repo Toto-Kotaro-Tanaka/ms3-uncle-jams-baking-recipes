@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<div class="center">
+<div class="text-center">
     {% if category_name == "bread" %}
     <img class="categories-img" src="{{ url_for('static', filename='images/bread.png') }}" alt="Category Bread">
     {% elif category_name == "cake" %}
@@ -12,7 +12,7 @@
     <img class="categories-img" src="{{ url_for('static', filename='images/other-categories.png') }}"
         alt="Category Other">
     {% endif %}
-    <h1>Recipe By Category</h1>
+    <h2>Recipe By Category</h2>
 </div>
 <img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
 <img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/coffee.png') }}" alt="Coffee">
