@@ -57,8 +57,9 @@ def categories(category_name):
 def recipe(recipe_id):
     """ To display an individual recipe """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html",
-                           recipe=recipe, recipe_title=recipe)
+    categories = mongo.db.categories.find()
+    return render_template("recipe.html", recipe=recipe,
+                           categories=categories, recipe_title=recipe)
 
 
 @app.route("/shop")

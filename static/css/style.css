@@ -604,15 +604,15 @@ header {
         height: 30vw;
     }
 
-    .recipe-full-img {
-        width: 120%;
-    }
-
     #section-recipe {
         margin: 0 auto 3rem;
-        max-width: 80rem;
+        max-width: 55rem;
         padding: 3rem 3rem 2rem;
         width: 85%;
+    }
+    
+    .recipe-title {
+        padding: 10rem 15rem 5rem;
     }
 
     .grid-top {
@@ -624,7 +624,6 @@ header {
     .grid-top-img {
         grid-column: 2/2;
         margin: 0 auto;
-        width: 70%;
     }
 
     .grid-top-title {
@@ -748,24 +747,20 @@ header {
         left: 4rem;
         opacity: 0.5;
         position: absolute;
-        top: 13rem;
-        width: 5rem;
+        top: 15rem;
+        width: 7rem;
     }
 
     .right {
         opacity: 0.5;
         position: absolute;
         right: 4rem;
-        top: 13rem;
-        width: 5rem;
+        top: 15rem;
+        width: 7rem;
     }
 
     .recipe-img-top {
         height: 20vw;
-    }
-
-    .recipe-full-img {
-        width: 80%;
     }
 
     #section-recipe-summary,
