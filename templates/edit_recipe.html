@@ -16,7 +16,6 @@
                     class="form-select bg-color-49332-06 recipe-select color-fff" aria-label="Recipe Categories">
                     {% for category in categories %}
                     {% if category.category_name == recipe.category_name %}
-                    <option value="other" disabled>Select Category</option>
                     <option value="{{ category.category_name }}" selected>{{ category.category_name | title }}
                     </option>
                     {% else %}
@@ -45,7 +44,6 @@
                 <label for="recipe_time">Baking Time</label>
                 <select id="recipe_time" name="recipe_time"
                     class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Baking Time">
-                    <option disabled>Select Time</option>
                     <option value="{{ recipe.recipe_time }}" selected>{{ recipe.recipe_time }} min</option>
                     <option value="less-than-30">Less than 30 min</option>
                     {% for time in range(40, 120, 10) %}
@@ -59,7 +57,6 @@
                 <label for="recipe_serves">Serves</label>
                 <select id="recipe_serves" name="recipe_serves"
                     class="form-select recipe-select bg-color-49332-06 color-fff" aria-label="Serves">
-                    <option disabled>Select Serves</option>
                     <option value="{{ recipe.recipe_serves }}">{{ recipe.recipe_serves }} people</option>
                     {% for num in range(2, 11) %}
                     <option value="{{ num }}">{{ num }} people</option>

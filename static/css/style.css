@@ -228,7 +228,7 @@ header {
     width: 17rem;
 }
 
-/* -- index.html & recipe.html -- */
+/* -- index.html & recipe.html & search.html -- */
 #index {
     min-height: 100vh;
 }
@@ -277,6 +277,10 @@ header {
 
 .p-tips {
     font-size: 0.9rem;
+}
+
+.search-title {
+    padding-top: 8rem;
 }
 
 /* Credit: Codepen CSS Bouncing Arrow @ https://codepen.io/bitstarr/pen/XjaJGz */

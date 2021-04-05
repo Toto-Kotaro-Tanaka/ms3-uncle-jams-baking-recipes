@@ -39,7 +39,10 @@ def search():
     recipe title and usrname in recipes collection """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("index.html", recipes=recipes, search=True)
+    total = int(mongo.db.recipes.find({"$text": {"$search": query}}).count())
+    categories = mongo.db.categories.find()
+    return render_template("search.html", recipes=recipes, total=total,
+                           categories=categories, search=True)
 
 
 @app.route("/categories/<category_name>")
