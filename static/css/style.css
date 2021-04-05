@@ -20,7 +20,7 @@ h2 {
     color: #493323;
     font-family: "Amatic SC", cursive;
     font-size: 3rem;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 3rem;
     text-align: center;
 }
 
@@ -448,7 +448,7 @@ header {
 /* -- profile.html -- */
 .profile-img {
     padding: 1.5rem 0 1rem;
-    width: 5rem;
+    width: 8rem;
 }
 
 /* -- Page 404 -- */
@@ -484,7 +484,7 @@ header {
     border-width: 0 2.56rem 3.5rem 0;
     border-color: transparent rgba(73, 51, 35, 0.3) transparent transparent;
     bottom: -3.5rem;
-    left: 70%;
+    left: 80%;
     margin-left: -1.28rem;
 }
 /* /End of Credit */
@@ -653,7 +653,6 @@ header {
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        text-align: center;
         width: 32rem;
     }
 
@@ -663,6 +662,16 @@ header {
 
     .diversion-account {
         padding-bottom: 1rem;
+    }
+
+    #heading-manage {
+        margin: 0 auto;
+        max-width: 40rem;
+        width: 80%;
+    }
+
+    .category-name {
+        padding-top: 1.5rem;
     }
 
     #section-account,
@@ -681,13 +690,8 @@ header {
         width: 40rem;
     }
 
-    #section-manage-recipe,
     #section-manage-category {
         width: 40rem;
-    }
-
-    #section-page-404 {
-        margin: 0 auto;
     }
 
     #important-note {
@@ -700,7 +704,7 @@ header {
     }
 
     .arrow {
-        bottom: -2rem;
+        bottom: -3rem;
         left: 50%;
     }
 }

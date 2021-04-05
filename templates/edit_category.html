@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('manage_category') }}"><img class="back-page-logo"
-        src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
-<h2 class="h2-p-0">Edit Category</h2>
+<section id="heading-manage">
+    <a href="{{ url_for('manage_category') }}"><img class="back-page-logo"
+            src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
+    <h2 class="h2-p-0">Edit Category</h2>
 
-<div id="section-create-edit-category" class="color-fbeade">
-    <form id="form-category" class="pb-4" method="POST"
-        action="{{ url_for('edit_category', category_id=category._id) }}">
-        <!-- Edit Category -->
-        <label class="form-label color-fbeade" for="category_name">Edit Category</label>
-        <div class="form-outline mb-4 form-white">
-            <input type="text" id="category_name" name="category_name" class="form-control bg-color-49332-06"
-                maxlength="15" value="{{ category.category_name }}" required />
-            <p class="input-note">&#40;max 15&#41;</p>
-        </div>
-        <!-- Edit Category Button -->
-        <button type="submit" class="btn btn-ffd5b7 mt-2">Edit</button>
-        <a href="{{ url_for('manage_category') }}" class="btn btn-ffd5b7-06 mt-2">Cancel</a>
-    </form>
-</div>
+    <div id="section-create-edit-category" class="color-fbeade">
+        <form id="form-category" class="category-name pb-4" method="POST"
+            action="{{ url_for('edit_category', category_id=category._id) }}">
+            <!-- Edit Category -->
+            <label class="form-label color-fbeade" for="category_name">Edit Category</label>
+            <div class="form-outline mb-4 form-white">
+                <input type="text" id="category_name" name="category_name" class="form-control bg-color-49332-06"
+                    maxlength="15" value="{{ category.category_name }}" required />
+                <p class="input-note">&#40;max 15&#41;</p>
+            </div>
+            <!-- Edit Category Button -->
+            <button type="submit" class="btn btn-ffd5b7 mt-2">Edit</button>
+            <a href="{{ url_for('manage_category') }}" class="btn btn-ffd5b7-06 mt-2">Cancel</a>
+        </form>
+    </div>
+</section>
 {% endblock %}
