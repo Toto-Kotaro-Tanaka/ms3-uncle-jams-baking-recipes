@@ -493,6 +493,31 @@ header {
 }
 /* /End of Credit */
 
+/* Pagination */
+.pagination {
+    color: #493323;
+    font-family: "Balsamiq Sans", cursive;
+    font-size: 1.4rem;
+}
+
+.pagination ul {
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.pagination ul li {
+    display: inline;
+    padding: 0 0.5rem
+}
+
+.pagination ul li a {
+    color: rgba(73, 51, 35, 0.6);
+}
+
+ul {
+    padding-left: 0;
+}
+
 /* -- Footer -- */
 .input-subscribe {
     background-color: rgba(73, 51, 35, 0.3) !important;

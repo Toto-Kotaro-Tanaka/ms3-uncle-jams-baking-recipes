@@ -10,7 +10,7 @@
 <section id="section-recipe-summary">
     <div class="container-fluid">
         <div class="row">
-            {% if total == 0 or total == 1 %}
+            {% if total < 2 %}
             <h3>{{ total }} Recipe Found</h3>
             {% else %}
             <h3>{{ total }} Recipes Found</h3>

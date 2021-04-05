@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import (generate_password_hash,
                                check_password_hash)
@@ -23,14 +24,44 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Pagination
+""" Credit: Ed Bradley \
+@ https://github.com/Edb83/self-isolution/blob/master/app.py """
+recipes = mongo.db.recipes.find()
+
+PER_PAGE = 6
+
+
+def paginated(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    offset = page * PER_PAGE - PER_PAGE
+
+    return recipes[offset: offset + PER_PAGE]
+
+
+def pagination_args(recipes):
+    page, per_page, offset = get_page_args(
+        page_parameter='page', per_page_parameter='per_page')
+    total = recipes.count()
+
+    return Pagination(page=page, per_page=PER_PAGE, total=total)
+
+# /End of Credit
+
+
 @app.route("/")
 @app.route("/home")
 def home():
     """ To display all recipes by posted date """
     recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
     return render_template("index.html", recipes=recipes,
-                           categories=categories, search=True)
+                           categories=categories,
+                           recipe_paginated=recipes_paginated,
+                           pagination=pagination, search=True)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -51,9 +82,13 @@ def categories(category_name):
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("_id", -1)
     categories = mongo.db.categories.find()
+    recipes_paginated = paginated(recipes)
+    pagination = pagination_args(recipes)
     return render_template("categories.html", recipes=recipes,
-                           category_name=category_name, categories=categories,
-                           title=category_name, search=True)
+                           category_name=category_name,
+                           categories=categories, title=category_name,
+                           recipe_paginated=recipes_paginated,
+                           pagination=pagination, search=True)
 
 
 @app.route("/recipe/<recipe_id>")
