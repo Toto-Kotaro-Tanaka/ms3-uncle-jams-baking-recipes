@@ -556,6 +556,10 @@ header {
     #section-create-edit-category {
         margin-bottom: 3rem;
     }
+
+    .arrow-link {
+        display: none;
+    }
 }
 
 /* -- Media Query: Tablet Screen Size Bigger Than 48rem / 768px -- */
@@ -586,14 +590,13 @@ header {
         border-radius: 0.25rem;
     }
 
-    #uncle-jam,
-    .categories-img {
+    #uncle-jam {
         padding-top: 0;
         width: 20rem;
     }
 
     .categories-img {
-        padding-top: 0;
+        padding-top: 10rem;
         width: 18rem;
     }
 
@@ -644,10 +647,29 @@ header {
         width: 22rem;
     }
 
+    #heading-account {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 32rem;
+    }
+
+    .form-login {
+        padding-top: 2rem;
+    }
+
+    .diversion-account {
+        padding-bottom: 1rem;
+    }
+
     #section-account,
-    #section-create-edit-category,
-    #section-page-404 {
-        width: 30rem;
+    #section-manage-recipe,
+    #section-create-edit-category {
+        position: relative;
     }
 
     #section-account,
@@ -672,6 +694,15 @@ header {
     #important-note {
         padding-left: 5rem !important;
         padding-right: 5rem !important;
+    }
+
+    .arrow-link {
+        display: block;
+    }
+
+    .arrow {
+        bottom: -2rem;
+        left: 50%;
     }
 }
 
@@ -711,6 +742,22 @@ header {
         left: 4rem;
         position: absolute;
         width: 6rem;
+    }
+
+    .left {
+        left: 4rem;
+        opacity: 0.5;
+        position: absolute;
+        top: 13rem;
+        width: 5rem;
+    }
+
+    .right {
+        opacity: 0.5;
+        position: absolute;
+        right: 4rem;
+        top: 13rem;
+        width: 5rem;
     }
 
     .recipe-img-top {

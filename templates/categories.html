@@ -13,11 +13,9 @@
         alt="Category Other">
     {% endif %}
     <h2>Recipe By Category</h2>
+    <img class="d-none d-lg-inline left" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
+    <img class="d-none d-lg-inline right" src="{{ url_for('static', filename='images/coffee.png') }}" alt="Coffee">
 </div>
-<img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
-<img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/coffee.png') }}" alt="Coffee">
-<img class="d-none d-lg-inline right-bottom" src="{{ url_for('static', filename='images/cream.png') }}" alt="Cream">
-<img class="d-none d-lg-inline left-bottom" src="{{ url_for('static', filename='images/coffee.png') }}" alt="coffee">
 {% endblock %}
 
 {% block content %}

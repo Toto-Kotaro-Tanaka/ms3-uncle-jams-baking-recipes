@@ -5,14 +5,14 @@
     <div class="center">
         <img id="uncle-jam" src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam">
         <h1>Uncle Jam's Baking Recipes</h1>
+        <a class="arrow-link" href="#section-recipe-summary">
+            <div class="arrow bounce"></div>
+        </a>
     </div>
     <img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
     <img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
     <img class="d-none d-lg-inline right-bottom" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
     <img class="d-none d-lg-inline left-bottom" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
-    <a href="#section-recipe-summary">
-        <div class="arrow bounce"></div>
-    </a>
 </div>
 {% endblock %}
 
