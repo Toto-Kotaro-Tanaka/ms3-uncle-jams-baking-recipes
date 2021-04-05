@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block heading %}
-<a href="{{ url_for('home') }}"><img class="uj-back-page-logo"
-        src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"></a>
-<h2>{{ recipe.recipe_title }}</h2>
+<h2 class="h2-p-5-15-1 mb-0">{{ recipe.recipe_title }} Recipe</h2>
+{% endblock %}
 
+{% block content %}
 <section id="section-recipe" class="color-493323">
     <div class="grid-top">
         <!-- Recipe Image -->
@@ -60,7 +60,7 @@
     <!-- Recipe Tips -->
     <div class="tips text-center">
         <h5 class="font-weight-700 mt-4">Tips</h5>
-        <p class="p-tips">{{ recipe.recipe_tips }}</p>
+        <p class="p-tips p-3 mb-0">{{ recipe.recipe_tips }}</p>
     </div>
     {% endif %}
     <!-- Home & Back To Category Links -->
@@ -70,7 +70,7 @@
             class="btn btn-ffd5b7-06">{{ recipe.category_name | title}}</a>
     </div>
     {% if recipe.recipe_owner %}
-    <div class="bbc-recipe-full text-center">
+    <div class="bbc-recipe-full text-center pb-3">
         <a class="h6" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">BBC Recipe</a>
     </div>
     {% endif %}

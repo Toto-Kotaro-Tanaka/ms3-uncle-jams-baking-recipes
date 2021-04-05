@@ -20,8 +20,20 @@ h2 {
     color: #493323;
     font-family: "Amatic SC", cursive;
     font-size: 3rem;
-    padding: 1.5rem 0;
-    /* text-align: center; */
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.h2-p-0 {
+    padding: 0;
+}
+
+.h2-p-5-15-1 {
+    padding: 5rem 1.5rem 1rem;
+}
+
+.h2-p-88-15 {
+    padding: 8.8rem 1.5rem 0;
 }
 
 h3 {
@@ -333,10 +345,6 @@ header {
     width: 4rem;
 }
 
-.account-title {
-    padding: 0;
-}
-
 #section-account,
 #section-manage-recipe,
 #section-create-edit-category {
@@ -438,10 +446,6 @@ header {
 }
 
 /* -- profile.html -- */
-.profile-text {
-    padding: 8.8rem 1.5rem 0;
-}
-
 .profile-img {
     padding: 1.5rem 0 1rem;
     width: 5rem;

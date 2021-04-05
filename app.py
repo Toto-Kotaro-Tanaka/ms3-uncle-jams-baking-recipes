@@ -58,8 +58,7 @@ def recipe(recipe_id):
     """ To display an individual recipe """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html",
-                           recipe=recipe, recipe_title=recipe,
-                           hide_navbar_main_footer=True)
+                           recipe=recipe, recipe_title=recipe)
 
 
 @app.route("/shop")
