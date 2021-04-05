@@ -602,6 +602,11 @@ ul {
         font-size: 3.5rem;
     }
 
+    .h2-mt-4 {
+    margin-top: -4rem;
+}
+
+
     h3 {
         font-size: 2rem;
     }
@@ -620,7 +625,7 @@ ul {
     }
 
     #uncle-jam {
-        padding-top: 0;
+        padding-top: 3rem;
         width: 20rem;
     }
 
@@ -678,7 +683,7 @@ ul {
     #heading-account {
         margin: 0;
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -748,7 +753,7 @@ ul {
         left: 4rem;
         opacity: 0.5;
         position: absolute;
-        top: 6rem;
+        top: 4.5rem;
         width: 6rem;
     }
 
@@ -756,7 +761,7 @@ ul {
         opacity: 0.5;
         position: absolute;
         right: 4rem;
-        top: 6rem;
+        top: 7.5rem;
         width: 6rem;
     }
 
@@ -770,7 +775,7 @@ ul {
 
     .left-bottom {
         opacity: 0.5;
-        bottom: 2rem;
+        bottom: 2.5rem;
         left: 4rem;
         position: absolute;
         width: 6rem;
