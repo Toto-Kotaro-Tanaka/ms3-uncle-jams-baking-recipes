@@ -179,10 +179,21 @@ Updating README.md and some testing is also done during the above process
 
 ## FEATURES
 ### Existing Features
-
-<div align="right"><a href="#top">🔝</a></div>
+* Create with **HTML5**, **CSS3** &#40;with Material Design for Bootstrap&#41;, **JavaScript**, **Python** &#40;Flask, Jinja&#41;, **MongoDB** &#40;Atlas&#41;
+* It consists of 1 base page with 14 different html files
+* Modal for "Create Recipe" instructions and confirmation for "Delete" function
+* [BBC Good Food](https://www.bbcgoodfood.com/) for recipes
+* All the [features planned on scope plane](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/scope-plane.png) and Pagination
 
 ### Features Left To Implement
+
+* **Resetting Password When Users Forget It:** To achieve this, email address is probably required for creating an account. Currently, the primary purpose of the website is to provide easy access to the platform as well as I do not know how to implement this with my current skills, decide to leave this out
+* **Upload Image For Each Recipe:** Image data cannot be stored in MongoDB so this is not possible with the current project however having image for recipes is achieved by using image URL
+* **Review By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out for 
+* **“Like” Reaction By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out for
+* **Customise Pagination Page Display:** Manage to do pagination as it is essential to have to make the website neat, however I do not know how to customise pagination page display (e.g. When there are more recipes, it will show page 1, 2, 3, 4, 5, 6, 7 ...) I do not have time to look into details so decide to leave it as it is
+
+<div align="right"><a href="#top">🔝</a></div>
 
 ## TECHNOLOGIES USED
 * [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
