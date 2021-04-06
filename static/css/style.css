@@ -205,6 +205,7 @@ hr.hr-fff {
     position: absolute;
     right: 1rem;
     top: 5rem;
+    z-index: 1;
 }
 
 .error {
@@ -215,6 +216,7 @@ hr.hr-fff {
     margin: 0 auto;
     position: absolute;
     right: 1rem;
+    z-index: 1;
 }
 
 /* -- Header -- */
