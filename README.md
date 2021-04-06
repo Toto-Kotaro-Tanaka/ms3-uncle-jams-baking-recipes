@@ -254,7 +254,7 @@ Testing report is available **[TESTING.md](https://github.com/Toto-Kotaro-Tanaka
 2. Use **Code Institute Template**, put the repository name and click Create Repository making sure to select public<br>
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-2.png)<br>
 
-3. Open the repository with [Gitpod](https://www.gitpod.io/) which is my Integrated Development Environment (IDE). By using Code Institue Template, initialisation including initial commit is done so no need to do git init when open IDE, or to use git push -u origin main command when I commit first time<br>
+3. Open the repository with [Gitpod](https://www.gitpod.io/) which is my Integrated Development Environment (IDE). By using Code Institue Template, initialisation including initial commit is done so no need to do `git init` command when open IDE, or to use `git push -u origin main` command for my first commit<br>
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-3-1.png)<br>
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-3-2.png)<br>
 
@@ -274,7 +274,7 @@ Testing report is available **[TESTING.md](https://github.com/Toto-Kotaro-Tanaka
 
 — **Branches** —
 
-* When somet esting is needes, create a branch and test is on it instead of using main branch. When the testing is successful, then merge the branch into main, when it is not, leave the branch unmerged and keep working on main branch. Below commands are used for this.
+* When some testing is needes, create a branch and test is on it instead of using main branch. When the testing is successful, then merge the branch into main, when it is not, leave the branch unmerged and keep working on main branch. Below commands are used for this.
 
 ````
 * git branch <branch name> | To create a new branch
@@ -347,18 +347,51 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 — **CSS3** —
 * [Html Code Generator](https://www.html-code-generator.com/css/speech-bubble-generator) for speech bubble
+* [Codepen CSS Bouncing Arrow](https://codepen.io/bitstarr/pen/XjaJGz) for bouncing arrow
 
 — **JavaScript** —
 * [Sanwebe](https://www.sanwebe.com/2013/03/addremove-input-fields-dynamically-with-jquery) for adding input fields
 
+— **Python** —
+* [Ed Bradley](https://github.com/Edb83/self-isolution/blob/master/app.py) for pagination
+
 > **Note:**
-> All credited codes are also mentioned on html and js files
+> All credits are also mentioned on the files
 
 ### Contents
 
+— **Recipes** —
+
+All recipes are from [BBC Good Food](https://www.bbcgoodfood.com/)
+
+* [Triple chocolate & peanut butter layer cake](https://www.bbcgoodfood.com/recipes/triple-chocolate-peanut-butter-layer-cake)
+* [Rustic bread](https://www.bbcgoodfood.com/recipes/rustic-bread)
+* [Hedgehog rolls](https://www.bbcgoodfood.com/recipes/hedgehog-rolls)
+* [Lemon biscuits](https://www.bbcgoodfood.com/recipes/lemon-kisses)
+* [Seed & grain cottage loaf](https://www.bbcgoodfood.com/recipes/seed-grain-cottage-loaf)
+* [Ginger biscuits](https://www.bbcgoodfood.com/recipes/ginger-biscuits)
+* [Easy vanilla cake](https://www.bbcgoodfood.com/recipes/easy-vanilla-cake)
+* [Florentine biscuits](https://www.bbcgoodfood.com/recipes/florentine-biscuits)
+* [Easy millionaire’s shortbread](https://www.bbcgoodfood.com/recipes/easy-millionaires-shortbread)
+* [Mary Berry’s orange layer cake
+](https://www.bbcgoodfood.com/recipes/mary-berrys-orange-layer-cake)
+* [Chocolate fudge crinkle biscuits](https://www.bbcgoodfood.com/recipes/chocolate-fudge-crinkle-biscuits)
+* [Luscious lemon baked cheesecake](https://www.bbcgoodfood.com/recipes/luscious-lemon-baked-cheesecake)
+* [Honey & almond layer cake](https://www.bbcgoodfood.com/recipes/honey-almond-layer-cake)
+* [Manchego & chorizo melting biscuits](https://www.bbcgoodfood.com/recipes/manchego-chorizo-melting-biscuits)
+* [Soft burger buns](https://www.bbcgoodfood.com/recipes/soft-burger-buns)
+* [Easy sourdough bread](https://www.bbcgoodfood.com/recipes/cheats-sourdough)
+* [Basic granary bread dough (for rolls or a large loaf)](https://www.bbcgoodfood.com/recipes/basic-granary-bread-dough-rolls-or-large-loaf)
+* [Ham & tomato Stromboli](https://www.bbcgoodfood.com/recipes/ham-tomato-stromboli)
+* [Turkish-style sharing bread](https://www.bbcgoodfood.com/recipes/turkish-style-sharing-bread)
+* [Dundee cake](https://www.bbcgoodfood.com/recipes/dundee-cake)
+* [Vanilla cupcake bouquet](https://www.bbcgoodfood.com/recipes/vanilla-cupcake-bouquet)
+* [Pistachio & milk chocolate squares](https://www.bbcgoodfood.com/recipes/pistachio-milk-chocolate-squares)
+
 ### Media
-— **Logo & Favicon** —
-* Created by me using [canva](https://www.canva.com/)
+— **Logo & Favicon & Other Images** —
+* Logo and Favicon Created by me using [canva](https://www.canva.com/)
+* Other Images are from elements in [canva](https://www.canva.com/)
 
 <div align="right"><a href="#top">🔝</a></div>
 
