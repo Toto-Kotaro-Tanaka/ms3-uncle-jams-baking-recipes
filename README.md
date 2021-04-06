@@ -388,6 +388,17 @@ All recipes are from [BBC Good Food](https://www.bbcgoodfood.com/)
 * [Vanilla cupcake bouquet](https://www.bbcgoodfood.com/recipes/vanilla-cupcake-bouquet)
 * [Pistachio & milk chocolate squares](https://www.bbcgoodfood.com/recipes/pistachio-milk-chocolate-squares)
 
+— **Affiliate** —
+
+All affiliates are from [Amazon Affiliate Programe](https://affiliate-program.amazon.com/)
+
+* [Cake Decorating Equipment](https://www.amazon.co.uk/gp/product/B07N1JB9V7/)
+* [Set of 8 Non Stick Baking Tray](https://www.amazon.co.uk/gp/product/B07B3XVN2V/)
+* [Stainless Steel Angled Icing Spatulas](https://www.amazon.co.uk/gp/product/B089F8XXLM/)
+* [Kenwood Mary Berry Special Edition Chef Elite Stand Mixer](https://www.amazon.co.uk/gp/product/B07XVF56FM/)
+* [Mary Berry's Baking Bible](https://www.amazon.co.uk/gp/product/1846077850/)
+* [Russell Hobbs 23620 Compact Fast Breadmaker](https://www.amazon.co.uk/gp/product/B01HMITHY2/)
+
 ### Media
 — **Logo & Favicon & Other Images** —
 * Logo and Favicon Created by me using [canva](https://www.canva.com/)

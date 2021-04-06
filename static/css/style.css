@@ -187,8 +187,9 @@ hr.hr-fff {
 }
 
 .btn-search:hover {
-    color: #fbeade;
+    color: #fbeade !important;
     background-color: #ff7c3e !important;
+    font-weight: 400 !important;
 }
 
 /* -- Flash Message -- */
