@@ -65,8 +65,10 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 
 ### Structure Plane
 
-— **Front-end** —<br>
+— **Front-end** —
+
 The website consists of **Home** page with **14 other core pages**.
+
 * **Home** &#40;`index.html`&#41;<br>The main page of the website. There is a logo, navigation bar to *Categories*, *Shop*, *Register* & *Login* pages, a title, a hero image. All the summary of recipes are contained and users can access to a full *Recipe* page. There is a footer with a form to subscribe to newsletter and some social icons
 
 * **Categories** &#40;`categories_bread | cake | biscuit.html`&#41;<br>The pages where users can see recipes by category and access to a full *Recipe* page. The same navigation bar and footer are used as *Home*
@@ -164,7 +166,7 @@ This project contains both front-end and back-end so well-structured planning is
 1. Installing necessary Python frameworks, creating a Python file for the app and to test a function
 1. Deploying the website in Heroku
 1. Connecting Database and App
-1. Creating parent HTML template with common sections (e.g. header & footer)
+1. Creating parent HTML template with common sections &#40;e.g. header & footer&#41;
 1. Creating *Register*, *Login*, *Profile* pages
 1. Creating *Create*, *Edit* recipe pages
 1. Creating *Create*, *Edit* category pages
@@ -186,12 +188,11 @@ Updating README.md and some testing is also done during the above process
 * All the [features planned on scope plane](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/scope-plane.png) and Pagination
 
 ### Features Left To Implement
-
 * **Resetting Password When Users Forget It:** To achieve this, email address is probably required for creating an account. Currently, the primary purpose of the website is to provide easy access to the platform as well as I do not know how to implement this with my current skills, decide to leave this out
 * **Upload Image For Each Recipe:** Image data cannot be stored in MongoDB so this is not possible with the current project however having image for recipes is achieved by using image URL
 * **Review By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out for 
 * **“Like” Reaction By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out for
-* **Customise Pagination Page Display:** Manage to do pagination as it is essential to have to make the website neat, however I do not know how to customise pagination page display (e.g. When there are more recipes, it will show page 1, 2, 3, 4, 5, 6, 7 ...) I do not have time to look into details so decide to leave it as it is
+* **Customise Pagination Page Display:** Manage to do pagination as it is essential to have to make the website neat, however I do not know how to customise pagination page display &#40;e.g. When there are more recipes, it will show page 1, 2, 3, 4, 5, 6, 7...&#41; I do not have time to look into details so decide to leave it as it is
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -243,7 +244,49 @@ Testing report is available **[TESTING.md](https://github.com/Toto-Kotaro-Tanaka
 
 ## VERSION CONTROL
 
-<!--- Commit message by mistke --->
+[Git](https://git-scm.com/) as a local repository and [GitHub](https://github.com/) as a remote repository are used for the project, and below is how I use these as the version control for the project.
+
+— **Setting Up** —
+
+1. Create a **remote repository** in GitHub by clicking **"New repository"** on the main page<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-1.png)<br>
+
+2. Use **Code Institute Template**, put the repository name and click Create Repository making sure to select public<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-2.png)<br>
+
+3. Open the repository with [Gitpod](https://www.gitpod.io/) which is my Integrated Development Environment (IDE). By using Code Institue Template, initialisation including initial commit is done so no need to do git init when open IDE, or to use git push -u origin main command when I commit first time<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-3-1.png)<br>
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/version-control-3-2.png)<br>
+
+— **Commitments** —
+
+* When a section or even a group of work are completed, they are committed in git and pushed into GitHub, in order to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
+
+````
+* git status | To check the status of new / modified folders, files, and documents
+* git add . | To put all new and updated work on the stage in git or git add <specific file> to put a certain work on the stage
+* git commit -m "Example commit" | To commit the work on the stage in git before pushing it to GitHub
+* git push | To update the repository in GitHub
+````
+
+> **Note:**<br>
+> During the project, I learn a better way of keeping commit messages so follow this [article](https://chris.beams.io/posts/git-commit/)
+
+— **Branches** —
+
+* When somet esting is needes, create a branch and test is on it instead of using main branch. When the testing is successful, then merge the branch into main, when it is not, leave the branch unmerged and keep working on main branch. Below commands are used for this.
+
+````
+* git branch <branch name> | To create a new branch
+* git checkout <branch name> | To switch branch
+* git branch | To check current branch
+* git merge <branch name> | To merge sub branch into main, do this on main branch
+````
+
+> **Note:**<br>
+> I understand that same sub branch can be used as many times as I want to, however I create a new branch for each test becuase my knowledge of git is not the best and sometimes I am not 100% sure if I do it right. I would like to improve more on the usage of git and version control and use this properly for the next project
+
+> There is one [commit message](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/commit-msg.png) that is not correspond to what actually happen. I commit it from sub branch presuming there are only minor changes, however it seems it do it from main somehow 
 
 <div align="right"><a href="#top">🔝</a></div>
 
