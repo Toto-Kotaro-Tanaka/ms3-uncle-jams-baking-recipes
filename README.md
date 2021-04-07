@@ -1,9 +1,9 @@
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/logo.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/readme-logo.png)
 # Uncle Jam's Baking Recipes <a name="top"></a>
 This is a website for baking recipes of bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
 It is a mobile-first & responsive website and the link to the website is available [HERE.](https://ms3-uncle-jams-baking-recipes.herokuapp.com/home)
 
-![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/mockup.png)
+![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/mockup.png)
 
 ## WHO'S THIS WEBSITE FOR?
 This is a website for people who simply love baking, or even just beginning to be interested in baking. People who would like to see someone’s recipes for new ideas and / or to share their own recipes with other people can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to create and post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page that uses can look at some items and purchase them on the seller's website. There is a section to subscribe to newsletter to get engaged what’s happening in baking and community.
@@ -185,7 +185,7 @@ Updating README.md and some testing is also done during the above process
 * It consists of 1 base page with 14 different html files
 * Modal for "Create Recipe" instructions and confirmation for "Delete" function
 * [BBC Good Food](https://www.bbcgoodfood.com/) for recipes
-* All the [features planned on scope plane](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/general-doc/scope-plane.png) and Pagination
+* All the [features planned on scope plane](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/scope-plane.png) and Pagination
 
 ### Features Left To Implement
 * **Resetting Password When Users Forget It:** To achieve this, email address is probably required for creating an account. Currently, the primary purpose of the website is to provide easy access to the platform as well as I do not know how to implement this with my current skills, decide to leave this out
@@ -238,7 +238,31 @@ Testing report is available **[TESTING.md](https://github.com/Toto-Kotaro-Tanaka
 <div align="right"><a href="#top">🔝</a></div>
 
 ## PROJECT BARRIERS & SOLUTIONS
-<!--- Retrieving data in a list --->
+— **Typos** —
+
+There are a few issues caused by typos and mislocating bracket. Nothing technical and these are just careless mistakes but spend sometime try to figure out what wrong it is. The solution for this is to be more careful of what you type, especially, something that the editor does not show as an error and need to be patient to go through each code again.
+
+— **Text Wrap** —
+
+For some reason, some texts in heading are not wrapped and just keep going to left. Look up the solution on internet and found that `word-wrap: break-word;` css code can be used to prevent this
+
+— **Retrieving Data in List** —
+
+On `edit_recipe` function, data needs to be retrieved from the database. Not sure how to do it for the data in a list so look up the solution on internet and find a [Stackoverflow post](https://stackoverflow.com/questions/17575276/how-can-i-print-a-mongodb-list-in-a-jinja2-template) that gives me the solution for this
+
+— **Targeting Specific Delete Item in Modal** —
+
+Set up modal for delete function to prevent users from deleting items unintentionally, however when modal is open, it targets the first item and not the specified item. Not sure what the issue is but keep testing it and come up with an idea of putting object id as a part of id &#40;`id="modal-delete{{ recipe._id }}"`&#41; and make it work
+
+— **Form Validation** —
+There are some headings for dropdown menu for creating recipes. Even though those headings are disabled, users actually can submit it, if they do not open the options in dropdown menu, and it stores an empty value in the database. It causes issues for category_name as there must be a value for this. Try a few ways to solve the issue and come up with an idea to allocate "other" as a category. Form is validated by html only so by using Flask form validation WTForms, this might be achieved better, however this is new module for me and currently do not have time to learn it, decide to keep the form as it is.
+
+— **Pagination** —
+
+Initially don't plan to have this on the project but as number of recipes increase, decide to do it to make the website look better. Watch [youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack so follow the thread and then look at **[Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png)** code on his project and use it to make it work. It works as pagination but I still do not understand the logic of this very well
+
+— **Defensive Programme** —
+
 
 <div align="right"><a href="#top">🔝</a></div>
 
