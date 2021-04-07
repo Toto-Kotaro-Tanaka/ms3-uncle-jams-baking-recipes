@@ -9,6 +9,7 @@ from werkzeug.security import (generate_password_hash,
                                check_password_hash)
 from datetime import datetime
 import os
+
 if os.path.exists("env.py"):
     import env
 
@@ -70,7 +71,7 @@ def search():
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     total = int(mongo.db.recipes.find({"$text": {"$search": query}}).count())
     categories = mongo.db.categories.find()
-    return render_template("search.html", recipes=recipes, 
+    return render_template("search.html", recipes=recipes,
                            total=total, categories=categories,
                            title="Search Result", search=True)
 
@@ -140,18 +141,19 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
+
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome back, {}".format(
                     request.form.get("username")), "success")
                 return redirect(url_for("profile", username=session["user"]))
-            else:
-                flash("Incorrect username and/or password", "error")
-                return redirect(url_for("login"))
-        else:
+
             flash("Incorrect username and/or password", "error")
             return redirect(url_for("login"))
+
+        flash("Incorrect username and/or password", "error")
+        return redirect(url_for("login"))
 
     return render_template("login.html", title="Login",
                            hide_navbar_main_footer=True)
@@ -170,12 +172,12 @@ def profile(username):
 
         if session["user"]:
             return render_template("profile.html", recipes=recipes,
-                                categories=categories,
-                                username=username, title=username)
+                                   categories=categories,
+                                   username=username, title=username)
 
     flash("Access denied. Create your own account and login", "error")
     return redirect(url_for("register"))
-  
+
 
 @app.route("/logout")
 def logout():
@@ -192,6 +194,7 @@ def logout():
 def create_recipe():
     """To create recipes"""
     if "user" in session:
+
         if request.method == "POST":
             recipe = {
                 "category_name": request.form.get("category_name"),
@@ -211,9 +214,9 @@ def create_recipe():
             return redirect(url_for("home"))
 
         categories = mongo.db.categories.find().sort("category_name", 1)
-        return render_template("create_recipe.html",
-                            categories=categories, title="Create Recipe",
-                            hide_navbar_main_footer=True, jquery=True)
+        return render_template("create_recipe.html", categories=categories,
+                               title="Create Recipe",
+                               hide_navbar_main_footer=True, jquery=True)
 
     flash("Access denied. Create your own account and login", "error")
     return redirect(url_for("register"))
@@ -223,8 +226,10 @@ def create_recipe():
 def edit_recipe(recipe_id):
     """To edit their own recipes"""
     if "user" in session:
+
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         if session["user"].lower() == recipe["username"].lower():
+
             if request.method == "POST":
                 submit = {
                     "category_name": request.form.get("category_name"),
@@ -246,8 +251,8 @@ def edit_recipe(recipe_id):
             recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
             categories = mongo.db.categories.find()
             return render_template("edit_recipe.html", recipe=recipe,
-                                    categories=categories, recipe_title=recipe,
-                                    hide_navbar_main_footer=True, jquery=True)
+                                   categories=categories, recipe_title=recipe,
+                                   hide_navbar_main_footer=True, jquery=True)
 
         flash("Access denied. This is not your recipe", "error")
         return redirect(url_for("profile", username=session["user"]))
@@ -261,6 +266,7 @@ def delete_recipe(recipe_id):
     """Delete recipes function"""
     if "user" in session:
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
         if session["user"].lower() == recipe["username"].lower():
             mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
             flash("Recipe successfully deleted", "success")
@@ -279,12 +285,15 @@ def manage_category():
         and access to create, edit category pages and delete function
     """
     if "user" in session:
+
         if session["user"] == "admin":
             categories = mongo.db.categories.find()
-            manage_categories = list(mongo.db.categories.find().sort("_id", -1))
-            return render_template("manage_category.html", categories=categories,
-                                manage_categories=manage_categories,
-                                title="Manage Category")
+            manage_categories = list(
+                mongo.db.categories.find().sort("_id", -1))
+            return render_template("manage_category.html",
+                                   categories=categories,
+                                   manage_categories=manage_categories,
+                                   title="Manage Category")
 
         flash("Access denied. You don't have permission", "error")
         return redirect(url_for("profile", username=session["user"]))
@@ -297,7 +306,9 @@ def manage_category():
 def create_category():
     """To create categories and only Admin has access to it"""
     if "user" in session:
+
         if session["user"] == "admin":
+
             if request.method == "POST":
                 category = {
                     "category_name": request.form.get("category_name").lower()
@@ -308,8 +319,9 @@ def create_category():
 
             categories = mongo.db.categories.find().sort("category_name", 1)
             return render_template("create_category.html",
-                                categories=categories, title="Create Category",
-                                hide_navbar_main_footer=True)
+                                   categories=categories,
+                                   title="Create Category",
+                                   hide_navbar_main_footer=True)
 
         flash("Access denied. You don't have permission", "error")
         return redirect(url_for("profile", username=session["user"]))
@@ -322,19 +334,23 @@ def create_category():
 def edit_category(category_id):
     """To edit categories and only Admin has access to it"""
     if "user" in session:
+
         if session["user"] == "admin":
+
             if request.method == "POST":
                 submit = {
                     "category_name": request.form.get("category_name")
                 }
-                mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+                mongo.db.categories.update(
+                    {"_id": ObjectId(category_id)}, submit)
                 flash("Category successfully updated", "success")
                 return redirect(url_for("manage_category"))
 
-            category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-            return render_template("edit_category.html", category=category,
-                                title="Edit Category",
-                                hide_navbar_main_footer=True)
+            category = mongo.db.categories.find_one(
+                {"_id": ObjectId(category_id)})
+            return render_template("edit_category.html",
+                                   category=category, title="Edit Category",
+                                   hide_navbar_main_footer=True)
 
         flash("Access denied. You don't have permission", "error")
         return redirect(url_for("profile", username=session["user"]))
@@ -347,6 +363,7 @@ def edit_category(category_id):
 def delete_category(category_id):
     """Delete categories function and only Admin has access to it"""
     if "user" in session:
+
         if session["user"] == "admin":
             mongo.db.categories.remove({"_id": ObjectId(category_id)})
             flash("Category successfully deleted", "success")
@@ -365,6 +382,7 @@ def subscribe_newsletter():
     if request.method == "POST":
         existing_email = mongo.db.emails.find_one(
             {"subsc_email": request.form.get("subsc_email")})
+
         if not existing_email:
             email = {
                 "subsc_email": request.form.get("subsc_email")
