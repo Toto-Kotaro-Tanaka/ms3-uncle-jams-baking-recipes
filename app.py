@@ -162,17 +162,19 @@ def login():
 def profile(username):
     """ User profile page where users have access to all their recipes,\
          and to create, edit and delete recipes """
-    recipes = mongo.db.recipes.find().sort("_id", -1)
-    categories = mongo.db.categories.find()
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    if "user" in session:
+        recipes = mongo.db.recipes.find().sort("_id", -1)
+        categories = mongo.db.categories.find()
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
 
-    if session["user"]:
-        return render_template("profile.html", recipes=recipes,
-                               categories=categories,
-                               username=username, title=username)
-
-    return redirect(url_for("login"))
+        if session["user"]:
+            return render_template("profile.html", recipes=recipes,
+                                categories=categories,
+                                username=username, title=username)
+    
+    flash("Access Denied. Please create your own account and login", "error")
+    return redirect(url_for("register"))
 
 
 @app.route("/logout")
@@ -187,28 +189,32 @@ def logout():
 def create_recipe():
     # Prevent none user accessing this page
     """ To create recipes """
-    if request.method == "POST":
-        recipe = {
-            "category_name": request.form.get("category_name"),
-            "recipe_title": request.form.get("recipe_title"),
-            "recipe_desc": request.form.get("recipe_desc"),
-            "recipe_time": request.form.get("recipe_time"),
-            "recipe_serves": request.form.get("recipe_serves"),
-            "recipe_ingreds": request.form.getlist("recipe_ingreds"),
-            "recipe_steps": request.form.getlist("recipe_steps"),
-            "recipe_img_url": request.form.get("recipe_img_url"),
-            "recipe_tips": request.form.get("recipe_tips"),
-            "username": session["user"],
-            "posted_date": datetime.today().strftime("%d %b, %Y")
-        }
-        mongo.db.recipes.insert_one(recipe)
-        flash("You have posted your recipe", "success")
-        return redirect(url_for("home"))
+    if "user" in session:
+        if request.method == "POST":
+            recipe = {
+                "category_name": request.form.get("category_name"),
+                "recipe_title": request.form.get("recipe_title"),
+                "recipe_desc": request.form.get("recipe_desc"),
+                "recipe_time": request.form.get("recipe_time"),
+                "recipe_serves": request.form.get("recipe_serves"),
+                "recipe_ingreds": request.form.getlist("recipe_ingreds"),
+                "recipe_steps": request.form.getlist("recipe_steps"),
+                "recipe_img_url": request.form.get("recipe_img_url"),
+                "recipe_tips": request.form.get("recipe_tips"),
+                "username": session["user"],
+                "posted_date": datetime.today().strftime("%d %b, %Y")
+            }
+            mongo.db.recipes.insert_one(recipe)
+            flash("You have posted your recipe", "success")
+            return redirect(url_for("home"))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("create_recipe.html",
-                           categories=categories, title="Create Recipe",
-                           hide_navbar_main_footer=True, jquery=True)
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("create_recipe.html",
+                            categories=categories, title="Create Recipe",
+                            hide_navbar_main_footer=True, jquery=True)
+
+    flash("Access Denied. Please create your own account and login", "error")
+    return redirect(url_for("register"))
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
