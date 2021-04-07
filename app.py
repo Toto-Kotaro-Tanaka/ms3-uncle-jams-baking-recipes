@@ -24,8 +24,9 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 # Pagination
-""" Credit: Ed Bradley \
-@ https://github.com/Edb83/self-isolution/blob/master/app.py """
+"""Credit: Ed Bradley\
+@ https://github.com/Edb83/self-isolution/blob/master/app.py
+"""
 recipes = mongo.db.recipes.find()
 
 PER_PAGE = 6
@@ -35,7 +36,6 @@ def paginated(recipes):
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
     offset = page * PER_PAGE - PER_PAGE
-
     return recipes[offset: offset + PER_PAGE]
 
 
@@ -43,15 +43,14 @@ def pagination_args(recipes):
     page, per_page, offset = get_page_args(
         page_parameter='page', per_page_parameter='per_page')
     total = recipes.count()
-
     return Pagination(page=page, per_page=PER_PAGE, total=total)
-# /End of Credit
+"""/End of Credit"""
 
 
 @app.route("/")
 @app.route("/home")
 def home():
-    """ To display all recipes by posted date """
+    """To display all recipes by posted date"""
     recipes = mongo.db.recipes.find().sort("_id", -1)
     categories = mongo.db.categories.find()
     recipes_paginated = paginated(recipes)
@@ -64,19 +63,21 @@ def home():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """ Search by a key word(s) function.  Index is recipe descriptions,\
-    recipe title and usrname in recipes collection """
+    """ Search by a key word(s) function and to display the result.\
+    Index is recipe descriptions, recipe title and usrname
+    """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     total = int(mongo.db.recipes.find({"$text": {"$search": query}}).count())
     categories = mongo.db.categories.find()
-    return render_template("search.html", recipes=recipes, total=total,
-                           categories=categories, search=True)
+    return render_template("search.html", recipes=recipes, 
+                           total=total, categories=categories,
+                           title="Search Result", search=True)
 
 
 @app.route("/categories/<category_name>")
 def categories(category_name):
-    """ To display recipes by category and posted date """
+    """To display recipes by category and posted date"""
     recipes = mongo.db.recipes.find(
         {"category_name": category_name}).sort("_id", -1)
     categories = mongo.db.categories.find()
@@ -91,7 +92,7 @@ def categories(category_name):
 
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
-    """ To display an individual recipe """
+    """To display an individual recipe"""
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
     return render_template("recipe.html", recipe=recipe,
@@ -100,14 +101,14 @@ def recipe(recipe_id):
 
 @app.route("/shop")
 def shop():
-    """ To display all baking items for sale in affiliate """
+    """To display all baking items for sale in affiliate"""
     categories = mongo.db.categories.find()
     return render_template("shop.html", categories=categories, title="Shop")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """ To create an account to create, post, edit and delete recipes """
+    """To create a login account to create, post, edit and delete recipes"""
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -133,7 +134,7 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """ To login the webiste """
+    """To login the webiste"""
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -158,13 +159,10 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """ User profile page where users have access to all their recipes,\
-         and to create, edit and delete recipes """
-    if not "user" in session:
-        flash("Access denied. Create your own account and login", "error")
-        return redirect(url_for("register"))
-
-    else:
+    """User profile page where users have access to all their recipes,\
+    and to create, edit and delete recipes
+    """
+    if "user" in session:
         recipes = mongo.db.recipes.find().sort("_id", -1)
         categories = mongo.db.categories.find()
         username = mongo.db.users.find_one(
@@ -174,25 +172,26 @@ def profile(username):
             return render_template("profile.html", recipes=recipes,
                                 categories=categories,
                                 username=username, title=username)
-    
 
+    flash("Access denied. Create your own account and login", "error")
+    return redirect(url_for("register"))
+  
 
 @app.route("/logout")
 def logout():
-    """ Logout function """
-    flash("You have logged out", "success")
-    session.pop("user")
+    """Logout function"""
+    if "user" in session:
+        flash("You have logged out", "success")
+        session.pop("user")
+        return redirect(url_for("home"))
+
     return redirect(url_for("home"))
 
 
 @app.route("/create_recipe", methods=["GET", "POST"])
 def create_recipe():
-    """ To create recipes """
-    if not "user" in session:
-        flash("Access denied. Create your own account and login", "error")
-        return redirect(url_for("register"))
-
-    else:
+    """To create recipes"""
+    if "user" in session:
         if request.method == "POST":
             recipe = {
                 "category_name": request.form.get("category_name"),
@@ -216,23 +215,16 @@ def create_recipe():
                             categories=categories, title="Create Recipe",
                             hide_navbar_main_footer=True, jquery=True)
 
+    flash("Access denied. Create your own account and login", "error")
+    return redirect(url_for("register"))
+
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    """ To edit recipes. Users only have access to their\
-        own recipes and if users try to access to someone's\
-        recipes, they are redirected to home page """
-    if not "user" in session:
-        flash("Access denied. This is not your recipe", "error")
-        return redirect(url_for("register"))
-
-    else:
+    """To edit their own recipes"""
+    if "user" in session:
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        if session["user"].lower() != recipe["username"].lower():
-            flash("Access denied. This is not your recipe", "error")
-            return redirect(url_for("profile", username=session["user"]))
-
-        else:
+        if session["user"].lower() == recipe["username"].lower():
             if request.method == "POST":
                 submit = {
                     "category_name": request.form.get("category_name"),
@@ -253,54 +245,59 @@ def edit_recipe(recipe_id):
 
             recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
             categories = mongo.db.categories.find()
-
             return render_template("edit_recipe.html", recipe=recipe,
-                                categories=categories, recipe_title=recipe,
-                                hide_navbar_main_footer=True, jquery=True)
+                                    categories=categories, recipe_title=recipe,
+                                    hide_navbar_main_footer=True, jquery=True)
+
+        flash("Access denied. This is not your recipe", "error")
+        return redirect(url_for("profile", username=session["user"]))
+
+    flash("Access denied. This is not your recipe", "error")
+    return redirect(url_for("register"))
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
 def delete_recipe(recipe_id):
-    """ Delete recipes function """
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe successfully deleted", "success")
-    return redirect(url_for("profile", username=session["user"]))
+    """Delete recipes function"""
+    if "user" in session:
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        if session["user"].lower() == recipe["username"].lower():
+            mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+            flash("Recipe successfully deleted", "success")
+            return redirect(url_for("profile", username=session["user"]))
+
+        flash("Access denied. This is not your recipe", "error")
+        return redirect(url_for("profile", username=session["user"]))
+
+    flash("Access denied. This is not your recipe", "error")
+    return redirect(url_for("register"))
 
 
 @app.route("/manage_category")
 def manage_category():
-    """ To manage categories where only Admin has access to it\
-        and access to create, edit category pages and delete function """
-    if not "user" in session:
-        flash("Access denied. You don't have permission", "error")
-        return redirect(url_for("home"))
-
-    else:
-        if not session["user"] == "admin":
-            flash("Access denied. You don't have permission", "error")
-            return redirect(url_for("profile", username=session["user"]))
-
-        else:
+    """To manage categories where only Admin has access to it\
+        and access to create, edit category pages and delete function
+    """
+    if "user" in session:
+        if session["user"] == "admin":
             categories = mongo.db.categories.find()
             manage_categories = list(mongo.db.categories.find().sort("_id", -1))
             return render_template("manage_category.html", categories=categories,
                                 manage_categories=manage_categories,
                                 title="Manage Category")
 
+        flash("Access denied. You don't have permission", "error")
+        return redirect(url_for("profile", username=session["user"]))
+
+    flash("Access denied. You don't have permission", "error")
+    return redirect(url_for("home"))
+
 
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
-    """ To create categories and only Admin has access to it """
-    if not "user" in session:
-        flash("Access denied. You don't have permission", "error")
-        return redirect(url_for("home"))
-
-    else:
-        if not session["user"] == "admin":
-            flash("Access denied. You don't have permission", "error")
-            return redirect(url_for("profile", username=session["user"]))
-
-        else:
+    """To create categories and only Admin has access to it"""
+    if "user" in session:
+        if session["user"] == "admin":
             if request.method == "POST":
                 category = {
                     "category_name": request.form.get("category_name").lower()
@@ -314,20 +311,18 @@ def create_category():
                                 categories=categories, title="Create Category",
                                 hide_navbar_main_footer=True)
 
+        flash("Access denied. You don't have permission", "error")
+        return redirect(url_for("profile", username=session["user"]))
+
+    flash("Access denied. You don't have permission", "error")
+    return redirect(url_for("home"))
+
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    """ To edit categories and only Admin has access to it """
-    if not "user" in session:
-        flash("Access denied. You don't have permission", "error")
-        return redirect(url_for("home"))
-
-    else:
-        if not session["user"] == "admin":
-            flash("Access denied. You don't have permission", "error")
-            return redirect(url_for("profile", username=session["user"]))
-
-        else:
+    """To edit categories and only Admin has access to it"""
+    if "user" in session:
+        if session["user"] == "admin":
             if request.method == "POST":
                 submit = {
                     "category_name": request.form.get("category_name")
@@ -341,30 +336,36 @@ def edit_category(category_id):
                                 title="Edit Category",
                                 hide_navbar_main_footer=True)
 
-        flash("Access denied", "error")
+        flash("Access denied. You don't have permission", "error")
         return redirect(url_for("profile", username=session["user"]))
+
+    flash("Access denied. You don't have permission", "error")
+    return redirect(url_for("home"))
 
 
 @app.route("/delete_category/<category_id>", methods=["GET", "POST"])
 def delete_category(category_id):
-    """ Delete categories function and only Admin has access to it """
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category successfully deleted", "success")
-    return redirect(url_for("manage_category"))
+    """Delete categories function and only Admin has access to it"""
+    if "user" in session:
+        if session["user"] == "admin":
+            mongo.db.categories.remove({"_id": ObjectId(category_id)})
+            flash("Category successfully deleted", "success")
+            return redirect(url_for("manage_category"))
+
+        flash("Access denied. You don't have permission", "error")
+        return redirect(url_for("profile", username=session["user"]))
+
+    flash("Access denied. You don't have permission", "error")
+    return redirect(url_for("home"))
 
 
 @app.route("/subscribe_newsletter", methods=["GET", "POST"])
 def subscribe_newsletter():
-    """ Subscribe newsletter function """
+    """Subscribe newsletter function"""
     if request.method == "POST":
         existing_email = mongo.db.emails.find_one(
             {"subsc_email": request.form.get("subsc_email")})
-
-        if existing_email:
-            flash("You are already subscribed", "error")
-            return redirect(url_for("home"))
-
-        else:
+        if not existing_email:
             email = {
                 "subsc_email": request.form.get("subsc_email")
             }
@@ -372,10 +373,13 @@ def subscribe_newsletter():
             flash("Thank your for your subscription", "success")
             return redirect(url_for("home"))
 
+        flash("You are already subscribed", "error")
+        return redirect(url_for("home"))
+
 
 @app.errorhandler(404)
 def page_not_found(e):
-    """ To handle not found page """
+    """To handle not found page"""
     return render_template("page_404.html", title="Page 404",
                            hide_navbar_main_footer=True), 404
 
