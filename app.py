@@ -23,7 +23,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 # MongoDB Global Variable
 mongo = PyMongo(app)
 
-
 # Pagination
 """ Credit: Ed Bradley \
 @ https://github.com/Edb83/self-isolution/blob/master/app.py """
@@ -46,7 +45,6 @@ def pagination_args(recipes):
     total = recipes.count()
 
     return Pagination(page=page, per_page=PER_PAGE, total=total)
-
 # /End of Credit
 
 
@@ -162,17 +160,21 @@ def login():
 def profile(username):
     """ User profile page where users have access to all their recipes,\
          and to create, edit and delete recipes """
-    recipes = mongo.db.recipes.find().sort("_id", -1)
-    categories = mongo.db.categories.find()
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    if not "user" in session:
+        flash("Access denied. Create your own account and login", "error")
+        return redirect(url_for("register"))
 
-    if session["user"]:
-        return render_template("profile.html", recipes=recipes,
-                               categories=categories,
-                               username=username, title=username)
+    else:
+        recipes = mongo.db.recipes.find().sort("_id", -1)
+        categories = mongo.db.categories.find()
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
 
-    return redirect(url_for("login"))
+        if session["user"]:
+            return render_template("profile.html", recipes=recipes,
+                                categories=categories,
+                                username=username, title=username)
+    
 
 
 @app.route("/logout")
@@ -185,46 +187,14 @@ def logout():
 
 @app.route("/create_recipe", methods=["GET", "POST"])
 def create_recipe():
-    # Prevent none user accessing this page
     """ To create recipes """
-    if request.method == "POST":
-        recipe = {
-            "category_name": request.form.get("category_name"),
-            "recipe_title": request.form.get("recipe_title"),
-            "recipe_desc": request.form.get("recipe_desc"),
-            "recipe_time": request.form.get("recipe_time"),
-            "recipe_serves": request.form.get("recipe_serves"),
-            "recipe_ingreds": request.form.getlist("recipe_ingreds"),
-            "recipe_steps": request.form.getlist("recipe_steps"),
-            "recipe_img_url": request.form.get("recipe_img_url"),
-            "recipe_tips": request.form.get("recipe_tips"),
-            "username": session["user"],
-            "posted_date": datetime.today().strftime("%d %b, %Y")
-        }
-        mongo.db.recipes.insert_one(recipe)
-        flash("You have posted your recipe", "success")
-        return redirect(url_for("home"))
-
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("create_recipe.html",
-                           categories=categories, title="Create Recipe",
-                           hide_navbar_main_footer=True, jquery=True)
-
-
-@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
-def edit_recipe(recipe_id):
-    """ To edit recipes. Users only have access to their\
-        own recipes and if users try to access to someone's\
-        recipes, they are redirected to home page """
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-
-    if session["user"].lower() != recipe["username"].lower():
-        flash("Access denied", "error")
-        return redirect(url_for("profile", username=session["user"]))
+    if not "user" in session:
+        flash("Access denied. Create your own account and login", "error")
+        return redirect(url_for("register"))
 
     else:
         if request.method == "POST":
-            submit = {
+            recipe = {
                 "category_name": request.form.get("category_name"),
                 "recipe_title": request.form.get("recipe_title"),
                 "recipe_desc": request.form.get("recipe_desc"),
@@ -237,16 +207,56 @@ def edit_recipe(recipe_id):
                 "username": session["user"],
                 "posted_date": datetime.today().strftime("%d %b, %Y")
             }
-            mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-            flash("Recipe successfully updated", "success")
+            mongo.db.recipes.insert_one(recipe)
+            flash("You have posted your recipe", "success")
             return redirect(url_for("home"))
 
-        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        categories = mongo.db.categories.find()
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("create_recipe.html",
+                            categories=categories, title="Create Recipe",
+                            hide_navbar_main_footer=True, jquery=True)
 
-        return render_template("edit_recipe.html", recipe=recipe,
-                               categories=categories, recipe_title=recipe,
-                               hide_navbar_main_footer=True, jquery=True)
+
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    """ To edit recipes. Users only have access to their\
+        own recipes and if users try to access to someone's\
+        recipes, they are redirected to home page """
+    if not "user" in session:
+        flash("Access denied. This is not your recipe", "error")
+        return redirect(url_for("register"))
+
+    else:
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        if session["user"].lower() != recipe["username"].lower():
+            flash("Access denied. This is not your recipe", "error")
+            return redirect(url_for("profile", username=session["user"]))
+
+        else:
+            if request.method == "POST":
+                submit = {
+                    "category_name": request.form.get("category_name"),
+                    "recipe_title": request.form.get("recipe_title"),
+                    "recipe_desc": request.form.get("recipe_desc"),
+                    "recipe_time": request.form.get("recipe_time"),
+                    "recipe_serves": request.form.get("recipe_serves"),
+                    "recipe_ingreds": request.form.getlist("recipe_ingreds"),
+                    "recipe_steps": request.form.getlist("recipe_steps"),
+                    "recipe_img_url": request.form.get("recipe_img_url"),
+                    "recipe_tips": request.form.get("recipe_tips"),
+                    "username": session["user"],
+                    "posted_date": datetime.today().strftime("%d %b, %Y")
+                }
+                mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+                flash("Recipe successfully updated", "success")
+                return redirect(url_for("home"))
+
+            recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+            categories = mongo.db.categories.find()
+
+            return render_template("edit_recipe.html", recipe=recipe,
+                                categories=categories, recipe_title=recipe,
+                                hide_navbar_main_footer=True, jquery=True)
 
 
 @app.route("/delete_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -261,59 +271,78 @@ def delete_recipe(recipe_id):
 def manage_category():
     """ To manage categories where only Admin has access to it\
         and access to create, edit category pages and delete function """
-    categories = mongo.db.categories.find()
-    manage_categories = list(mongo.db.categories.find().sort("_id", -1))
+    if not "user" in session:
+        flash("Access denied. You don't have permission", "error")
+        return redirect(url_for("home"))
 
-    if not session["user"] == "admin":
-        flash("Access denied", "error")
-        return redirect(url_for("profile", username=session["user"]))
+    else:
+        if not session["user"] == "admin":
+            flash("Access denied. You don't have permission", "error")
+            return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("manage_category.html", categories=categories,
-                           manage_categories=manage_categories,
-                           title="Manage Category")
+        else:
+            categories = mongo.db.categories.find()
+            manage_categories = list(mongo.db.categories.find().sort("_id", -1))
+            return render_template("manage_category.html", categories=categories,
+                                manage_categories=manage_categories,
+                                title="Manage Category")
 
 
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
     """ To create categories and only Admin has access to it """
-    if not session["user"] == "admin":
-        flash("Access denied", "error")
-        return redirect(url_for("profile", username=session["user"]))
+    if not "user" in session:
+        flash("Access denied. You don't have permission", "error")
+        return redirect(url_for("home"))
 
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name").lower()
-        }
-        mongo.db.categories.insert_one(category)
-        flash("You have created a new category", "success")
-        return redirect(url_for("manage_category"))
+    else:
+        if not session["user"] == "admin":
+            flash("Access denied. You don't have permission", "error")
+            return redirect(url_for("profile", username=session["user"]))
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("create_category.html",
-                           categories=categories, title="Create Category",
-                           hide_navbar_main_footer=True)
+        else:
+            if request.method == "POST":
+                category = {
+                    "category_name": request.form.get("category_name").lower()
+                }
+                mongo.db.categories.insert_one(category)
+                flash("You have created a new category", "success")
+                return redirect(url_for("manage_category"))
+
+            categories = mongo.db.categories.find().sort("category_name", 1)
+            return render_template("create_category.html",
+                                categories=categories, title="Create Category",
+                                hide_navbar_main_footer=True)
 
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """ To edit categories and only Admin has access to it """
-    if session["user"] == "admin":
+    if not "user" in session:
+        flash("Access denied. You don't have permission", "error")
+        return redirect(url_for("home"))
 
-        if request.method == "POST":
-            submit = {
-                "category_name": request.form.get("category_name")
-            }
-            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-            flash("Category successfully updated", "success")
-            return redirect(url_for("manage_category"))
+    else:
+        if not session["user"] == "admin":
+            flash("Access denied. You don't have permission", "error")
+            return redirect(url_for("profile", username=session["user"]))
 
-        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-        return render_template("edit_category.html", category=category,
-                               title="Edit Category",
-                               hide_navbar_main_footer=True)
+        else:
+            if request.method == "POST":
+                submit = {
+                    "category_name": request.form.get("category_name")
+                }
+                mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+                flash("Category successfully updated", "success")
+                return redirect(url_for("manage_category"))
 
-    flash("Access denied", "error")
-    return redirect(url_for("profile", username=session["user"]))
+            category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+            return render_template("edit_category.html", category=category,
+                                title="Edit Category",
+                                hide_navbar_main_footer=True)
+
+        flash("Access denied", "error")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/delete_category/<category_id>", methods=["GET", "POST"])
