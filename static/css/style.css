@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
     background-image: url(../images/main-background.png);
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
     letter-spacing: 0.1rem;
@@ -114,6 +122,8 @@ h5 {
 
 .btn-center {
     margin: 0 auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -164,7 +174,24 @@ hr.hr-fff {
 
 .form-search > .form-control:focus {
     border-color: #fbeade;
+    -webkit-box-shadow: inset 0 0 0 1px #493323;
     box-shadow: inset 0 0 0 1px #493323;
+}
+
+.input-search::-webkit-input-placeholder {
+    color: rgba(73, 51, 35, 0.4);
+}
+
+.input-search::-moz-placeholder {
+    color: rgba(73, 51, 35, 0.4);
+}
+
+.input-search:-ms-input-placeholder {
+    color: rgba(73, 51, 35, 0.4);
+}
+
+.input-search::-ms-input-placeholder {
+    color: rgba(73, 51, 35, 0.4);
 }
 
 .input-search::placeholder {
@@ -255,6 +282,7 @@ header {
 
 .recipe-img-top {
     height: 50vw;
+    -o-object-fit: cover;
     object-fit: cover;
     width: 100%;
 }
@@ -299,7 +327,27 @@ header {
 }
 
 .bounce {
+    -webkit-animation: bounce 4s infinite;
     animation: bounce 4s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
 
 @keyframes bounce {
@@ -308,12 +356,15 @@ header {
     50%,
     80%,
     100% {
+        -webkit-transform: translateY(0);
         transform: translateY(0);
     }
     40% {
+        -webkit-transform: translateY(-30px);
         transform: translateY(-30px);
     }
     60% {
+        -webkit-transform: translateY(-15px);
         transform: translateY(-15px);
     }
 }
@@ -432,6 +483,7 @@ header {
 .recipe-select:focus {
     border: none;
     -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .input-note {
@@ -522,7 +574,7 @@ header {
     background-color: #ffd5b7;
 }
 
-ul {
+.pagination ul {
     padding-left: 0;
 }
 
@@ -624,6 +676,7 @@ ul {
         top: 50%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
 
@@ -657,23 +710,29 @@ ul {
     }
 
     .grid-top {
+        display: -ms-grid;
         display: grid;
         grid-gap: 1rem;
+        -ms-grid-columns: 1fr 1rem 1fr;
         grid-template-columns: 1fr 1fr;
     }
 
     .grid-top-img {
+        -ms-grid-column: 2;
         grid-column: 2/2;
         margin: 0 auto;
     }
 
     .grid-top-title {
+        -ms-grid-row: 1;
         grid-row: 1/1;
     }
 
     .grid-bottom {
+        display: -ms-grid;
         display: grid;
         grid-gap: 1rem;
+        -ms-grid-columns: 1fr 1rem 2fr;
         grid-template-columns: 1fr 2fr;
     }
 
@@ -693,6 +752,7 @@ ul {
         top: 40%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         width: 32rem;
     }

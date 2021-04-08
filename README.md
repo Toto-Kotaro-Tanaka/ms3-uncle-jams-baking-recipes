@@ -254,6 +254,7 @@ Updating README.md and some testing is also done during the above process
 - [removebg](https://www.remove.bg/) for removing background images
 - [Transparent Textures](https://www.transparenttextures.com/) for creating background image
 - [Canva](https://www.canva.com/) for creating logos and some images
+- [Multi Device Website Mockup Generator](http://techsini.com/multi-mockup/index.php) for mockup
 - [Autoprefixer](https://autoprefixer.github.io/) for parsing CSS and add vendor prefixes
 - [W3C Markup Validation Service](https://validator.w3.org/) for testing html code
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) for testing css code

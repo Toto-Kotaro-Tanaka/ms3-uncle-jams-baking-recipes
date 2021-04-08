@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-    {% if recipe_title  %}
+    {% if recipe_title %}
     <title>{{ recipe_title.recipe_title | title }}</title>
     {% elif title %}
     <title>Uncle Jam's Baking Recipes - {{ title | title }}</title>
@@ -60,7 +60,8 @@
                         <ul class="dropdown-menu color-493323 bg-color-fbeade" aria-labelledby="navbarDropdown">
                             {% for category in categories %}
                             <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name=category.category_name) }}">{{ category.category_name | title }}</a>
+                                    href="{{ url_for('categories', category_name=category.category_name) }}">{{
+                                    category.category_name | title }}</a>
                             </li>
                             {% endfor %}
                         </ul>

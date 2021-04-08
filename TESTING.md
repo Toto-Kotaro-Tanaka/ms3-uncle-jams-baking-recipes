@@ -312,3 +312,5 @@ There are some key features to achieve the primary goals of the website from use
 - A function to subscribe newsletter
 
 > Everything outlined above is implemented on the website and works properly
+
+### Unsolved Issues

@@ -24,13 +24,12 @@
             <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
-                <div class="card recipe-summary bg-color-fbeade">
+                    <div class="card recipe-summary bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
-                                alt="{{ recipe.recipe_title }}" /></a>
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}" alt="{{ recipe.recipe_title }}" /></a>
                         {% else %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
                             <img class="card-img-top recipe-img-top"
