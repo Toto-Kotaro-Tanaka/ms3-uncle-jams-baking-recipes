@@ -45,6 +45,8 @@ def pagination_args(recipes):
         page_parameter='page', per_page_parameter='per_page')
     total = recipes.count()
     return Pagination(page=page, per_page=PER_PAGE, total=total)
+
+
 """/End of Credit"""
 
 
