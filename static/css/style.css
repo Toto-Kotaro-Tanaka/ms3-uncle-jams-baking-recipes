@@ -317,7 +317,7 @@ header {
 /* Credit: Codepen CSS Bouncing Arrow @ https://codepen.io/bitstarr/pen/XjaJGz */
 .arrow {
     bottom: -12rem;
-    height: 3.2rem;
+    height: 3rem;
     left: 10%;
     margin-left: -1rem;
     position: relative;
