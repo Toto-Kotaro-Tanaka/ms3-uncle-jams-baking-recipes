@@ -148,6 +148,7 @@ hr.hr-fff {
 }
 
 .navbar-brand img {
+    height: auto;
     width: 3.5rem;
 }
 
@@ -253,6 +254,7 @@ header {
 
 #uncle-jam {
     bottom: 0;
+    height: auto;
     position: absolute;
     right: 0;
     width: 17rem;
@@ -317,7 +319,7 @@ header {
 /* Credit: Codepen CSS Bouncing Arrow @ https://codepen.io/bitstarr/pen/XjaJGz */
 .arrow {
     bottom: -12rem;
-    height: 3.2rem;
+    height: 3rem;
     left: 10%;
     margin-left: -1rem;
     position: relative;
@@ -372,12 +374,14 @@ header {
 
 /* -- categories.html -- */
 .categories-img {
+    height: auto;
     padding-top: 7rem;
     width: 10rem;
 }
 
 /* -- shop.html -- */
 .card-shop {
+    height: auto;
     margin: 0 auto 2.5rem;
     width: 90%;
 }
@@ -394,11 +398,13 @@ header {
 
 /* -- register.html & login.html & create_recipe.html & create_category.html -- */
 .uj-back-page-logo {
+    height: auto;
     margin: 1rem;
     width: 6rem;
 }
 
 .back-page-logo {
+    height: auto;
     margin: 1rem;
     width: 4rem;
 }
@@ -462,6 +468,7 @@ header {
 }
 
 .recipe-inst-img {
+    height: auto;
     display: block;
     margin: 0 auto;
     width: 95%;
@@ -506,12 +513,14 @@ header {
 
 /* -- profile.html -- */
 .profile-img {
+    height: auto;
     padding: 1.5rem 0 1rem;
     width: 8rem;
 }
 
 /* -- Page 404 -- */
 .page-404-img {
+    height: auto;
     margin-bottom: 1rem;
     width: 8rem;
 }
@@ -519,6 +528,7 @@ header {
 .uj404-back-page-logo {
     bottom: 2rem;
     float: right;
+    height: auto;
     margin-top: 3rem;
     right: 0;
     width: 8rem;
@@ -627,6 +637,7 @@ header {
     #uncle-jam,
     .categories-img {
         display: block;
+        height: auto;
         margin: 0 auto;
         padding-top: 5rem;
         position: relative;
@@ -685,11 +696,13 @@ header {
     }
 
     #uncle-jam {
+        height: auto;
         padding-top: 3rem;
         width: 20rem;
     }
 
     .categories-img {
+        height: auto;
         padding-top: 10rem;
         width: 18rem;
     }
@@ -817,6 +830,7 @@ header {
     }
 
     .left-top {
+        height: auto;
         left: 4rem;
         opacity: 0.5;
         position: absolute;
@@ -825,6 +839,7 @@ header {
     }
 
     .right-top {
+        height: auto;
         opacity: 0.5;
         position: absolute;
         right: 4rem;
@@ -833,6 +848,7 @@ header {
     }
 
     .right-bottom {
+        height: auto;
         opacity: 0.5;
         bottom: 2rem;
         position: absolute;
@@ -841,6 +857,7 @@ header {
     }
 
     .left-bottom {
+        height: auto;
         opacity: 0.5;
         bottom: 2.5rem;
         left: 4rem;
@@ -849,6 +866,7 @@ header {
     }
 
     .left {
+        height: auto;
         left: 4rem;
         opacity: 0.5;
         position: absolute;
@@ -857,6 +875,7 @@ header {
     }
 
     .right {
+        height: auto;
         opacity: 0.5;
         position: absolute;
         right: 4rem;

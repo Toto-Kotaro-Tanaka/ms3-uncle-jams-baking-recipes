@@ -3,16 +3,21 @@
 {% block heading %}
 <div id="index">
     <div class="center">
-        <img id="uncle-jam" src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam">
+        <img id="uncle-jam" src="{{ url_for('static', filename='images/uncle-jam.png') }}" width="640" height="360"
+            alt="Uncle Jam">
         <h1>Uncle Jam's Baking Recipes</h1>
         <a class="arrow-link" href="#section-recipe-summary">
             <div class="arrow bounce"></div>
         </a>
     </div>
-    <img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
-    <img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
-    <img class="d-none d-lg-inline right-bottom" src="{{ url_for('static', filename='images/wheat.png') }}" alt="Wheat">
-    <img class="d-none d-lg-inline left-bottom" src="{{ url_for('static', filename='images/flour.png') }}" alt="Flour">
+    <img class="d-none d-lg-inline left-top" src="{{ url_for('static', filename='images/wheat.png') }}" width="640"
+        height="360" alt="Wheat">
+    <img class="d-none d-lg-inline right-top" src="{{ url_for('static', filename='images/flour.png') }}" width="640"
+        height="360" alt="Flour">
+    <img class="d-none d-lg-inline right-bottom" src="{{ url_for('static', filename='images/wheat.png') }}" width="640"
+        height="360" alt="Wheat">
+    <img class="d-none d-lg-inline left-bottom" src="{{ url_for('static', filename='images/flour.png') }}" width="640"
+        height="360" alt="Flour">
 </div>
 {% endblock %}
 
@@ -24,17 +29,18 @@
             <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
-                    <div class="card recipe-summary bg-color-fbeade">
+                <div class="card recipe-summary bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}" alt="{{ recipe.recipe_title }}" /></a>
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}" width="640"
+                                height="360" alt="{{ recipe.recipe_title }}" /></a>
                         {% else %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
                             <img class="card-img-top recipe-img-top"
-                                src="{{ url_for('static', filename='images/no-recipe-img.png') }}"
-                                alt="No recipe image" /></a>
+                                src="{{ url_for('static', filename='images/no-recipe-img.png') }}" width="640"
+                                height="360" alt="No recipe image" /></a>
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h5 class="card-title pt-2 pb-1">
