@@ -161,6 +161,23 @@ As the core HTML code is completed, a quality check test is carried out by using
 
 - Desktop Size: [Performance: 100 / Accessibility: 100 / Best Practices: 100 / SEO: 100](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-edit-category-desktop.png)
 
+
+Address the low performance on mobile size and try to improve it as much as possible. Examine the issues by the reports on Lighthouse on `index.html` which must be the same or similar issues causing on other html files. Two main issues of the low performance are caused by [Eliminate render-blocking resources and Serve images in next-gen formats](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-two-main-issues.png). 
+
+**Eliminate render-blocking resources:**
+- According to [coverage](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-coverage.png) by Google DevTools, this is caused by *MDB (Material Design Bootstrap) CDNs*. Look for solutions on the internet however, this seems to be [beyond my current ability](https://mdbootstrap.com/support/jquery/unused-css-and-javascript-page-performance/) so decide to leave it as it is
+
+**Serve images in next-gen formats:**
+- Try to use JPG2000 format as per [web.dev's suggestion](https://web.dev/uses-webp-images/?utm_source=lighthouse&utm_medium=devtools). JP2 format is not recognised for some reason so try to use JPG however, my images are transparent and it cannot be used in JPG format so decide to keep all images as they are
+
+There are two more issues that could be fixed and improve the quality. These are [Image elements do not have explicit width and height & Serve static assets with an efficient cache policy](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-two-issues.png). 
+
+**Image elements do not have explicit width and height**
+- Try to fix as per [dev.web's suggestion](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-quality-width-height.png) however, not only this does not improve the performance but also this causes issues on *Best Practice* so decide to leave as they are
+
+**Serve static assets with an efficient cache policy**
+- This seems to be [beyond my current ability](https://web.dev/uses-long-cache-ttl/#:~:text=When%20a%20browser%20requests%20a,getting%20it%20from%20the%20network) so decide to leave it as it is
+
 ### Css
 
 — **Code Validation** —
