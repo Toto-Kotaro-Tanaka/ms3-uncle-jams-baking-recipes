@@ -19,7 +19,7 @@
     {% if jquery %}
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" type="module"></script>
     {% endif %}
     <!-- Styles CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
@@ -161,13 +161,13 @@
         </div>
         <div class="mb-4">
             <a class="btn btn-link btn-floating btn-lg text-dark m-1 social-media" href="https://www.facebook.com/"
-                role="button" data-mdb-ripple-color="dark" target="_blank" rel="noopener"><i
+                role="button" data-mdb-ripple-color="dark" aria-label="Facebook" target="_blank" rel="noopener"><i
                     class="fab fa-facebook-f"></i></a>
             <a class="btn btn-link btn-floating btn-lg text-dark m-1 social-media" href="https://twitter.com/"
-                role="button" data-mdb-ripple-color="dark" target="_blank" rel="noopener"><i
+                role="button" data-mdb-ripple-color="dark" aria-label="Twitter" target="_blank" rel="noopener"><i
                     class="fab fa-twitter"></i></a>
             <a class="btn btn-link btn-floating btn-lg text-dark m-1 social-media" href="https://www.instagram.com/"
-                role="button" data-mdb-ripple-color="dark" target="_blank" rel="noopener"><i
+                role="button" data-mdb-ripple-color="dark" aria-label="Instagram" target="_blank" rel="noopener"><i
                     class="fab fa-instagram"></i></a>
         </div>
         <div id="important-note" class="hide color-fff p-3">This website is created by Kotaro Tanaka for educational
@@ -186,14 +186,14 @@
     {% endif %}
 
     <!-- MDB -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" type="module"></script>
     {% if jquery %}
     <!-- jQuery -->
-    <script src="{{ url_for('static', filename='js/createRecipe.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/createRecipe.js') }}" type="module"></script>
     {% endif %}
     {% if not hide_navbar_main_footer %}
     <!-- script.js -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" type="module"></script>
     {% endif %}
 </body>
 

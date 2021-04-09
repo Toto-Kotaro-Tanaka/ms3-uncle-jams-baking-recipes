@@ -5,7 +5,7 @@
     <div class="center">
         <img id="uncle-jam" src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam">
         <h1>Uncle Jam's Baking Recipes</h1>
-        <a class="arrow-link" href="#section-recipe-summary">
+        <a class="arrow-link" href="#section-recipe-summary" aria-label="Arrow">
             <div class="arrow bounce"></div>
         </a>
     </div>
@@ -24,12 +24,13 @@
             <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
-                    <div class="card recipe-summary bg-color-fbeade">
+                <div class="card recipe-summary bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}" alt="{{ recipe.recipe_title }}" /></a>
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
+                                alt="{{ recipe.recipe_title }}" /></a>
                         {% else %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
                             <img class="card-img-top recipe-img-top"
@@ -37,8 +38,8 @@
                                 alt="No recipe image" /></a>
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
-                        <h5 class="card-title pt-2 pb-1">
-                            {{ recipe.recipe_title | title }}</h5>
+                        <h4 class="card-title pt-2 pb-1">
+                            {{ recipe.recipe_title | title }}</h4>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
                     </div>
                     <!-- Recipe Owner & Posted Date -->

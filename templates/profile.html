@@ -34,7 +34,7 @@
                             src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
-                        <h5>{{ recipe.recipe_title | title }}</h5>
+                        <h4>{{ recipe.recipe_title | title }}</h4>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
                     </div>
                     <!-- Recipe Owner & Posted Date -->
@@ -60,10 +60,10 @@
                 <div class="modal-dialog">
                     <div class="modal-content color-493323">
                         <div class="modal-header">
-                            <h5 id="modal-deleteLabel-{{ recipe._id }}" class="modal-title">Are you
+                            <h4 id="modal-deleteLabel-{{ recipe._id }}" class="modal-title">Are you
                                 sure
                                 to DELETE?
-                            </h5>
+                            </h4>
                             <button type="button" class="btn-close" data-mdb-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -74,7 +74,8 @@
                         </div>
                         <div class="modal-footer">
                             <form action="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" method="POST">
-                                <input class="btn btn-e84610 font-weight-700" type="submit" value="Delete"></form>
+                                <input class="btn btn-e84610 font-weight-700" type="submit" value="Delete">
+                            </form>
                             <button class="btn btn-ffd5b7-06" type="button" data-mdb-dismiss="modal">No</button>
                         </div>
                     </div>

@@ -20,7 +20,7 @@
     <div class="card recipe-summary bg-color-fbeade">
         <!-- Recipe Image & Category & Title -->
         <div class="card-body">
-            <h5>{{ category.category_name | title }}</h5>
+            <h4>{{ category.category_name | title }}</h4>
         </div>
         <!-- Edit & Delet Recipe Buttons -->
         <div class="card-body">
@@ -36,7 +36,7 @@
         <div class="modal-dialog">
             <div class="modal-content color-493323">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal-deleteLabel-{{ category._id }}">Are you sure to DELETE?</h5>
+                    <h4 class="modal-title" id="modal-deleteLabel-{{ category._id }}">Are you sure to DELETE?</h4>
                     <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -46,7 +46,8 @@
                 </div>
                 <div class="modal-footer">
                     <form action="{{ url_for('delete_category', category_id=category._id) }}" method="POST">
-                        <input class="btn btn-e84610 font-weight-700" type="submit" value="Delete"></form>
+                        <input class="btn btn-e84610 font-weight-700" type="submit" value="Delete">
+                    </form>
                     <button class="btn btn-ffd5b7-06" type="button" data-mdb-dismiss="modal">No</button>
                 </div>
             </div>
