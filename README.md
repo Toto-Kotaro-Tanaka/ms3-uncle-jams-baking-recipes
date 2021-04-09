@@ -294,7 +294,7 @@ There are some headings for dropdown menu for creating recipes. Even though thos
 
 — **Pagination** —
 
-Initially don't plan to implement this on the project but as a number of recipes increases, decide to do it to make the website look better. Watch [Corey Schafer's youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack about pagination so follow the threads and then look at **[Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png)** code on his project and use it to make it work. It works as pagination but still do not understand the logic of this very well
+Initially don't plan to implement this on the project but as a number of recipes increases, decide to do it to make the website look better. Watch [Corey Schafer's youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack about pagination so follow the threads and then look at [Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png) code on his project and use it to make it work. It works as pagination but still do not understand the logic of this very well
 
 — **Defensive Programme** —
 
