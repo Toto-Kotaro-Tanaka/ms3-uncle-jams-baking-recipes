@@ -15,7 +15,7 @@ This is a website for people who simply love baking, or even just beginning to b
 
 ## WHO IS THE OWNER?
 
-I am the owner of the website. The primary goal of the website is to provide a platform that users can see baking recipes and&#47;or share their recipes without any hassles. There is a _Shop_ page that some baking items are listed &#40;affiliate&#41; so in case users find something interesting, they can access the seller's website for more details of the items and can also purchase them. I can get a commission from the seller for any items being sold through my website and this is also one of the goals. I would like to collect their e-mail address for newsletters to expand the community for further business opportunities.
+I am the owner of the website. The primary goal of the website is to provide a platform that users can see baking recipes and&#47;or share their recipes without any hassles. There is a _Shop_ page where some baking items are listed &#40;affiliate&#41; so in case users find something interesting, they can access the seller's website for more details and can also purchase them. I can get a commission from the seller for any items being sold through my website and this is also one of the goals. I would like to collect their e-mail address for newsletters to expand the community for further business opportunities.
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -23,7 +23,7 @@ I am the owner of the website. The primary goal of the website is to provide a p
 
 ### Strategy Plane
 
-The website is designed for those who love baking, and who are interested in baking. People who have been baking might want to share their knowledge with other people as it gives them great feeling and motivation, so by following very simple registration steps, they can create an account and post their recipes in a well-structured format. People who have less experience in baking and would just like to see recipes, they can do it simply by visiting the website where all the recipes are shown by posted date, or they can see them by category &#40;bread, cake, biscuit&#41; on different pages. There is a search function on the website so they can search for specific recipes by a keyword&#40;s&#41;. To see recipes, users do not need to register so it is hassle-free. There is a _shop_ page that has some baking items in an affiliate style so in case users would like to purchase something, they can do it by clicking the link and it leads users to the website of the sellers. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a baking recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by user first concept.
+The website is designed for those who love baking, and who are interested in baking. People who have been baking might want to share their knowledge with other people as it gives them great feeling and motivation, so by following very simple registration steps, they can create an account and post their recipes in a well-structured format. People who have less experience in baking and would just like to see recipes, they can do it simply by visiting the website where all the recipes are shown by posted date, or they can see them by category &#40;e.g bread, cake, biscuit&#41; on different pages. There is a search function on the website so they can search for specific recipes by a keyword&#40;s&#41;. To see recipes, users do not need to register so it is hassle-free. There is a _shop_ page that has some baking items in an affiliate style so in case users would like to purchase something, they can do it by clicking the link and it leads users to the website of the sellers. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a baking recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by user first concept.
 
 All the functions on the tables below are minimum requirements on the website to achieve the current user's and owner's goals. &#40;On a scale of 1 &#91;least&#93; - 5 &#91;most&#93;&#41;
 
@@ -83,7 +83,7 @@ The website consists of **Home** page with **13 other core pages**.
 
 - **Home** &#40;`index.html`&#41;<br>The main page of the website. There is a logo, navigation bar to _Categories_, _Shop_, _Register_ & _Login_ pages, a title, a hero image. All the summary of recipes are contained and users can access a full _Recipe_ page. There is a footer with a form to subscribe to newsletter and some social icons
 
-- **Search Result** &#40;`search.html`&#41;<br>The pages where users can see recipes by search and access a full _Recipe_ page. The same navigation bar and footer are used as _Home_ \*Idea of having this page comes up during the project
+- **Search Result** &#40;`search.html`&#41;<br>The page where users can see recipes by search and access a full _Recipe_ page. The same navigation bar and footer are used as _Home_ \*Idea of having this page comes up during the project
 
 - **Categories** &#40;`categories_<category_name>.html`&#41;<br>The pages where users can see recipes by category and access a full _Recipe_ page. The same navigation bar and footer are used as _Home_
 
@@ -122,9 +122,12 @@ Below is the chart of the database to show the collections and their relationshi
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/back-end-chart.png)<br>
 
+> **Note:**<br>
+> On the chart, subs_name is listed but the subscribe function collects e-mail address only
+
 ### Skeleton Plane
 
-It is a mobile-first website because people usually bake with a recipe so a good mobile-first design helps users whose main purpose is to see recipes. For users whose main purpose is to create and post recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website.
+It is a mobile-first website because people usually bake with a recipe so a good mobile-first design helps users whose main purpose is seeing recipes. For users whose main purpose is creating and posting recipes, the form is also well designed on both mobile and desktop sizes. There are wireframes of mobile and desktop sizes for all the core pages of the website.
 
 - [Wireframes: Home &#40;`index.html`&#41;](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/home.png)
 
@@ -157,7 +160,7 @@ It is a mobile-first website because people usually bake with a recipe so a good
 
 — **Colour** —
 
-As this is a baking recipes website, **Cafe Noir** &#40;#493323&#41; is used as the main colour of the website. It is used as it is on some headings, texts as well as the navigation bar, footer, and slightly transparentised colour is used for some background. **Linen** &#40;#FBEADE&#41; and **Apricot** &#40;#FFD5B7&#41; are used for some text and background when it needs contrast. **Mango Tango** &#40;#FF7C3E&#41; and **Flame** &#40;#E84610&#41; are used when it needs an accent on the website such as See Recipe button, flash messages and hover effect.
+As this is a baking recipes website, **Cafe Noir** &#40;#493323&#41; is used for the main colour of the website. It is used as it is on some headings, texts as well as the navigation bar, footer, and slightly transparentised colour is used for some background. **Linen** &#40;#FBEADE&#41; and **Apricot** &#40;#FFD5B7&#41; are used for some text and background when it needs contrast. **Mango Tango** &#40;#FF7C3E&#41; and **Flame** &#40;#E84610&#41; are used when it needs an accent on the website such as See Recipe button, flash messages and hover effect.
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/colours.png)
 
@@ -182,7 +185,7 @@ As this is a baking recipes website, **Cafe Noir** &#40;#493323&#41; is used as 
 This project contains both front-end and back-end so well-structured planning is required to do the work efficiently. Below is a summary of the plans.
 
 1. Creating Database in MongoDB
-1. Installing necessary Python frameworks, creating a Python file for the app and testing a function
+1. Installing necessary Python frameworks, creating a Python file for the app and testing functions
 1. Deploying the website in Heroku
 1. Connecting Database and App
 1. Creating parent HTML template with common sections &#40;e.g. header & footer&#41;
@@ -294,15 +297,17 @@ There are some headings for dropdown menu for creating recipes. Even though thos
 
 — **Pagination** —
 
-Initially don't plan to implement this on the project but as a number of recipes increases, decide to do it to make the website look better. Watch [Corey Schafer's youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack about pagination so follow the threads and then look at [Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png) code on his project and use it to make it work. It works as pagination but still do not understand the logic of this very well
+Initially no plan to implement this on the project but as a number of recipes increases, decide to do it to make the website look better. Watch [Corey Schafer's youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack about pagination so follow the threads and then look at [Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png) code on his project and use it to make it work. It works as pagination but still do not understand the logic of this very well
 
 — **Defensive Programme** —
+
+There is a certain restriction on accessing pages or recipes. For example, **create recipe** page can be accessed by a logged-in user, **edit recipe** can be accessed by the recipe owner only, so a good defensive programme is required to prevent non-authorised users from accessing them. Defensive programme when users logged-in is achieved easily &#40;e.g. User A tries to access to user B's recipe&#41; however, when user is not logged in and do a manual test, it gives me a KeyError:  "user". Try a few different codes including try and except, talk to my mentor however the issue is still there so decide to post it on slack. There is a feedback from someone suggesting `if "user" in session:`  can be used for what I want to achieve. As per his suggestion, use  `if "user" in session:` and properly set us a defensive programme.
 
 <div align="right"><a href="#top">🔝</a></div>
 
 ## VERSION CONTROL
 
-[Git](https://git-scm.com/) as a local repository and [GitHub](https://github.com/) as a remote repository are used for the project, and below is how I use these as the version control for the project.
+[Git](https://git-scm.com/) as a local repository and [GitHub](https://github.com/) as a remote repository are used for the project, and below is how I use them as the version control for the project.
 
 — **Setting Up** —
 
@@ -318,7 +323,7 @@ Initially don't plan to implement this on the project but as a number of recipes
 
 — **Commitments** —
 
-- When a section or even a group of work are completed, they are committed in git and pushed into GitHub, in order to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
+- When a section or even a group of work is completed, it is committed in git and pushed into GitHub, in order to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
 
 ```
 * git status | To check the status of new/modified folders, files, and documents
@@ -344,15 +349,15 @@ Initially don't plan to implement this on the project but as a number of recipes
 ```
 
 > **Note:**<br>
-> I understand that same sub branch can be used as many times as I want to, however I create a new branch for each test because my knowledge of git is not the best and sometimes I am not 100% sure if I do it right. I would like to improve more on the usage of git and version control for my next project
+> Same sub branch can be used as many times during the project, however, create a new branch for each test because my knowledge of git is not the best and sometimes not 100% sure if things are done right. Hope to improve more on the version control using git for future projects
 
-> There is one [commit message](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/commit-msg.png) does not correspond to what happen. I commit it from sub branch presuming there are only minor changes, however, it seems it does it from main branch somehow
+> There is one [commit message](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/commit-msg.png) does not correspond to what happen. Commit it from sub branch presuming there are only minor changes, however, it seems it does it from main branch somehow
 
 <div align="right"><a href="#top">🔝</a></div>
 
 ## DEPLOYMENT
 
-The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, as GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository. Connecting to GitHub repository is much easier and recommended by a tutor so this website is deployed by using GitHub method.
+The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, because GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository. Connecting to GitHub repository is much easier and recommended by a tutor so this website is deployed by using GitHub method.
 
 Before deploying the website to Heroku, there are three important steps to follow in order to make the app work in Heroku correctly.
 
@@ -465,6 +470,9 @@ All affiliates are from [Amazon Affiliate Programe](https://affiliate-program.am
 - [Mary Berry's Baking Bible](https://www.amazon.co.uk/gp/product/1846077850/)
 - [Russell Hobbs 23620 Compact Fast Breadmaker](https://www.amazon.co.uk/gp/product/B01HMITHY2/)
 
+> **Note:**<br>
+> According to the handbook, actual affiliate is not recommended so image is used from Amazon affiliate but use `tag=faketag` and link to only item page
+
 ### Media
 
 — **Logo & Favicon & Other Images** —
@@ -478,7 +486,7 @@ All affiliates are from [Amazon Affiliate Programe](https://affiliate-program.am
 
 I would like to thank ;
 
-- My mentor, **Spencer Barriball**, who goes through the project with me and gives me some advice to improve UI and UX
+- My mentor, **Spencer Barriball**, who goes through the project with me and gives me some advice especially to improve UI and UX
 - **Ed Bradley** who gives me advice on several queries and difficulties I have throughout the project
 - Code Institute Tutor **Alan** who gives me guidance on how to solve the issue
 - **Code Institute Slack Members** who give me advice on queries I have throughout the project
