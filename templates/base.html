@@ -186,14 +186,14 @@
     {% endif %}
 
     <!-- MDB -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     {% if jquery %}
     <!-- jQuery -->
-    <script src="{{ url_for('static', filename='js/createRecipe.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/createRecipe.js') }}"></script>
     {% endif %}
     {% if not hide_navbar_main_footer %}
     <!-- script.js -->
-    <script src="{{ url_for('static', filename='js/script.js') }}" type="module"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% endif %}
 </body>
 
