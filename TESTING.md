@@ -288,8 +288,8 @@ Search function and form are created so a testing is carried out.
 Subscribe To Newsletter function and form are created so a testing is carried out.
 
 - Create `subscribe_newsletter function` on `app.py` with POST method that takes an input email address and stores it in the database.<br>
-  [Subscribe To Newsletter Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe.png) / [Subscribe To Newsletter Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-form.png) /
-  [Subscribe To Newsletter Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result.png) / [Subscribe To Newsletter Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result-data.png) &#40;Input emails are stored in the database so it works properly&#41;
+[Subscribe To Newsletter Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe.png) / [Subscribe To Newsletter Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-form.png) /
+[Subscribe To Newsletter Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result.png) / [Subscribe To Newsletter Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-result-data.png) &#40;Input emails are stored in the database so it works properly&#41;
 
 ---
 
@@ -362,3 +362,15 @@ There are some key features to achieve the primary goals of the website from use
 ---
 
 ### Unsolved Issues
+
+**Low Performance on Mobile Size**
+
+- Try to improve it but cannot do it because of my current skillset and time. Hope to have the skillset in the near future as I continue learning. 
+
+**3 Errors on Console**
+
+- There is [an error on create_recipe](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-console-create-recipe.png) and [errors on edit_recipe](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-console-edit-recipe.png) html files. These errors are related to Material Design Bootstrap that I cannot do anything with. These errors do not cause any issues on the website so they are left as they are. 
+
+**Recipe Ingredients & Steps on edit_recipe.html**
+
+- To solve the issue by W3C Markup Validation Service for html code, [loop is set up](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-repeat-label.png) for `for attribute` of label for Recipe Ingredients and Steps, so that it corresponds to a unique ID of the input field. However, this causes an issue of [showing the label multiple times](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-repeat-label.png) on *Edit Recipe*. Try to think of showing only one label but cannot solve it and also this is *Edit Recipe* page where users have some ideas of what inputs are so decide to leave the [label empty](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-empty-label.png)
