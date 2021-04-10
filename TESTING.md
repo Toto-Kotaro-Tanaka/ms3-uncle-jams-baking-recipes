@@ -4,7 +4,7 @@
 
 — **Code Validation** —
 
-As the core HTML code is completed on all html files, a code validation test is carried out by using [W3C Markup Validation Service](https://validator.w3.org/), which is a validator by the World Wide Web Consortium that allows checking HTML and XHTML documents for well-formed markup, to check any warnings and errors. As Flask Jinja template is used on all html files, source code is taken from rendered pages for the test.
+As the core HTML code is completed on all html files, a code validation test is carried out by using [W3C Markup Validation Service](https://validator.w3.org/), which is a validator by the World Wide Web Consortium that allows checking HTML and XHTML documents for well-formed markup, to check any warnings and errors. As Flask Jinja template is used on all html files, source code is taken from rendered pages for the testing.
 
 **Home Page** &#40;`index.html`&#41;: [2 Errors & 4 Warnings](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/html/test-code-validation-home.png)
 
@@ -89,7 +89,7 @@ As the core HTML code is completed on all html files, a code validation test is 
 
 — **Quality** —
 
-As the core HTML code is completed, a quality check test is carried out by using [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is an open-source and one of the automated DevTools for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO.
+As the core HTML code is completed, a quality check testing is carried out by using [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is an open-source and one of the automated DevTools for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO.
 
 **Home Page** &#40;`index.html`&#41;
 
@@ -185,7 +185,7 @@ As the core HTML code is completed, a quality check test is carried out by using
 
 — **Code Validation** —
 
-As the core CSS code is completed, a code validation test is carried out by using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/), which is a validator by the World Wide Web Consortium that allows checking Cascading Style Sheets, to make sure that CSS complies with the standards set by the World Wide Web Consortium
+As the core CSS code is completed, a code validation testing is carried out by using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/), which is a validator by the World Wide Web Consortium that allows checking Cascading Style Sheets, to make sure that CSS complies with the standards set by the World Wide Web Consortium
 
 **`style.css`**: [0 Error & 1 Warning](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/css/test-style.png)
 
@@ -197,7 +197,7 @@ As the core CSS code is completed, a code validation test is carried out by usin
 
 — **Code Validation** —
 
-As the core JavaScript code is completed, a code validation test is carried out by using [JSHint](https://jshint.com/), which is a static code analysis tool used in software development for checking if JavaScript source code complies with coding rules
+As the core JavaScript code is completed, a code validation testing is carried out by using [JSHint](https://jshint.com/), which is a static code analysis tool used in software development for checking if JavaScript source code complies with coding rules
 
 **`script.js`**: [1 Unused Variable](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/js/test-script.png)
 
@@ -213,35 +213,35 @@ As the core JavaScript code is completed, a code validation test is carried out 
 
 — **Initial Function** —
 
-As an initial function in Python is created, a manual test is carried out.
+As an initial function in Python is created, a testing is carried out.
 
 - Set up *app.py* file and test it by creating `test function` to see if "This is testing" message appears on the page<br>
 [Test Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-function.png) / [Test Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-function-result.png) &#40;The message is displayed so the function works properly&#41;
 
 — **Connection with Database** —
 
-The connection between the App and MongoDB Atlas is set up so a manual test is carried out.
+The connection between the App and MongoDB Atlas is set up so a testing is carried out.
 
 - `render_template` function is imported to render HTML document when the function is run. A variable called *recipes* is created to retrieve the data from *recipes collection*. Each data in *recipes collection* is retrieved by using Jinja templating language on `index.html`<br>
 [Connecting Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-connection.png) / [Data in Database](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-db.png) / [Connecting Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-db-connection-result.png) &#40;All the data in recipes collection is displayed so the App and database are connected properly&#41;
 
 — **Base Template** —
 
-The base template for HTML is created so a test is carried out.
+The base template for HTML is created so a testing is carried out.
 
 - Create `base.html` that contains all main references to external files and third-party libraries for CSS and JavaScript that are used across the entire website. Block keyword is required to show the contents of child documents<br>
 [Base Template](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-base-template.png) / [Base Template Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-base-template-result.png) &#40;All the contents of parent and child documents are displayed so the base template works properly&#41;
 
 — **Register Function & Form** —
 
-Register function and form are created so a test is carried out.
+Register function and form are created so a testing is carried out.
 
 - Create `register.html` that contains a form to store first time user in *users collection* in *baking_recipe* database to create a unique account. Create a function in `app.py` with POST method with a condition for any usernames, which are not in the database, to be stored in the database. If users already exist in the data, users are led back to register page with a notification.<br>
 [Register Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register.png) / [Register Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-form.png) / [Register Function Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-result.png) / [Register Failure](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-register-failure.png) &#40;If there is no username exists in the database, the function stores username & password and if there is, it leads back to register page so the function and the form works properly&#41;
 
 — **Login, Logout Function & Form** —
 
-Login function and form are created so a test is carried out.
+Login function and form are created so a testing is carried out.
 
 - Create `login.html` that contains a form, which takes a username and password. If username and password match with the data in the database, users are led to *Profile* page where they have an option to create and post a recipe as well as to see all of their recipes with Edit and Delete functions. Create a function in `app.py` with POST method and the function checks both input and the data in the database for authentification. If username and&#47;or password is incorrect, users are led back to login page with a notification.<br>
 Logout function is created in `app.py` that when users logout, it removes *session* so they do not see a link to *Profile* page and they cannot even access the page by putting `profile/<username>` on URL.<br>
@@ -249,14 +249,14 @@ Logout function is created in `app.py` that when users logout, it removes *sessi
 
 — **Create Recipe Function & Form** —
 
-Create Recipe function and form are created so a test is carried out.
+Create Recipe function and form are created so a testing is carried out.
 
 - Create `create_recipe.html` that contains a form, which takes some user input by a dropdown, input and textarea fields. Create a function in `app.py` with POST method that stores all the input data in the database. There are two data fields, Recipe Ingredients and Steps that take various fields depending on users so this data is stored as Array in the database. Username and posted date, which are not user input, are also stored in the database.<br>
 [Create Recipe Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe.png) / [Create Recipe Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-form.png) / [Create Recipe Result](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-result.png) / [Create Recipe Result Data](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-create-recipe-result-data.png) &#40;All the input as well as username and posted date are shown on recipe summary and stored in the database so it works properly&#41;
 
 — **Edit & Delete Recipe Function & Form** —
 
-Edit Recipe function & form and Delete function are created so a test is carried out.
+Edit Recipe function & form and Delete function are created so a testing is carried out.
 
 - Edit recipe function & form work almost the same way as Create Recipe but uses `updated()` method instead of `insert_one()`.<br>
 Delete function uses `remove()` methods to remove the data from the database.<br>
@@ -264,7 +264,7 @@ Delete function uses `remove()` methods to remove the data from the database.<br
 
 — **Manage Category with Create, Edit & Delete Functions & Form** —
 
-Manage Category page with Create, Edit & Delete Functions & Form are created so a test is carried out.
+Manage Category page with Create, Edit & Delete Functions & Form are created so a testing is carried out.
 
 - These work almost the same as Create, Edit and Delete recipes. Create `manage_category.html`, `create_category.html` and `edit_category.html` and functions on app.py. Only admin user has an access to *Manage Category* page where admin user can create, edit and delete category. To prevent other users from visiting *Manage Category* Page, the link to this page only appears for admin user. This is set up by using `if condition` on base template. In case users figure out the URL for Manage, Create and Edit category pages, they do not have access to those pages as it is also prevented by `if conditions` on `app.py`.<br>
 [Manage Category Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category.png) / [Manage Category Navbar](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-navbar.png) / [Manage Category Navbar Admin](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-navbar.png) / [Manage Category Admin](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-admin.png) / [Manage Category Non-Admin](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-manage-category-non-admin.png) &#40;Link to Manage Category page only appears for admin user so it works properly. `manage_category`, `create_category`, `edit_category` URLs are also put in non-admin user and they do not work for non-admin users&#41;<br>
@@ -274,7 +274,7 @@ Manage Category page with Create, Edit & Delete Functions & Form are created so 
 
 — **Search Function and Form** —
 
-Search function and form are created so a test is carried out.
+Search function and form are created so a testing is carried out.
 
 - Create Text index using Python interpreter on the command-line. Only one Text index can be created on a collection and the purpose of this function is searching recipes by a keyword&#40;s&#41; so text index includes `recipe_title`, `recipe_desc` and `username`. Other documents are excluded from Text Index as there would be too many unnecessary results if these are included. Then, create search function on `app.py` that searches contents in the text index.<br>
 [Text Index](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-text-index.png) / [Test Search Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-search.png)<br>
@@ -285,7 +285,7 @@ Search function and form are created so a test is carried out.
 
 — **Subscribe To Newsletter Function and Form** —
 
-Subscribe To Newsletter function and form are created so a test is carried out.
+Subscribe To Newsletter function and form are created so a testing is carried out.
 
 - Create `subscribe_newsletter function` on `app.py` with POST method that takes an input email address and stores it in the database.<br>
   [Subscribe To Newsletter Function](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe.png) / [Subscribe To Newsletter Form](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-subscribe-form.png) /
@@ -293,7 +293,32 @@ Subscribe To Newsletter function and form are created so a test is carried out.
 
 ---
 
+— **Code Validation** —
+
+As Python code is completed on `app.py`, a code validation testing is carried out by using [PEP8 &#40;Python Enhancement Proposal&#41; online](http://pep8online.com/checkresult) to see if the code meets guidelines and best practices for the readability and consistency of Python code.
+
+---
+
 ### Defensive Programme
+
+There are some pages on the website that users without permission are not allowed to access. Interface prevents those users who have no permission from accessing these pages &#40;i.e Create recipe page can be accessed from Profile page where only users who log in have access by navigation bar&#41;, however, by typing URL, non-authorised users can try to access these pages so there are some defensive programmes set up to prevent this from happening. 
+
+Below are the testing and results to check to see if the defensive programmes work properly.
+
+**Non-Logged in users who;**
+
+- Try to access *Profile* page are led to *Error 404*. If they type `profile/<actual username>`, then they are led to *Register* page with "Access denied. Create your own account and login" message
+- Try to access *Create Recipe* page are led to *Register* page with "Access denied. Create your own account and login" message
+- Try to access *Edit Recipe* page are led to *Error 404*. If they type `edit_recipe/<object id>`, they are led to *Register* page with "Access denied. This is not your recipe" message
+- Try to access *Delete Recipe* function by typing `delete/<object id>` are led to *Register* page with "Access denied. This is not your recipe" message
+
+> **Note:**<br>
+> Same&#47;similar things happen when Non-Logged in uses try to access *Manage Category*, *Create Category*, *Edit Category* pages and *Delete Category* function.
+
+**Logged in users who;**
+
+- Try to access someone's recipe by typing `edit_recipe/<object id>` and `delete_recipe/<object id>` are led to *Profile* page with "Access denied. This is not your recipe" message
+- Are NOT Admin and try to access *Manage Category*, *Create Category*, *Edit Category* pages and *Delete Category* function are led to *Profile* page with "Access denied. You don't have permission" message
 
 ---
 
@@ -301,7 +326,7 @@ Subscribe To Newsletter function and form are created so a test is carried out.
 
 — **Visibilities and CRUD functionality** —
 
-The website is available on the major web browsers, such as **Chrome**, **Safari**, **Firefox**, **Opera** and **Microsoft Edge**. To make sure all the visual contents are shown and functions work properly on those browsers, the below manual testing is carried out on all of them. \*Except Chrom that is used to build the website
+The website is available on the major web browsers, such as **Chrome**, **Safari**, **Firefox**, **Opera** and **Microsoft Edge**. To make sure all the visual contents are shown and functions work properly on those browsers, the below testings are carried out on all of them. \*Except Chrom that is used to build the website
 
 1. Open the website on the browser to do a visual test. Look at all the pages to see if everything appears as expected
 2. Create a user and test CRUD functions

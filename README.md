@@ -123,7 +123,7 @@ Below is the chart of the database to show the collections and their relationshi
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/back-end-chart.png)<br>
 
 > **Note:**<br>
-> On the chart, subs_name is listed but the subscribe function collects e-mail address only
+> On the subscription collection, subs_name is listed but the subscribe function collects e-mail address only
 
 ### Skeleton Plane
 
@@ -302,6 +302,9 @@ Initially no plan to implement this on the project but as a number of recipes in
 — **Defensive Programme** —
 
 There is a certain restriction on accessing pages or recipes. For example, **create recipe** page can be accessed by a logged-in user, **edit recipe** can be accessed by the recipe owner only, so a good defensive programme is required to prevent non-authorised users from accessing them. Defensive programme when users logged-in is achieved easily &#40;e.g. User A tries to access to user B's recipe&#41; however, when user is not logged in and do a manual test, it gives me a KeyError:  "user". Try a few different codes including try and except, talk to my mentor however the issue is still there so decide to post it on slack. There is a feedback from someone suggesting `if "user" in session:`  can be used for what I want to achieve. As per his suggestion, use  `if "user" in session:` and properly set us a defensive programme.
+
+— **Object ID** —
+
 
 <div align="right"><a href="#top">🔝</a></div>
 

@@ -19,7 +19,7 @@
     {% if jquery %}
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" type="module"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     {% endif %}
     <!-- Styles CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
@@ -188,7 +188,7 @@
     <!-- MDB -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     {% if jquery %}
-    <!-- jQuery -->
+    <!-- createRecipe.js comes with jQuery -->
     <script src="{{ url_for('static', filename='js/createRecipe.js') }}"></script>
     {% endif %}
     {% if not hide_navbar_main_footer %}
