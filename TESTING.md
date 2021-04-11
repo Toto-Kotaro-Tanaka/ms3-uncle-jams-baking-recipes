@@ -279,6 +279,8 @@ Delete function uses `remove()` methods to remove the data from the database.<br
 
 As Python code is completed on `app.py`, a code validation testing is carried out by using [PEP8 &#40;Python Enhancement Proposal&#41; online](http://pep8online.com/checkresult) to see if the code meets guidelines and best practices for the readability and consistency of Python code.
 
+**`app.py`**: [All right](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-pep8.png)
+
 ---
 
 ### Defensive Programme
@@ -355,4 +357,11 @@ There are some key features to achieve the primary goals of the website from use
 
 **Recipe Ingredients & Steps on edit_recipe.html**
 
-- To solve the issue by W3C Markup Validation Service for html code, [loop is set up](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-label.png) for `for attribute` of label for Recipe Ingredients and Steps, so that it corresponds to a unique ID of the input field. However, this causes an issue of [showing the label multiple times](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-repeat-label.png) on *Edit Recipe*. Try to think of showing only one label but cannot solve it and also this is *Edit Recipe* page where users have some ideas of what inputs are so decide to leave the [label empty](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-empty-label.png)
+- To solve the issue by W3C Markup Validation Service for html code, [loop is set up](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-label.png) for `for attribute` of label for Recipe Ingredients and Steps, so that it corresponds to a unique ID of the input field. However, this causes an issue of [showing the label multiple times](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-repeat-label.png) on *Edit Recipe*. Try to think of showing only one label but cannot solve it and also this is *Edit Recipe* page where users have some ideas of what inputs are so decide to leave the [label empty](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-empty-label.png).
+
+> **Note**<br>
+> Initially, it loops through to have [a label for each input box](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-label-input.png). This works from html code validation point of view however, when click add more ingredients button, it [adds a new input box underneath each existing input box](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-label-duplicate-input.png) instead of adding just one so this is not a solution either
+
+**Edit Recipe to Remove Ingredients and Steps**
+
+On *Edit Recipe* page, a new input field can be added and deleted, [existing fields](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/unsolved-issues/test-input-delete.png) can be edited but cannot be deleted. This is not a major function issue so leave it as it is as no time to look deep into the issue.

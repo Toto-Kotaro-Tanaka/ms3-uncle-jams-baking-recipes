@@ -301,10 +301,11 @@ Initially no plan to implement this on the project but as a number of recipes in
 
 — **Defensive Programme** —
 
-There is a certain restriction on accessing pages or recipes. For example, **create recipe** page can be accessed by a logged-in user, **edit recipe** can be accessed by the recipe owner only, so a good defensive programme is required to prevent non-authorised users from accessing them. Defensive programme when users logged-in is achieved easily &#40;e.g. User A tries to access to user B's recipe&#41; however, when user is not logged in and do a manual test, it gives me a KeyError:  "user". Try a few different codes including try and except, talk to my mentor however the issue is still there so decide to post it on slack. There is a feedback from someone suggesting `if "user" in session:`  can be used for what I want to achieve. As per his suggestion, use  `if "user" in session:` and properly set us a defensive programme.
+There is a certain restriction on accessing pages or recipes. For example, *create recipe* page can be accessed by a logged-in user, *edit recipe* can be accessed by the recipe owner only, so a good defensive programme is required to prevent non-authorised users from accessing them. Defensive programme when users logged-in is achieved easily &#40;e.g. User A tries to access to user B's recipe&#41; however, when user is not logged in and do a manual test, it gives me a KeyError:  "user". Try a few different codes including try and except, talk to my mentor however the issue is still there so decide to post it on slack. There is a feedback from someone suggesting `if "user" in session:`  can be used for what I want to achieve. As per his suggestion, use  `if "user" in session:` and properly set us a defensive programme.
 
 — **Object ID** —
 
+When an incorrect object id is typed on URL with `edit_recipe` and `edit_category` &#40;which should not happen under normal circumstances but discover this error during some manual testings&#41;, it shows a [bson invalid error](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/bson-invalid.png). Try to fix this issue by myself first so look up solutions on the internet and find [three possible ways](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/three-ways.png). First, try to set number of objct id and equal to 24. Second, use `bson.objectid.ObjectId.is_valid(recipe_id)` with if statement. Third, define **o** as object id and check to see if it matches with actual object id. None of them works so post the query on slack community hoping someone might give me advice on this. Get no response and as getting nowhere to solve the issue, contact tutoring support. A tutor suggests to use `try and except blcok` but also asks me how to solve the issue. Explain what I try to do and he suggests to check if bson is fully imported for my second solution. Import bson and use `bson.objectid.ObjectId.is_valid(recipe_id)` with if statement but does not work so he suggests `try and except block` that checks object id validation, then to process it or lead to error page. As per his suggestion, use `try and except block` and no error is given when an incorrect object id is manually put and also led to the error page. 
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -491,7 +492,8 @@ I would like to thank ;
 
 - My mentor, **Spencer Barriball**, who goes through the project with me and gives me some advice especially to improve UI and UX
 - **Ed Bradley** who gives me advice on several queries and difficulties I have throughout the project
-- Code Institute Tutor **Alan** who gives me guidance on how to solve the issue
+- Code Institute Tutor **Alan** who gives me guidance on how to solve an issue
+- Code Institute Tutor **Igor** who gives me guidance on how to solve an issue
 - **Code Institute Slack Members** who give me advice on queries I have throughout the project
 
 <div align="right"><a href="#top">🔝</a></div>
