@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
+import bson
 from werkzeug.security import (generate_password_hash,
                                check_password_hash)
 from datetime import datetime
@@ -229,35 +230,41 @@ def edit_recipe(recipe_id):
     """To edit their own recipes"""
     if "user" in session:
 
-        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        if session["user"].lower() == recipe["username"].lower():
-
-            if request.method == "POST":
-                submit = {
-                    "category_name": request.form.get("category_name"),
-                    "recipe_title": request.form.get("recipe_title"),
-                    "recipe_desc": request.form.get("recipe_desc"),
-                    "recipe_time": request.form.get("recipe_time"),
-                    "recipe_serves": request.form.get("recipe_serves"),
-                    "recipe_ingreds": request.form.getlist("recipe_ingreds"),
-                    "recipe_steps": request.form.getlist("recipe_steps"),
-                    "recipe_img_url": request.form.get("recipe_img_url"),
-                    "recipe_tips": request.form.get("recipe_tips"),
-                    "username": session["user"],
-                    "posted_date": datetime.today().strftime("%d %b, %Y")
-                }
-                mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-                flash("Recipe successfully updated", "success")
-                return redirect(url_for("home"))
-
+        try:
+            bson.objectid.ObjectId.is_valid(recipe_id)
             recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-            categories = mongo.db.categories.find()
-            return render_template("edit_recipe.html", recipe=recipe,
-                                   categories=categories, recipe_title=recipe,
-                                   hide_navbar_main_footer=True, jquery=True)
 
-        flash("Access denied. This is not your recipe", "error")
-        return redirect(url_for("profile", username=session["user"]))
+            if session["user"].lower() == recipe["username"].lower():
+
+                if request.method == "POST":
+                    submit = {
+                        "category_name": request.form.get("category_name"),
+                        "recipe_title": request.form.get("recipe_title"),
+                        "recipe_desc": request.form.get("recipe_desc"),
+                        "recipe_time": request.form.get("recipe_time"),
+                        "recipe_serves": request.form.get("recipe_serves"),
+                        "recipe_ingreds": request.form.getlist("recipe_ingreds"),
+                        "recipe_steps": request.form.getlist("recipe_steps"),
+                        "recipe_img_url": request.form.get("recipe_img_url"),
+                        "recipe_tips": request.form.get("recipe_tips"),
+                        "username": session["user"],
+                        "posted_date": datetime.today().strftime("%d %b, %Y")
+                    }
+                    mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+                    flash("Recipe successfully updated", "success")
+                    return redirect(url_for("home"))
+
+                recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+                categories = mongo.db.categories.find()
+                return render_template("edit_recipe.html", recipe=recipe,
+                                    categories=categories, recipe_title=recipe,
+                                    hide_navbar_main_footer=True, jquery=True)
+
+            flash("Access denied. This is not your recipe", "error")
+            return redirect(url_for("profile", username=session["user"]))
+
+        except Exception as e:
+            return render_template("page_404.html", hide_navbar_main_footer=True)
 
     flash("Access denied. This is not your recipe", "error")
     return redirect(url_for("register"))
