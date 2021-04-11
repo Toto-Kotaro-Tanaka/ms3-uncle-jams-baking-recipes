@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
+import bson
 from werkzeug.security import (generate_password_hash,
                                check_password_hash)
 from datetime import datetime
@@ -229,35 +230,48 @@ def edit_recipe(recipe_id):
     """To edit their own recipes"""
     if "user" in session:
 
-        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-        if session["user"].lower() == recipe["username"].lower():
-
-            if request.method == "POST":
-                submit = {
-                    "category_name": request.form.get("category_name"),
-                    "recipe_title": request.form.get("recipe_title"),
-                    "recipe_desc": request.form.get("recipe_desc"),
-                    "recipe_time": request.form.get("recipe_time"),
-                    "recipe_serves": request.form.get("recipe_serves"),
-                    "recipe_ingreds": request.form.getlist("recipe_ingreds"),
-                    "recipe_steps": request.form.getlist("recipe_steps"),
-                    "recipe_img_url": request.form.get("recipe_img_url"),
-                    "recipe_tips": request.form.get("recipe_tips"),
-                    "username": session["user"],
-                    "posted_date": datetime.today().strftime("%d %b, %Y")
-                }
-                mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
-                flash("Recipe successfully updated", "success")
-                return redirect(url_for("home"))
-
+        try:
+            bson.objectid.ObjectId.is_valid(recipe_id)
             recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-            categories = mongo.db.categories.find()
-            return render_template("edit_recipe.html", recipe=recipe,
-                                   categories=categories, recipe_title=recipe,
-                                   hide_navbar_main_footer=True, jquery=True)
 
-        flash("Access denied. This is not your recipe", "error")
-        return redirect(url_for("profile", username=session["user"]))
+            if session["user"].lower() == recipe["username"].lower():
+
+                if request.method == "POST":
+                    submit = {
+                        "category_name": request.form.get("category_name"),
+                        "recipe_title": request.form.get("recipe_title"),
+                        "recipe_desc": request.form.get("recipe_desc"),
+                        "recipe_time": request.form.get("recipe_time"),
+                        "recipe_serves": request.form.get("recipe_serves"),
+                        "recipe_ingreds": request.form.getlist(
+                            "recipe_ingreds"),
+                        "recipe_steps": request.form.getlist("recipe_steps"),
+                        "recipe_img_url": request.form.get("recipe_img_url"),
+                        "recipe_tips": request.form.get("recipe_tips"),
+                        "username": session["user"],
+                        "posted_date": datetime.today().strftime("%d %b, %Y")
+                    }
+                    mongo.db.recipes.update(
+                        {"_id": ObjectId(recipe_id)}, submit)
+                    flash("Recipe successfully updated", "success")
+                    return redirect(url_for("home"))
+
+                recipe = mongo.db.recipes.find_one(
+                    {"_id": ObjectId(recipe_id)})
+                categories = mongo.db.categories.find()
+                return render_template("edit_recipe.html",
+                                       recipe=recipe,
+                                       categories=categories,
+                                       recipe_title=recipe,
+                                       hide_navbar_main_footer=True,
+                                       jquery=True)
+
+            flash("Access denied. This is not your recipe", "error")
+            return redirect(url_for("profile", username=session["user"]))
+
+        except Exception as e:
+            return render_template("page_404.html",
+                                   hide_navbar_main_footer=True)
 
     flash("Access denied. This is not your recipe", "error")
     return redirect(url_for("register"))
@@ -337,25 +351,35 @@ def edit_category(category_id):
     """To edit categories and only Admin has access to it"""
     if "user" in session:
 
-        if session["user"] == "admin":
-
-            if request.method == "POST":
-                submit = {
-                    "category_name": request.form.get("category_name")
-                }
-                mongo.db.categories.update(
-                    {"_id": ObjectId(category_id)}, submit)
-                flash("Category successfully updated", "success")
-                return redirect(url_for("manage_category"))
-
+        try:
+            bson.objectid.ObjectId.is_valid(category_id)
             category = mongo.db.categories.find_one(
                 {"_id": ObjectId(category_id)})
-            return render_template("edit_category.html",
-                                   category=category, title="Edit Category",
-                                   hide_navbar_main_footer=True)
 
-        flash("Access denied. You don't have permission", "error")
-        return redirect(url_for("profile", username=session["user"]))
+            if session["user"] == "admin":
+
+                if request.method == "POST":
+                    submit = {
+                        "category_name": request.form.get("category_name")
+                    }
+                    mongo.db.categories.update(
+                        {"_id": ObjectId(category_id)}, submit)
+                    flash("Category successfully updated", "success")
+                    return redirect(url_for("manage_category"))
+
+                category = mongo.db.categories.find_one(
+                    {"_id": ObjectId(category_id)})
+                return render_template("edit_category.html",
+                                       category=category,
+                                       title="Edit Category",
+                                       hide_navbar_main_footer=True)
+
+            flash("Access denied. You don't have permission", "error")
+            return redirect(url_for("profile", username=session["user"]))
+
+        except Exception as e:
+            return render_template("page_404.html",
+                                   hide_navbar_main_footer=True)
 
     flash("Access denied. You don't have permission", "error")
     return redirect(url_for("home"))
@@ -408,4 +432,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)  # Change this to False before submission of the project and delete this message
+            debug=False)
