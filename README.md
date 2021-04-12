@@ -214,10 +214,18 @@ Updating README.md and some testing is also done during the above process
 ### Features Left To Implement
 
 - **Resetting Password When Users Forget It:** To achieve this, an email address is probably required for creating an account. Current primary purpose of the website is to provide easy access to the platform as well as I do not know how to implement this with my current skills, decide to leave this out
+
 - **Upload Image For Each Recipe:** Image data cannot be stored in MongoDB so this is not possible with the current project however having image for recipes is achieved by using image URL
+
 - **Review By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
+
 - **“Like” Reaction By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
+
 - **Customise Pagination Page Display:** Manage to do pagination as it is essential to have to make the website neat, however I do not know how to customise pagination page display &#40;e.g. When there are more recipes, it will show page 1, 2, 3, 4, 5, 6, 7...&#41; and I do not have time to look into details so decide to leave it as it is
+
+- **Error Pages:** On the current project, only one type of error page &#40;404&#41; set up for the project. Ideally, users should be directed to a specific error page depending on the type of error so should set them up however there is no time to implement this so leave this out
+
+- **Posted Date and Updated Date:** On recipe summary pages, recipes are shown by the posted date and there is a posted date on the summary of recipes. The function works fine however, when users edit recipe, the posted date is updated so it looks as if they are posted on that date. For any edited recipes, there should be an updated date other than the original posted date, but this is not critical for the current project and as no time to work on this, decide to leave this out 
 
 <div align="right"><a href="#top">🔝</a></div>
 
