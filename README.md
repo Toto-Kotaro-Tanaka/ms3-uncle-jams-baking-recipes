@@ -3,13 +3,13 @@
 # Uncle Jam's Baking Recipes <a name="top"></a>
 
 This is a website for baking recipes of bread, cakes, and biscuits. I create this for **Milestone Project 3 (Python and Data-Centric Development), Full Stack Software Development** in [Code Institute](https://codeinstitute.net/), Ireland.
-It is a mobile-first & responsive website and the link to the website is available [HERE.](https://ms3-uncle-jams-baking-recipes.herokuapp.com/home)
+It is a mobile-first &#38; responsive website and the link to the website is available [HERE.](https://ms3-uncle-jams-baking-recipes.herokuapp.com/home)
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/mockup.png)
 
 ## WHO'S THIS WEBSITE FOR?
 
-This is a website for people who simply love baking, or even just beginning to be interested in baking. People, who would like to see someone’s recipes for new ideas and&#47;or to share their own recipes with other people, can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to create and post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page where uses can look at some items and purchase them on the seller's website. There is a function to subscribe to newsletter to get engaged in what’s happening in baking and the community.
+This is a website for people who simply love baking, or even just beginning to be interested in baking. People, who would like to see someone’s recipes for new ideas and&#47;or to share their own recipes with other people, can do both on this website. The website is designed to be obvious its purpose for first-time users. Everything is laid out simply and navigated quite easily so users can adapt to the website fairly quickly, and that makes users keep coming back to the website. All the recipes are visible to any users so they do not need to create an account if they just would like to see recipes. If users would like to create and post their recipes, then they need to create an account but the process of creating an account is very simple. Some users may want to buy new baking items so there is a *Shop* page where uses can look at some items and purchase them on the seller's website. There is a function to subscribe to a newsletter to get engaged in what’s happening in baking and the community.
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -23,7 +23,7 @@ I am the owner of the website. The primary goal of the website is to provide a p
 
 ### Strategy Plane
 
-The website is designed for those who love baking, and who are interested in baking. People who have been baking might want to share their knowledge with other people as it gives them great feeling and motivation, so by following very simple registration steps, they can create an account and post their recipes in a well-structured format. People who have less experience in baking and would just like to see recipes, they can do it simply by visiting the website where all the recipes are shown by posted date, or they can see them by category &#40;e.g bread, cake, biscuit&#41; on different pages. There is a search function on the website so they can search for specific recipes by a keyword&#40;s&#41;. To see recipes, users do not need to register so it is hassle-free. There is a *shop* page that has some baking items in an affiliate style so in case users would like to purchase something, they can do it by clicking the link and it leads users to the website of the sellers. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a baking recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by user first concept.
+The website is designed for those who love baking, and who are interested in baking. People who have been baking might want to share their knowledge with other people as it gives them great feeling and motivation, so by following very simple registration steps, they can create an account and post their recipes in a well-structured format. People who have less experience in baking and would just like to see recipes, they can do it simply by visiting the website where all the recipes are shown by posted date, or they can see them by category &#40;e.g bread, cake, biscuit&#41; on different pages. There is a search function on the website so they can search for specific recipes by a keyword&#40;s&#41;. To see recipes, users do not need to register so it is hassle-free. There is a *shop* page that has some baking items in an affiliate style so in case users would like to purchase something, they can do it by clicking the link and it leads users to the sellers website. The design of the website is meaningful and simple so that the purpose of the website is very clear for first-time users, and they can easily adapt to the website. This also applies to all the functions to create, post, edit and delete recipes for regular users. The owner’s main goal is to provide a baking recipe platform that is easy to use whether they are first-time or returning users, and this is the key to grow the community for further business opportunities. To achieve this, the website is designed and created by users first concept.
 
 All the functions on the tables below are minimum requirements on the website to achieve the current user's and owner's goals. &#40;On a scale of 1 &#91;least&#93; - 5 &#91;most&#93;&#41;
 
@@ -64,24 +64,24 @@ To achieve user and owner’s goals, below are the minimum features to be includ
 - Login page where users can log in to the website
 - Logout function that users can log out the website
 - Profile page where users can see all their recipes and access to create, post, edit and delete recipes
-- Create Recipe page where users can create and post their recipes&#40;C&#41;
+- Create Recipe page where users can create and post their recipes &#40;C&#41;
 - Edit Recipe page where users can edit their recipes &#40;U&#41;
 - Delete Recipe function that users can delete their recipes &#40;D&#41;
 - Manage Category page and functions that only <ins>admin user</ins> &#40;owner&#41; can create, edit and delete categories &#40;C & U & D&#41;
 - Search by a keyword&#40;s&#41; function that users can search for specific recipes
-- Subscribe to newsletter function to collect users email addresses
-- 404 page that appears for invalid url and takes users back to *Home* page of the website safely
+- Subscribe to newsletter function to collect users e-mail addresses
+- 404 page that appears for invalid URL and takes users back to *Home* page of the website safely
 
 > **Note:**<br>
-> Initially, only 3 fixed categories are planned for recipes, however as the project is created, discover that newly created category can be implemented on the website by using loop so categories are note limited. &#40;e.g. If the admin decides to create a new category called "Birthday", it can be implemented to the website automatically&#41;
+> Initially, only 3 fixed categories are planned for recipes, however as the project is created, discover that a newly created category can be implemented on the website by using loop so categories are not limited. &#40;e.g. If the admin decides to create a new category called "Birthday", it can be implemented to the website automatically&#41;
 
 ### Structure Plane
 
 — **Front-end** —
 
-The website consists of **Home** page with **13 other core pages**.
+The website consists of a **Home** page with **13 other core pages**.
 
-- **Home** &#40;`index.html`&#41;<br>The main page of the website. There is a logo, navigation bar to *Categories*, *Shop*, *Register* & *Login* pages, a title, a hero image. All the summary of recipes are contained and users can access a full *Recipe* page. There is a footer with a form to subscribe to newsletter and some social icons
+- **Home** &#40;`index.html`&#41;<br>The main page of the website. There is a logo, navigation bar to *Categories*, *Shop*, *Register* & *Login* pages, a title and a hero image. All the summary of recipes are contained and users can access a full *Recipe* page. There is a footer with a form to subscribe to newsletter and some social icons
 
 - **Search Result** &#40;`search.html`&#41;<br>The page where users can see recipes by search and access a full *Recipe* page. The same navigation bar and footer are used as *Home* *Idea of having this page comes up during the project
 
@@ -95,19 +95,19 @@ The website consists of **Home** page with **13 other core pages**.
 
 - **Login** &#40;`login.html`&#41;<br>The page where users who have an account can log in to the website. Once users log in successfully, they will be led to *Profile* page. The navigation bar is different to *Home* page, in which users can go back to *Home* page by clicking Uncle Jam's icon, and there is no footer
 
-- **Profile** &#40;`profile.html`&#41;<br>The page where users will be led when they create an account or login. Users see all of their recipes with an option to edit&#47;delete. Users can access to *Edit Recipe* page and *Delete Recipe* function by clicking a button on the recipe. There is an option to create a new recipe from this page by clicking a button and that leads to *Create Recipe* page. The same navigation bar and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*. There is also a link to *Profile* page on the navigation bar
+- **Profile** &#40;`profile.html`&#41;<br>The page where users will be led when they create an account or log in. Users see all of their recipes with an option to edit&#47;delete. Users can access to *Edit Recipe* page and *Delete Recipe* function by clicking a button on the recipe. There is an option to create a new recipe from this page by clicking a button and that leads to *Create Recipe* page. The same navigation bar and footer are used as *Home* but there is a *Logout* function instead of *Register* and *Login*. There is also a link to *Profile* page on the navigation bar
 
-- **Create Recipe** &#40;`create_recipe.html`&#41;<br>The page where users can create and post recipes. There is no link on the navigation bar and it can only be accessed by clicking a Create Recipe button on *Profile* page. The page style is same as *Register | Login*, and users can go back to *Profile* page by clicking gingerbread man icon or cancel button
+- **Create Recipe** &#40;`create_recipe.html`&#41;<br>The page where users can create and post recipes. There is no link on the navigation bar and it can only be accessed by clicking a Create Recipe button on *Profile* page. The page style is the same as *Register | Login*, and users can go back to *Profile* page by clicking Gingerbread man icon or cancel button
 
-- **Edit Recipe** &#40;`edit_recipe.html`&#41;<br>The page where users can edit recipes. There is no link on the navigation bar and it can only be accessed by clicking an Edit button on *Profile* page. The page style is same as *Register | Login*, and users can go back to *Profile* page by clicking gingerbread man icon or cancel button
+- **Edit Recipe** &#40;`edit_recipe.html`&#41;<br>The page where users can edit recipes. There is no link on the navigation bar and it can only be accessed by clicking an Edit button on *Profile* page. The page style is the same as *Register | Login*, and users can go back to *Profile* page by clicking Gingerbread man icon or cancel button
 
-- **Manage Category** &#40;`manage_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can access to create and edit category pages as well as to delete categories. Only admin user can have an access to this page by a navigation link that appears for admin *Profile* page. The page style is same as *Home*
+- **Manage Category** &#40;`manage_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can access to create and edit category pages as well as to delete categories. Only admin user can have an access to this page by a navigation link that appears on *Profile* page for admin. The page style is the same as *Home*
 
-- **Create Category** &#40;`create_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can create categories. The page style is same as *Register | Login*, and admin user can go back to *Manage Category* page by clicking tools icon or cancel button
+- **Create Category** &#40;`create_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can create categories. The page style is the same as *Register | Login*, and admin user can go back to *Manage Category* page by clicking Tools icon or cancel button
 
-- **Edit Category** &#40;`edit_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can edit categories. The page style is same as *Register | Login*, and admin user can go back to *Manage Category* page by clicking tools icon or cancel button
+- **Edit Category** &#40;`edit_category.html`&#41;<br>The page where only <ins>admin user</ins> &#40;owner&#41; can edit categories. The page style is the same as *Register | Login*, and admin user can go back to *Manage Category* page by clicking Tools icon or cancel button
 
-- **Page 404** &#40;`page_404.html`&#41;<br>The page that informs users the page not found and takes them back to *Home* page safely. The page style is same as *Register | Login*.
+- **Page 404** &#40;`page_404.html`&#41;<br>The page that informs users the page not found and takes them back to *Home* page safely. The page style is the same as *Register | Login*.
 
 Summary of recipes and full recipes are accessible by any users. Summary of recipes are available on *Home* and *Categories* pages and full recipes are available on *Recipe* page.
 
@@ -116,7 +116,7 @@ Below is the chart of the website to show the core relationships between the pag
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/front-end-chart.png)<br>
 
 — **Back-end** —<br>
-Users must have an account to create recipes so there is a **users collection** that has <ins>username</ins> and <ins>password</ins> as keys of the data. <ins>username</ins> in **users collections** is linked with the <ins>username</ins> in **recipes collection** because users who have an account can only create a recipe and they create a recipe in their own account. Same principle as <ins>username</ins> in **users collection** that users can only create a recipe for the categories available in a **categories collection** so it is liked with <ins>category_name_</ins> in **recipes collection**. Categories in **categories collection** are editable by admin so it is created as an independent collection. Data in **subscription collection** is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do. The data in all the collections are retrievable and can be identified by the key or unique id of the object.
+Users must have an account to create recipes so there is a **users collection** that has <ins>username</ins> and <ins>password</ins> as keys of the data. <ins>username</ins> in **users collections** is linked with the <ins>username</ins> in **recipes collection** because users who have an account can only create a recipe and they create a recipe in their own account. Same principle as <ins>username</ins> in **users collection** that users can only create a recipe for the categories available in a **categories collection** so it is liked with <ins>category_name</ins> in **recipes collection**. Categories in **categories collection** are editable by admin so it is created as an independent collection. Data in **subscription collection** is independent data for newsletters because users who do not have an account can also subscribe to it if they wish to do. The data in all the collections are retrievable and can be identified by the key or unique id of the object.
 
 Below is the chart of the database to show the collections and their relationships.
 
@@ -160,7 +160,7 @@ It is a mobile-first website because people usually bake with a recipe so a good
 
 — **Colour** —
 
-As this is a baking recipes website, **Cafe Noir** &#40;#493323&#41; is used for the main colour of the website. It is used as it is on some headings, texts as well as the navigation bar, footer, and slightly transparentised colour is used for some background. **Linen** &#40;#FBEADE&#41; and **Apricot** &#40;#FFD5B7&#41; are used for some text and background when it needs contrast. **Mango Tango** &#40;#FF7C3E&#41; and **Flame** &#40;#E84610&#41; are used when it needs an accent on the website such as See Recipe button, flash messages and hover effect.
+As this is a baking recipes website, **Cafe Noir** &#40;#493323&#41; is used for the main colour of the website. It is used as it is on some headings, texts as well as the navigation bar, footer, and slightly transparent colour is used for some background. **Linen** &#40;#FBEADE&#41; and **Apricot** &#40;#FFD5B7&#41; are used for some text and background when it needs contrast. **Mango Tango** &#40;#FF7C3E&#41; and **Flame** &#40;#E84610&#41; are used when it needs an accent on the website such as See Recipe button, flash messages and hover effect.
 
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/ux/colours.png)
 
@@ -208,24 +208,23 @@ Updating README.md and some testing is also done during the above process
 - Create with **HTML5**, **CSS3** &#40;with Material Design for Bootstrap&#41;, **JavaScript**, **Python** &#40;Flask&#41;, **MongoDB** &#40;Atlas&#41;
 - It consists of 1 base html file and 14 other html files
 - Modal for "Create Recipe" instructions and confirmation for "Delete" function
-- [BBC Good Food](https://www.bbcgoodfood.com/) for recipes
 - All the [features planned on scope plane](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/scope-plane.png) and Pagination
 
 ### Features Left To Implement
 
-- **Resetting Password When Users Forget It:** To achieve this, an email address is probably required for creating an account. Current primary purpose of the website is to provide easy access to the platform as well as I do not know how to implement this with my current skills, decide to leave this out
+- **Resetting Password When Users Forget It:** To achieve this, an e-mail address is probably required for creating an account. The current primary purpose of the website is to provide easy access to the platform so do not ask e-mail address to create an account. In addition, do not know how to implement this with my current skills, decide to leave this out
 
-- **Upload Image For Each Recipe:** Image data cannot be stored in MongoDB so this is not possible with the current project however having image for recipes is achieved by using image URL
+- **Upload Image For Each Recipe:** Image data cannot be stored in MongoDB so this is not possible with the current project however, having image for recipes is achieved by using image URL
 
-- **Review By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
+- **Review By Other Users:** Do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
 
-- **“Like” Reaction By Other Users:** I do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
+- **“Like” Reaction By Other Users:** Do not know how to achieve this with my current skill and do not have time to learn so decide to leave this out
 
-- **Customise Pagination Page Display:** Manage to do pagination as it is essential to have to make the website neat, however I do not know how to customise pagination page display &#40;e.g. When there are more recipes, it will show page 1, 2, 3, 4, 5, 6, 7...&#41; and I do not have time to look into details so decide to leave it as it is
+- **Customise Pagination Page Display:** Manage to do pagination as it is essential to make the website neat, however, do not know how to customise pagination page display &#40;e.g. When there are more recipes, it will show page 1, 2, 3, 4, 5, 6, 7...&#41; and do not have time to look into details so decide to leave as it is
 
-- **Error Pages:** On the current project, only one type of error page &#40;404&#41; set up for the project. Ideally, users should be directed to a specific error page depending on the type of error so should set them up however there is no time to implement this so leave this out
+- **Error Pages:** Only one type of error page &#40;404&#41; is set up for the project. Ideally, users should be directed to a specific error page depending on the type of the error, however, do not have time to implement this so leave this out
 
-- **Posted Date and Updated Date:** On recipe summary pages, recipes are shown by the posted date and there is a posted date on the summary of recipes. The function works fine however, when users edit recipe, the posted date is updated so it looks as if they are posted on that date. For any edited recipes, there should be an updated date other than the original posted date, but this is not critical for the current project and as no time to work on this, decide to leave this out 
+- **Posted Date and Updated Date:** On recipe summary pages, recipes are shown by the posted date and there is a posted date on the summary of recipes. The function works fine however, when users edit recipe, the posted date is updated so it looks as if they are posted on that date. For any edited recipes, there should be an updated date other than the original posted date, but this is not critical for the current project and do not have time to work on this, decide to leave this out 
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -233,10 +232,10 @@ Updating README.md and some testing is also done during the above process
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML) for markup
 - [CSS3](https://en.wikipedia.org/wiki/CSS) for style
-- [Material Design for Bootstrap 5 & 4](https://mdbootstrap.com/) &#40;an open-source toolkit based on Bootstrap for developing Material Design&#41; for mainframe of the website
+- [Material Design for Bootstrap 5 & 4](https://mdbootstrap.com/) &#40;an open-source toolkit based on Bootstrap for developing Material Design&#41; for the mainframe of the website
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for interaction
 - [Python3](https://www.python.org/) as a backend programming language
-- [Flask](https://flask.palletsprojects.com/) &#40;a micro web framework written in Python&#41; as main framework of Python
+- [Flask](https://flask.palletsprojects.com/) &#40;a micro web framework written in Python&#41; as the main framework of Python
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/) as database
 - [Google Fonts](https://fonts.google.com/) for fonts
 - [Font Awesome](https://fontawesome.com/) for icons
@@ -267,10 +266,10 @@ Updating README.md and some testing is also done during the above process
 - [Canva](https://www.canva.com/) for creating logos and some images
 - [Multi Device Website Mockup Generator](http://techsini.com/multi-mockup/index.php) for mockup
 - [Autoprefixer](https://autoprefixer.github.io/) for parsing CSS and add vendor prefixes
-- [W3C Markup Validation Service](https://validator.w3.org/) for testing html code
-- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) for testing css code
-- [jshint](https://jshint.com/) for testing javascript code
-- [PEP8 Online](http://pep8online.com/) for checking python code compliance
+- [W3C Markup Validation Service](https://validator.w3.org/) for testing HTML code
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) for testing CSS code
+- [jshint](https://jshint.com/) for testing JavaScript code
+- [PEP8 Online](http://pep8online.com/) for checking Python code compliance
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) for testing, style checking and debugging
 
 <div align="right"><a href="#top">🔝</a></div>
@@ -285,35 +284,35 @@ Testing report is available **[TESTING.md](https://github.com/Toto-Kotaro-Tanaka
 
 — **Typos** —
 
-There are a few issues caused by typos and mislocating bracket. Nothing technical and these are just careless mistakes but spend some time trying to figure out what wrong it is. The solution for this is to be more careful of what you type, especially, something that the editor does not show as an error and need to be patient to go through each code again.
+There are a few issues caused by typos and mislocating bracket. Nothing technical and these are just careless mistakes but spend some time trying to figure out what wrong it is. The solution for this is to be more careful of what you type, especially, something that the editor does not pick up as an error and need to be patience to go through each code again.
 
 — **Text Wrap** —
 
-For some reason, some texts in heading are not wrapped and just keep going to the right. Look up the solution on internet and found that `word-wrap: break-word;` css code can be used to prevent this
+For some reason, some texts in heading are not wrapped and just keep going to the right. Look up the solution on the internet and found that `word-wrap: break-word;` CSS code can be used to prevent this.
 
 — **Retrieving Data in List** —
 
-On `edit_recipe` function, data needs to be retrieved from the database. Not sure how to do it for the data in a list so look up the solution on internet and find a [Stackoverflow post](https://stackoverflow.com/questions/17575276/how-can-i-print-a-mongodb-list-in-a-jinja2-template) that gives me the solution for this
+On `edit_recipe` function, data needs to be retrieved from the database. Not sure how to do it for the data in a list so look up the solution on the internet and find a [Stackoverflow post](https://stackoverflow.com/questions/17575276/how-can-i-print-a-mongodb-list-in-a-jinja2-template) that gives me the solution for this.
 
 — **Targeting Specific Delete Item in Modal** —
 
-Set up a modal for delete function to prevent users from deleting items unintentionally, however when modal is open, it targets the first item and not the specified item. Not sure what the issue is but keep testing it and come up with an idea of putting object id as a part of id &#40;`id="modal-delete{{ recipe._id }}"`&#41; and somehow make it work
+Set up a modal for delete function to prevent users from deleting items unintentionally, however, when modal is open, it targets the first item and not the specified item. Not sure what the issue is but keep testing it and come up with an idea of putting object id as a part of id &#40;`id="modal-delete{{ recipe._id }}"`&#41; and somehow make it work.
 
 — **Form Validation** —
 
-There are some headings for dropdown menu for creating recipes. Even though those headings are disabled, users actually can submit it, if they do not open the options in dropdown menu, and it stores an empty value in the database. It causes issues for `category_name` as there must be a value for this. Try a few ways to solve the issue and come up with an idea to allocate "other" as a category. Currently form is validated by html only but by using Flask form validation WTForms, this might be achieved better, however, this is a new module for me and currently do not have time to learn it so decide to keep the form as it is.
+There are some headings for dropdown menus for creating recipes. Even though those headings are disabled, users actually can submit it, if they do not open the options in the dropdown menu, and it stores an empty value in the database. It causes issues for `category_name` as there must be a value for this. Try a few ways to solve the issue and come up with an idea to allocate "other" as a category. Currently form is validated by HTML only but by using Flask form validation WTForms, this might be achieved better, however, this is a new module for me and currently do not have time to learn it so decide to keep the form as it is.
 
 — **Pagination** —
 
-Initially no plan to implement this on the project but as a number of recipes increases, decide to do it to make the website look better. Watch [Corey Schafer's youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack about pagination so follow the threads and then look at [Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png) code on his project and use it to make it work. It works as pagination but still do not understand the logic of this very well
+Initially, no plan to implement this on the project but as the number of recipes increases, decide to do it to make the website look better. Watch [Corey Schafer's youtube tutorial](https://www.youtube.com/watch?v=PSWf2TjTGNY), follow [Pagination Demo](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9) but cannot make pagination work. Find a recent post on slack about pagination so follow the threads and then look at [Ed Bradley's](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/pagination-ed.png) code on his project and use it to make it work. It works as pagination but still do not understand the logic of this very well
 
 — **Defensive Programme** —
 
-There is a certain restriction on accessing pages or recipes. For example, *create recipe* page can be accessed by a logged-in user, *edit recipe* can be accessed by the recipe owner only, so a good defensive programme is required to prevent non-authorised users from accessing them. Defensive programme when users logged-in is achieved easily &#40;e.g. User A tries to access to user B's recipe&#41; however, when user is not logged in and do a manual test, it gives me a KeyError:  "user". Try a few different codes including try and except, talk to my mentor however the issue is still there so decide to post it on slack. There is a feedback from someone suggesting `if "user" in session:`  can be used for what I want to achieve. As per his suggestion, use  `if "user" in session:` and properly set us a defensive programme.
+There is a certain restriction on accessing pages or recipes. For example, *create recipe* page can be accessed by logged-in users, *edit recipe* can be accessed by the recipe owner only, so a good defensive programme is required to prevent non-authorised users from accessing them. Defensive programme when users logged-in is achieved easily &#40;e.g. User A tries to access user B's recipe&#41; however when a user is not logged in and do a manual test, it gives me a **KeyError:  "user"**. Try a few different codes including try and except, talk to my mentor however the issue is still there so decide to post it on slack. There is feedback from someone suggesting `if "user" in session:`  can be used for this, and as per his suggestion, use `if "user" in session:` and able to set us a defensive programme.
 
 — **Object ID** —
 
-When an incorrect object id is typed on URL with `edit_recipe` and `edit_category` &#40;which should not happen under normal circumstances but discover this error during some manual testings&#41;, it shows a [bson invalid error](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/bson-invalid.png). Try to fix this issue by myself first so look up solutions on the internet and find [three possible ways](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/three-ways.png). First, try to set number of objct id and equal to 24. Second, use `bson.objectid.ObjectId.is_valid(recipe_id)` with if statement. Third, define **o** as object id and check to see if it matches with actual object id. None of them works so post the query on slack community hoping someone might give me advice on this. Get no response and as getting nowhere to solve the issue, contact tutoring support. A tutor suggests to use `try and except blcok` but also asks me how to solve the issue. Explain what I try to do and he suggests to check if bson is fully imported for my second solution. Import bson and use `bson.objectid.ObjectId.is_valid(recipe_id)` with if statement but does not work so he suggests `try and except block` that checks object id validation, then to process it or lead to error page. As per his suggestion, use `try and except block` and no error is given when an incorrect object id is manually put and also led to the error page. 
+When an incorrect object id is typed on URL with `edit_recipe` and `edit_category` &#40;which should not happen under normal circumstances but discover this error during some manual testings&#41;, it shows a [bson invalid error](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/bson-invalid.png). Look up solutions on the internet and find [three possible ways](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/other/three-ways.png). First, try to set the number of objct id and equal to 24. Second, use `bson.objectid.ObjectId.is_valid(recipe_id)` with if statement. Third, define **o** as object id and check to see if it matches with actual object id. None of them works so post the query on slack community hoping someone might give me advice on this. Get no response and as getting nowhere to solve the issue, contact tutoring support. A tutor suggests using `try and except blcok` but also asks me how to solve the issue. Explain what I try to do and he suggests to check if bson is fully imported for my second solution. Import bson and use `bson.objectid.ObjectId.is_valid(recipe_id)` with if statement but does not work so he suggests `try and except block` that checks object id validation, then to process it or lead to error page. As per his suggestion, use `try and except block` and no error is given when an incorrect object id is manually put and also led to the error page. 
 
 <div align="right"><a href="#top">🔝</a></div>
 
@@ -335,7 +334,7 @@ When an incorrect object id is typed on URL with `edit_recipe` and `edit_categor
 
 — **Commitments** —
 
-- When a section or even a group of work is completed, it is committed in git and pushed into GitHub, in order to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
+- When a section or even a group of work is completed, it is committed in git and pushed into GitHub, to make sure to keep the history of the work logged properly and not to lose the work in unexpected situations. Below commands are used for this.
 
 ```
 * git status | To check the status of new/modified folders, files, and documents
@@ -343,7 +342,7 @@ When an incorrect object id is typed on URL with `edit_recipe` and `edit_categor
   git add <specific file> is used when different types of work are done but do not want to commit everything on the same commitment
 * git commit -m "Example commit" | To commit the work on the stage in git before pushing it to GitHub
 * git push | To update the repository in GitHub for main branch
-  git push origin <branch name> is used when pushing git into GitHub for sub branches
+  git push origin <branch name> is used when pushing git into GitHub for sub-branches
 ```
 
 > **Note:**<br>
@@ -357,11 +356,11 @@ When an incorrect object id is typed on URL with `edit_recipe` and `edit_categor
 * git branch <branch name> | To create a new branch
 * git checkout <branch name> | To switch branch
 * git branch | To check current branch
-* git merge <branch name> | To merge sub branch into main, do this on main branch
+* git merge <branch name> | To merge sub-branch into main, do this on main branch
 ```
 
 > **Note:**<br>
-> Same sub branch can be used as many times during the project, however, create a new branch for each test because my knowledge of git is not the best and sometimes not 100% sure if things are done right. Hope to improve more on the version control using git for future projects
+> Same sub-branch can be used as many times during the project, however, create a new branch for each testing because my knowledge of git is not the best and sometimes not 100% sure if things are done right. Hope to improve more on the version control using git for future projects
 >
 > There is one [commit message](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/version-control/commit-msg.png) does not correspond to what happen. Commit it from sub branch presuming there are only minor changes, however, it seems it does it from main branch somehow
 
@@ -371,11 +370,11 @@ When an incorrect object id is typed on URL with `edit_recipe` and `edit_categor
 
 The website of this project requires back-end technologies such as server, application, and database so the website is deployed in [Heroku](https://www.heroku.com/), which is a cloud platform with a service supporting several programming languages, because GitHub can only host a static website. There are two ways to deploy a website in Heroku. One is to use Heroku Command Line Interface (CLI) and another one is to connect to GitHub repository. Connecting to GitHub repository is much easier and recommended by a tutor so this website is deployed by using GitHub method.
 
-Before deploying the website to Heroku, there are three important steps to follow in order to make the app work in Heroku correctly.
+Before deploying the website to Heroku, there are three important steps to follow to make the app work in Heroku correctly.
 
 1. Create `requirements.txt` file that contains the names of packages being used in Python. It is important to update the file if other packages or modules are installed during the project
 2. Create `Procfile` that contains the name of the application file so that Heroku knows what to run. Procfile may have a blank line when it is created so remove it as it may cause problems
-3. Push them into Github
+3. Push them into GitHub
 
 Once those steps are done, the website can be deployed and below are the steps of the deployment in Heroku.
 
@@ -498,10 +497,10 @@ All affiliates are from [Amazon Affiliate Programe](https://affiliate-program.am
 
 I would like to thank ;
 
-- My mentor, **Spencer Barriball**, who goes through the project with me and gives me some advice especially to improve UI and UX
-- **Ed Bradley** who gives me advice on several queries and difficulties I have throughout the project
-- Code Institute Tutor **Alan** who gives me guidance on how to solve an issue
-- Code Institute Tutor **Igor** who gives me guidance on how to solve an issue
-- **Code Institute Slack Members** who give me advice on queries I have throughout the project
+- My mentor, **Spencer Barriball**, for going through the project with me and giving me some advice especially to improve UI and UX
+- **Ed Bradley** for giving me advice on several queries that I have during the project
+- Code Institute Tutor, **Alan**, for giving me a guidance on how to solve an issue
+- Code Institute Tutor, **Igor**, for giving me a guidance on how to solve an issue
+- **Code Institute Slack Members** for giving me advice on queries that I have during the project
 
 <div align="right"><a href="#top">🔝</a></div>
