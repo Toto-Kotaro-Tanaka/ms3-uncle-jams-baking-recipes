@@ -2,42 +2,39 @@
 
 {% block heading %}
 <section id="heading-account">
-    <a href="{{ url_for('home') }}"><img class="uj-back-page-logo"
-            src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"></a>
+    <a href="{{ url_for('home') }}">
+        <img class="uj-back-page-logo" src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam">
+    </a>
     <h2 class="h2-p-0 h2-mt-4">Register</h2>
 
     <div id="section-account" class="color-fbeade">
-        <p class="note-register text-center color-fff"><i class="fas fa-info-circle"></i> Username can contain only
-            alphabets &
-            numbers, and max 15 letters.<br>Min 5 letters required for both.
+        <p class="note-register text-center color-fff">
+            <i class="fas fa-info-circle"></i> Username can contain only alphabets & numbers, and max 15 letters.<br>Min 5 letters required for both.
         </p>
         <!-- Credit: MDB Forms & Input @ https://mdbootstrap.com/docs/standard/forms/overview/ -->
         <form id="form-account" method="POST" action="{{ url_for('register') }}">
             <!-- Username -->
             <div class="form-outline form-white mb-4">
                 <i class="fas fa-user trailing"></i>
-                <input type="text" id="username" name="username" class="form-control bg-color-49332-06"
-                    data-mdb-showcounter="true" pattern="^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required />
+                <input id="username" class="form-control bg-color-49332-06" type="text" name="username" data-mdb-showcounter="true"
+                    pattern="^[a-zA-Z0-9]{5,15}$" minlength="5" maxlength="15" required />
                 <label class="form-label" for="username">Username</label>
                 <div class="form-helper color-fbeade"></div>
             </div>
             <!-- Password -->
             <div class="form-outline form-white mb-4">
                 <i class="fas fa-lock trailing"></i>
-                <input type="password" id="password" name="password" class="form-control bg-color-49332-06"
-                    minlength="5" required />
+                <input id="password" class="form-control bg-color-49332-06" type="password" name="password" minlength="5" required />
                 <label class="form-label" for="password">Password</label>
             </div>
             <!-- Register Button -->
             <div class="btn-center">
-                <button type="submit" class="btn btn-ffd5b7">Register</button>
+                <button class="btn btn-ffd5b7" type="submit">Register</button>
             </div>
         </form>
         <!-- Diversion Message -->
         <div>
-            <p class="diversion-account text-center color-fff">Already registered?<br>Click <a
-                    href="{{ url_for('login') }}">HERE to
-                    LOGIN</a></p>
+            <p class="diversion-account text-center color-fff">Already registered?<br>Click <a href="{{ url_for('login') }}">HERE to LOGIN</a></p>
         </div>
         <!-- /End of Credit -->
     </div>

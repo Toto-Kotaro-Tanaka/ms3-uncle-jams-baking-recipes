@@ -87,6 +87,28 @@ As the core HTML code is completed on all html files, a code validation test is 
 
 ---
 
+— **Form Validation** —
+
+All the forms used on the website is validated by html. Manual testing is carried out to see if those forms are validated properly.
+
+**Register**
+
+- Only the alphabet and numbers can be used as username, and the length must be between 5 - 15. When invalid letters, including space, there is a warning message pops up. For password, any letters can be used but must be 5 or more letters so a warning pops up for an invalid length. If the user already exists in the system, then an error message pops up saying user already exist and it will not process the registration process
+
+**Login**
+
+- Username and password must match to log in. If one of them or both are incorrect, an error message pops up saying incorrect username and/or password. Not saying what is incorrec because this is to make more difficult for brute-forcing an account
+
+**Create & Edit Recipe &#40;Category&#41;**
+
+- All the fields except Recipe Image URL and Tips are mandatory. Unless users select something on the fields, it gives an error message. If Recipe Image URL is empty, then, it creates a default image for the recipe. There is an issue on Create Recipe form that the title of the dropdown menu can be selected even if it is set to disable. An empty entry for the category causes an issue so put `value="other"` for this. &#40;Same ideas for Recipe Time and Serves&#41; For Recipe Ingredients and steps, fields can be added and they cannot be submitted as empty fields
+
+**Subscribe to our newsletter**
+
+- Input email must contain &#64; mark and some letters after. Otherwise, an error message pops up. If the email already exists in the system, then an error message pops up saying email already exists and it will not process the subscription process
+
+---
+
 — **Quality** —
 
 As the core HTML code is completed, a quality check testing is carried out by using [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is an open-source and one of the automated DevTools for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO.
@@ -282,28 +304,6 @@ Delete function uses `remove()` methods to remove the data from the database.<br
 As Python code is completed on `app.py`, a code validation testing is carried out by using [PEP8 &#40;Python Enhancement Proposal&#41; online](http://pep8online.com/checkresult) to see if the code meets guidelines and best practices for the readability and consistency of Python code.
 
 **`app.py`**: [All right](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/testing/python/test-pep8.png)
-
----
-
-### Form Validation
-
-All the forms used on the website is validated by html. Manual testing is carried out to see if those forms are validated properly.
-
-**Register**
-
-- Only the alphabet and numbers can be used as username, and the length must be between 5 - 15. When invalid letters, including space, there is a warning message pops up. For password, any letters can be used but must be 5 or more letters so a warning pops up for an invalid length. If the user already exists in the system, then an error message pops up saying user already exist and it will not process the registration process
-
-**Login**
-
-- Username and password must match to log in. If one of them or both are incorrect, an error message pops up saying incorrect username and/or password. Not saying what is incorrec because this is to make more difficult for brute-forcing an account
-
-**Create & Edit Recipe &#40;Category&#41;**
-
-- All the fields except Recipe Image URL and Tips are mandatory. Unless users select something on the fields, it gives an error message. If Recipe Image URL is empty, then, it creates a default image for the recipe. There is an issue on Create Recipe form that the title of the dropdown menu can be selected even if it is set to disable. An empty entry for the category causes an issue so put `value="other"` for this. &#40;Same ideas for Recipe Time and Serves&#41; For Recipe Ingredients and steps, fields can be added and they cannot be submitted as empty fields
-
-**Subscribe to our newsletter**
-
-- Input email must contain &#64; mark and some letters after. Otherwise, an error message pops up. If the email already exists in the system, then an error message pops up saying email already exists and it will not process the subscription process
 
 ---
 

@@ -4,27 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="A baking recipes website that you can see recipes by other people as well as to share your own recipes">
+    <meta name="description" content="A baking recipes website that you can see recipes by other people as well as to share your own recipes">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" type="text/css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Balsamiq+Sans:wght@400;700&family=Nunito:wght@400;700&display=swap">
     <!-- MDB -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" type="text/css" />
     {% if jquery %}
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     {% endif %}
     <!-- Styles CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    
     {% if recipe_title %}
     <title>{{ recipe_title.recipe_title | title }}</title>
     {% elif title %}
@@ -39,29 +36,24 @@
     <!-- Credit: MDB Navbar @ https://mdbootstrap.com/docs/standard/navigation/navbar/ -->
     <nav class="navbar navbar-expand-lg navbar-light font-balsamiq color-fbeade bg-color-49332-06">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png"
-                    alt="Website Logo"></a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" href="{{ url_for('home') }}"><img src="../static/images/logo.png" alt="Website Logo"></a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars color-fbeade"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active color-fbeade" aria-current="page"
-                            href="{{ url_for('home') }}">Home</a>
+                        <a class="nav-link active color-fbeade" aria-current="page" href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle color-fbeade" href="#" id="navbarDropdown" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            Categories
-                        </a>
+                            data-mdb-toggle="dropdown" aria-expanded="false">Categories</a>
                         <ul class="dropdown-menu color-493323 bg-color-fbeade" aria-labelledby="navbarDropdown">
                             {% for category in categories %}
-                            <li><a class="dropdown-item color-493323"
-                                    href="{{ url_for('categories', category_name=category.category_name) }}">{{
-                                    category.category_name | title }}</a>
+                            <li>
+                                <a class="dropdown-item color-493323"
+                                    href="{{ url_for('categories', category_name=category.category_name) }}">{{ category.category_name | title }</a>
                             </li>
                             {% endfor %}
                         </ul>
@@ -71,14 +63,11 @@
                     </li>
                     {% if session.user %}
                     <li class="nav-item">
-                        <a class="nav-link color-fbeade"
-                            href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                        <a class="nav-link color-fbeade" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
                     </li>
                     {% if session.user | lower == "admin" | lower %}
                     <li class="nav-item">
-                        <a class="nav-link color-fbeade" href="{{ url_for('manage_category') }}"><i
-                                class="fas fa-tools"></i>
-                            Category</a>
+                        <a class="nav-link color-fbeade" href="{{ url_for('manage_category') }}"><i class="fas fa-tools"></i> Category</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
@@ -96,11 +85,8 @@
                 </ul>
                 {% if search %}
                 <form class="d-flex input-group w-auto form-search" action="{{ url_for('search') }}" method="POST">
-                    <input type="text" name="query" id="query" minlength="3" class="form-control input-search"
-                        placeholder="Search Recipes" aria-label="Search" required />
-                    <button class="btn btn-search color-fbeade" type="submit" data-mdb-ripple-color="dark">
-                        Search
-                    </button>
+                    <input id="query" class="form-control input-search" type="text" name="query" minlength="3" placeholder="Search Recipes" aria-label="Search" required />
+                    <button class="btn btn-search color-fbeade" type="submit" data-mdb-ripple-color="dark">Search</button>
                     <div class="btn btn-search" data-mdb-ripple-color="dark">
                         <a class="color-fbeade" href="{{ url_for('home') }}">Reset</a>
                     </div>
@@ -146,35 +132,35 @@
                     <div class="col-md-5 col-12">
                         <div class="form-outline form-white mb-4">
                             <i class="fas fa-envelope trailing"></i>
-                            <input type="email" id="subsc_email" name="subsc_email" class="form-control input-subscribe"
-                                required />
+                            <input id="subsc_email" class="form-control input-subscribe" type="email" name="subsc_email" required />
                             <label class="form-label" for="subsc_email">Email Address</label>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-ffd5b7 mb-4">
-                            Subscribe
-                        </button>
+                        <button type="submit" class="btn btn-ffd5b7 mb-4">Subscribe</button>
                     </div>
                 </div>
             </form>
         </div>
         <div class="mb-4">
             <a class="btn btn-link btn-floating btn-lg text-dark m-1 social-media" href="https://www.facebook.com/"
-                role="button" data-mdb-ripple-color="dark" aria-label="Facebook" target="_blank" rel="noopener"><i
-                    class="fab fa-facebook-f"></i></a>
+                role="button" data-mdb-ripple-color="dark" aria-label="Facebook" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+            </a>
             <a class="btn btn-link btn-floating btn-lg text-dark m-1 social-media" href="https://twitter.com/"
-                role="button" data-mdb-ripple-color="dark" aria-label="Twitter" target="_blank" rel="noopener"><i
-                    class="fab fa-twitter"></i></a>
+                role="button" data-mdb-ripple-color="dark" aria-label="Twitter" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+            </a>
             <a class="btn btn-link btn-floating btn-lg text-dark m-1 social-media" href="https://www.instagram.com/"
-                role="button" data-mdb-ripple-color="dark" aria-label="Instagram" target="_blank" rel="noopener"><i
-                    class="fab fa-instagram"></i></a>
+                role="button" data-mdb-ripple-color="dark" aria-label="Instagram" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
-        <div id="important-note" class="hide color-fff p-3">This website is created by Kotaro Tanaka for educational
-            purpose only. Some recipes from <a class="font-weight-700" href="https://www.bbcgoodfood.com/"
-                target="_blank" rel="noopener">BBC Good Food</a> are on this website, and the copyright is to BBC
-            Good Food
-            &#47; the actual owner of the recipe.</div>
+        <div id="important-note" class="hide color-fff p-3">
+            This website is created by Kotaro Tanaka for educational purpose only. Some recipes from 
+            <a class="font-weight-700" href="https://www.bbcgoodfood.com/" target="_blank" rel="noopener">BBC Good Food</a> 
+            are on this website, and the copyright is to BBC Good Food &#47; the actual owner of the recipe.
+        </div>
         <div class="bg-color-49332-06 pt-3">
             <i class="fas fa-exclamation-circle fa-lg" onclick="showImportantNote()"></i> Important Note
         </div>

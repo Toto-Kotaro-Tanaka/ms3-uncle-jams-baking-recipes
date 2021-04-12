@@ -2,8 +2,9 @@
 
 {% block heading %}
 <section id="heading-account">
-    <a href="{{ url_for('home') }}"><img class="uj-back-page-logo"
-            src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam"></a>
+    <a href="{{ url_for('home') }}">
+        <img class="uj-back-page-logo" src="{{ url_for('static', filename='images/uncle-jam.png') }}" alt="Uncle Jam">
+    </a>
     <h2 class="h2-p-0 h2-mt-4">Login</h2>
 
     <div id="section-account" class="color-fbeade">
@@ -12,27 +13,23 @@
             <!-- Username -->
             <div class="form-outline form-white mb-4">
                 <i class="fas fa-user trailing"></i>
-                <input type="text" id="username" name="username" class="form-control bg-color-49332-06" minlength="5"
-                    maxlength="25" required />
+                <input id="username" class="form-control bg-color-49332-06" type="text" name="username" minlength="5" maxlength="25" required />
                 <label class="form-label" for="username">Username</label>
             </div>
             <!-- Password -->
             <div class="form-outline form-white mb-4">
                 <i class="fas fa-unlock-alt trailing"></i>
-                <input type="password" id="password" name="password" class="form-control bg-color-49332-06"
-                    minlength="5" required />
+                <input id="password" class="form-control bg-color-49332-06" type="password" name="password" minlength="5" required />
                 <label class="form-label" for="password">Password</label>
             </div>
             <!-- Login Button -->
             <div class="btn-center">
-                <button type="submit" class="btn btn-ffd5b7">Login</button>
+                <button class="btn btn-ffd5b7" type="submit">Login</button>
             </div>
         </form>
         <!-- Diversion Message -->
         <div>
-            <p class="diversion-account text-center color-fff">Not registered yet?<br>Click <a
-                    href="{{ url_for('register') }}">HERE
-                    to REGISTER</a></p>
+            <p class="diversion-account text-center color-fff">Not registered yet?<br>Click <a href="{{ url_for('register') }}">HERE to REGISTER</a></p>
         </div>
         <!-- /End of Credit -->
     </div>

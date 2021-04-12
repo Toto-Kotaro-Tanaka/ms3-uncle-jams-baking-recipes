@@ -10,27 +10,22 @@
         <!-- Recipe Image -->
         <div class="grid-top-img">
             {% if recipe.recipe_img_url %}
-            <img class="card-img-top recipe-full-img border-radius-025" src="{{ recipe.recipe_img_url }}"
-                alt="{{ recipe.recipe_title }}" />
+            <img class="card-img-top recipe-full-img border-radius-025" src="{{ recipe.recipe_img_url }}" alt="{{ recipe.recipe_title }}" />
             {% else %}
-            <img class="card-img-top recipe-full-img border-radius-025"
-                src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
+            <img class="card-img-top recipe-full-img border-radius-025" src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
             {% endif %}
         </div>
         <div class="recipe-full grid-top-title bg-color-fbeade border-radius-025">
             <!-- Recipe Title & Owner & Descriptions -->
             <div class="text-center">
-                <h3 class="font-weight-700">{{ recipe.recipe_title | title }} Recipe<br>by
-                    {{ recipe.username | title }}
-                </h3>
+                <h3 class="font-weight-700">{{ recipe.recipe_title | title }} Recipe<br>by {{ recipe.username | title }}</h3>
                 <p class="card-text">{{ recipe.recipe_desc }}</p>
             </div>
             <!-- Recipe Time & Serves -->
             <div>
                 <h4 class="text-center mt-3 font-weight-700">Time & Serves</h4>
-                <p class="text-center pb-3"><i class="fas fa-clock">
-                    </i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }}
-                    people
+                <p class="text-center pb-3">
+                    <i class="fas fa-clock"></i> {{ recipe.recipe_time }} min | <i class="fas fa-users"></i> {{ recipe.recipe_serves }} people
                 </p>
             </div>
         </div>
@@ -41,7 +36,9 @@
             <h5 class="font-weight-700 mt-5">Ingredients</h5>
             <ul class="list-group list-group-flush border-radius-025">
                 {% for ingreds in recipe.recipe_ingreds %}
-                <li class="list-group-item">&#9679; {{ ingreds }}</li>
+                <li class="list-group-item">
+                    &#9679; {{ ingreds }}
+                </li>
                 {% endfor %}
             </ul>
         </div>
@@ -50,7 +47,8 @@
             <h5 class="font-weight-700 mt-5">Steps</h5>
             <ul class="list-group list-group-flush border-radius-025">
                 {% for step in recipe.recipe_steps %}
-                <li class="list-group-item"><span class="font-weight-700">Step {{ loop.index }}</span><br>{{ step }}
+                <li class="list-group-item">
+                    <span class="font-weight-700">Step {{ loop.index }}</span><br>{{ step }}
                 </li>
                 {% endfor %}
             </ul>
@@ -65,9 +63,8 @@
     {% endif %}
     <!-- Home & Back To Category Links -->
     <div class="p-3">
-        <a href="{{ url_for('home') }}" class="btn btn-ffd5b7">Home</a>
-        <a href="{{ url_for('categories', category_name=recipe.category_name) }}" class="btn btn-ffd5b7-06">{{
-            recipe.category_name | title}}</a>
+        <a class="btn btn-ffd5b7" href="{{ url_for('home') }}">Home</a>
+        <a class="btn btn-ffd5b7-06" href="{{ url_for('categories', category_name=recipe.category_name) }}">{{ recipe.category_name | title }}</a>
     </div>
     {% if recipe.recipe_owner %}
     <div class="bbc-recipe-full text-center pb-3">

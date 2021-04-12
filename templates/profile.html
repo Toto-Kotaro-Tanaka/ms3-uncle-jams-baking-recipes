@@ -3,13 +3,12 @@
 {% block heading %}
 <h2 class="h2-p-88-15">{{ username }}'s profile</h2>
 <div class="text-center">
-    <img class="profile-img" src="{{ url_for('static', filename='images/gingerbread-man.png') }}"
-        alt="Profile Image Gingerbread Man">
+    <img class="profile-img" src="{{ url_for('static', filename='images/gingerbread-man.png') }}" alt="Profile Image Gingerbread Man">
 </div>
 <hr class="hr-493323">
 <div class="text-center">
     <p class="h3 font-balsamiq color-493323 mt-4">Create Your Recipe</p>
-    <a href="{{ url_for('create_recipe') }}" class="btn btn-ffd5b7 mt-4 mb-4">Create Recipe</a>
+    <a class="btn btn-ffd5b7 mt-4 mb-4" href="{{ url_for('create_recipe') }}">Create Recipe</a>
 </div>
 {% endblock %}
 
@@ -27,49 +26,44 @@
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
-                                alt="{{ recipe.recipe_title }}" /></a>
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}" alt="{{ recipe.recipe_title }}" />
+                        </a>
                         {% else %}
                         <img class="card-img-top recipe-img-top"
                             src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h4>{{ recipe.recipe_title | title }}</h4>
-                        <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
+                        <p class="card-text">{{ recipe.recipe_desc | truncate(70) }}</p>
                     </div>
                     <!-- Recipe Owner & Posted Date -->
                     <ul class="list-group list-group-flush posted-list">
-                        <li class="list-group-item bg-color-fbeade text-center">Posted by
-                            {{ recipe.username | capitalize }}</li>
-                        <li class="list-group-item bg-color-fbeade text-center">on {{ recipe.posted_date }}
+                        <li class="list-group-item bg-color-fbeade text-center">
+                            Posted by {{ recipe.username | capitalize }}
+                        </li>
+                        <li class="list-group-item bg-color-fbeade text-center">
+                            on {{ recipe.posted_date }}
                         </li>
                     </ul>
                     <!-- Edit & Delet Recipe Buttons -->
                     <div class="card-body">
-                        <a class="btn btn-ffd5b7" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i
-                                class="fas fa-edit"></i>Edit</a>
-                        <button class="btn btn-e84610" type="button" data-mdb-toggle="modal"
-                            data-mdb-target="#modal-delete{{ recipe._id }}"><i class="fas fa-trash-alt"></i>
-                            Delete</button>
+                        <a class="btn btn-ffd5b7" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i>Edit</a>
+                        <button class="btn btn-e84610" type="button" data-mdb-toggle="modal" data-mdb-target="#modal-delete{{ recipe._id }}">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </button>
                     </div>
                 </div>
             </div>
             <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
-            <div class="modal fade" id="modal-delete{{ recipe._id }}" tabindex="-1"
-                aria-labelledby="modal-deleteLabel-{{ recipe._id }}" aria-hidden="true">
+            <div id="modal-delete{{ recipe._id }}" class="modal fade" tabindex="-1" aria-labelledby="modal-deleteLabel-{{ recipe._id }}" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content color-493323">
                         <div class="modal-header">
-                            <h4 id="modal-deleteLabel-{{ recipe._id }}" class="modal-title">Are you
-                                sure
-                                to DELETE?
-                            </h4>
-                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                aria-label="Close"></button>
+                            <h4 id="modal-deleteLabel-{{ recipe._id }}" class="modal-title">Are you sure to DELETE?</h4>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="h3 font-weight-700 mb-0">{{ recipe.recipe_title | title }}
-                                <span class="h5">Recipe</span>
+                            <p class="h3 font-weight-700 mb-0">{{ recipe.recipe_title | title }} <span class="h5">Recipe</span>
                             </p>
                         </div>
                         <div class="modal-footer">

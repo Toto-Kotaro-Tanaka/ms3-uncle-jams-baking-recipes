@@ -2,16 +2,16 @@
 
 {% block heading %}
 <section id="heading-manage">
-    <a href="{{ url_for('manage_category') }}"><img class="back-page-logo"
-            src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils"></a>
+    <a href="{{ url_for('manage_category') }}">
+        <img class="back-page-logo" src="{{ url_for('static', filename='images/utensils.png') }}" alt="Utensils">
+    </a>
     <h2 class="h2-p-0 h2-mt-4">Create Category</h2>
 
     <div id="section-create-edit-category" class="color-fbeade">
         <form id="form-category" class="category-name pb-4" method="POST" action="{{ url_for('create_category') }}">
             <!-- New Category -->
             <div class="form-outline form-white mb-4">
-                <input type="text" id="category_name" name="category_name" class="form-control bg-color-49332-06"
-                    maxlength="15" required />
+                <input id="category_name" class="form-control bg-color-49332-06" type="text" name="category_name" maxlength="15" required />
                 <label class="form-label" for="category_name">New Category</label>
                 <p class="input-note">&#40;max 15&#41;</p>
             </div>

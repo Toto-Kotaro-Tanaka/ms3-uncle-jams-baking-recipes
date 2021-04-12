@@ -29,13 +29,12 @@
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}"
-                                alt="{{ recipe.recipe_title }}" /></a>
+                            <img class="card-img-top recipe-img-top" src="{{ recipe.recipe_img_url }}" alt="{{ recipe.recipe_title }}" />
+                        </a>
                         {% else %}
                         <a href="{{ url_for('recipe', recipe_id=recipe._id) }}">
-                            <img class="card-img-top recipe-img-top"
-                                src="{{ url_for('static', filename='images/no-recipe-img.png') }}"
-                                alt="No recipe image" /></a>
+                            <img class="card-img-top recipe-img-top" src="{{ url_for('static', filename='images/no-recipe-img.png') }}" alt="No recipe image" />
+                        </a>
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h4 class="card-title pt-2 pb-1">
@@ -44,21 +43,20 @@
                     </div>
                     <!-- Recipe Owner & Posted Date -->
                     <ul class="list-group list-group-flush posted-list">
-                        <li class="list-group-item bg-color-fbeade text-center">Posted by
-                            {{ recipe.username | capitalize }}
+                        <li class="list-group-item bg-color-fbeade text-center">
+                            Posted by {{ recipe.username | capitalize }}
                         </li>
-                        <li class="list-group-item bg-color-fbeade text-center">on {{ recipe.posted_date }}
+                        <li class="list-group-item bg-color-fbeade text-center">
+                            on {{ recipe.posted_date }}
                         </li>
                     </ul>
                     <!-- See Recipe Button -->
                     <div class="card-body">
-                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="see-recipe">See
-                            Recipe</a>
+                        <a class="see-recipe" href="{{ url_for('recipe', recipe_id=recipe._id) }}">See Recipe</a>
                     </div>
                     {% if recipe.recipe_owner %}
                     <div class="bbc-recipe text-center">
-                        <a class="p-2" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">&#40;BBC
-                            Recipe&#41;</a>
+                        <a class="p-2" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">&#40;BBC Recipe&#41;</a>
                     </div>
                     {% endif %}
                 </div>
