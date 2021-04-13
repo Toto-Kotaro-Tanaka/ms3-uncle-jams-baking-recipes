@@ -408,6 +408,9 @@ Once those steps are done, the website can be deployed and below are the steps o
 
 8. When the app is deployed by Heroku correctly, there is a confirmation message and you can access the app
 
+> **Note**<br>
+> It is important NOT to set `debug=True` when you deploy the website. As this is a project for my study, I keep `debug=True` even after the deployment but only while the app is being built and make sure to change it to `debug=False` before the submission 
+
 ![image](https://github.com/Toto-Kotaro-Tanaka/ms3-uncle-jams-baking-recipes/blob/master/readme/deployment/dep-success.png)
 
 <div align="right"><a href="#top">🔝</a></div>

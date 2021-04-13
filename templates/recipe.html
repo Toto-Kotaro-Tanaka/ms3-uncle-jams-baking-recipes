@@ -33,7 +33,7 @@
     <div class="grid-bottom">
         <!-- Recipe Ingredients -->
         <div>
-            <h5 class="font-weight-700 mt-5">Ingredients</h5>
+            <h5 class="text-center font-weight-700 mt-4">Ingredients</h5>
             <ul class="list-group list-group-flush border-radius-025">
                 {% for ingreds in recipe.recipe_ingreds %}
                 <li class="list-group-item">
@@ -44,7 +44,7 @@
         </div>
         <!-- Recipe Steps -->
         <div>
-            <h5 class="font-weight-700 mt-5">Steps</h5>
+            <h5 class="text-center font-weight-700 mt-4">Steps</h5>
             <ul class="list-group list-group-flush border-radius-025">
                 {% for step in recipe.recipe_steps %}
                 <li class="list-group-item">
@@ -58,7 +58,7 @@
     <!-- Recipe Tips -->
     <div class="tips text-center">
         <h5 class="font-weight-700 mt-4">Tips</h5>
-        <p class="p-tips p-3 mb-0">{{ recipe.recipe_tips }}</p>
+        <p class="p-tips p-2 mb-0">{{ recipe.recipe_tips }}</p>
     </div>
     {% endif %}
     <!-- Home & Back To Category Links -->
