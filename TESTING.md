@@ -370,7 +370,7 @@ There are some key features to achieve the primary goals of the website from use
 ---
 
 ### Unsolved Issues
-There are a few issues in the project that are addressed to get them solved however they remain unsolved issues due to a lack of my current skill and/or time
+There are a few issues in the project that are addressed to get them solved however they remain unsolved issues due to a lack of my current skill and&#47;or time
 
 **Low Performance on Mobile Size**
 
