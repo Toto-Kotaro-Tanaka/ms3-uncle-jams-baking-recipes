@@ -697,6 +697,10 @@ header {
     .recipe-img-top {
         height: 30vw;
     }
+    
+    .recipe-summary {
+        height: 90%;
+    }    
 
     #section-recipe {
         margin: 0 auto 3rem;
