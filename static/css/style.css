@@ -689,6 +689,27 @@ header {
         width: 20rem;
     }
 
+    .recipe-summary-height {
+        height: 93%;
+    }
+
+    .see-recipe {
+        bottom: 0.8rem;
+        position: absolute;
+    }
+    
+    .manage-recipe-edit {
+        bottom: 1rem;
+        left: 0.8rem;
+        position: absolute;
+    }
+
+    .manage-recipe-delete {
+        bottom: 1rem;
+        position: absolute;
+        right: 0.8rem;
+    }
+
     .categories-img {
         padding-top: 10rem;
         width: 18rem;
@@ -865,7 +886,7 @@ header {
     }
 
     .recipe-img-top {
-        height: 20vw;
+        height: 15vw;
     }
 
     #section-recipe-summary,

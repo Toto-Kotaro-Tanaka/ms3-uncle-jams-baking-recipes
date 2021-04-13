@@ -24,7 +24,7 @@
             <!-- Credit: MDB Cards @ https://mdbootstrap.com/docs/standard/components/cards/ -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4">
-                <div class="card recipe-summary bg-color-fbeade">
+                <div class="card recipe-summary recipe-summary-height bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
@@ -40,25 +40,20 @@
                         <h4 class="card-title pt-2 pb-1">
                             {{ recipe.recipe_title | title }}</h4>
                         <p class="card-text">{{ recipe.recipe_desc | truncate(70) }} </p>
+                        <!-- Recipe Owner & Posted Date -->
+                        <ul class="list-group list-group-flush posted-list">
+                            <li class="list-group-item bg-color-fbeade text-center">
+                                Posted by {{ recipe.username | capitalize }}
+                            </li>
+                            <li class="list-group-item bg-color-fbeade text-center">
+                                on {{ recipe.posted_date }}
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Recipe Owner & Posted Date -->
-                    <ul class="list-group list-group-flush posted-list">
-                        <li class="list-group-item bg-color-fbeade text-center">
-                            Posted by {{ recipe.username | capitalize }}
-                        </li>
-                        <li class="list-group-item bg-color-fbeade text-center">
-                            on {{ recipe.posted_date }}
-                        </li>
-                    </ul>
                     <!-- See Recipe Button -->
                     <div class="card-body">
                         <a class="see-recipe" href="{{ url_for('recipe', recipe_id=recipe._id) }}">See Recipe</a>
                     </div>
-                    {% if recipe.recipe_owner %}
-                    <div class="bbc-recipe text-center">
-                        <a class="p-2" href="{{ recipe.recipe_owner }}" target="_blank" rel="noopener">&#40;BBC Recipe&#41;</a>
-                    </div>
-                    {% endif %}
                 </div>
             </div>
             {% endfor %}

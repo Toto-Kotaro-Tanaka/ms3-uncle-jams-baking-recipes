@@ -21,7 +21,7 @@
             {% for recipe in recipes %}
             {% if session.user | lower == recipe.username | lower %}
             <div class="col-md-6 col-lg-4">
-                <div class="card recipe-summary bg-color-fbeade">
+                <div class="card recipe-summary recipe-summary-height bg-color-fbeade">
                     <!-- Recipe Image & Category & Title -->
                     <div class="card-body">
                         {% if recipe.recipe_img_url %}
@@ -34,26 +34,23 @@
                         {% endif %}
                         <p class="card-text category">Category: {{ recipe.category_name | title }}</p>
                         <h4>{{ recipe.recipe_title | title }}</h4>
-                        <p class="card-text">{{ recipe.recipe_desc | truncate(70) }}</p>
+                        <!-- Recipe Owner & Posted Date -->
+                        <ul class="list-group list-group-flush posted-list">
+                            <li class="list-group-item bg-color-fbeade text-center">
+                                Posted on {{ recipe.posted_date }}
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Recipe Owner & Posted Date -->
-                    <ul class="list-group list-group-flush posted-list">
-                        <li class="list-group-item bg-color-fbeade text-center">
-                            Posted by {{ recipe.username | capitalize }}
-                        </li>
-                        <li class="list-group-item bg-color-fbeade text-center">
-                            on {{ recipe.posted_date }}
-                        </li>
-                    </ul>
                     <!-- Edit & Delet Recipe Buttons -->
                     <div class="card-body">
-                        <a class="btn btn-ffd5b7" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i>Edit</a>
-                        <button class="btn btn-e84610" type="button" data-mdb-toggle="modal" data-mdb-target="#modal-delete{{ recipe._id }}">
+                        <a class="btn manage-recipe-edit btn-ffd5b7" href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"><i class="fas fa-edit"></i>Edit</a>
+                        <button class="btn manage-recipe-delete btn-e84610" type="button" data-mdb-toggle="modal" data-mdb-target="#modal-delete{{ recipe._id }}">
                             <i class="fas fa-trash-alt"></i> Delete
                         </button>
                     </div>
                 </div>
             </div>
+
             <!-- Modal for Delete Confirmation & Credit: MDB Modal @ https://mdbootstrap.com/docs/standard/components/modal/ -->
             <div id="modal-delete{{ recipe._id }}" class="modal fade" tabindex="-1" aria-labelledby="modal-deleteLabel-{{ recipe._id }}" aria-hidden="true">
                 <div class="modal-dialog">
