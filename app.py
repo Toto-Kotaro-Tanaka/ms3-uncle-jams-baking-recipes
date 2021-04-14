@@ -97,10 +97,15 @@ def categories(category_name):
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     """To display an individual recipe"""
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find()
-    return render_template("recipe.html", recipe=recipe,
-                           categories=categories, recipe_title=recipe)
+    try:
+        bson.objectid.ObjectId.is_valid(recipe_id)
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        categories = mongo.db.categories.find()
+        return render_template("recipe.html", recipe=recipe,
+                               categories=categories, recipe_title=recipe)
+    except Exception as e:
+        return render_template("page_404.html",
+                               hide_navbar_main_footer=True)
 
 
 @app.route("/shop")
